@@ -1,3 +1,15 @@
+# Для старта
+1. клонувати репозиторій
+2. зробити npm i
+3. npm run prepare
+
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
