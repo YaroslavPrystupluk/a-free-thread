@@ -116,10 +116,8 @@ module.exports = {
 		"switch-colon-spacing": "error",
 		"import/no-duplicates": "error",
 		"import/newline-after-import": ["error", { count: 1 }],
-		"import/no-extraneous-dependencies": [
-			"error",
-			{ devDependencies: true, optionalDependencies: false, peerDependencies: false },
-		],
+		"import/no-extraneous-dependencies": "off",
+		"import/prefer-default-export": "off",
 		"react/react-in-jsx-scope": "off",
 		"no-tabs": ["error", { allowIndentationTabs: true }],
 		"react/jsx-indent": [2, "tab"],
