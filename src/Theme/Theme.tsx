@@ -1,5 +1,5 @@
-import { ThemeProvider } from "styled-components";
 import { ReactNode } from "react";
+import { ThemeProvider } from "styled-components";
 
 const theme = {
 	colors: {
@@ -11,7 +11,7 @@ const theme = {
 		secondary: "#ffffff",
 	},
 	fontFamily: {
-		title: "Kyiv Region",
+		title: "Kyiv",
 		text: "Geneva",
 	},
 };
