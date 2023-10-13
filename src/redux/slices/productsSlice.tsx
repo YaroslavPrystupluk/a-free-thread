@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/space-before-blocks */
 /* eslint-disable prettier/prettier */
 import { createSlice, PayloadAction, Dispatch } from "@reduxjs/toolkit";
 
@@ -30,7 +31,7 @@ const productsSlice = createSlice({
 
 export const { printProducts } = productsSlice.actions;
 
-export const getProductsAsync = (productsFile: string) => async(dispatch: Dispatch) => {
+export const getProductsAsync = (productsFile: string) => async (dispatch: Dispatch) => {
 	try {
 		const response = await fetch(`src/products/${productsFile}.json`);
 

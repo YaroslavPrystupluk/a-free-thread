@@ -1,9 +1,14 @@
+/* eslint-disable react/jsx-indent-props */
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { Product, getProductsAsync } from "../../redux/slices/productsSlice";
+import {
+	StyleImageList,
+	StyleImageListItemBar,
+	StyleImageListItem,
+	StyleTypography,
+	StyleImageListItemBadge,
+} from "../../Theme/HitsTheme";
 
 const Hits = () => {
 	const productsArray = useSelector((state) => state.products.products);
@@ -13,31 +18,36 @@ const Hits = () => {
 		dispatch(getProductsAsync("shirts"));
 	}, [dispatch]);
 
-	const randomProducts = productsArray
-		.slice()
-		.sort(() => 0.5 - Math.random())
-		.slice(0, 2);
-
-	console.log(productsArray);
+	const randomProducts = productsArray.
+		slice().
+		sort(() => 0.5 - Math.random()).
+		slice(0, 4);
 
 	return (
-		<ImageList>
-			{randomProducts.map((item: Product) => (
-				<ImageListItem key={item.id} sx={{ width: 145, height: 180 }}>
-					<img
-						srcSet={`${item.imageUrls[0]}`}
-						src={`${item.imageUrls[0]}`}
-						alt={item.name}
-						loading="lazy"
-					/>
-					<ImageListItemBar
-						title={item.price}
-						subtitle={<span>{item.name}</span>}
-						position="below"
-					/>
-				</ImageListItem>
-			))}
-		</ImageList>
+		<>
+			<StyleTypography variant="h4" gutterBottom>
+				популярні товари
+			</StyleTypography>
+			<StyleImageList>
+				{randomProducts.map((item: Product) => (
+					<StyleImageListItem key={item.id} style={{ width: 130 }}>
+						<img
+							srcSet={`${item.imageUrls[0]}`}
+							src={`${item.imageUrls[0]}`}
+							alt={item.name}
+							loading="lazy"
+							style={{ height: 180 }}
+						/>
+						<StyleImageListItemBar
+							title={item.price}
+							subtitle={<span>{item.name}</span>}
+							position="below"
+						/>
+						<StyleImageListItemBadge title="Хіт" position="top" />
+					</StyleImageListItem>
+				))}
+			</StyleImageList>
+		</>
 	);
 };
 
