@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface HeaderWrapperProps {
-	thema: {
+	theme: {
 		colors: {
 			primary: string;
 			secondary: string;
@@ -18,7 +18,14 @@ interface HeaderWrapperProps {
 }
 
 const HeaderWrapper = styled.div<HeaderWrapperProps>`
-	color: ${({ thema }) => thema.colors.primary};
+	color: ${({ theme }) => theme.colors.primary};
+	font-size: 50px;
+	font-family: ${({ theme }) => theme.fontFamily.title};
 `;
 
-export { HeaderWrapper };
+const Parag = styled.p<HeaderWrapperProps>`
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	font-size: px;
+`;
+
+export { HeaderWrapper, Parag };
