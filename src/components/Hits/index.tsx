@@ -10,40 +10,48 @@ import {
 	StyleImageListItemBadge,
 } from "../../Theme/HitsTheme";
 
-const Hits = () => {
-	const productsArray = useSelector((state) => state.products.products);
+interface HitsProps {
+	badge: string;
+}
+
+const Hits: React.FC<HitsProps> = ({ badge }) => {
+	const productsArray = useSelector((state) => state.products.products || []);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getProductsAsync("shirts"));
 	}, [dispatch]);
 
-	const randomProducts = productsArray.
-		slice().
-		sort(() => 0.5 - Math.random()).
-		slice(0, 4);
+	const randomProducts =
+		badge === "Хіт"
+			? productsArray
+				.slice()
+				.sort(() => 0.5 - Math.random())
+				.slice(0, 4)
+			: productsArray.slice(-4);
+
+	const titleList = badge === "Хіт" ? "популярні товари" : "нові надходження";
 
 	return (
 		<>
 			<StyleTypography variant="h4" gutterBottom>
-				популярні товари
+				{titleList}
 			</StyleTypography>
-			<StyleImageList>
+			<StyleImageList style={{ gap: "auto" }}>
 				{randomProducts.map((item: Product) => (
-					<StyleImageListItem key={item.id} style={{ width: 130 }}>
+					<StyleImageListItem key={item.id}>
 						<img
 							srcSet={`${item.imageUrls[0]}`}
 							src={`${item.imageUrls[0]}`}
 							alt={item.name}
 							loading="lazy"
-							style={{ height: 180 }}
 						/>
 						<StyleImageListItemBar
 							title={item.price}
 							subtitle={<span>{item.name}</span>}
 							position="below"
 						/>
-						<StyleImageListItemBadge title="Хіт" position="top" />
+						<StyleImageListItemBadge title={badge} position="top" />
 					</StyleImageListItem>
 				))}
 			</StyleImageList>

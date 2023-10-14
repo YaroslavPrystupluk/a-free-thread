@@ -16,6 +16,13 @@ const theme = {
 		text: "Geneva",
 		list: "Philosopher",
 	},
+	breakpoints: {
+		xs: 320,
+		sm: 480,
+		md: 768,
+		lg: 992,
+		xl: 1220,
+	},
 };
 
 interface MyComponentProps {
