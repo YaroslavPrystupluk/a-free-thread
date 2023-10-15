@@ -7,9 +7,10 @@ const GlobalStyle = createGlobalStyle`
 	font-weight: normal;
 	font-style: normal;
   }
+
   @font-face {
 	font-family: "Geneva";
-	src: url("/fonts/Geneva Regular.ttf") format("ttf");
+	src: url("/fonts/geneva regular.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
   }

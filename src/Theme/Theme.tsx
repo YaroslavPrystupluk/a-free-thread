@@ -4,15 +4,23 @@ import { ThemeProvider } from "styled-components";
 const theme = {
 	colors: {
 		primary: "#edcdb6",
-		secondary: "#973a23",
+		secondary: "#edcdb6",
+		third: "#973a23",
+		fourth: "#ffffff",
 	},
 	colorText: {
-		primary: "#000000",
+		primary: "#353840",
 		secondary: "#ffffff",
+		third: "#000000",
 	},
 	fontFamily: {
 		title: "Kyiv",
 		text: "Geneva",
+	},
+	media: {
+		phone: "(min-width: 320px )",
+		tablet: "(min-width: 768px)",
+		desktop: "(min-width: 1220px)",
 	},
 };
 
