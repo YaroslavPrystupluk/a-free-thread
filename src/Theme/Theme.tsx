@@ -17,10 +17,12 @@ const theme = {
 		title: "Kyiv",
 		text: "Geneva",
 	},
-	media: {
-		phone: "(min-width: 320px )",
-		tablet: "(min-width: 768px)",
-		desktop: "(min-width: 1220px)",
+	breakpoints: {
+		xs: 320,
+		sm: 480,
+		md: 768,
+		lg: 992,
+		xl: 1220,
 	},
 };
 
