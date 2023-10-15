@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.section`
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 9px;
 	background: ${({ theme }) => theme.colors.primary};
-	@media ${({ theme }) => theme.media.tablet} {
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.sm}px`}) {
 		background: ${({ theme }) => theme.colors.fourth};
 	}
 `;
@@ -13,12 +13,12 @@ const HeaderWrapper = styled.header`
 const LogoWrapper = styled.div`
 	width: 49px;
 	height: 38px;
-	margin: 8px 4px 8px 26px;
-	@media ${({ theme }) => theme.media.tablet} {
+	margin: 8px 5px 8px 26px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.sm}px`}) {
 		width: 58px;
 		height: 45px;
 	}
-	@media ${({ theme }) => theme.media.desktop} {
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		width: 82px;
 		height: 64px;
 	}
