@@ -41,14 +41,14 @@ export const getProductsAsync = (productsFile: string) => async(dispatch: Dispat
 	try {
 		const response = await fetch(`src/products/${productsFile}.json`);
 
-		if (response.ok){
+		if (response.ok) {
 			const results: Product[] = await response.json();
 
 			dispatch(printProducts(results));
 		} else {
 			console.error("Error fetching products:", response.statusText);
 		}
-	} catch (error){
+	} catch (error) {
 		console.error("Error fetching products:", error);
 	}
 };
