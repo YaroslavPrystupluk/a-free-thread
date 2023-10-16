@@ -6,7 +6,8 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<Header />
-			<Hits />
+			<Hits badge="Хіт" />
+			<Hits badge="Новинка" />
 		</BrowserRouter>
 	);
 };

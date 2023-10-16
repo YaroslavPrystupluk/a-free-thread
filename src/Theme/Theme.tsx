@@ -11,6 +11,7 @@ const theme = {
 	colorText: {
 		primary: "#353840",
 		secondary: "#ffffff",
+		price: "#472124",
 		third: "#000000",
 	},
 	fontFamily: {

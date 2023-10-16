@@ -1,4 +1,8 @@
-import { createSlice, PayloadAction, Dispatch } from "@reduxjs/toolkit";
+/* eslint-disable @typescript-eslint/space-before-blocks */
+/* eslint-disable prettier/prettier */
+import {
+	createSlice, PayloadAction, Dispatch, AnyAction,
+} from "@reduxjs/toolkit";
 
 export interface Product {
 	id: number;
@@ -17,19 +21,23 @@ const initialState: ProductsState = {
 	products: [],
 };
 
+
 const productsSlice = createSlice({
 	name: "products",
 	initialState,
 	reducers: {
-		printProducts(state, action: PayloadAction<Product[]>) {
-			state.products = action.payload;
+		printProducts(state, action: PayloadAction<Product[]>){
+			return {
+				...state,
+				products: action.payload,
+			};
 		},
 	},
 });
 
 export const { printProducts } = productsSlice.actions;
 
-export const getProductsAsync = (productsFile: string) => async (dispatch: Dispatch) => {
+export const getProductsAsync = (productsFile: string) => async(dispatch: Dispatch<AnyAction>) => {
 	try {
 		const response = await fetch(`src/products/${productsFile}.json`);
 
