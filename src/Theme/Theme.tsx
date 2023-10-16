@@ -9,12 +9,11 @@ const theme = {
 	colorText: {
 		primary: "#000000",
 		secondary: "#ffffff",
-		title: "#37326A",
+		price: "#472124",
 	},
 	fontFamily: {
 		title: "Kyiv",
 		text: "Geneva",
-		list: "Philosopher",
 	},
 	breakpoints: {
 		xs: 320,
@@ -32,7 +31,5 @@ interface MyComponentProps {
 const Theme = ({ children }: MyComponentProps) => {
 	return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
-
-console.log(theme);
 
 export default Theme;

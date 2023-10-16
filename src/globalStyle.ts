@@ -13,12 +13,6 @@ const GlobalStyle = createGlobalStyle`
 	font-weight: normal;
 	font-style: normal;
   }
-  @font-face {
-	font-family: "Philosopher";
-	src: url("/fonts/Philosopher-Regular.ttf") format("ttf");
-	font-weight: normal;
-	font-style: normal;
-  }
 
   * {
 	padding: 0;
