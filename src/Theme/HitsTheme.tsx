@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// eslint-disable-next-line object-curly-newline
 import { ImageList, ImageListItem, ImageListItemBar, Typography, Container } from "@mui/material";
 
 const StyleImageList = styled(ImageList)(({ theme }) => ({
@@ -12,8 +11,7 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			fill: "white!important",
 		},
 		"& svg": {
-			width: "3px!important",
-			margin: 1,
+			margin: 2,
 		},
 		"& ul": {
 			top: "-5px!important",
@@ -160,6 +158,14 @@ const StyleSlideImg = styled("img")(({ theme }) => ({
 const StyledContainerWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xl,
 	margin: "30px 6px",
+	minHeight: 550,
+	textAlign: "center",
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		minHeight: 350,
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		minHeight: 550,
+	},
 }));
 
 export {
