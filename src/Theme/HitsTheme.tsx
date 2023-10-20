@@ -1,46 +1,46 @@
-import styled from "styled-components";
-import { ImageList, ImageListItem, ImageListItemBar, Typography, Container } from "@mui/material";
+import styled from 'styled-components';
+import { ImageList, ImageListItem, ImageListItemBar, Typography, Container } from '@mui/material';
 
 const StyleImageList = styled(ImageList)(({ theme }) => ({
-	"&.MuiImageList-root": {
-		overflow: "hidden",
-		margin: "16px 10px",
-		gridTemplateColumns: "repeat(2, 144px)!important",
-		justifyContent: "center",
-		"& button": {
-			fill: "white!important",
+	'&.MuiImageList-root': {
+		overflow: 'hidden',
+		margin: '16px 10px',
+		gridTemplateColumns: 'repeat(2, 144px)!important',
+		justifyContent: 'center',
+		'& button': {
+			fill: 'white!important',
 		},
 		"& svg": {
 			margin: 2,
 		},
-		"& ul": {
-			top: "-5px!important",
+		'& ul': {
+			top: '-5px!important',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			gridTemplateColumns: "repeat(3, 180px)!important",
+			gridTemplateColumns: 'repeat(3, 180px)!important',
 			height: 320,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			gridTemplateColumns: "repeat(4, 1fr)!important",
+			gridTemplateColumns: 'repeat(4, 1fr)!important',
 			height: 480,
 		},
 	},
 }));
 
 const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
-	"&.MuiImageListItemBar-root": {
+	'&.MuiImageListItemBar-root': {
 		fontFamily: theme.fontFamily.text,
 		margin: 8,
 		fontWeight: 400,
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			margin: "12px 16px",
+			margin: '12px 16px',
 		},
-		"& .MuiImageListItemBar-titleWrap": {
+		'& .MuiImageListItemBar-titleWrap': {
 			padding: 0,
-			overflow: "inherit",
+			overflow: 'inherit',
 		},
-		"& .MuiImageListItemBar-subtitle": {
-			lineHeight: "normal",
+		'& .MuiImageListItemBar-subtitle': {
+			lineHeight: 'normal',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				fontSize: 14,
 			},
@@ -48,12 +48,12 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 				fontSize: 16,
 			},
 		},
-		"& .MuiImageListItemBar-title": {
+		'& .MuiImageListItemBar-title': {
 			color: theme.colorText.price,
 			fontWeight: 400,
 			marginBottom: 6,
 			fontSize: 11,
-			lineHeight: "normal",
+			lineHeight: 'normal',
 			letterSpacing: 0.24,
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				fontSize: 16,
@@ -66,30 +66,30 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 }));
 
 const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
-	"&.MuiImageListItemBar-root": {
-		padding: "4px 6px",
+	'&.MuiImageListItemBar-root': {
+		padding: '4px 6px',
 		height: 20,
 		top: 8,
-		right: "auto",
-		background: "rgba(255, 255, 255, 0.70)",
+		right: 'auto',
+		background: 'rgba(255, 255, 255, 0.70)',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			top: 12,
 			height: 25,
-			padding: "6px 12px",
+			padding: '6px 12px',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			top: 24,
 			height: 32,
-			padding: "8px 16px",
+			padding: '8px 16px',
 		},
-		"& .MuiImageListItemBar-title": {
+		'& .MuiImageListItemBar-title': {
 			padding: 0,
 			color: theme.colorText.primary,
 			fontFamily: theme.fontFamily.text,
 			fontSize: 10,
 			fontWeight: 400,
-			textTransform: "capitalize",
-			display: "inline-flex",
+			textTransform: 'capitalize',
+			display: 'inline-flex',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				fontSize: 12,
 			},
@@ -97,7 +97,7 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 				fontSize: 14,
 			},
 		},
-		"& .MuiImageListItemBar-titleWrap": {
+		'& .MuiImageListItemBar-titleWrap': {
 			padding: 0,
 		},
 	},
@@ -105,8 +105,8 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 
 const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 	width: 124,
-	margin: "13px 10px",
-	border: "1px solid #F5F5F5",
+	margin: '13px 10px',
+	border: '1px solid #F5F5F5',
 	boxShadow: `
 	  0px 0px 0.91935px 0px rgba(0, 0, 0, 0.04),
 	  0px 1.83871px 1.83871px 0px rgba(0, 0, 0, 0.04),
@@ -122,15 +122,15 @@ const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 }));
 
 const StyleTypography = styled(Typography)(({ theme }) => ({
-	"&.MuiTypography-h4": {
+	'&.MuiTypography-h4': {
 		fontFamily: theme.fontFamily.title,
 		fontSize: 20,
 		fontWeight: 500,
-		lineHeight: "32px",
+		lineHeight: '32px',
 		letterSpacing: 0.4,
-		textTransform: "uppercase",
-		margin: "16px auto",
-		textAlign: "center",
+		textTransform: 'uppercase',
+		margin: '16px auto',
+		textAlign: 'center',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: 24,
 			letterSpacing: 0.48,
@@ -142,7 +142,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 	},
 }));
 
-const StyleSlideImg = styled("img")(({ theme }) => ({
+const StyleSlideImg = styled('img')(({ theme }) => ({
 	height: 180,
 	width: 124,
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {

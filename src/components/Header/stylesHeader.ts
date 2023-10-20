@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const HeaderWrapper = styled.section`
 	display: flex;
@@ -33,7 +33,7 @@ const PhoneWrapper = styled.div`
 `;
 
 const PhoneNumber = styled.a`
-	font-family: ${({ theme }) => theme.fontFamily.text};
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 	color: ${({ theme }) => theme.colorText.primary};
 	font-size: 12px;
 	text-decoration: none;
@@ -45,11 +45,27 @@ const SelectLanguage = styled.div`
 `;
 
 const BtnLang = styled.p`
-	font-family: ${({ theme }) => theme.fontFamily.text};
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 	color: ${({ theme }) => theme.colorText.third};
 	font-size: 10px;
 	padding: 8px 4px;
 	border-bottom: 3px solid ${({ theme }) => theme.colors.third};
 `;
 
-export { HeaderWrapper, LogoWrapper, Logo, PhoneWrapper, PhoneNumber, SelectLanguage, BtnLang };
+const SubHeader = styled.div`
+	display: flex;
+	justify-content: space-between;
+	padding: 4px 26px;
+	border-bottom: 1px solid rgba(243, 198, 182, 0.5);
+`;
+
+export {
+	HeaderWrapper,
+	LogoWrapper,
+	Logo,
+	PhoneWrapper,
+	PhoneNumber,
+	SelectLanguage,
+	BtnLang,
+	SubHeader,
+};

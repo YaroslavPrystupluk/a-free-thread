@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSlideImg } from "../../Theme/HitsTheme";
+import React from 'react';
+import { StyleSlideImg } from '../../Theme/HitsTheme';
 
 interface ProductImagesProps {
 	img: string;

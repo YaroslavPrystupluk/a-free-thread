@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, SerializedError } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, Dispatch, AnyAction } from '@reduxjs/toolkit';
 
 export interface Product {
 	id: number;
@@ -40,7 +40,7 @@ export const getProductsAsync = createAsyncThunk(
 );
 
 const productsSlice = createSlice({
-	name: "products",
+	name: 'products',
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
