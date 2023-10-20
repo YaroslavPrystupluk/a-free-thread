@@ -1,7 +1,6 @@
-import { FC } from "react";
-import { Box, Toolbar, IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+import { FC } from 'react';
+import BurgerMenu from './BurgerMenu/BurgerMenu';
+import Search from './Search/Search';
 import {
 	HeaderWrapper,
 	LogoWrapper,
@@ -10,11 +9,15 @@ import {
 	PhoneNumber,
 	SelectLanguage,
 	BtnLang,
-} from "./stylesHeader";
-import logoBig from "../../images/logo/logo_free_thread.webp";
-import phone from "../../images/icon/phone.webp";
+	SubHeader,
+} from './stylesHeader';
+import logoBig from '../../images/logo/logo_free_thread.webp';
+import phone from '../../images/icon/phone.webp';
 
-const Header: FC = () => {
+interface HeaderProps {
+	handleOpenModal: () => void;
+}
+const Header: FC<HeaderProps> = ({ handleOpenModal }) => {
 	return (
 		<header>
 			<HeaderWrapper>
@@ -30,22 +33,10 @@ const Header: FC = () => {
 					<BtnLang>EN</BtnLang>
 				</SelectLanguage>
 			</HeaderWrapper>
-			<Box sx={{ flexGrow: 1 }}>
-				<Toolbar>
-					<IconButton
-						size="large"
-						edge="start"
-						color="inherit"
-						aria-label="open drawer"
-						sx={{ mr: 2 }}
-					>
-						<MenuIcon />
-					</IconButton>
-					<IconButton size="large" aria-label="search" color="inherit">
-						<SearchIcon />
-					</IconButton>
-				</Toolbar>
-			</Box>
+			<SubHeader>
+				<BurgerMenu />
+				<Search handleOpenModal={handleOpenModal} />
+			</SubHeader>
 		</header>
 	);
 };

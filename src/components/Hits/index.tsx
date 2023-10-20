@@ -1,12 +1,9 @@
-/* eslint-disable indent */
-/* eslint-disable dot-location */
-/* eslint-disable react/jsx-indent-props */
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Carousel from "nuka-carousel";
-import { Product, getProductsAsync } from "../../redux/slices/productsSlice";
-import { RootState } from "../../redux/store/store";
-import ProductItem from "../ex";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Carousel from 'nuka-carousel';
+import { Product, getProductsAsync } from '../../redux/slices/productsSlice';
+import { RootState } from '../../redux/store/store';
+import ProductItem from '../ex';
 import {
 	StyleImageList,
 	StyleImageListItemBar,
@@ -14,7 +11,7 @@ import {
 	StyleTypography,
 	StyleImageListItemBadge,
 	StyledContainerWrapper,
-} from "../../Theme/HitsTheme";
+} from '../../Theme/HitsTheme';
 
 interface HitsProps {
 	badge: string;
@@ -25,25 +22,25 @@ const Hits: React.FC<HitsProps> = ({ badge }) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getProductsAsync("shirts"));
+		dispatch(getProductsAsync('shirts'));
 	}, [dispatch]);
 
 	const randomProducts =
-		badge === "Хіт"
+		badge === 'Хіт'
 			? productsArray
 					.slice()
 					.sort(() => 0.5 - Math.random())
 					.slice(0, 4)
 			: productsArray.slice(-4);
 
-	const titleList = badge === "Хіт" ? "популярні товари" : "нові надходження";
+	const titleList = badge === 'Хіт' ? 'популярні товари' : 'нові надходження';
 
 	return (
 		<StyledContainerWrapper>
 			<StyleTypography variant="h4" gutterBottom>
 				{titleList}
 			</StyleTypography>
-			<StyleImageList style={{ gap: "auto" }}>
+			<StyleImageList style={{ gap: 'auto' }}>
 				{randomProducts.map((item: Product) => (
 					<StyleImageListItem key={item.id}>
 						<Carousel renderCenterLeftControls={false} renderCenterRightControls={false}>
