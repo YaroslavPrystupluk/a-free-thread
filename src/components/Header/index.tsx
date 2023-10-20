@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
-import Menu from './Menu/Menu';
+import MenuHeader from './MenuHeader/MenuHeader';
 import {
 	HeaderWrapper,
 	LogoWrapper,
@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({ handleOpenModal }) => {
 					<img src={phone} alt="icon phone" />
 					<PhoneNumber href="tel:+380503337820">+38 (050) 333 78 20</PhoneNumber>
 				</PhoneWrapper>
-				<Menu />
+				<MenuHeader />
 				<SelectLanguage>
 					<BtnLang>UA</BtnLang>
 					<BtnLang>EN</BtnLang>
