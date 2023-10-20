@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Dialog, DialogActions, Grid, IconButton } from '@mui/material';
-import { CustomTextField, CustomButton } from './styledModalSearch';
+import { DialogActions, Grid, IconButton } from '@mui/material';
+import { CustomTextField, CustomButton, ContainerGrid, CustomDialog } from './styledModalSearch';
 import closeMenu from '../../images/icon/cancel-menu.webp';
 
 interface ModalSearchProps {
@@ -10,23 +10,23 @@ interface ModalSearchProps {
 
 const ModalSearch: FC<ModalSearchProps> = ({ handleCloseModal, openModal }) => {
 	return (
-		<Dialog fullScreen open={openModal} onClose={handleCloseModal}>
+		<CustomDialog fullScreen open={openModal} onClose={handleCloseModal}>
 			<DialogActions>
 				<IconButton edge="start" color="inherit" onClick={handleCloseModal} aria-label="close">
 					<img src={closeMenu} alt="icon menu close" />
 				</IconButton>
 			</DialogActions>
-			<Grid container alignItems="center">
+			<ContainerGrid container justifyContent="center" alignItems="center">
 				<Grid item>
 					<CustomTextField size="small" placeholder="введіть назву" />
 				</Grid>
 				<Grid item>
 					<CustomButton variant="contained" onClick={handleCloseModal}>
-						Пошук
+						Знайти
 					</CustomButton>
 				</Grid>
-			</Grid>
-		</Dialog>
+			</ContainerGrid>
+		</CustomDialog>
 	);
 };
 
