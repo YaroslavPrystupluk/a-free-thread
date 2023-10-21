@@ -1,22 +1,52 @@
+/* eslint-disable max-len */
+/* eslint-disable import/no-cycle */
 import { createSlice } from '@reduxjs/toolkit';
-import { selectProducts } from '../selectors';
+import { Dispatch } from 'redux';
 import kiev from '../../images/Collections/collection_kiev.webp';
 import grandmother from '../../images/Collections/collection_grandmother.webp';
 import regions from '../../images/Collections/collection_regions.webp';
+import { getProductsAsync, Product } from './productsSlice';
 import store from '../store/store';
 
-interface CollectionState {
+export interface CollectionItem {
 	title: string;
 	description: string;
 	img: string;
 	collectionProducts: [];
 }
 
+export interface CollectionState {
+	kiev: CollectionItem;
+	grandmother: CollectionItem;
+	regions: CollectionItem;
+}
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export const selectProducts = (state: RootState) => state.products.products;
+
 const initialState: CollectionState = {
-	title: '',
-	description: '',
-	img: '',
-	collectionProducts: [],
+	kiev: {
+		title: 'сорочки київщини',
+		description:
+			'Опис о сорочках Київщини. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
+		img: kiev,
+		collectionProducts: [],
+	},
+	grandmother: {
+		title: 'Віднови вишиванку своєї бабусі',
+		description:
+			'Опис о відновленні вишиванки. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
+		img: grandmother,
+		collectionProducts: [],
+	},
+	regions: {
+		title: 'регіони україни',
+		description:
+			'Опис о сорочках з регіонами україни. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
+		img: regions,
+		collectionProducts: [],
+	},
 };
 
 const collectionSlice = createSlice({
@@ -24,22 +54,13 @@ const collectionSlice = createSlice({
 	initialState,
 	reducers: {
 		collectionKiev: (state, action) => {
-			state.title = 'сорочки київщини';
-			state.description = 'Опис о сорочках Київщини';
-			state.img = kiev;
-			state.collectionProducts = action.payload;
+			state.kiev.collectionProducts = action.payload;
 		},
 		collectionGrandmother: (state, action) => {
-			state.title = 'Віднови вишиванку своєї бабусі';
-			state.description = 'Опис о відновленні вишиванки';
-			state.img = grandmother;
-			state.collectionProducts = action.payload;
+			state.grandmother.collectionProducts = action.payload;
 		},
 		collectionRegions: (state, action) => {
-			state.title = 'регіони україни';
-			state.description = 'Опис о сорочках з регіонами україни';
-			state.img = regions;
-			state.collectionProducts = action.payload;
+			state.regions.collectionProducts = action.payload;
 		},
 	},
 });
@@ -47,38 +68,40 @@ const collectionSlice = createSlice({
 export const { reducer: collectionReducer } = collectionSlice;
 export const { collectionKiev, collectionGrandmother, collectionRegions } = collectionSlice.actions;
 
-export const selectCollection = (selectedProduct: string) => async (dispatch, getState) => {
-	const waitForData = async () => {
-		const products = selectProducts(getState());
+export const selectCollection =
+	(selectedProduct: string) => (dispatch: Dispatch, getState: () => RootState) => {
+		const state = getState();
+		const products = selectProducts(state) as Product[];
 
 		if (products.length === 0) {
-			await new Promise((resolve) => setTimeout(resolve, 100));
-			return waitForData();
+			try {
+				dispatch(getProductsAsync('shirts'));
+			} catch (error) {
+				console.error('Помилка завантаження продуктів', error);
+				return;
+			}
 		}
-		return products;
+
+		const updatedProducts: Product[] = selectProducts(state) as Product[];
+
+		const collection = updatedProducts.filter((product) => product.collection === selectedProduct);
+
+		switch (selectedProduct) {
+			case 'kiev':
+				dispatch(collectionKiev(collection));
+				break;
+
+			case 'grandmother':
+				dispatch(collectionGrandmother(collection));
+				break;
+
+			case 'regions':
+				dispatch(collectionRegions(collection));
+				break;
+
+			default:
+				console.log(`Sorry, we are out of ${selectedProduct}.`);
+		}
 	};
-	const products = await waitForData();
-
-	console.log(products);
-	const collection = products.filter((product) => product.collection === selectedProduct);
-
-	console.log(collection);
-	switch (selectedProduct) {
-		case 'kiev':
-			dispatch(collectionKiev(collection));
-			break;
-
-		case 'grandmother':
-			dispatch(collectionGrandmother(collection));
-			break;
-
-		case 'regions':
-			dispatch(collectionRegions(collection));
-			break;
-
-		default:
-			console.log('Sorry, we are out of ' + product + '.');
-	}
-};
 
 export default collectionReducer;

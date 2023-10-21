@@ -12,7 +12,7 @@
 		"name": "Сорочка Христина",
 		"price": "3400 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
+		"collection": "grandmother",
 		"imageUrls": [
 			"src/images/Shirts/2/shirts_2_0.webp",
 			"src/images/Shirts/2/shirts_2_1.webp",
@@ -33,10 +33,10 @@
 	},
 	{
 		"id": "4",
-		"name": "Сорочка Євдокія",
+		"name": "Сорочка Київщина2",
 		"price": "5000 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
+		"collection": "kiev",
 		"imageUrls": [
 			"src/images/Shirts/4/shirts_4_0.webp",
 			"src/images/Shirts/4/shirts_4_1.webp",

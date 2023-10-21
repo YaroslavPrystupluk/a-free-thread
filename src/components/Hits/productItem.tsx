@@ -1,12 +1,12 @@
-import React from "react";
-import Carousel from "nuka-carousel";
+import React from 'react';
+import Carousel from 'nuka-carousel';
 import {
 	StyleImageListItem,
 	StyleImageListItemBadge,
 	StyleImageListItemBar,
-} from "../../Theme/HitsTheme";
-import ProductImages from "./productImages";
-import { Product } from "../../redux/slices/productsSlice";
+} from '../../Theme/HitsTheme';
+import ProductImages from './productImages';
+import { Product } from '../../redux/slices/productsSlice';
 
 interface ProductItemProps {
 	item: Product;

@@ -1,8 +1,8 @@
-import React from "react";
-import { LoadingContainer, LoadingText } from "../../Theme/LoadingTheme";
+import React from 'react';
+import { LoadingContainer, LoadingText } from '../../Theme/LoadingTheme';
 
 function LoadingAnimation() {
-	const letters = ["З", "А", "В", "А", "Н", "Т", "А", "Ж", "Е", "Н", "Н", "Я"];
+	const letters = ['З', 'А', 'В', 'А', 'Н', 'Т', 'А', 'Ж', 'Е', 'Н', 'Н', 'Я'];
 
 	return (
 		<LoadingContainer>

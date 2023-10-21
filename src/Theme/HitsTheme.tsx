@@ -156,7 +156,7 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 	},
 }));
 
-const StyledContainerWrapper = styled(Container)(({ theme }) => ({
+const StyleHitsWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xl,
 	margin: '30px 6px',
 	minHeight: 550,
@@ -176,5 +176,5 @@ export {
 	StyleTypography,
 	StyleImageListItemBadge,
 	StyleSlideImg,
-	StyledContainerWrapper,
+	StyleHitsWrapper,
 };

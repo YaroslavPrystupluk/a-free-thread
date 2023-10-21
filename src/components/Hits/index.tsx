@@ -4,7 +4,7 @@ import LoadingAnimation from '../Loading';
 import ProductItem from './productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import { RootState } from '../../redux/store/store';
-import { StyleImageList, StyleTypography, StyledContainerWrapper } from "../../Theme/HitsTheme";
+import { StyleHitsWrapper, StyleImageList, StyleTypography } from '../../Theme/HitsTheme';
 
 interface HitsProps {
 	badge: string;
@@ -25,20 +25,20 @@ const Hits: React.FC<HitsProps> = ({ badge }) => {
 	const titleList = badge === 'Хіт' ? 'популярні товари' : 'нові надходження';
 
 	return (
-		<StyledContainerWrapper>
+		<StyleHitsWrapper>
 			<StyleTypography variant="h4" gutterBottom>
 				{titleList}
 			</StyleTypography>
 			{loading ? (
 				<LoadingAnimation />
 			) : (
-				<StyleImageList style={{ gap: "auto" }}>
+				<StyleImageList style={{ gap: 'auto' }}>
 					{randomProducts.map((item: Product) => (
 						<ProductItem item={item} badge={badge} key={item.id * Math.random()} />
 					))}
 				</StyleImageList>
 			)}
-		</StyledContainerWrapper>
+		</StyleHitsWrapper>
 	);
 };
 

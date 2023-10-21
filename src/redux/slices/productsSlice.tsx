@@ -1,10 +1,4 @@
-import {
-	createSlice,
-	createAsyncThunk,
-	PayloadAction,
-	Dispatch,
-	AnyAction,
-} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 
 export interface Product {
 	id: number;
@@ -28,7 +22,7 @@ const initialState: ProductsState = {
 };
 
 export const getProductsAsync = createAsyncThunk(
-	"products/fetchProducts",
+	'products/fetchProducts',
 	async (productsFile: string) => {
 		try {
 			const response = await fetch(`src/products/${productsFile}.json`);
