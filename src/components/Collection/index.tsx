@@ -1,22 +1,30 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import regions from "../../images/Collections/collection_regions.webp";
-import { StyledContainerWrapper, StyleTypography, StyleSlideImg } from "../../Theme/HitsTheme";
+import { StyledContainerWrapper, StyleTypography, StyleImageList } from "../../Theme/HitsTheme";
 import { StyleCollectionImg } from "../../Theme/CollectionTheme";
-import { printCollectionCard } from "../../redux/slices/collectionSlice";
+import { selectCollection } from "../../redux/slices/collectionSlice";
 import { RootState } from "../../redux/selectors";
+import ProductItem from "../Hits/productItem";
 
 interface CollectionProps {
 	title: string;
 }
 const Collection: React.FC<CollectionProps> = ({ title }) => {
 	const titleColl = useSelector((state: RootState) => state.collection.title);
+	const collectionsProducts = useSelector(
+		(state: RootState) => state.collection.collectionProducts,
+	);
 	const dispatch = useDispatch();
-	const titleCollection = title === "regions" ? "regions" : "nnn";
 
-	// useEffect(() => {
-	// 	dispatch(printCollectionCard(title));
-	// }, [dispatch]);
+	const randomCollectionProducts = collectionsProducts
+				.slice()
+				.sort(() => 0.5 - Math.random())
+				.slice(0, 2);
+
+	useEffect(() => {
+		dispatch(selectCollection(title));
+	  }, [dispatch, title]);
 
 	return (
 		<StyledContainerWrapper>
@@ -24,7 +32,11 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 				{titleColl}
 			</StyleTypography>
 			<StyleCollectionImg src={regions} alt={title} loading="lazy" />
-			{/* <StyleSlideImg src={img} alt={alt} loading="lazy" />; */}
+			<StyleImageList style={{ gap: 'auto' }}>
+				{randomCollectionProducts.map((item: Product) => (
+					<ProductItem item={item} badge={"Новинка"} key={item.id * Math.random()} />
+				))}
+			</StyleImageList>
 		</StyledContainerWrapper>
 	)
 };

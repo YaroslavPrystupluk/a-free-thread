@@ -1,4 +1,10 @@
-import { createSlice, PayloadAction, Dispatch, AnyAction } from '@reduxjs/toolkit';
+import {
+	createSlice,
+	createAsyncThunk,
+	PayloadAction,
+	Dispatch,
+	AnyAction,
+} from "@reduxjs/toolkit";
 
 export interface Product {
 	id: number;

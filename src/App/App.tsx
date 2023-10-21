@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from '../components/Header';
 import Hits from '../components/Hits';
 import Modal from '../components/Modal';
+import Collection from '../components/Collection';
+import Main from '../pages/Main';
 
 const App = () => {
 	const [openModal, setOpenModal] = useState(false);
@@ -18,9 +20,7 @@ const App = () => {
 		<BrowserRouter>
 			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
 			<Header handleOpenModal={handleOpenModal} />
-			<Hits badge="Хіт" />
-			<Hits badge="Новинка" />
-			<Collection title="regions" />
+			<Main />
 		</BrowserRouter>
 	);
 };

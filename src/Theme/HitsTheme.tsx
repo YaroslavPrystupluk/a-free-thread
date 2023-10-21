@@ -10,7 +10,7 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 		'& button': {
 			fill: 'white!important',
 		},
-		"& svg": {
+		'& svg': {
 			margin: 2,
 		},
 		'& ul': {
@@ -36,6 +36,7 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 			margin: '12px 16px',
 		},
 		'& .MuiImageListItemBar-titleWrap': {
+			textAlign: 'left',
 			padding: 0,
 			overflow: 'inherit',
 		},
@@ -157,9 +158,9 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 
 const StyledContainerWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xl,
-	margin: "30px 6px",
+	margin: '30px 6px',
 	minHeight: 550,
-	textAlign: "center",
+	textAlign: 'center',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		minHeight: 350,
 	},
