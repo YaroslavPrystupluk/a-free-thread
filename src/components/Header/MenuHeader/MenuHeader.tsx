@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
-import { CustomLink } from './styledMenu';
+import { Menu, MenuItem } from '@mui/material';
+import { WrapperMenu, CustomLink, MenuButton } from './styledMenu';
 
 const MenuHeader = React.memo(() => {
-	const [bayer, setBayer] = useState<null | HTMLElement>(null);
-	const openBayer = Boolean(bayer);
+	const [catalog, setCatalog] = useState<null | HTMLElement>(null);
+	const openCatalog = Boolean(catalog);
 
 	const handleClickBayer = (event: React.MouseEvent<HTMLButtonElement>) => {
-		setBayer(event.currentTarget);
+		setCatalog(event.currentTarget);
 	};
 	const handleCloseBayer = () => {
-		setBayer(null);
+		setCatalog(null);
 	};
 
 	return (
-		<div>
+		<WrapperMenu>
 			<CustomLink to="/">
-				<Button
-					id="button-bayer"
-					aria-controls={openBayer ? 'menu-bayer' : undefined}
+				<MenuButton
+					id="MenuButton-bayer"
+					aria-controls={openCatalog ? 'menu-bayer' : undefined}
 					aria-haspopup="true"
-					aria-expanded={openBayer ? 'true' : undefined}
+					aria-expanded={openCatalog ? 'true' : undefined}
 					onClick={handleClickBayer}
 				>
 					каталог
-				</Button>
+				</MenuButton>
 				<Menu
 					id="menu-bayer"
-					anchorEl={bayer}
-					open={openBayer}
+					anchorEl={catalog}
+					open={openCatalog}
 					onClose={handleCloseBayer}
 					MenuListProps={{
-						'aria-labelledby': 'button-bayer',
+						'aria-labelledby': 'MenuButton-catalog',
 					}}
 				>
 					<CustomLink to="/guarantee">
@@ -57,18 +57,18 @@ const MenuHeader = React.memo(() => {
 				</Menu>
 			</CustomLink>
 			<CustomLink to="/">
-				<Button>про нас</Button>
+				<MenuButton>про нас</MenuButton>
 			</CustomLink>
 			<CustomLink to="/">
-				<Button>доставка і оплата</Button>
+				<MenuButton>доставка і оплата</MenuButton>
 			</CustomLink>
 			<CustomLink to="/">
-				<Button>відгуки</Button>
+				<MenuButton>відгуки</MenuButton>
 			</CustomLink>
 			<CustomLink to="/">
-				<Button>контакти</Button>
+				<MenuButton>контакти</MenuButton>
 			</CustomLink>
-		</div>
+		</WrapperMenu>
 	);
 });
 

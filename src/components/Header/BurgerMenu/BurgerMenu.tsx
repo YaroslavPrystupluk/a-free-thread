@@ -1,6 +1,13 @@
 import React, { FC, useState } from 'react';
-import { Box, IconButton, MenuItem } from '@mui/material';
-import { CustomizedMenu, CustomLink, Symbol } from './styledBurgerMenu';
+import { IconButton, MenuItem, Collapse } from '@mui/material';
+import {
+	BurgerMenuWrapper,
+	CustomizedMenu,
+	CustomLink,
+	ArrowRight,
+	ArrowDown,
+	SubMenuItem,
+} from './styledBurgerMenu';
 import openMenu from '../../../images/icon/cancel-menu.webp';
 import closeMenu from '../../../images/icon/menu-2.webp';
 
@@ -15,8 +22,14 @@ const BurgerMenu: FC = React.memo(() => {
 		setBurgerMenu(null);
 	};
 
+	const [open, setOpen] = useState(false);
+
+	const handleClick = () => {
+		setOpen(!open);
+	};
+
 	return (
-		<Box>
+		<BurgerMenuWrapper>
 			<IconButton
 				id="button-burgerMenu"
 				aria-controls={openBurgerMenu ? 'menu-burgerMenu' : undefined}
@@ -40,10 +53,32 @@ const BurgerMenu: FC = React.memo(() => {
 				}}
 			>
 				<CustomLink to="/">
-					<MenuItem divider onClick={handleCloseBurgerMenu}>
+					<MenuItem divider onClick={handleClick}>
 						Каталог
-						<Symbol> </Symbol>
+						{!open ? <ArrowRight /> : <ArrowDown />}
 					</MenuItem>
+					<Collapse in={open} timeout="auto" unmountOnExit>
+						<SubMenuItem to="/products">
+							<MenuItem divider onClick={handleCloseBurgerMenu}>
+								“Сорочки Київщини”
+							</MenuItem>
+						</SubMenuItem>
+						<SubMenuItem to="/guarantee">
+							<MenuItem divider onClick={handleCloseBurgerMenu}>
+								“Регіони України”
+							</MenuItem>
+						</SubMenuItem>
+						<SubMenuItem to="/paymentAndDelivery">
+							<MenuItem divider onClick={handleCloseBurgerMenu}>
+								“Віднови вишиванку своєї бабусі”
+							</MenuItem>
+						</SubMenuItem>
+						<SubMenuItem to="/contacts">
+							<MenuItem divider onClick={handleCloseBurgerMenu}>
+								Аксесуари
+							</MenuItem>
+						</SubMenuItem>
+					</Collapse>
 				</CustomLink>
 				<CustomLink to="/products">
 					<MenuItem divider onClick={handleCloseBurgerMenu}>
@@ -66,7 +101,7 @@ const BurgerMenu: FC = React.memo(() => {
 					</MenuItem>
 				</CustomLink>
 			</CustomizedMenu>
-		</Box>
+		</BurgerMenuWrapper>
 	);
 });
 

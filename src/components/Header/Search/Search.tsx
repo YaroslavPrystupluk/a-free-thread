@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Box, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
+import { SearchWrapper } from './styledSearch';
 import search from '../../../images/icon/search.webp';
 
 interface SearchProps {
@@ -8,11 +9,11 @@ interface SearchProps {
 
 const Search: FC<SearchProps> = React.memo(({ handleOpenModal }) => {
 	return (
-		<Box>
+		<SearchWrapper component="div">
 			<IconButton onClick={handleOpenModal}>
 				<img src={search} alt="icon search" />
 			</IconButton>
-		</Box>
+		</SearchWrapper>
 	);
 });
 

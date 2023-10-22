@@ -5,7 +5,7 @@ const HeaderWrapper = styled.section`
 	align-items: center;
 	gap: 9px;
 	background: ${({ theme }) => theme.colors.primary};
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.sm}px`}) {
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		background: ${({ theme }) => theme.colors.fourth};
 	}
 `;
@@ -14,7 +14,7 @@ const LogoWrapper = styled.div`
 	width: 49px;
 	height: 38px;
 	margin: 8px 5px 8px 26px;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.sm}px`}) {
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		width: 58px;
 		height: 45px;
 	}
@@ -30,6 +30,9 @@ const Logo = styled.img`
 const PhoneWrapper = styled.div`
 	display: flex;
 	gap: 8px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		display: none;
+	}
 `;
 
 const PhoneNumber = styled.a`

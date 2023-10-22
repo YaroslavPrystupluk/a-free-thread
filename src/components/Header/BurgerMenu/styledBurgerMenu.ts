@@ -1,7 +1,12 @@
 import styled from 'styled-components';
-import { Menu } from '@mui/material';
+import { Box, Menu } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
+const BurgerMenuWrapper = styled(Box)`
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		display: none;
+	}
+`;
 const CustomizedMenu = styled(Menu)`
 	& .MuiMenu-paper {
 		min-width: 100%;
@@ -21,7 +26,6 @@ const CustomLink = styled(NavLink)`
 	color: ${({ theme }) => theme.colorText.primary};
 	text-transform: uppercase;
 	text-decoration: none;
-	border-bottom: none;
 
 	& .MuiMenuItem-root {
 		font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
@@ -31,7 +35,7 @@ const CustomLink = styled(NavLink)`
 	}
 `;
 
-const Symbol = styled.span`
+const ArrowRight = styled.span`
 	position: absolute;
 	right: 16px;
 	border: solid #000000;
@@ -42,4 +46,25 @@ const Symbol = styled.span`
 	margin: 0 0 2px 16px;
 `;
 
-export { CustomizedMenu, CustomLink, Symbol };
+const ArrowDown = styled.span`
+	position: absolute;
+	right: 16px;
+	border: solid #000000;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	margin: 0 0 2px 16px;
+`;
+
+const SubMenuItem = styled(NavLink)`
+	color: ${({ theme }) => theme.colorText.primary};
+	text-transform: uppercase;
+	text-decoration: none;
+	border-bottom: none;
+	& .MuiMenuItem-root {
+		padding: 12px 26px;
+	}
+`;
+
+export { BurgerMenuWrapper, CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem };
