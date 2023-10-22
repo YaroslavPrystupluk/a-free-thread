@@ -9,13 +9,14 @@ import {
 	StyledCollectionWrapper,
 	StyleCollectionImageWrapper,
 } from '../../Theme/CollectionTheme';
-import { RootState } from '../../redux/slices/collectionSlice';
+import { RootState, CollectionState } from '../../redux/slices/collectionSlice';
 import ProductItem from '../Hits/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 
 interface CollectionProps {
-	title: string;
+	title: keyof CollectionState;
 }
+
 const Collection: React.FC<CollectionProps> = ({ title }) => {
 	const titleColl = useSelector((state: RootState) => state.collection);
 	const collectionsProducts = titleColl[title].collectionProducts;
@@ -28,9 +29,11 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 	return (
 		<StyledCollectionWrapper>
 			<StyleTypography variant="h4" gutterBottom>
-				&ldquo;{titleColl[title].title}&rdquo;
+				&ldquo;
+				{titleColl[title].title}
+				&rdquo;
 			</StyleTypography>
-			<StyleTypography variant="span" gutterBottom>
+			<StyleTypography variant="body1" gutterBottom>
 				{titleColl[title].description}
 			</StyleTypography>
 			<StyleCollectionImageWrapper className={`wrapper_${title}`}>

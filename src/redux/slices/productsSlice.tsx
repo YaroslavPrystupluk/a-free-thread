@@ -9,7 +9,7 @@ export interface Product {
 	imageUrls: string[];
 }
 
-interface ProductsState {
+export interface ProductsState {
 	products: Product[] | unknown;
 	isLoading: boolean;
 	error: string | null | SerializedError;

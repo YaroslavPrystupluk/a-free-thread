@@ -140,7 +140,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 			letterSpacing: 0.8,
 		},
 	},
-	'&.MuiTypography-span': {
+	'&.MuiTypography-body1': {
 		width: '85%',
 		fontFamily: theme.fontFamily.text,
 		fontSize: 12,

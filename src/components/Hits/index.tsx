@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import LoadingAnimation from '../Loading';
 import ProductItem from './productItem';
 import { Product } from '../../redux/slices/productsSlice';
-import { RootState } from '../../redux/store/store';
+import { RootState } from '../../redux/slices/collectionSlice';
 import { StyleHitsWrapper, StyleImageList, StyleTypography } from '../../Theme/HitsTheme';
 
 interface HitsProps {
@@ -11,8 +11,8 @@ interface HitsProps {
 }
 
 const Hits: React.FC<HitsProps> = ({ badge }) => {
-	const productsArray = useSelector((state: RootState) => state.products.products || []);
-	const loading = useSelector((state: RootState) => state.products.isLoading);
+	const productsArray: Product[] = useSelector((state: RootState) => state.products.products || []);
+	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
 
 	const randomProducts =
 		badge === 'Хіт'
