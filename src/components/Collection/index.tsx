@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import regions from '../../images/Collections/collection_regions.webp';
 import { StyleTypography } from '../../Theme/HitsTheme';
 import {
 	StyleCollectionImg,
@@ -8,6 +7,7 @@ import {
 	StyleCollectionButton,
 	StyleCollectionImageList,
 	StyledCollectionWrapper,
+	StyleCollectionImageWrapper,
 } from '../../Theme/CollectionTheme';
 import { RootState } from '../../redux/slices/collectionSlice';
 import ProductItem from '../Hits/productItem';
@@ -28,20 +28,30 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 	return (
 		<StyledCollectionWrapper>
 			<StyleTypography variant="h4" gutterBottom>
-				"{titleColl[title].title}"
+				&ldquo;{titleColl[title].title}&rdquo;
 			</StyleTypography>
-			<StyleTypography variant="p" gutterBottom>
+			<StyleTypography variant="span" gutterBottom>
 				{titleColl[title].description}
 			</StyleTypography>
-			<StyleCollectionImg src={titleColl[title].img} alt={title} loading="lazy" />
-			<StyleCollectionProducts>
-				<StyleCollectionImageList style={{ gap: 'auto' }}>
-					{randomCollectionProducts.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
-					))}
-				</StyleCollectionImageList>
-				<StyleCollectionButton>перейти до колекції &#10230;</StyleCollectionButton>
-			</StyleCollectionProducts>
+			<StyleCollectionImageWrapper className={`wrapper_${title}`}>
+				<StyleCollectionImg
+					src={titleColl[title].img}
+					alt={title}
+					loading="lazy"
+					className={`mainImage_${title}`}
+				/>
+				<StyleCollectionProducts>
+					<StyleCollectionImageList style={{ gap: 'auto' }}>
+						{randomCollectionProducts.map((item: Product) => (
+							<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
+						))}
+					</StyleCollectionImageList>
+					<StyleCollectionButton>
+						<div>перейти до колекції</div>
+						<div>&#10230;</div>
+					</StyleCollectionButton>
+				</StyleCollectionProducts>
+			</StyleCollectionImageWrapper>
 		</StyledCollectionWrapper>
 	);
 };
