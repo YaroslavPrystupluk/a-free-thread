@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Box } from '@mui/material';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
 import MenuHeader from './MenuHeader/MenuHeader';
@@ -10,9 +9,11 @@ import {
 	Logo,
 	PhoneWrapper,
 	PhoneNumber,
+	SearchDesktop,
 	SelectLanguage,
 	BtnLang,
 	SubHeader,
+	SearchMobile,
 } from './stylesHeader';
 import logoBig from '../../images/logo/logo_free_thread.webp';
 import phone from '../../images/icon/phone.webp';
@@ -33,9 +34,9 @@ const Header: FC<HeaderProps> = ({ handleOpenModal }) => {
 					<PhoneNumber href="tel:+380503337820">+38 (050) 333 78 20</PhoneNumber>
 				</PhoneWrapper>
 				<MenuHeader />
-				<Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+				<SearchDesktop>
 					<Search handleOpenModal={handleOpenModal} />
-				</Box>
+				</SearchDesktop>
 				<SelectLanguage>
 					<BtnLang>UA</BtnLang>
 					<BtnLang>EN</BtnLang>
@@ -43,9 +44,9 @@ const Header: FC<HeaderProps> = ({ handleOpenModal }) => {
 			</HeaderWrapper>
 			<SubHeader>
 				<BurgerMenu />
-				<Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+				<SearchMobile>
 					<Search handleOpenModal={handleOpenModal} />
-				</Box>
+				</SearchMobile>
 			</SubHeader>
 		</header>
 	);
