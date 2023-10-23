@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { Box, Menu } from '@mui/material';
+import { Menu } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
-const BurgerMenuWrapper = styled(Box)`
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		display: none;
-	}
-`;
+interface BtnMenuProps {
+	$active: boolean;
+}
+
 const CustomizedMenu = styled(Menu)`
 	& .MuiMenu-paper {
 		min-width: 100%;
@@ -22,7 +21,7 @@ const CustomizedMenu = styled(Menu)`
 	}
 `;
 
-const CustomLink = styled(NavLink)`
+const CustomLink = styled(NavLink)<BtnMenuProps>`
 	color: ${({ theme }) => theme.colorText.primary};
 	text-transform: uppercase;
 	text-decoration: none;
@@ -32,6 +31,7 @@ const CustomLink = styled(NavLink)`
 		font-size: 12px;
 		border-bottom: none;
 		padding: 16px;
+		border-bottom: ${(props) => (props.$active ? `1px solid ${props.theme.colors.third}` : 'none')};
 	}
 `;
 
@@ -62,9 +62,10 @@ const SubMenuItem = styled(NavLink)`
 	text-transform: uppercase;
 	text-decoration: none;
 	border-bottom: none;
+
 	& .MuiMenuItem-root {
 		padding: 12px 26px;
 	}
 `;
 
-export { BurgerMenuWrapper, CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem };
+export { CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem };

@@ -1,19 +1,22 @@
 import React, { FC, useState } from 'react';
 import { IconButton, MenuItem, Collapse } from '@mui/material';
-import {
-	BurgerMenuWrapper,
-	CustomizedMenu,
-	CustomLink,
-	ArrowRight,
-	ArrowDown,
-	SubMenuItem,
-} from './styledBurgerMenu';
+import { CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem } from './styledBurgerMenu';
 import openMenu from '../../../images/icon/cancel-menu.webp';
 import closeMenu from '../../../images/icon/menu-2.webp';
 
-const BurgerMenu: FC = React.memo(() => {
+interface HeaderBurgerMenuProps {
+	activeButtonMenu: number;
+	handleActiveButtonMenu: (buttonIndex: number) => void;
+}
+
+const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(() => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
+	const [isActive, setIsActive] = useState(false);
 	const openBurgerMenu = Boolean(burgerMenu);
+
+	const toggleActive = () => {
+		setIsActive(!isActive);
+	};
 
 	const handleClickBurgerMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setBurgerMenu(event.currentTarget);
@@ -29,7 +32,7 @@ const BurgerMenu: FC = React.memo(() => {
 	};
 
 	return (
-		<BurgerMenuWrapper>
+		<>
 			<IconButton
 				id="button-burgerMenu"
 				aria-controls={openBurgerMenu ? 'menu-burgerMenu' : undefined}
@@ -52,7 +55,7 @@ const BurgerMenu: FC = React.memo(() => {
 					'aria-labelledby': 'button-burgerMenu',
 				}}
 			>
-				<CustomLink to="/">
+				<CustomLink $active={isActive} onClick={toggleActive} to="/">
 					<MenuItem divider onClick={handleClick}>
 						Каталог
 						{!open ? <ArrowRight /> : <ArrowDown />}
@@ -101,7 +104,7 @@ const BurgerMenu: FC = React.memo(() => {
 					</MenuItem>
 				</CustomLink>
 			</CustomizedMenu>
-		</BurgerMenuWrapper>
+		</>
 	);
 });
 

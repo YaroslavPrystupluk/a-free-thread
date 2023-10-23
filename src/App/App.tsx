@@ -6,6 +6,16 @@ import Modal from '../components/Modal';
 
 const App = () => {
 	const [openModal, setOpenModal] = useState(false);
+	const [activeButtonLang, setActiveButtonLang] = useState(1);
+	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
+
+	const handleActiveButtonLang = (buttonIndex: number) => {
+		setActiveButtonLang(buttonIndex);
+	};
+
+	const handleActiveButtonMenu = (buttonIndex: number) => {
+		setActiveButtonMenu(buttonIndex);
+	};
 	const handleOpenModal = () => {
 		setOpenModal(true);
 	};
@@ -17,7 +27,13 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
-			<Header handleOpenModal={handleOpenModal} />
+			<Header
+				activeButtonLang={activeButtonLang}
+				handleActiveButtonLang={handleActiveButtonLang}
+				handleOpenModal={handleOpenModal}
+				handleActiveButtonMenu={handleActiveButtonMenu}
+				activeButtonMenu={activeButtonMenu}
+			/>
 			<Hits badge="Хіт" />
 			<Hits badge="Новинка" />
 		</BrowserRouter>
