@@ -90,7 +90,6 @@ const BtnLang = styled.p<BtnLangProps>`
 
 const SelectLanguage = styled.div`
 	display: flex;
-	align-items: center;
 	margin: 0 26px 0 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		gap: 14px;

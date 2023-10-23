@@ -29,6 +29,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						aria-expanded={openCatalog ? 'true' : undefined}
 						onClick={handleClickBayer}
 						$active={activeButtonMenu === 1}
+						disableRipple
 					>
 						каталог
 					</MenuButton>
@@ -42,44 +43,60 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						}}
 					>
 						<CustomLink to="/guarantee">
-							<MenuItem divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Сорочки Київщини”
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/paymentAndDelivery">
-							<MenuItem divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Регіони України”
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/exchangeAndReturn">
-							<MenuItem divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/exchangeAndReturn">
-							<MenuItem divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								Аксесуари
 							</MenuItem>
 						</CustomLink>
 					</CustomMenu>
 				</CustomLink>
 				<CustomLink to="/">
-					<MenuButton $active={activeButtonMenu === 2} onClick={() => handleActiveButtonMenu(2)}>
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 2}
+						onClick={() => handleActiveButtonMenu(2)}
+					>
 						про нас
 					</MenuButton>
 				</CustomLink>
 				<CustomLink to="/">
-					<MenuButton $active={activeButtonMenu === 3} onClick={() => handleActiveButtonMenu(3)}>
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 3}
+						onClick={() => handleActiveButtonMenu(3)}
+					>
 						доставка і оплата
 					</MenuButton>
 				</CustomLink>
 				<CustomLink to="/">
-					<MenuButton $active={activeButtonMenu === 4} onClick={() => handleActiveButtonMenu(4)}>
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 4}
+						onClick={() => handleActiveButtonMenu(4)}
+					>
 						відгуки
 					</MenuButton>
 				</CustomLink>
 				<CustomLink to="/">
-					<MenuButton $active={activeButtonMenu === 5} onClick={() => handleActiveButtonMenu(5)}>
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 5}
+						onClick={() => handleActiveButtonMenu(5)}
+					>
 						контакти
 					</MenuButton>
 				</CustomLink>

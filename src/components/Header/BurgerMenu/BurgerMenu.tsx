@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import { IconButton, MenuItem, Collapse } from '@mui/material';
 import {
-	Cus,
 	CustomizedMenu,
 	CustomLink,
+	BtnCatalogLine,
 	ArrowRight,
 	ArrowDown,
 	SubMenuItem,
@@ -41,6 +41,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(() => {
 	return (
 		<>
 			<IconButton
+				disableRipple
 				id="button-burgerMenu"
 				aria-controls={openBurgerMenu ? 'menu-burgerMenu' : undefined}
 				aria-haspopup="true"
@@ -63,40 +64,41 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(() => {
 				}}
 			>
 				<CustomLink onClick={toggleActive} to="/">
-					<Cus $active={isActive} divider onClick={handleClick}>
+					<MenuItem disableRipple divider onClick={handleClick}>
+						<BtnCatalogLine $active={isActive} />
 						Каталог
 						{!open ? <ArrowRight /> : <ArrowDown />}
-					</Cus>
+					</MenuItem>
 					<Collapse in={open} timeout="auto" unmountOnExit>
 						<SubMenuItem to="/products">
-							<MenuItem divider onClick={handleCloseBurgerMenu}>
+							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Сорочки Київщини”
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/guarantee">
-							<MenuItem divider onClick={handleCloseBurgerMenu}>
+							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Регіони України”
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/paymentAndDelivery">
-							<MenuItem divider onClick={handleCloseBurgerMenu}>
+							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/contacts">
-							<MenuItem divider onClick={handleCloseBurgerMenu}>
+							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								Аксесуари
 							</MenuItem>
 						</SubMenuItem>
 					</Collapse>
 				</CustomLink>
 				<CustomLink to="/products">
-					<MenuItem divider onClick={handleCloseBurgerMenu}>
+					<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 						Про нас
 					</MenuItem>
 				</CustomLink>
 				<CustomLink to="/guarantee">
-					<MenuItem divider onClick={handleCloseBurgerMenu}>
+					<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 						Доставка і оплата
 					</MenuItem>
 				</CustomLink>
@@ -106,7 +108,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(() => {
 					</MenuItem>
 				</CustomLink>
 				<CustomLink to="/contacts">
-					<MenuItem divider onClick={handleCloseBurgerMenu}>
+					<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 						Контакти
 					</MenuItem>
 				</CustomLink>
