@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Menu } from '@mui/material';
+import { Menu, MenuItem } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 interface BtnMenuProps {
@@ -31,8 +31,11 @@ const CustomLink = styled(NavLink)<BtnMenuProps>`
 		font-size: 12px;
 		border-bottom: none;
 		padding: 16px;
-		border-bottom: ${(props) => (props.$active ? `1px solid ${props.theme.colors.third}` : 'none')};
 	}
+`;
+
+const Cus = styled(MenuItem)<BtnMenuProps>`
+	border-bottom: ${(props) => (props.$active ? `1px solid ${props.theme.colors.third}` : 'none')};
 `;
 
 const ArrowRight = styled.span`
@@ -68,4 +71,4 @@ const SubMenuItem = styled(NavLink)`
 	}
 `;
 
-export { CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem };
+export { Cus, CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem };

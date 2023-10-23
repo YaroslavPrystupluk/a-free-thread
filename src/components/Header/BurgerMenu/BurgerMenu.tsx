@@ -1,6 +1,13 @@
 import React, { FC, useState } from 'react';
 import { IconButton, MenuItem, Collapse } from '@mui/material';
-import { CustomizedMenu, CustomLink, ArrowRight, ArrowDown, SubMenuItem } from './styledBurgerMenu';
+import {
+	Cus,
+	CustomizedMenu,
+	CustomLink,
+	ArrowRight,
+	ArrowDown,
+	SubMenuItem,
+} from './styledBurgerMenu';
 import openMenu from '../../../images/icon/cancel-menu.webp';
 import closeMenu from '../../../images/icon/menu-2.webp';
 
@@ -55,11 +62,11 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(() => {
 					'aria-labelledby': 'button-burgerMenu',
 				}}
 			>
-				<CustomLink $active={isActive} onClick={toggleActive} to="/">
-					<MenuItem divider onClick={handleClick}>
+				<CustomLink onClick={toggleActive} to="/">
+					<Cus $active={isActive} divider onClick={handleClick}>
 						Каталог
 						{!open ? <ArrowRight /> : <ArrowDown />}
-					</MenuItem>
+					</Cus>
 					<Collapse in={open} timeout="auto" unmountOnExit>
 						<SubMenuItem to="/products">
 							<MenuItem divider onClick={handleCloseBurgerMenu}>
