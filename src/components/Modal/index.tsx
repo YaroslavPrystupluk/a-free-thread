@@ -12,7 +12,13 @@ const ModalSearch: FC<ModalSearchProps> = ({ handleCloseModal, openModal }) => {
 	return (
 		<CustomDialog fullScreen open={openModal} onClose={handleCloseModal}>
 			<DialogActions>
-				<IconButton edge="start" color="inherit" onClick={handleCloseModal} aria-label="close">
+				<IconButton
+					disableRipple
+					edge="start"
+					color="inherit"
+					onClick={handleCloseModal}
+					aria-label="close"
+				>
 					<img src={closeMenu} alt="icon menu close" />
 				</IconButton>
 			</DialogActions>
@@ -21,7 +27,7 @@ const ModalSearch: FC<ModalSearchProps> = ({ handleCloseModal, openModal }) => {
 					<CustomTextField size="small" placeholder="введіть назву" />
 				</Grid>
 				<Grid item>
-					<CustomButton variant="contained" onClick={handleCloseModal}>
+					<CustomButton disableRipple variant="contained" onClick={handleCloseModal}>
 						Знайти
 					</CustomButton>
 				</Grid>

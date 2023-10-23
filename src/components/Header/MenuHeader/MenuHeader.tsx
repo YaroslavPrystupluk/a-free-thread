@@ -1,75 +1,108 @@
-import React, { useState } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
-import { CustomLink } from './styledMenu';
+import React, { FC, useState } from 'react';
+import { MenuItem } from '@mui/material';
+import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from './styledMenu';
 
-const MenuHeader = React.memo(() => {
-	const [bayer, setBayer] = useState<null | HTMLElement>(null);
-	const openBayer = Boolean(bayer);
+interface HeaderMenuProps {
+	activeButtonMenu: number;
+	handleActiveButtonMenu: (buttonIndex: number) => void;
+}
 
-	const handleClickBayer = (event: React.MouseEvent<HTMLButtonElement>) => {
-		setBayer(event.currentTarget);
-	};
-	const handleCloseBayer = () => {
-		setBayer(null);
-	};
+const MenuHeader: FC<HeaderMenuProps> = React.memo(
+	({ activeButtonMenu, handleActiveButtonMenu }) => {
+		const [catalog, setCatalog] = useState<null | HTMLElement>(null);
+		const openCatalog = Boolean(catalog);
 
-	return (
-		<div>
-			<CustomLink to="/">
-				<Button
-					id="button-bayer"
-					aria-controls={openBayer ? 'menu-bayer' : undefined}
-					aria-haspopup="true"
-					aria-expanded={openBayer ? 'true' : undefined}
-					onClick={handleClickBayer}
-				>
-					каталог
-				</Button>
-				<Menu
-					id="menu-bayer"
-					anchorEl={bayer}
-					open={openBayer}
-					onClose={handleCloseBayer}
-					MenuListProps={{
-						'aria-labelledby': 'button-bayer',
-					}}
-				>
-					<CustomLink to="/guarantee">
-						<MenuItem divider onClick={handleCloseBayer}>
-							“Сорочки Київщини”
-						</MenuItem>
-					</CustomLink>
-					<CustomLink to="/paymentAndDelivery">
-						<MenuItem divider onClick={handleCloseBayer}>
-							“Регіони України”
-						</MenuItem>
-					</CustomLink>
-					<CustomLink to="/exchangeAndReturn">
-						<MenuItem divider onClick={handleCloseBayer}>
-							“Віднови вишиванку своєї бабусі”
-						</MenuItem>
-					</CustomLink>
-					<CustomLink to="/exchangeAndReturn">
-						<MenuItem divider onClick={handleCloseBayer}>
-							Аксесуари
-						</MenuItem>
-					</CustomLink>
-				</Menu>
-			</CustomLink>
-			<CustomLink to="/">
-				<Button>про нас</Button>
-			</CustomLink>
-			<CustomLink to="/">
-				<Button>доставка і оплата</Button>
-			</CustomLink>
-			<CustomLink to="/">
-				<Button>відгуки</Button>
-			</CustomLink>
-			<CustomLink to="/">
-				<Button>контакти</Button>
-			</CustomLink>
-		</div>
-	);
-});
+		const handleClickBayer = (event: React.MouseEvent<HTMLButtonElement>) => {
+			setCatalog(event.currentTarget);
+		};
+		const handleCloseBayer = () => {
+			setCatalog(null);
+		};
+
+		return (
+			<WrapperMenu>
+				<CustomLink onClick={() => handleActiveButtonMenu(1)} to="/">
+					<MenuButton
+						id="MenuButton-bayer"
+						aria-controls={openCatalog ? 'menu-bayer' : undefined}
+						aria-haspopup="true"
+						aria-expanded={openCatalog ? 'true' : undefined}
+						onClick={handleClickBayer}
+						$active={activeButtonMenu === 1}
+						disableRipple
+					>
+						каталог
+					</MenuButton>
+					<CustomMenu
+						id="menu-bayer"
+						anchorEl={catalog}
+						open={openCatalog}
+						onClose={handleCloseBayer}
+						MenuListProps={{
+							'aria-labelledby': 'MenuButton-catalog',
+						}}
+					>
+						<CustomLink to="/guarantee">
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+								“Сорочки Київщини”
+							</MenuItem>
+						</CustomLink>
+						<CustomLink to="/paymentAndDelivery">
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+								“Регіони України”
+							</MenuItem>
+						</CustomLink>
+						<CustomLink to="/exchangeAndReturn">
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+								“Віднови вишиванку своєї бабусі”
+							</MenuItem>
+						</CustomLink>
+						<CustomLink to="/exchangeAndReturn">
+							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+								Аксесуари
+							</MenuItem>
+						</CustomLink>
+					</CustomMenu>
+				</CustomLink>
+				<CustomLink to="/">
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 2}
+						onClick={() => handleActiveButtonMenu(2)}
+					>
+						про нас
+					</MenuButton>
+				</CustomLink>
+				<CustomLink to="/">
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 3}
+						onClick={() => handleActiveButtonMenu(3)}
+					>
+						доставка і оплата
+					</MenuButton>
+				</CustomLink>
+				<CustomLink to="/">
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 4}
+						onClick={() => handleActiveButtonMenu(4)}
+					>
+						відгуки
+					</MenuButton>
+				</CustomLink>
+				<CustomLink to="/">
+					<MenuButton
+						disableRipple
+						$active={activeButtonMenu === 5}
+						onClick={() => handleActiveButtonMenu(5)}
+					>
+						контакти
+					</MenuButton>
+				</CustomLink>
+			</WrapperMenu>
+		);
+	},
+);
 
 export default MenuHeader;
