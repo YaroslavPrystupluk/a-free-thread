@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/Header';
 import Modal from '../components/Modal';
 import Main from '../pages/Main';
+import CollectionPage from '../pages/Collections';
+import PageNotFound from '../pages/NotFoundPage';
 
 const App = () => {
 	const [openModal, setOpenModal] = useState(false);
@@ -26,7 +28,6 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
 			<Header
 				activeButtonLang={activeButtonLang}
 				handleActiveButtonLang={handleActiveButtonLang}
@@ -34,7 +35,12 @@ const App = () => {
 				handleActiveButtonMenu={handleActiveButtonMenu}
 				activeButtonMenu={activeButtonMenu}
 			/>
-			<Main />
+			<Routes>
+				<Route path="/" element={<Main />} />
+				<Route path="/:id" element={<CollectionPage />} />
+				<Route path="*" element={<PageNotFound />} />
+			</Routes>
+			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
 		</BrowserRouter>
 	);
 };

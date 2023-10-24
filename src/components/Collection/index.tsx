@@ -1,5 +1,5 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { StyleTypography } from '../../Theme/HitsTheme';
 import {
 	StyleCollectionImg,
@@ -60,10 +60,12 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 							<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
 						))}
 					</StyleCollectionImageList>
-					<StyleCollectionButton>
-						<div>перейти до колекції</div>
-						<div>&#10230;</div>
-					</StyleCollectionButton>
+					<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
+						<StyleCollectionButton>
+							<div>перейти до колекції</div>
+							<div>&#10230;</div>
+						</StyleCollectionButton>
+					</Link>
 				</StyleCollectionProducts>
 			</StyleCollectionImageWrapper>
 		</StyledCollectionWrapper>
