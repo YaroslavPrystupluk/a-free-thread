@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
 import MenuHeader from './MenuHeader/MenuHeader';
@@ -21,9 +21,16 @@ import phone from '../../images/icon/phone.webp';
 interface HeaderProps {
 	activeButtonLang: number;
 	activeButtonMenu: number;
+	openSubMenu: boolean;
 	handleActiveButtonLang: (buttonIndex: number) => void;
 	handleActiveButtonMenu: (buttonIndex: number) => void;
 	handleOpenModal: () => void;
+	handleOpenSubMenu: () => void;
+	toggleActive: () => void;
+	handleClickBurgerMenu: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	handleCloseBurgerMenu: () => void;
+	burgerMenu: null | HTMLElement;
+	isActive: boolean;
 }
 
 const Header: FC<HeaderProps> = ({
@@ -32,6 +39,13 @@ const Header: FC<HeaderProps> = ({
 	activeButtonLang,
 	activeButtonMenu,
 	handleActiveButtonMenu,
+	openSubMenu,
+	handleOpenSubMenu,
+	toggleActive,
+	handleClickBurgerMenu,
+	handleCloseBurgerMenu,
+	burgerMenu,
+	isActive,
 }) => {
 	return (
 		<header>
@@ -65,6 +79,13 @@ const Header: FC<HeaderProps> = ({
 				<BurgerMenu
 					activeButtonMenu={activeButtonMenu}
 					handleActiveButtonMenu={handleActiveButtonMenu}
+					openSubMenu={openSubMenu}
+					handleOpenSubMenu={handleOpenSubMenu}
+					toggleActive={toggleActive}
+					handleClickBurgerMenu={handleClickBurgerMenu}
+					handleCloseBurgerMenu={handleCloseBurgerMenu}
+					burgerMenu={burgerMenu}
+					isActive={isActive}
 				/>
 				<Search handleOpenModal={handleOpenModal} />
 			</SubHeader>
