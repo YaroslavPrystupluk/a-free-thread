@@ -7,28 +7,35 @@ interface BtnLangProps {
 const HeaderWrapper = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	background: ${({ theme }) => theme.colors.primary};
+	padding: 0 26px;
+	gap: 9px;
 
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		background: ${({ theme }) => theme.colors.fourth};
 		border-bottom: 1px solid ${({ theme }) => theme.colors.third};
+		justify-content: center;
+		padding: 0 34px;
+		gap: 48px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		padding: 0 46px;
+		gap: 166px;
 	}
 `;
 
 const LogoWrapper = styled.div`
 	width: 49px;
 	height: 38px;
-	margin: 8px 5px 8px 26px;
+	margin: 8px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		width: 58px;
 		height: 45px;
-		margin: 8px 5px 8px 34px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		width: 82px;
 		height: 64px;
-		margin: 8px 5px 8px 46px;
 	}
 `;
 const Logo = styled.img`
@@ -39,7 +46,7 @@ const PhoneWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	margin: 19px 9px 19px 0;
+	//margin: 0 9px 0 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		display: none;
 	}
@@ -50,6 +57,7 @@ const PhoneNumber = styled.a`
 	color: ${({ theme }) => theme.colorText.primary};
 	font-size: 12px;
 	text-decoration: none;
+	cursor: pointer;
 `;
 
 const Wrapper = styled(Box)`
@@ -77,6 +85,7 @@ const BtnLang = styled.p<BtnLangProps>`
 	padding: 8px 4px;
 	cursor: pointer;
 	text-transform: uppercase;
+	letter-spacing: 0.2px;
 	border-bottom: ${(props) => (props.$active ? `1px solid ${props.theme.colors.third}` : 'none')};
 
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
@@ -90,21 +99,20 @@ const BtnLang = styled.p<BtnLangProps>`
 
 const SelectLanguage = styled.div`
 	display: flex;
-	margin: 0 26px 0 0;
+	align-items: center;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		gap: 14px;
-		margin: 0 34px 0 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		margin: 0 45px 0 0;
 		gap: 24px;
 	}
 `;
 
 const SubHeader = styled.div`
 	display: flex;
-	justify-content: space-between;
-	padding: 4px 26px;
+	justify-content: center;
+	gap: calc(220px - 26px);
+	padding: 4px 0;
 	border-bottom: 1px solid rgba(243, 198, 182, 0.5);
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		display: none;

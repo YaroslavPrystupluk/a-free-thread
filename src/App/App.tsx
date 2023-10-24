@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from '../components/Header';
 import Hits from '../components/Hits';
 import Modal from '../components/Modal';
+import Footer from '../components/Footer';
 
 const App = () => {
 	const [openModal, setOpenModal] = useState(false);
@@ -36,6 +37,7 @@ const App = () => {
 			/>
 			<Hits badge="Хіт" />
 			<Hits badge="Новинка" />
+			<Footer />
 		</BrowserRouter>
 	);
 };
