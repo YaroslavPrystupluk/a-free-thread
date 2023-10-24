@@ -1,4 +1,3 @@
-import React from 'react';
 import { LoadingContainer, LoadingText } from '../../Theme/LoadingTheme';
 
 function LoadingAnimation() {

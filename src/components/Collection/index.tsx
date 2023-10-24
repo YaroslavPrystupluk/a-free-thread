@@ -9,36 +9,47 @@ import {
 	StyledCollectionWrapper,
 	StyleCollectionImageWrapper,
 } from '../../Theme/CollectionTheme';
-import { RootState, CollectionState } from '../../redux/slices/collectionSlice';
+import { CollectionState, CollectionItem } from '../../redux/slices/collectionSlice';
+import { RootState } from '../../redux/store/store';
 import ProductItem from '../Hits/productItem';
 import { Product } from '../../redux/slices/productsSlice';
+import LoadingAnimation from '../Loading';
 
 interface CollectionProps {
 	title: keyof CollectionState;
 }
 
 const Collection: React.FC<CollectionProps> = ({ title }) => {
-	const titleColl = useSelector((state: RootState) => state.collection);
-	const collectionsProducts = titleColl[title].collectionProducts;
+	const titleColl = useSelector((state: RootState) => state.collection) as CollectionState;
+	const loadingCollection: boolean = useSelector(
+		(state: RootState) => state.collection.isLoadingCollection,
+	);
+	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
+
+	const collectionItem = titleColl[title] as CollectionItem;
+
+	const collectionsProducts = collectionItem.collectionProducts as Product[];
 
 	const randomCollectionProducts = collectionsProducts
 		.slice()
 		.sort(() => 0.5 - Math.random())
 		.slice(0, 2);
 
-	return (
+	return loadingCollection || loading ? (
+		<LoadingAnimation />
+	) : (
 		<StyledCollectionWrapper>
 			<StyleTypography variant="h4" gutterBottom>
 				&ldquo;
-				{titleColl[title].title}
+				{collectionItem.title}
 				&rdquo;
 			</StyleTypography>
 			<StyleTypography variant="body1" gutterBottom>
-				{titleColl[title].description}
+				{collectionItem.description}
 			</StyleTypography>
 			<StyleCollectionImageWrapper className={`wrapper_${title}`}>
 				<StyleCollectionImg
-					src={titleColl[title].img}
+					src={collectionItem.img}
 					alt={title}
 					loading="lazy"
 					className={`mainImage_${title}`}

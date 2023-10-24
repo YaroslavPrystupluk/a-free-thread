@@ -1,26 +1,26 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable max-len */
-import { createSlice } from '@reduxjs/toolkit';
-import { Dispatch } from 'redux';
+import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 import kiev from '../../images/Collections/collection_kiev.webp';
 import grandmother from '../../images/Collections/collection_grandmother.webp';
 import regions from '../../images/Collections/collection_regions.webp';
 import { getProductsAsync, Product } from './productsSlice';
-import store from '../store/store';
+import { RootState } from '../store/store';
 
 export interface CollectionItem {
 	title: string;
 	description: string;
 	img: string;
-	collectionProducts: [];
+	collectionProducts: Product[];
 }
 
 export interface CollectionState {
 	kiev: CollectionItem;
 	grandmother: CollectionItem;
 	regions: CollectionItem;
+	isLoadingCollection: boolean;
+	error: string | null | SerializedError;
 }
-
-export type RootState = ReturnType<typeof store.getState>;
 
 export const selectProducts = (state: RootState) => state.products.products;
 
@@ -28,56 +28,40 @@ const initialState: CollectionState = {
 	kiev: {
 		title: 'сорочки київщини',
 		description:
-			'Опис о сорочках Київщини. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
+			'Опис о сорочках Київщини...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		img: kiev,
 		collectionProducts: [],
 	},
 	grandmother: {
 		title: 'Віднови вишиванку своєї бабусі',
 		description:
-			'Опис о відновленні вишиванки. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
+			'Опис о відновленні вишиванки...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		img: grandmother,
 		collectionProducts: [],
 	},
 	regions: {
 		title: 'регіони україни',
 		description:
-			'Опис о сорочках з регіонами україни. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
+			'Опис о сорочках з регіонами україни...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		img: regions,
 		collectionProducts: [],
 	},
+	isLoadingCollection: false,
+	error: null,
 };
 
-const collectionSlice = createSlice({
-	name: 'collection',
-	initialState,
-	reducers: {
-		collectionKiev: (state, action) => {
-			state.kiev.collectionProducts = action.payload;
-		},
-		collectionGrandmother: (state, action) => {
-			state.grandmother.collectionProducts = action.payload;
-		},
-		collectionRegions: (state, action) => {
-			state.regions.collectionProducts = action.payload;
-		},
-	},
-});
-
-export const { reducer: collectionReducer } = collectionSlice;
-export const { collectionKiev, collectionGrandmother, collectionRegions } = collectionSlice.actions;
-
-export const selectCollection =
-	(selectedProduct: string) => (dispatch: Dispatch, getState: () => RootState) => {
-		const state = getState();
+export const selectCollection = createAsyncThunk(
+	'collection/selectCollection',
+	async (selectedProduct: string, { getState, dispatch }) => {
+		const state = getState() as RootState;
 		const products = selectProducts(state) as Product[];
 
 		if (products.length === 0) {
 			try {
-				dispatch(getProductsAsync('shirts'));
+				await dispatch(getProductsAsync('shirts'));
 			} catch (error) {
 				console.error('Помилка завантаження продуктів', error);
-				return;
+				throw error;
 			}
 		}
 
@@ -85,22 +69,36 @@ export const selectCollection =
 
 		const collection = updatedProducts.filter((product) => product.collection === selectedProduct);
 
-		switch (selectedProduct) {
-			case 'kiev':
-				dispatch(collectionKiev(collection));
-				break;
+		return collection;
+	},
+);
 
-			case 'grandmother':
-				dispatch(collectionGrandmother(collection));
-				break;
+const collectionSlice = createSlice({
+	name: 'collection',
+	initialState,
+	reducers: {},
+	extraReducers: (builder) => {
+		builder.addCase(selectCollection.pending, (state) => {
+			state.isLoadingCollection = true;
+			state.error = null;
+		});
+		builder.addCase(selectCollection.fulfilled, (state, action) => {
+			state.isLoadingCollection = false;
+			if (action.meta.arg === 'kiev') {
+				state.kiev.collectionProducts = action.payload;
+			} else if (action.meta.arg === 'grandmother') {
+				state.grandmother.collectionProducts = action.payload;
+			} else if (action.meta.arg === 'regions') {
+				state.regions.collectionProducts = action.payload;
+			}
+		});
+		builder.addCase(selectCollection.rejected, (state, action) => {
+			state.isLoadingCollection = false;
+			state.error = action.error.message || action.error;
+		});
+	},
+});
 
-			case 'regions':
-				dispatch(collectionRegions(collection));
-				break;
-
-			default:
-				console.log(`Sorry, we are out of ${selectedProduct}.`);
-		}
-	};
+export const { reducer: collectionReducer } = collectionSlice;
 
 export default collectionReducer;
