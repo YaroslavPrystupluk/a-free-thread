@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Collapse } from '@mui/material';
 import FooterLogo from '../../images/logo/logo_free_thread.webp';
 import logoFacebook from '../../images/icon/facebook-v1-2.webp';
 import logoInstagram from '../../images/icon/instagram-_1_-2.webp';
@@ -14,9 +15,21 @@ import {
 	IconMenuSocial,
 	FooterLink,
 	IconMenuBank,
+	ArrowRight,
+	ArrowDown,
+	CustomLink,
+	SubMenuItem,
+	CustomMenuItem,
+	CustomSubMenuItem,
 } from './styledFooter';
 
-const Footer: FC = () => {
+interface FooterProps {
+	openSubMenu: boolean;
+	handleOpenSubMenu: () => void;
+	handleCloseBurgerMenu: () => void;
+}
+
+const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseBurgerMenu }) => {
 	return (
 		<FooterWrap>
 			<LogoWrapper>
@@ -26,7 +39,35 @@ const Footer: FC = () => {
 				<MenuFooter>
 					<TitleMenu>Про компанію</TitleMenu>
 					<li>Про нас</li>
-					<li>Каталог</li>
+					<CustomLink to="/">
+						<CustomMenuItem disableRipple divider onClick={handleOpenSubMenu}>
+							Каталог
+							{!openSubMenu ? <ArrowRight /> : <ArrowDown />}
+						</CustomMenuItem>
+					</CustomLink>
+					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
+						<SubMenuItem to="/products">
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+								“Сорочки Київщини”
+							</CustomSubMenuItem>
+						</SubMenuItem>
+						<SubMenuItem to="/guarantee">
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+								“Регіони України”
+							</CustomSubMenuItem>
+						</SubMenuItem>
+						<SubMenuItem to="/paymentAndDelivery">
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+								“Віднови вишиванку своєї бабусі”
+							</CustomSubMenuItem>
+						</SubMenuItem>
+						<SubMenuItem to="/contacts">
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+								Аксесуари
+							</CustomSubMenuItem>
+						</SubMenuItem>
+					</Collapse>
+
 					<li>Доставка і оплата</li>
 					<li>Відгуки</li>
 					<li>Контакти</li>

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { MenuItem } from '@mui/material';
 
 const FooterWrap = styled.footer`
 	background: ${({ theme }) => theme.colors.primary};
@@ -89,6 +91,63 @@ const IconMenuBank = styled.img`
 	}
 `;
 
+const ArrowRight = styled.span`
+	position: absolute;
+	right: 16px;
+	border: solid #000000;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	margin: 0 0 2px 16px;
+`;
+
+const ArrowDown = styled.span`
+	position: absolute;
+	right: 16px;
+	border: solid #000000;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	margin: 0 0 2px 16px;
+`;
+
+const CustomLink = styled(NavLink)`
+	color: ${({ theme }) => theme.colorText.primary};
+	text-decoration: none;
+
+	& .MuiMenuItem-root {
+		font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+		font-size: 12px;
+		border-bottom: none;
+	}
+`;
+
+const SubMenuItem = styled(NavLink)`
+	color: ${({ theme }) => theme.colorText.primary};
+	text-decoration: none;
+
+	& .MuiMenuItem-root {
+		font-size: 12px;
+		padding: 6px 26px;
+		border-bottom: none;
+	}
+`;
+
+const CustomMenuItem = styled(MenuItem)`
+	&& {
+		padding: 0;
+		min-height: 12px;
+	}
+`;
+
+const CustomSubMenuItem = styled(MenuItem)`
+	&& {
+		min-height: 12px;
+	}
+`;
+
 export {
 	FooterWrap,
 	LogoWrapper,
@@ -99,4 +158,10 @@ export {
 	IconMenuSocial,
 	IconMenuBank,
 	FooterLink,
+	ArrowRight,
+	ArrowDown,
+	CustomLink,
+	SubMenuItem,
+	CustomMenuItem,
+	CustomSubMenuItem,
 };
