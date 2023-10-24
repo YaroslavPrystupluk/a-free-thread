@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, Dispatch, AnyAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 
 export interface Product {
 	id: number;
@@ -6,46 +6,59 @@ export interface Product {
 	price: string;
 	description: string;
 	collection: string;
-	imageUrls: [];
+	imageUrls: string[];
 }
 
-interface ProductsState {
-	products: Product[];
+export interface ProductsState {
+	products: Product[] | unknown;
+	isLoading: boolean;
+	error: string | null | SerializedError;
 }
 
 const initialState: ProductsState = {
 	products: [],
+	isLoading: false,
+	error: null,
 };
+
+export const getProductsAsync = createAsyncThunk(
+	'products/fetchProducts',
+	async (productsFile: string) => {
+		try {
+			const response = await fetch(`src/products/${productsFile}.json`);
+
+			if (!response.ok) {
+				throw new Error(`Error fetching products: ${response.statusText}`);
+			}
+			const results: Product[] = await response.json();
+
+			return results;
+		} catch (error) {
+			return error;
+		}
+	},
+);
 
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
-	reducers: {
-		printProducts(state, action: PayloadAction<Product[]>) {
-			return {
-				...state,
-				products: action.payload,
-			};
-		},
+	reducers: {},
+	extraReducers: (builder) => {
+		builder.addCase(getProductsAsync.pending, (state) => {
+			state.isLoading = true;
+			state.error = null;
+		});
+		builder.addCase(getProductsAsync.fulfilled, (state, action) => {
+			state.isLoading = false;
+			state.products = action.payload;
+		});
+		builder.addCase(getProductsAsync.rejected, (state, action) => {
+			state.isLoading = false;
+			state.error = action.error.message || action.error;
+		});
 	},
 });
 
-export const { printProducts } = productsSlice.actions;
+export const { reducer: productsReducer } = productsSlice;
 
-export const getProductsAsync = (productsFile: string) => async (dispatch: Dispatch<AnyAction>) => {
-	try {
-		const response = await fetch(`src/products/${productsFile}.json`);
-
-		if (response.ok) {
-			const results: Product[] = await response.json();
-
-			dispatch(printProducts(results));
-		} else {
-			console.error('Error fetching products:', response.statusText);
-		}
-	} catch (error) {
-		console.error('Error fetching products:', error);
-	}
-};
-
-export default productsSlice.reducer;
+export default productsReducer;

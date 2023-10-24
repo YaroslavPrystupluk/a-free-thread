@@ -10,15 +10,11 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 		'& button': {
 			fill: 'white!important',
 		},
-		'& svg': {
-			width: '3px!important',
-			margin: 1,
-		},
 		'& ul': {
 			top: '-5px!important',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			gridTemplateColumns: 'repeat(3, 180px)!important',
+			gridTemplateColumns: 'repeat(4, 180px)!important',
 			height: 320,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
@@ -37,6 +33,7 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 			margin: '12px 16px',
 		},
 		'& .MuiImageListItemBar-titleWrap': {
+			textAlign: 'left',
 			padding: 0,
 			overflow: 'inherit',
 		},
@@ -132,6 +129,8 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		textTransform: 'uppercase',
 		margin: '16px auto',
 		textAlign: 'center',
+		maxWidth: theme.breakpoints.xl,
+		width: '85%',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: 24,
 			letterSpacing: 0.48,
@@ -139,6 +138,22 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			fontSize: 40,
 			letterSpacing: 0.8,
+		},
+	},
+	'&.MuiTypography-body1': {
+		width: '85%',
+		fontFamily: theme.fontFamily.text,
+		fontSize: 12,
+		fontWeight: 400,
+		lineHeight: '20px',
+		letterSpacing: 0.24,
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			width: '90%',
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			fontSize: 14,
+			letterSpacing: 0.28,
+			lineHeight: '24px',
 		},
 	},
 }));
@@ -156,9 +171,17 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 	},
 }));
 
-const StyledContainerWrapper = styled(Container)(({ theme }) => ({
+const StyleHitsWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xl,
 	margin: '30px 6px',
+	minHeight: 550,
+	textAlign: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		minHeight: 350,
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		minHeight: 550,
+	},
 }));
 
 export {
@@ -168,5 +191,5 @@ export {
 	StyleTypography,
 	StyleImageListItemBadge,
 	StyleSlideImg,
-	StyledContainerWrapper,
+	StyleHitsWrapper,
 };

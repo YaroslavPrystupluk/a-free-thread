@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../components/Header';
-import Hits from '../components/Hits';
 import Modal from '../components/Modal';
+import Main from '../pages/Main';
 
 const App = () => {
 	const [openModal, setOpenModal] = useState(false);
@@ -34,8 +34,7 @@ const App = () => {
 				handleActiveButtonMenu={handleActiveButtonMenu}
 				activeButtonMenu={activeButtonMenu}
 			/>
-			<Hits badge="Хіт" />
-			<Hits badge="Новинка" />
+			<Main />
 		</BrowserRouter>
 	);
 };
