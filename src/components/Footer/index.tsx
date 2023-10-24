@@ -26,10 +26,10 @@ import {
 interface FooterProps {
 	openSubMenu: boolean;
 	handleOpenSubMenu: () => void;
-	handleCloseBurgerMenu: () => void;
+	handleCloseSubMenu: () => void;
 }
 
-const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseBurgerMenu }) => {
+const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseSubMenu }) => {
 	return (
 		<FooterWrap>
 			<LogoWrapper>
@@ -47,22 +47,22 @@ const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseBu
 					</CustomLink>
 					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
 						<SubMenuItem to="/products">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								“Сорочки Київщини”
 							</CustomSubMenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/guarantee">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								“Регіони України”
 							</CustomSubMenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/paymentAndDelivery">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								“Віднови вишиванку своєї бабусі”
 							</CustomSubMenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/contacts">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								Аксесуари
 							</CustomSubMenuItem>
 						</SubMenuItem>

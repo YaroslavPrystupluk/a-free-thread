@@ -27,6 +27,9 @@ const App = () => {
 		setOpenSubMenu(!openSubMenu);
 	};
 
+	const handleCloseSubMenu = () => {
+		setOpenSubMenu(false);
+	};
 	const handleActiveButtonLang = (buttonIndex: number) => {
 		setActiveButtonLang(buttonIndex);
 	};
@@ -65,6 +68,7 @@ const App = () => {
 				handleOpenSubMenu={handleOpenSubMenu}
 				openSubMenu={openSubMenu}
 				handleCloseBurgerMenu={handleCloseBurgerMenu}
+				handleCloseSubMenu={handleCloseSubMenu}
 			/>
 		</BrowserRouter>
 	);
