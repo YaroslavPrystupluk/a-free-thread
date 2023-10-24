@@ -121,6 +121,9 @@ const CustomLink = styled(NavLink)`
 		font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 		font-size: 12px;
 		border-bottom: none;
+		@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+			font-size: 14px;
+		}
 	}
 `;
 
@@ -132,6 +135,9 @@ const SubMenuItem = styled(NavLink)`
 		font-size: 12px;
 		padding: 6px 26px;
 		border-bottom: none;
+		@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+			font-size: 14px;
+		}
 	}
 `;
 

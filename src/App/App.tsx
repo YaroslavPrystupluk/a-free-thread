@@ -5,7 +5,6 @@ import Modal from '../components/Modal';
 import Main from '../pages/Main';
 import Footer from '../components/Footer';
 
-
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
 	const [isActive, setIsActive] = useState(false);
@@ -63,14 +62,12 @@ const App = () => {
 				burgerMenu={burgerMenu}
 				isActive={isActive}
 			/>
-      <Main />
-			<Hits badge="Хіт" />
-			<Hits badge="Новинка" />
+			<Main />
 			<Footer
 				handleOpenSubMenu={handleOpenSubMenu}
 				openSubMenu={openSubMenu}
-				handleCloseBurgerMenu={handleCloseBurgerMenu}
 				handleCloseSubMenu={handleCloseSubMenu}
+			/>
 		</BrowserRouter>
 	);
 };
