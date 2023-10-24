@@ -8,7 +8,7 @@ interface SearchProps {
 
 const Search: FC<SearchProps> = React.memo(({ handleOpenModal }) => {
 	return (
-		<Box>
+		<Box component="div">
 			<IconButton onClick={handleOpenModal}>
 				<img src={search} alt="icon search" />
 			</IconButton>
