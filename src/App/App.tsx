@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../components/Header';
-import Hits from '../components/Hits';
 import Modal from '../components/Modal';
+import Main from '../pages/Main';
 import Footer from '../components/Footer';
+
 
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
@@ -62,6 +63,7 @@ const App = () => {
 				burgerMenu={burgerMenu}
 				isActive={isActive}
 			/>
+      <Main />
 			<Hits badge="Хіт" />
 			<Hits badge="Новинка" />
 			<Footer
@@ -69,7 +71,6 @@ const App = () => {
 				openSubMenu={openSubMenu}
 				handleCloseBurgerMenu={handleCloseBurgerMenu}
 				handleCloseSubMenu={handleCloseSubMenu}
-			/>
 		</BrowserRouter>
 	);
 };

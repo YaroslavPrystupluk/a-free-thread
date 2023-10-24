@@ -1,29 +1,20 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Carousel from 'nuka-carousel';
-import { Product, getProductsAsync } from '../../redux/slices/productsSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import LoadingAnimation from '../Loading';
+import ProductItem from './productItem';
+import { Product } from '../../redux/slices/productsSlice';
 import { RootState } from '../../redux/store/store';
-import ProductItem from '../ex';
-import {
-	StyleImageList,
-	StyleImageListItemBar,
-	StyleImageListItem,
-	StyleTypography,
-	StyleImageListItemBadge,
-	StyledContainerWrapper,
-} from '../../Theme/HitsTheme';
+import { StyleHitsWrapper, StyleImageList, StyleTypography } from '../../Theme/HitsTheme';
 
 interface HitsProps {
 	badge: string;
 }
 
 const Hits: React.FC<HitsProps> = ({ badge }) => {
-	const productsArray = useSelector((state: RootState) => state.products.products || []);
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(getProductsAsync('shirts'));
-	}, [dispatch]);
+	const productsArray: Product[] = useSelector(
+		(state: RootState) => (state.products.products || []) as Product[],
+	);
+	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
 
 	const randomProducts =
 		badge === 'Хіт'
@@ -36,28 +27,20 @@ const Hits: React.FC<HitsProps> = ({ badge }) => {
 	const titleList = badge === 'Хіт' ? 'популярні товари' : 'нові надходження';
 
 	return (
-		<StyledContainerWrapper>
+		<StyleHitsWrapper>
 			<StyleTypography variant="h4" gutterBottom>
 				{titleList}
 			</StyleTypography>
-			<StyleImageList style={{ gap: 'auto' }}>
-				{randomProducts.map((item: Product) => (
-					<StyleImageListItem key={item.id}>
-						<Carousel renderCenterLeftControls={false} renderCenterRightControls={false}>
-							{item.imageUrls.map((imageUrls: string[]) => (
-								<ProductItem img={imageUrls} key={item.id * Math.random()} alt={item.name} />
-							))}
-						</Carousel>
-						<StyleImageListItemBar
-							title={item.price}
-							subtitle={<span>{item.name}</span>}
-							position="below"
-						/>
-						<StyleImageListItemBadge title={badge} position="top" />
-					</StyleImageListItem>
-				))}
-			</StyleImageList>
-		</StyledContainerWrapper>
+			{loading ? (
+				<LoadingAnimation />
+			) : (
+				<StyleImageList style={{ gap: 'auto' }}>
+					{randomProducts.map((item: Product) => (
+						<ProductItem item={item} badge={badge} key={item.id * Math.random()} />
+					))}
+				</StyleImageList>
+			)}
+		</StyleHitsWrapper>
 	);
 };
 
