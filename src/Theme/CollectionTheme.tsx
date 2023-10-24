@@ -100,7 +100,7 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 	flexDirection: 'column',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		flexDirection: 'row-reverse',
-		'&.grandmother': {
+		'&.wrapper_grandmother': {
 			flexDirection: 'row',
 		},
 	},
