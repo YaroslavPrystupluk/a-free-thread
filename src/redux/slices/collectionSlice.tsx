@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-/* eslint-disable import/no-cycle */
 import { createSlice } from '@reduxjs/toolkit';
 import { Dispatch } from 'redux';
 import kiev from '../../images/Collections/collection_kiev.webp';
