@@ -6,18 +6,28 @@ const SubHeaderWrapper = styled.div`
 	gap: 30px;
 	justify-content: center;
 	align-items: center;
+	padding: 16px 0;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		padding: 20px 0;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		gap: 57px;
+		padding: 40px 0 33px 0;
+	}
 `;
 
 const OrnamentWrapper = styled.section`
-	background-image: url(${ornamentImg});
-	background-repeat: repeat;
+	background: url(${ornamentImg}) 0 0 / contain repeat-y;
 	min-width: 67px;
-	min-height: 200px;
-	background-size: auto 100%;
-`;
-
-const Ornament = styled.img`
-	width: 100%;
+	min-height: 437px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		min-width: 120px;
+		min-height: 360px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		min-width: 180px;
+		min-height: 540px;
+	}
 `;
 
 const SubHeaderTitle = styled.h1`
@@ -49,4 +59,4 @@ const SubHeaderParagraph = styled.p`
 	}
 `;
 
-export { SubHeaderWrapper, OrnamentWrapper, Ornament, SubHeaderTitle, SubHeaderParagraph };
+export { SubHeaderWrapper, OrnamentWrapper, SubHeaderTitle, SubHeaderParagraph };
