@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../components/Header';
+import SubHeader from '../components/SubHeader';
 import Modal from '../components/Modal';
 import Main from '../pages/Main';
 import Footer from '../components/Footer';
@@ -62,6 +63,7 @@ const App = () => {
 				burgerMenu={burgerMenu}
 				isActive={isActive}
 			/>
+			<SubHeader />
 			<Main />
 			<Footer
 				handleOpenSubMenu={handleOpenSubMenu}

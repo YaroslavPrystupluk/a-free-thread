@@ -173,7 +173,7 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 
 const StyleHitsWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xl,
-	margin: '30px 6px',
+	margin: '60px 6px',
 	minHeight: 550,
 	textAlign: 'center',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
