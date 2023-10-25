@@ -20,6 +20,17 @@ const StyleCollectionImg = styled('img')(({ theme }) => ({
 		height: 560,
 		width: 560,
 	},
+	'&.mainImage_page': {
+		height: 170,
+		marginBottom: 8,
+		paddingTop: 0,
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			height: 200,
+			width: 340,
+			margin: 0,
+			padding: 0,
+		},
+	},
 }));
 
 const StyleCollectionProducts = styled('div')(() => ({
@@ -93,6 +104,12 @@ const StyledCollectionWrapper = styled('div')(({ theme }) => ({
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		maxWidth: theme.breakpoints.xl,
 	},
+	'&.collectionPage': {
+		margin: '24px auto',
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			maxWidth: 720,
+		},
+	},
 }));
 
 const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
@@ -102,6 +119,11 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 		flexDirection: 'row-reverse',
 		'&.wrapper_grandmother': {
 			flexDirection: 'row',
+		},
+		'&.collectionPageMain': {
+			flexDirection: 'row',
+			justifyContent: 'center',
+			alignItems: 'center',
 		},
 	},
 }));

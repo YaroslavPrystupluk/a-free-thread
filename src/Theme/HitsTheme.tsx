@@ -139,6 +139,9 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 			fontSize: 40,
 			letterSpacing: 0.8,
 		},
+		'&.collectionPageTitle': {
+			display: 'flex',
+		},
 	},
 	'&.MuiTypography-body1': {
 		width: '85%',
@@ -147,13 +150,27 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		fontWeight: 400,
 		lineHeight: '20px',
 		letterSpacing: 0.24,
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+		'-webkit-line-clamp': '7',
+		'-webkit-box-orient': 'vertical',
+		display: '-webkit-box',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			width: '90%',
+			'-webkit-line-clamp': '3',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			fontSize: 14,
 			letterSpacing: 0.28,
 			lineHeight: '24px',
+		},
+		'&.collectionPageSpan': {
+			'-webkit-line-clamp': '20',
+			margin: 'auto',
+			width: '100%',
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				'-webkit-line-clamp': '12',
+			},
 		},
 	},
 }));
