@@ -69,7 +69,9 @@ const SubMenuItem = styled(NavLink)`
 	border-bottom: none;
 
 	& .MuiMenuItem-root {
-		padding: 12px 26px;
+		padding: 6px 26px;
+		font-size: 12px;
+		border-bottom: none;
 	}
 `;
 
