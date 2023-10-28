@@ -14,6 +14,7 @@ import { RootState } from '../../redux/store/store';
 import ProductItem from '../Hits/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import LoadingAnimation from '../Loading';
+import { RightArrowWhite } from './arrows';
 
 interface CollectionProps {
 	title: keyof CollectionState;
@@ -63,7 +64,7 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 					<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
 						<StyleCollectionButton>
 							<div>перейти до колекції</div>
-							<div>&#10230;</div>
+							<div>{RightArrowWhite()}</div>
 						</StyleCollectionButton>
 					</Link>
 				</StyleCollectionProducts>

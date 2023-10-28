@@ -21,6 +21,11 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			gridTemplateColumns: 'repeat(4, 1fr)!important',
 			height: 480,
 		},
+		'&.collectionPage': {
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				margin: '16px 0',
+			},
+		},
 	},
 }));
 
@@ -129,7 +134,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		textTransform: 'uppercase',
 		margin: '16px auto',
 		textAlign: 'center',
-		maxWidth: theme.breakpoints.xl,
+		maxWidth: theme.breakpoints.xsl,
 		width: '85%',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: 24,
@@ -140,7 +145,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 			letterSpacing: 0.8,
 		},
 		'&.collectionPageTitle': {
-			display: 'flex',
+			width: '100%',
 		},
 	},
 	'&.MuiTypography-body1': {
@@ -189,7 +194,7 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 }));
 
 const StyleHitsWrapper = styled(Container)(({ theme }) => ({
-	maxWidth: theme.breakpoints.xl,
+	maxWidth: theme.breakpoints.xsl,
 	margin: '60px 6px',
 	minHeight: 550,
 	textAlign: 'center',

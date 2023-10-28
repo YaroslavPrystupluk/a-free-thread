@@ -30,6 +30,10 @@ const StyleCollectionImg = styled('img')(({ theme }) => ({
 			margin: 0,
 			padding: 0,
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			height: 340,
+			width: 550,
+		},
 	},
 }));
 
@@ -102,12 +106,15 @@ const StyledCollectionWrapper = styled('div')(({ theme }) => ({
 		maxWidth: theme.breakpoints.md,
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		maxWidth: theme.breakpoints.xl,
+		maxWidth: theme.breakpoints.xsl,
 	},
 	'&.collectionPage': {
 		margin: '24px auto',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			maxWidth: 720,
+			maxWidth: 700,
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			maxWidth: theme.breakpoints.xsl,
 		},
 	},
 }));
@@ -124,6 +131,12 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 			flexDirection: 'row',
 			justifyContent: 'center',
 			alignItems: 'center',
+			gap: 20,
+			padding: '0 10px',
+			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+				gap: 24,
+				marginBottom: 60,
+			},
 		},
 	},
 }));

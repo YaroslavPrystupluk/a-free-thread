@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import { useParams } from 'react-router-dom';
+import { Pagination, PaginationItem } from '@mui/material';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { filterProducts } from '../Main/getProducts';
 import { RootState } from '../../redux/store/store';
 import { Product } from '../../redux/slices/productsSlice';
@@ -10,6 +12,7 @@ import { CollectionItem, CollectionState } from '../../redux/slices/collectionSl
 import LoadingAnimation from '../../components/Loading';
 import ProductItem from '../../components/Hits/productItem';
 import PageNotFound from '../NotFoundPage';
+import { RightArrow, LeftArrow } from '../../components/Collection/arrows';
 
 import {
 	StyledCollectionWrapper,
@@ -18,11 +21,18 @@ import {
 	StyleCollectionProducts,
 } from '../../Theme/CollectionTheme';
 import { StyleTypography, StyleImageList } from '../../Theme/HitsTheme';
-import { StyleCollectionPageMain, StyleSquare, StyleStar } from '../../Theme/OthersTheme';
+import {
+	StyleCollectionPageMain,
+	StylePaginationBox,
+	StyleSquare,
+	StyleStar,
+	StyleTitleCollectionPage,
+} from '../../Theme/CollectionPageTheme';
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
 	const idColl = useSelector((state: RootState) => state.collection) as CollectionState;
+	const [currentPage, setCurrentPage] = useState(1);
 	const productsArrayAll: Product[] = useSelector(
 		(state: RootState) => (state.products.products || []) as Product[],
 	);
@@ -31,8 +41,18 @@ const CollectionPage = () => {
 	);
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
 	const collectionItem = idColl[id] as CollectionItem;
-
 	const collectionsProducts = collectionItem?.collectionProducts as Product[];
+	const total = collectionsProducts.length;
+	const productsPerPage = 16;
+	const countPagination = total ? Math.ceil(total / productsPerPage) : 0;
+	const startIndex = (currentPage - 1) * productsPerPage;
+	const endIndex = currentPage * productsPerPage;
+
+	const productsSliced = collectionsProducts.slice(startIndex, endIndex);
+
+	useEffect(() => {
+		setCurrentPage(1);
+	}, []);
 
 	useEffect(() => {
 		if (productsArrayAll.length <= 0) {
@@ -48,11 +68,13 @@ const CollectionPage = () => {
 		<LoadingAnimation />
 	) : (
 		<StyledCollectionWrapper className="collectionPage">
-			<StyleTypography variant="h4" className="collectionPageTitle" gutterBottom>
+			<StyleTitleCollectionPage>
 				<StyleSquare> </StyleSquare>
-				&ldquo;
-				{collectionItem.title}
-				&rdquo;
+				<StyleTypography variant="h4" className="collectionPageTitle" gutterBottom>
+					&ldquo;
+					{collectionItem.title}
+					&rdquo;
+				</StyleTypography>
 				<StyleStar>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +90,7 @@ const CollectionPage = () => {
 						/>
 					</svg>
 				</StyleStar>
-			</StyleTypography>
+			</StyleTitleCollectionPage>
 			<StyleCollectionImageWrapper className="collectionPageMain">
 				<StyleCollectionImg
 					src={collectionItem.img}
@@ -83,30 +105,24 @@ const CollectionPage = () => {
 				</StyleCollectionPageMain>
 			</StyleCollectionImageWrapper>
 			<StyleCollectionProducts>
-				<StyleImageList style={{ gap: 'auto' }}>
-					{collectionsProducts.map((item: Product) => (
+				<StyleImageList style={{ gap: 'auto' }} className="collectionPage">
+					{productsSliced.map((item: Product) => (
 						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
 					))}
-				</StyleImageList>
-				<StyleImageList style={{ gap: 'auto' }}>
-					{collectionsProducts.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
-					))}
-				</StyleImageList>
-				<StyleImageList style={{ gap: 'auto' }}>
-					{collectionsProducts.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
-					))}
-				</StyleImageList>
-				<StyleImageList style={{ gap: 'auto' }}>
-					{collectionsProducts.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
-					))}
-				</StyleImageList>
-				<StyleImageList style={{ gap: 'auto' }}>
-					{collectionsProducts.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
-					))}
+					<StylePaginationBox>
+						<Pagination
+							sx={{ margin: '25% auto 10%' }}
+							count={countPagination}
+							color="primary"
+							page={currentPage}
+							renderItem={(item) => (
+								<PaginationItem slots={{ previous: LeftArrow, next: RightArrow }} {...item} />
+							)}
+							onChange={(_, num) => {
+								setCurrentPage(num);
+							}}
+						/>
+					</StylePaginationBox>
 				</StyleImageList>
 			</StyleCollectionProducts>
 		</StyledCollectionWrapper>
