@@ -7,6 +7,7 @@ import {
 	SubHeaderWrapper,
 	OrnamentWrapper,
 	ContentWrapper,
+	SubHeaderText,
 	SubHeaderTitle,
 	SubHeaderParagraph,
 	SubHeaderImage,
@@ -23,14 +24,14 @@ const SubHeader = () => {
 		<SubHeaderWrapper>
 			<OrnamentWrapper />
 			<ContentWrapper>
-				<div>
+				<SubHeaderText>
 					<SubHeaderTitle>Вільна нитка</SubHeaderTitle>
 					<SubHeaderParagraph>
 						Ми виробляємо етнічний одяг, сорочки, за індивідуальним замовленням, який ми відшиваємо
 						і вишиваємо за власним дизайном і кроєм. Маємо власну колекцію сорочок з кожного регіону
 						України.
 					</SubHeaderParagraph>
-				</div>
+				</SubHeaderText>
 				<SubHeaderImage>
 					<ImgBig src={imgSubHeaderBig} alt="ornament" />
 					<ImgMedium src={imgSubHeaderMedium} alt="ornament" />

@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import ornamentImg from '../../images/icon/ornament.webp';
 
 const SubHeaderWrapper = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: minmax(67px, 194px) 68%;
 	gap: 30px;
-	justify-content: center;
 	padding: 16px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		grid-template-columns: minmax(120px, 194px) 1fr;
 		padding: 20px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		grid-template-columns: minmax(180px, 194px) 1fr;
 		gap: 57px;
 		padding: 40px 0 33px 0;
 	}
@@ -17,25 +19,23 @@ const SubHeaderWrapper = styled.div`
 
 const OrnamentWrapper = styled.section`
 	background: url(${ornamentImg}) 0 0 / contain repeat-y;
-	min-width: 67px;
-	min-height: 100%;
+	height: 100%;
+	width: 100%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		min-width: 120px;
+		//min-width: 120px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		min-width: 180px;
+		//min-width: 194px;
 	}
 `;
 
 const ContentWrapper = styled.section`
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-column-gap: 0px;
-		grid-row-gap: 0px;
-	}
+	display: grid;
+	grid-template-columns: 1fr;
+  @media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+	grid-template-columns: 50% 50%;
 `;
-
+const SubHeaderText = styled.div``;
 const SubHeaderTitle = styled.p`
 	font-family: ${({ theme }) => theme.fontFamily.title}, sans-serif;
 	font-size: 40px;
@@ -51,9 +51,11 @@ const SubHeaderTitle = styled.p`
 `;
 const SubHeaderParagraph = styled.p`
 	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	font-weight: 400;
 	font-size: 12px;
-	line-height: 173%;
-	margin: 32px 28px 0 0;
+	line-height: 170%;
+	margin: 14px 26px 0 0;
+	letter-spacing: 0.5px;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		font-size: 14px;
 		line-height: 160%;
@@ -67,33 +69,35 @@ const SubHeaderParagraph = styled.p`
 
 const SubHeaderImage = styled.div`
 	position: relative;
-	margin: 13px 0 0 0;
+	margin: 13px 0 20px 0;
 `;
 
 const ImgSmall = styled.img`
-	max-width: 16%;
+	max-width: 17%;
 	height: auto;
 	position: absolute;
-	top: 60%;
+	top: 65%;
 	left: 55%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
+		//left: 120%;
+		//top: 15%;
 	}
 `;
 const ImgMedium = styled.img`
-	max-width: 36%;
+	max-width: 37%;
 	height: auto;
 	position: absolute;
 	left: 25%;
-	top: 25%;
+	top: 35%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
-		left: 35%;
-		top: 35%;
-	}
+	//left: 55%;
+	//top: 25%;
+	//}
 `;
 const ImgBig = styled.img`
-	max-width: 45%;
+	max-width: 50%;
 	height: auto;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
@@ -106,7 +110,7 @@ const SloganWrapper = styled.div`
 	gap: 12px;
 	position: absolute;
 	top: -16px;
-	left: 70%;
+	left: 67%;
 `;
 
 const StarIcon = styled.img`
@@ -114,7 +118,7 @@ const StarIcon = styled.img`
 `;
 
 const Slogan = styled.span`
-	//width: 70px;
+	min-width: 70px;
 	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 	font-size: 10px;
 	line-height: 140%;
@@ -126,6 +130,7 @@ export {
 	SubHeaderWrapper,
 	OrnamentWrapper,
 	ContentWrapper,
+	SubHeaderText,
 	SubHeaderTitle,
 	SubHeaderParagraph,
 	SubHeaderImage,
