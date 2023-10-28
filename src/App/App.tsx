@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/Header';
+import SubHeader from '../components/SubHeader';
 import Modal from '../components/Modal';
 import Main from '../pages/Main';
 import CollectionPage from '../pages/Collections';
@@ -49,6 +50,7 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
+			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
 			<Header
 				activeButtonLang={activeButtonLang}
 				handleActiveButtonLang={handleActiveButtonLang}
@@ -63,12 +65,12 @@ const App = () => {
 				burgerMenu={burgerMenu}
 				isActive={isActive}
 			/>
+			<SubHeader />
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route path="/:id" element={<CollectionPage />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
-			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
 			<Footer
 				handleOpenSubMenu={handleOpenSubMenu}
 				openSubMenu={openSubMenu}
