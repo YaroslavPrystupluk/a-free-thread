@@ -52,7 +52,7 @@ const StyleTitleCollectionPage = styled('div')(({ theme }) => ({
 }));
 
 const StylePaginationBox = styled('div')(({ theme }) => ({
-	width: 160,
+	width: 200,
 	display: 'flex',
 	alignItems: 'center',
 	textAlign: 'center',
@@ -66,12 +66,13 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 		color: `${theme.colorText.third}!important`,
 		backgroundColor: 'white!important',
 		fontSize: 14,
-		maxHeight: '20px!important',
-		maxWidth: '20px!important',
-		height: '20px!important',
-		width: '20px!important',
 		minHeight: '20px!important',
 		minWidth: '20px!important',
+	},
+	'& .Mui-selected::after': {
+		content: '•',
+		color: 'red',
+		marginLeft: 5,
 	},
 }));
 

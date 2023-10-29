@@ -25,3 +25,11 @@ export const RightArrowWhite = () => (
 		/>
 	</svg>
 );
+
+export 	const DividerIcon = () => {
+	return (
+	  <span style={{ display: 'inline-block', margin: '5px 8px' }}>
+		&#47;
+	  </span>
+	);
+  };

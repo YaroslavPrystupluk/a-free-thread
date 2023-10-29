@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import { useParams } from 'react-router-dom';
 import { Pagination, PaginationItem } from '@mui/material';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { filterProducts } from '../Main/getProducts';
 import { RootState } from '../../redux/store/store';
 import { Product } from '../../redux/slices/productsSlice';
@@ -12,7 +11,7 @@ import { CollectionItem, CollectionState } from '../../redux/slices/collectionSl
 import LoadingAnimation from '../../components/Loading';
 import ProductItem from '../../components/Hits/productItem';
 import PageNotFound from '../NotFoundPage';
-import { RightArrow, LeftArrow } from '../../components/Collection/arrows';
+import { RightArrow, LeftArrow, DividerIcon } from '../../components/Collection/arrows';
 
 import {
 	StyledCollectionWrapper,
@@ -107,22 +106,59 @@ const CollectionPage = () => {
 			<StyleCollectionProducts>
 				<StyleImageList style={{ gap: 'auto' }} className="collectionPage">
 					{productsSliced.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
+						<ProductItem item={item} badge="Новинка" key={item.id} />
 					))}
-					<StylePaginationBox>
-						<Pagination
-							sx={{ margin: '25% auto 10%' }}
-							count={countPagination}
-							color="primary"
-							page={currentPage}
-							renderItem={(item) => (
-								<PaginationItem slots={{ previous: LeftArrow, next: RightArrow }} {...item} />
-							)}
-							onChange={(_, num) => {
-								setCurrentPage(num);
+				<StylePaginationBox>
+				<Pagination
+					sx={{ margin: '40px auto' }}
+					count={countPagination}
+					color="primary"
+					page={currentPage}
+					renderItem={(item) => {
+					if (item.type === 'page') {
+						if (item.page === currentPage || item.page === countPagination ) {
+							if (item.page === currentPage ) {
+								return (<>
+									<PaginationItem
+									component="button"
+									 slots={{ previous: LeftArrow, next: RightArrow }}
+									{...item}
+									onClick={() => {
+										setCurrentPage(item.page);
+									}}
+									/>
+									<DividerIcon />
+									</>
+								);
+							}
+						return (
+							<PaginationItem
+							component="button"
+							 slots={{ previous: LeftArrow, next: RightArrow }}
+							{...item}
+							onClick={() => {
+								setCurrentPage(item.page);
+							}}
+							/>
+						);
+						}
+					} else if (item.type === 'start-ellipsis' || item.type === 'end-ellipsis') {
+						return null;
+					  } else {
+						return (
+						<PaginationItem
+							component="button"
+							 slots={{ previous: LeftArrow, next: RightArrow }}
+							{...item}
+							onClick={() => {
+							setCurrentPage(item.page);
 							}}
 						/>
-					</StylePaginationBox>
+						);
+					}
+					}}
+				/>
+				</StylePaginationBox>
 				</StyleImageList>
 			</StyleCollectionProducts>
 		</StyledCollectionWrapper>
