@@ -15,8 +15,8 @@ const SubHeaderWrapper = styled.div`
 		align-items: end;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		//grid-template-columns: 1fr 2fr 3fr;
 		padding: 40px 0 33px 0;
+		align-items: center;
 	}
 `;
 
@@ -65,10 +65,18 @@ const SubHeaderParagraph = styled.p`
 `;
 
 const SubHeaderImage = styled.div`
-	position: relative;
 	margin: 13px 0 27px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		grid-row: 1 / 3;
+	}
+`;
+const WrapperGrid = styled.div`
+	position: relative;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		max-width: 400px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		max-width: 670px;
 	}
 `;
 
@@ -79,8 +87,8 @@ const ImgSmall = styled.img`
 	left: 55%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
-		top: 20%;
-		left: 70%;
+		top: 22%;
+		left: 68%;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		display: none;
@@ -122,6 +130,10 @@ const SloganWrapper = styled.div`
 		top: 60%;
 		left: 79%;
 	}
+  @media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+	position: absolute;
+	top: 68%;
+	right: 6%;
 `;
 
 const StarIcon = styled.img`
@@ -135,6 +147,9 @@ const Slogan = styled.span`
 	line-height: 140%;
 	letter-spacing: 0.2px;
 	text-transform: uppercase;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 12px;
+	}
 `;
 
 const SloganWrapperTop = styled.div`
@@ -147,17 +162,23 @@ const SloganWrapperTop = styled.div`
 		top: -5%;
 		left: 67%;
 	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		top: -5%;
+		left: 70%;
+		width: 115px;
+	}
 `;
 
 const SloganWrapperEnd = styled.div`
 	display: none;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
 		position: absolute;
 		bottom: 6%;
 		right: 1%;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		bottom: 18%;
+		right: 4%;
 	}
 `;
 
@@ -166,7 +187,8 @@ const ImgDesktopSmall = styled.img`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		display: block;
 		position: absolute;
-		top: 0;
+		top: 20%;
+		right: 12%;
 	}
 `;
 const ImgDesktopMedium = styled.img`
@@ -174,7 +196,8 @@ const ImgDesktopMedium = styled.img`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		display: block;
 		position: absolute;
-		top: 0;
+		top: 35%;
+		right: 25%;
 	}
 `;
 const ImgDesktopBig = styled.img`
@@ -191,6 +214,7 @@ export {
 	SubHeaderTitle,
 	SubHeaderParagraph,
 	SubHeaderImage,
+	WrapperGrid,
 	ImgSmall,
 	ImgMedium,
 	ImgBig,

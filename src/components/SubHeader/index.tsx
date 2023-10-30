@@ -13,6 +13,7 @@ import {
 	SubHeaderTitle,
 	SubHeaderParagraph,
 	SubHeaderImage,
+	WrapperGrid,
 	ImgSmall,
 	ImgMedium,
 	ImgBig,
@@ -40,24 +41,26 @@ const SubHeader = () => {
 					</SubHeaderParagraph>
 				</SubHeaderText>
 				<SubHeaderImage>
-					<ImgBig src={imgSubHeaderBig} alt="ornament" />
-					<ImgMedium src={imgSubHeaderMedium} alt="ornament" />
-					<ImgSmall src={imgSubHeaderSmall} alt="ornament" />
-					<ImgDesktopBig src={imgDesktopSubHeaderBig} alt="ornament" />
-					<ImgDesktopMedium src={imgDesktopSubHeaderMedium} alt="ornament" />
-					<ImgDesktopSmall src={imgDesktopSubHeaderSmall} alt="ornament" />
-					<SloganWrapper>
-						<StarIcon src={star} alt="star icon" />
-						<Slogan>віднови вишиванку своєї бабусі.</Slogan>
-					</SloganWrapper>
-					<SloganWrapperTop>
-						<StarIcon src={star} alt="star icon" />
-						<Slogan>Створюємо речі сили сильними жінками.</Slogan>
-					</SloganWrapperTop>
+					<WrapperGrid>
+						<ImgBig src={imgSubHeaderBig} alt="ornament" />
+						<ImgMedium src={imgSubHeaderMedium} alt="ornament" />
+						<ImgSmall src={imgSubHeaderSmall} alt="ornament" />
+						<ImgDesktopBig src={imgDesktopSubHeaderBig} alt="ornament" />
+						<ImgDesktopMedium src={imgDesktopSubHeaderMedium} alt="ornament" />
+						<ImgDesktopSmall src={imgDesktopSubHeaderSmall} alt="ornament" />
+						<SloganWrapper>
+							<StarIcon src={star} alt="star icon" />
+							<Slogan>віднови вишиванку своєї бабусі.</Slogan>
+						</SloganWrapper>
+						<SloganWrapperTop>
+							<StarIcon src={star} alt="star icon" />
+							<Slogan>Створюємо речі сили сильними жінками.</Slogan>
+						</SloganWrapperTop>
+						<SloganWrapperEnd>
+							<Slogan>Час бути вільною.</Slogan>
+						</SloganWrapperEnd>
+					</WrapperGrid>
 				</SubHeaderImage>
-				<SloganWrapperEnd>
-					<Slogan>Час бути вільною.</Slogan>
-				</SloganWrapperEnd>
 			</SubHeaderWrapper>
 		</>
 	);
