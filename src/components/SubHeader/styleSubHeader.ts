@@ -7,13 +7,15 @@ const SubHeaderWrapper = styled.div`
 	//grid-auto-rows: auto;
 	grid-template-rows: auto;
 	padding: 16px 0;
+	column-gap: 30px;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		grid-template-columns: 1fr 2fr 3fr;
 		padding: 20px 0;
-		column-gap: 30px;
+		column-gap: 0;
+		align-items: end;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		grid-template-columns: 1fr 2fr 2fr;
+		//grid-template-columns: 1fr 2fr 3fr;
 		padding: 40px 0 33px 0;
 	}
 `;
@@ -27,6 +29,7 @@ const OrnamentWrapper = styled.section`
 
 const SubHeaderText = styled.div`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		margin: 30px 21px 0 30px;
 		grid-row: 1 / 3;
 	}
 `;
@@ -52,8 +55,8 @@ const SubHeaderParagraph = styled.p`
 	letter-spacing: 0.5px;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		font-size: 14px;
-		line-height: 160%;
-		letter-spacing: 0.28px;
+		line-height: 157%;
+		letter-spacing: 0.2px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		font-size: 16px;
@@ -79,6 +82,9 @@ const ImgSmall = styled.img`
 		top: 20%;
 		left: 70%;
 	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		display: none;
+	}
 `;
 const ImgMedium = styled.img`
 	max-width: 37%;
@@ -91,11 +97,17 @@ const ImgMedium = styled.img`
 		left: 33%;
 		top: 33%;
 	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		display: none;
+	}
 `;
 const ImgBig = styled.img`
 	max-width: 50%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		display: none;
 	}
 `;
 
@@ -107,7 +119,8 @@ const SloganWrapper = styled.div`
 	top: -16px;
 	left: 67%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		position: absolute;
+		top: 60%;
+		left: 79%;
 	}
 `;
 
@@ -124,6 +137,53 @@ const Slogan = styled.span`
 	text-transform: uppercase;
 `;
 
+const SloganWrapperTop = styled.div`
+	display: none;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		position: absolute;
+		top: -5%;
+		left: 67%;
+	}
+`;
+
+const SloganWrapperEnd = styled.div`
+	display: none;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		position: absolute;
+		bottom: 6%;
+		right: 1%;
+	}
+`;
+
+const ImgDesktopSmall = styled.img`
+	display: none;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		display: block;
+		position: absolute;
+		top: 0;
+	}
+`;
+const ImgDesktopMedium = styled.img`
+	display: none;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		display: block;
+		position: absolute;
+		top: 0;
+	}
+`;
+const ImgDesktopBig = styled.img`
+	display: none;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		display: block;
+	}
+`;
+
 export {
 	SubHeaderWrapper,
 	OrnamentWrapper,
@@ -134,7 +194,12 @@ export {
 	ImgSmall,
 	ImgMedium,
 	ImgBig,
+	ImgDesktopSmall,
+	ImgDesktopMedium,
+	ImgDesktopBig,
 	SloganWrapper,
 	StarIcon,
 	Slogan,
+	SloganWrapperTop,
+	SloganWrapperEnd,
 };
