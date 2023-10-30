@@ -3,16 +3,17 @@ import ornamentImg from '../../images/icon/ornament.webp';
 
 const SubHeaderWrapper = styled.div`
 	display: grid;
-	grid-template-columns: minmax(67px, 194px) 68%;
-	gap: 30px;
+	grid-template-columns: 1fr 3fr;
+	//grid-auto-rows: auto;
+	grid-template-rows: auto;
 	padding: 16px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		grid-template-columns: minmax(120px, 194px) 1fr;
+		grid-template-columns: 1fr 2fr 3fr;
 		padding: 20px 0;
+		column-gap: 30px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		grid-template-columns: minmax(180px, 194px) 1fr;
-		gap: 57px;
+		grid-template-columns: 1fr 2fr 2fr;
 		padding: 40px 0 33px 0;
 	}
 `;
@@ -21,21 +22,14 @@ const OrnamentWrapper = styled.section`
 	background: url(${ornamentImg}) 0 0 / contain repeat-y;
 	height: 100%;
 	width: 100%;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		//min-width: 120px;
-	}
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		//min-width: 194px;
-	}
+	grid-row: 1 / 3;
 `;
 
-const ContentWrapper = styled.section`
-	display: grid;
-	grid-template-columns: 1fr;
-  @media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-	grid-template-columns: 50% 50%;
+const SubHeaderText = styled.div`
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		grid-row: 1 / 3;
+	}
 `;
-const SubHeaderText = styled.div``;
 const SubHeaderTitle = styled.p`
 	font-family: ${({ theme }) => theme.fontFamily.title}, sans-serif;
 	font-size: 40px;
@@ -69,36 +63,37 @@ const SubHeaderParagraph = styled.p`
 
 const SubHeaderImage = styled.div`
 	position: relative;
-	margin: 13px 0 20px 0;
+	margin: 13px 0 27px 0;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		grid-row: 1 / 3;
+	}
 `;
 
 const ImgSmall = styled.img`
 	max-width: 17%;
-	height: auto;
 	position: absolute;
 	top: 65%;
 	left: 55%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
-		//left: 120%;
-		//top: 15%;
+		top: 20%;
+		left: 70%;
 	}
 `;
 const ImgMedium = styled.img`
 	max-width: 37%;
-	height: auto;
 	position: absolute;
 	left: 25%;
 	top: 35%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
-	//left: 55%;
-	//top: 25%;
-	//}
+		position: absolute;
+		left: 33%;
+		top: 33%;
+	}
 `;
 const ImgBig = styled.img`
 	max-width: 50%;
-	height: auto;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 100%;
 	}
@@ -111,6 +106,9 @@ const SloganWrapper = styled.div`
 	position: absolute;
 	top: -16px;
 	left: 67%;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		position: absolute;
+	}
 `;
 
 const StarIcon = styled.img`
@@ -129,7 +127,6 @@ const Slogan = styled.span`
 export {
 	SubHeaderWrapper,
 	OrnamentWrapper,
-	ContentWrapper,
 	SubHeaderText,
 	SubHeaderTitle,
 	SubHeaderParagraph,
