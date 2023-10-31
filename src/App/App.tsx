@@ -15,7 +15,11 @@ const App = () => {
 	const [activeButtonLang, setActiveButtonLang] = useState(1);
 	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
 	const [openSubMenu, setOpenSubMenu] = useState(false);
+	const [valueSearch, setValueSearch] = useState('');
 
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+		setValueSearch(event.target.value);
+	};
 	const toggleActive = () => {
 		setIsActive(!isActive);
 	};
@@ -23,6 +27,12 @@ const App = () => {
 	const handleClickBurgerMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setBurgerMenu(event.currentTarget);
 	};
+
+	// const handleKeyDoun = (e: KeyboardEvent<HTMLInputElement>) => {
+	// eslint-disable-next-line no-tabs
+	// 	if (e.key === "Enter") showIssues();
+	// };
+
 	const handleCloseBurgerMenu = () => {
 		setBurgerMenu(null);
 	};
@@ -50,7 +60,12 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-			<Modal handleCloseModal={handleCloseModal} openModal={openModal} />
+			<Modal
+				handleChange={handleChange}
+				valueSearch={valueSearch}
+				handleCloseModal={handleCloseModal}
+				openModal={openModal}
+			/>
 			<Header
 				activeButtonLang={activeButtonLang}
 				handleActiveButtonLang={handleActiveButtonLang}
