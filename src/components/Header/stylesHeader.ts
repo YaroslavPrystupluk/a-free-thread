@@ -46,7 +46,6 @@ const PhoneWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	//margin: 0 9px 0 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		display: none;
 	}
