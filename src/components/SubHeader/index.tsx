@@ -7,6 +7,7 @@ import imgDesktopSubHeaderMedium from '../../images/Others/others_9.webp';
 import imgDesktopSubHeaderBig from '../../images/Others/others_10.webp';
 
 import {
+	Container,
 	SubHeaderWrapper,
 	OrnamentWrapper,
 	SubHeaderText,
@@ -29,7 +30,7 @@ import {
 
 const SubHeader = () => {
 	return (
-		<>
+		<Container>
 			<SubHeaderWrapper>
 				<OrnamentWrapper />
 				<SubHeaderText>
@@ -62,7 +63,7 @@ const SubHeader = () => {
 					</WrapperGrid>
 				</SubHeaderImage>
 			</SubHeaderWrapper>
-		</>
+		</Container>
 	);
 };
 

@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import ornamentImg from '../../images/icon/ornament.webp';
 
+const Container = styled.article`
+	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
+	margin: 0 auto;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
+	}
+`;
+
 const SubHeaderWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 3fr;
@@ -17,6 +28,7 @@ const SubHeaderWrapper = styled.div`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		padding: 40px 0 33px 0;
 		align-items: center;
+		justify-self: center;
 	}
 `;
 
@@ -27,7 +39,7 @@ const OrnamentWrapper = styled.section`
 	grid-row: 1 / 3;
 `;
 
-const SubHeaderText = styled.div`
+const SubHeaderText = styled.section`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		margin: 30px 21px 0 30px;
 		grid-row: 1 / 3;
@@ -73,9 +85,11 @@ const SubHeaderImage = styled.div`
 const WrapperGrid = styled.div`
 	position: relative;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		align-self: center;
 		max-width: 400px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		align-self: center;
 		max-width: 670px;
 	}
 `;
@@ -208,6 +222,7 @@ const ImgDesktopBig = styled.img`
 `;
 
 export {
+	Container,
 	SubHeaderWrapper,
 	OrnamentWrapper,
 	SubHeaderText,
