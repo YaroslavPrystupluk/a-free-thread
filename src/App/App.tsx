@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/Header';
 import SubHeader from '../components/SubHeader';
 import Modal from '../components/Modal';
 import Main from '../pages/Main';
+import CollectionPage from '../pages/Collections';
+import PageNotFound from '../pages/NotFoundPage';
 import Footer from '../components/Footer';
 
 const App = () => {
@@ -79,7 +81,11 @@ const App = () => {
 				isActive={isActive}
 			/>
 			<SubHeader />
-			<Main />
+			<Routes>
+				<Route path="/" element={<Main />} />
+				<Route path="/:id" element={<CollectionPage />} />
+				<Route path="*" element={<PageNotFound />} />
+			</Routes>
 			<Footer
 				handleOpenSubMenu={handleOpenSubMenu}
 				openSubMenu={openSubMenu}

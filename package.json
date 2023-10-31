@@ -20,6 +20,7 @@
 		"@mui/material": "^5.14.13",
 		"@reduxjs/toolkit": "^1.9.7",
 		"@types/styled-components": "^5.1.28",
+		"mkdirp": "^3.0.1",
 		"nuka-carousel": "^6.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

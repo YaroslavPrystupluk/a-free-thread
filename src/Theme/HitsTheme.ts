@@ -21,6 +21,23 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			gridTemplateColumns: 'repeat(4, 1fr)!important',
 			height: 480,
 		},
+		'&.collectionPage': {
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				margin: '16px 0',
+			},
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				height: 'auto',
+			},
+			'& .MuiPagination-ul svg': {
+				'& button': {
+					padding: 0,
+					width: 34,
+					[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+						width: 60,
+					},
+				},
+			},
+		},
 	},
 }));
 
@@ -129,7 +146,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		textTransform: 'uppercase',
 		margin: '16px auto',
 		textAlign: 'center',
-		maxWidth: theme.breakpoints.xl,
+		maxWidth: theme.breakpoints.xsl,
 		width: '85%',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: 24,
@@ -139,6 +156,9 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 			fontSize: 40,
 			letterSpacing: 0.8,
 		},
+		'&.collectionPageTitle': {
+			width: '100%',
+		},
 	},
 	'&.MuiTypography-body1': {
 		width: '85%',
@@ -147,13 +167,27 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		fontWeight: 400,
 		lineHeight: '20px',
 		letterSpacing: 0.24,
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+		'-webkit-line-clamp': '7',
+		'-webkit-box-orient': 'vertical',
+		display: '-webkit-box',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			width: '90%',
+			'-webkit-line-clamp': '3',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			fontSize: 14,
 			letterSpacing: 0.28,
 			lineHeight: '24px',
+		},
+		'&.collectionPageSpan': {
+			'-webkit-line-clamp': '20',
+			margin: 'auto',
+			width: '100%',
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				'-webkit-line-clamp': '12',
+			},
 		},
 	},
 }));
@@ -172,7 +206,7 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 }));
 
 const StyleHitsWrapper = styled(Container)(({ theme }) => ({
-	maxWidth: theme.breakpoints.xl,
+	maxWidth: theme.breakpoints.xsl,
 	margin: '60px 6px',
 	minHeight: 550,
 	textAlign: 'center',

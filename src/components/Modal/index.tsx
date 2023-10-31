@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { DialogActions, Grid, IconButton } from '@mui/material';
-import { CustomTextField, CustomButton, ContainerGrid, CustomDialog } from './styledModalSearch';
+import { CustomTextField, CustomButton, ContainerGrid, CustomDialog } from './ModalSearchThema';
 import closeMenu from '../../images/icon/cancel-menu.webp';
 
 interface ModalSearchProps {

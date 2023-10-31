@@ -7,7 +7,7 @@ import {
 	ArrowRight,
 	ArrowDown,
 	SubMenuItem,
-} from './styledBurgerMenu';
+} from './BurgerMenuThema';
 import openMenu from '../../../images/icon/cancel-menu.webp';
 import closeMenu from '../../../images/icon/menu-2.webp';
 

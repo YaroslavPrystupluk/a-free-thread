@@ -21,7 +21,7 @@ import {
 	SubMenuItem,
 	CustomMenuItem,
 	CustomSubMenuItem,
-} from './styledFooter';
+} from './FooterThema';
 
 interface FooterProps {
 	openSubMenu: boolean;
