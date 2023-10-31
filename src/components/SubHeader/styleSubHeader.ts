@@ -67,7 +67,7 @@ const SubHeaderParagraph = styled.p`
 	letter-spacing: 0.5px;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		font-size: 14px;
-		line-height: 157%;
+		line-height: 155%;
 		letter-spacing: 0.2px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
