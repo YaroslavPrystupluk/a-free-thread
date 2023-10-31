@@ -61,19 +61,57 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 	fontWeight: 400,
 	lineHeight: '20px',
 	position: 'relative',
-	left: '40%',
+	left: '35%',
+	'& .MuiPagination-ul': {
+		gap: 3,
+	},
 	'& .MuiPaginationItem-page': {
 		color: `${theme.colorText.third}!important`,
 		backgroundColor: 'white!important',
-		fontSize: 14,
+		fontSize: 16,
+		margin: 0,
 		minHeight: '20px!important',
 		minWidth: '20px!important',
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			fontSize: 18,
+		},
 	},
-	'& .Mui-selected::after': {
-		content: '•',
-		color: 'red',
-		marginLeft: 5,
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		left: '145%',
 	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		width: 210,
+		left: '160%',
+		fontSize: 18,
+	},
+}));
+
+const StylePaginationButton = styled('div')(({ theme }) => ({
+	display: 'flex',
+	position: 'relative',
+	fontSize: 14,
+	bottom: 10,
+	alignContent: 'flex-start',
+	alignItems: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		fontSize: 18,
+	},
+	'&.countPagination1': {
+		position: 'relative',
+		top: 20,
+	},
+	'&.countPagination2': {
+		position: 'relative',
+		bottom: -10,
+	},
+}));
+
+const StyleDriverIcon = styled('span')(() => ({
+	display: 'inline-block',
+	margin: '5px 2px',
+	position: 'relative',
+	top: 10,
+	right: 3,
 }));
 
 export {
@@ -82,4 +120,6 @@ export {
 	StyleCollectionPageMain,
 	StyleTitleCollectionPage,
 	StylePaginationBox,
+	StylePaginationButton,
+	StyleDriverIcon,
 };

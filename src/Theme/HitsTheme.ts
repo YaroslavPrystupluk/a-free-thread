@@ -25,6 +25,18 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				margin: '16px 0',
 			},
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				height: 'auto',
+			},
+			'& .MuiPagination-ul svg': {
+				'& button': {
+					padding: 0,
+					width: 34,
+					[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+						width: 60,
+					},
+				},
+			},
 		},
 	},
 }));

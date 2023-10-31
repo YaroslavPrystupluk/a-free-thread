@@ -42,7 +42,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 							'aria-labelledby': 'MenuButton-catalog',
 						}}
 					>
-						<CustomLink to="/guarantee">
+						<CustomLink to="/kiev">
 							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Сорочки Київщини”
 							</MenuItem>

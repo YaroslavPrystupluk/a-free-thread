@@ -11,12 +11,12 @@ const StyleGridWrapper = styled(Grid)({
 	margin: '20px auto',
 });
 
-const StyleGrid = styled(Grid)({
-	display: 'flex',
-	flexDirection: 'column!important',
-	alignItems: 'center',
-	justifyContent: 'center',
-	textAlign: 'center',
-});
+const StyleGrid = styled(Grid)`
+	display: flex;
+	flex-direction: column !important;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+`;
 
 export { StyleGrid, StyleGridWrapper, StyleTextError };
