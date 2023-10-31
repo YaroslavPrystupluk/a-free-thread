@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { MenuItem } from '@mui/material';
-import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from './styledMenu';
+import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from './MenuThema';
 
 interface HeaderMenuProps {
 	activeButtonMenu: number;

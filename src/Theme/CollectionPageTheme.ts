@@ -52,7 +52,7 @@ const StyleTitleCollectionPage = styled('div')(({ theme }) => ({
 }));
 
 const StylePaginationBox = styled('div')(({ theme }) => ({
-	width: 200,
+	width: 210,
 	display: 'flex',
 	alignItems: 'center',
 	textAlign: 'center',
@@ -80,7 +80,7 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 		left: '145%',
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		width: 210,
+		width: 230,
 		left: '160%',
 		fontSize: 18,
 	},

@@ -14,7 +14,7 @@ import {
 	SelectLanguage,
 	BtnLang,
 	SubHeader,
-} from './stylesHeader';
+} from './HeaderThema';
 import logoBig from '../../images/logo/logo_free_thread.webp';
 import phone from '../../images/icon/phone.webp';
 

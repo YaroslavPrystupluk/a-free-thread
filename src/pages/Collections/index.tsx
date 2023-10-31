@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -146,7 +147,6 @@ const CollectionPage = () => {
 														{...item}
 														onClick={() => {
 															setCurrentPage(item.page);
-															console.log(item);
 														}}
 													/>
 													<DividerIcon />
