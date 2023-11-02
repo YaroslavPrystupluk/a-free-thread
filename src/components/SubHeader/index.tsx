@@ -26,7 +26,7 @@ import {
 	Slogan,
 	SloganWrapperTop,
 	SloganWrapperEnd,
-} from './styleSubHeader';
+} from '../../Theme/SubHeaderTheme';
 
 const SubHeader = () => {
 	return (

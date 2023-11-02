@@ -7,7 +7,7 @@ import {
 	ArrowRight,
 	ArrowDown,
 	SubMenuItem,
-} from './BurgerMenuThema';
+} from '../../../Theme/BurgerMenuThema';
 import openMenu from '../../../images/icon/cancel-menu.webp';
 import closeMenu from '../../../images/icon/menu-2.webp';
 
@@ -68,28 +68,28 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 						</MenuItem>
 					</CustomLink>
 					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
-						<SubMenuItem to="/products">
+						<SubMenuItem to="/kiev">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Сорочки Київщини”
 							</MenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/guarantee">
+						<SubMenuItem to="regions">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Регіони України”
 							</MenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/paymentAndDelivery">
+						<SubMenuItem to="/restore">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/contacts">
+						<SubMenuItem to="/accessories">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								Аксесуари
 							</MenuItem>
 						</SubMenuItem>
 					</Collapse>
-					<CustomLink to="/products">
+					<CustomLink to="/about">
 						<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 							Про нас
 						</MenuItem>

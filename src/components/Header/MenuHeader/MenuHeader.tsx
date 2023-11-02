@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { MenuItem } from '@mui/material';
-import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from './MenuThema';
+import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from '../../../Theme/MenuThema';
 
 interface HeaderMenuProps {
 	activeButtonMenu: number;
@@ -47,24 +47,24 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 								“Сорочки Київщини”
 							</MenuItem>
 						</CustomLink>
-						<CustomLink to="/paymentAndDelivery">
+						<CustomLink to="regions">
 							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Регіони України”
 							</MenuItem>
 						</CustomLink>
-						<CustomLink to="/exchangeAndReturn">
+						<CustomLink to="/restore">
 							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>
 						</CustomLink>
-						<CustomLink to="/exchangeAndReturn">
+						<CustomLink to="/accessories">
 							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								Аксесуари
 							</MenuItem>
 						</CustomLink>
 					</CustomMenu>
 				</CustomLink>
-				<CustomLink to="/">
+				<CustomLink to="/about">
 					<MenuButton
 						disableRipple
 						$active={activeButtonMenu === 2}
