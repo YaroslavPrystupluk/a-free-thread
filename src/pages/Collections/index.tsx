@@ -42,7 +42,7 @@ const CollectionPage = () => {
 	);
 	const [productsPerPage, setProductsPerPage] = useState<number>(16);
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
-	const collectionItem = idColl[id] as CollectionItem;
+	const collectionItem = idColl[id] as CollectionItem | undefined;
 	const collectionsProducts = collectionItem?.collectionProducts as Product[];
 	const total = collectionsProducts?.length;
 	const countPagination = total ? Math.ceil(total / productsPerPage) : 0;
@@ -54,10 +54,8 @@ const CollectionPage = () => {
 	const handleScrollAndResize = () => {
 		if (window.innerWidth >= 768) {
 			setProductsPerPage(8);
-			console.log(productsPerPage);
 		} else {
 			setProductsPerPage(16);
-			console.log(productsPerPage);
 		}
 	};
 
@@ -146,7 +144,7 @@ const CollectionPage = () => {
 														slots={{ previous: LeftArrow, next: RightArrow }}
 														{...item}
 														onClick={() => {
-															setCurrentPage(item.page);
+															setCurrentPage(item.page as number);
 														}}
 													/>
 													<DividerIcon />
@@ -157,7 +155,7 @@ const CollectionPage = () => {
 																component="button"
 																{...item}
 																onClick={() => {
-																	setCurrentPage(item.page);
+																	setCurrentPage(item.page as number);
 																}}
 															/>
 														</StylePaginationButton>
@@ -173,7 +171,7 @@ const CollectionPage = () => {
 													slots={{ previous: LeftArrow, next: RightArrow }}
 													{...item}
 													onClick={() => {
-														setCurrentPage(item.page);
+														setCurrentPage(item.page as number);
 													}}
 												/>
 											</StylePaginationButton>
@@ -188,11 +186,12 @@ const CollectionPage = () => {
 											slots={{ previous: LeftArrow, next: RightArrow }}
 											{...item}
 											onClick={() => {
-												setCurrentPage(item.page);
+												setCurrentPage(item.page as number);
 											}}
 										/>
 									);
 								}
+								return null;
 							}}
 						/>
 					</StylePaginationBox>

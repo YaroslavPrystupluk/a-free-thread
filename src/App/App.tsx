@@ -7,6 +7,7 @@ import Main from '../pages/Main';
 import CollectionPage from '../pages/Collections';
 import PageNotFound from '../pages/NotFoundPage';
 import Footer from '../components/Footer';
+import ProductPage from '../pages/Product';
 
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
@@ -84,6 +85,7 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route path="/:id" element={<CollectionPage />} />
+				<Route path="/product/:id" element={<ProductPage />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer

@@ -33,7 +33,7 @@
 	},
 	{
 		"id": "4",
-		"name": "Сорочка Київщина2",
+		"name": "Буча",
 		"price": "5000 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
 		"collection": "kiev",
@@ -92,282 +92,6 @@
 		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
 	},
 	{
-		"id": "11",
-		"name": "Сорочка Дарина",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
-	},
-	{
-		"id": "22",
-		"name": "Сорочка Христина",
-		"price": "3400 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/2/shirts_2_0.webp",
-			"src/images/Shirts/2/shirts_2_1.webp",
-			"src/images/Shirts/2/shirts_2_2.webp"
-		]
-	},
-	{
-		"id": "33",
-		"name": "Сорочка Марина",
-		"price": "4000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/3/shirts_3_0.webp",
-			"src/images/Shirts/3/shirts_3_1.webp",
-			"src/images/Shirts/3/shirts_3_2.webp"
-		]
-	},
-	{
-		"id": "44",
-		"name": "Сорочка Київщина2",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/4/shirts_4_0.webp",
-			"src/images/Shirts/4/shirts_4_1.webp",
-			"src/images/Shirts/4/shirts_4_2.webp"
-		]
-	},
-	{
-		"id": "55",
-		"name": "Сорочка Маріуполь",
-		"price": "4500 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": [
-			"src/images/Shirts/5/shirts_5_0.webp",
-			"src/images/Shirts/5/shirts_5_1.webp",
-			"src/images/Shirts/5/shirts_5_2.webp"
-		]
-	},
-	{
-		"id": "66",
-		"name": "Сорочка Київщина",
-		"price": "5300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/6/shirts_6_0.webp",
-			"src/images/Shirts/6/shirts_6_1.webp",
-			"src/images/Shirts/6/shirts_6_2.webp"
-		]
-	},
-	{
-		"id": "77",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "88",
-		"name": "Сорочка Єдність",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
-	},
-	{
-		"id": "99",
-		"name": "Сорочка Перемога",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
-	},
-	{
-		"id": "111",
-		"name": "Сорочка Дарина",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
-	},
-	{
-		"id": "222",
-		"name": "Сорочка Христина",
-		"price": "3400 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/2/shirts_2_0.webp",
-			"src/images/Shirts/2/shirts_2_1.webp",
-			"src/images/Shirts/2/shirts_2_2.webp"
-		]
-	},
-	{
-		"id": "333",
-		"name": "Сорочка Марина",
-		"price": "4000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/3/shirts_3_0.webp",
-			"src/images/Shirts/3/shirts_3_1.webp",
-			"src/images/Shirts/3/shirts_3_2.webp"
-		]
-	},
-	{
-		"id": "444",
-		"name": "Сорочка Київщина2",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/4/shirts_4_0.webp",
-			"src/images/Shirts/4/shirts_4_1.webp",
-			"src/images/Shirts/4/shirts_4_2.webp"
-		]
-	},
-	{
-		"id": "555",
-		"name": "Сорочка Маріуполь",
-		"price": "4500 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": [
-			"src/images/Shirts/5/shirts_5_0.webp",
-			"src/images/Shirts/5/shirts_5_1.webp",
-			"src/images/Shirts/5/shirts_5_2.webp"
-		]
-	},
-	{
-		"id": "666",
-		"name": "Сорочка Київщина",
-		"price": "5300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/6/shirts_6_0.webp",
-			"src/images/Shirts/6/shirts_6_1.webp",
-			"src/images/Shirts/6/shirts_6_2.webp"
-		]
-	},
-	{
-		"id": "777",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "888",
-		"name": "Сорочка Єдність",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
-	},
-	{
-		"id": "999",
-		"name": "Сорочка Перемога",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
-	},
-	{
-		"id": "1111",
-		"name": "Сорочка Дарина",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
-	},
-	{
-		"id": "2222",
-		"name": "Сорочка Христина",
-		"price": "3400 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/2/shirts_2_0.webp",
-			"src/images/Shirts/2/shirts_2_1.webp",
-			"src/images/Shirts/2/shirts_2_2.webp"
-		]
-	},
-	{
-		"id": "3333",
-		"name": "Сорочка Марина",
-		"price": "4000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/3/shirts_3_0.webp",
-			"src/images/Shirts/3/shirts_3_1.webp",
-			"src/images/Shirts/3/shirts_3_2.webp"
-		]
-	},
-	{
-		"id": "4444",
-		"name": "Сорочка Київщина2",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/4/shirts_4_0.webp",
-			"src/images/Shirts/4/shirts_4_1.webp",
-			"src/images/Shirts/4/shirts_4_2.webp"
-		]
-	},
-	{
-		"id": "5555",
-		"name": "Сорочка Маріуполь",
-		"price": "4500 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": [
-			"src/images/Shirts/5/shirts_5_0.webp",
-			"src/images/Shirts/5/shirts_5_1.webp",
-			"src/images/Shirts/5/shirts_5_2.webp"
-		]
-	},
-	{
-		"id": "6666",
-		"name": "Сорочка Київщина",
-		"price": "5300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/6/shirts_6_0.webp",
-			"src/images/Shirts/6/shirts_6_1.webp",
-			"src/images/Shirts/6/shirts_6_2.webp"
-		]
-	},
-	{
-		"id": "7777",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "8888",
-		"name": "Сорочка Єдність",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
-	},
-	{
-		"id": "9999",
-		"name": "Сорочка Перемога",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
-	},
-	{
 		"id": "10",
 		"name": "Сорочка Дарина",
 		"price": "3200 UAH",
@@ -376,7 +100,191 @@
 		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
 	},
 	{
+		"id": "11",
+		"name": "Сорочка Христина",
+		"price": "3400 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		]
+	},
+	{
+		"id": "12",
+		"name": "Сорочка Марина",
+		"price": "4000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		]
+	},
+	{
+		"id": "13",
+		"name": "Буча",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "14",
+		"name": "Сорочка Маріуполь",
+		"price": "4500 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
+		]
+	},
+	{
+		"id": "15",
+		"name": "Сорочка Київщина",
+		"price": "5300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
+		]
+	},
+	{
+		"id": "16",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
+	},
+	{
+		"id": "17",
+		"name": "Сорочка Єдність",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
+	},
+	{
+		"id": "18",
+		"name": "Сорочка Перемога",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
+	},
+	{
+		"id": "19",
+		"name": "Сорочка Дарина",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
+	},
+	{
 		"id": "20",
+		"name": "Сорочка Христина",
+		"price": "3400 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		]
+	},
+	{
+		"id": "21",
+		"name": "Сорочка Марина",
+		"price": "4000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		]
+	},
+	{
+		"id": "22",
+		"name": "Буча",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "23",
+		"name": "Сорочка Маріуполь",
+		"price": "4500 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
+		]
+	},
+	{
+		"id": "24",
+		"name": "Сорочка Київщина",
+		"price": "5300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
+		]
+	},
+	{
+		"id": "25",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
+	},
+	{
+		"id": "26",
+		"name": "Сорочка Єдність",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
+	},
+	{
+		"id": "27",
+		"name": "Сорочка Перемога",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
+	},
+	{
+		"id": "28",
+		"name": "Сорочка Дарина",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
+	},
+	{
+		"id": "29",
 		"name": "Сорочка Христина",
 		"price": "3400 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -400,8 +308,8 @@
 		]
 	},
 	{
-		"id": "40",
-		"name": "Сорочка Київщина2",
+		"id": "31",
+		"name": "Буча",
 		"price": "5000 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
 		"collection": "kiev",
@@ -409,10 +317,286 @@
 			"src/images/Shirts/4/shirts_4_0.webp",
 			"src/images/Shirts/4/shirts_4_1.webp",
 			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "31",
+		"name": "Сорочка Маріуполь",
+		"price": "4500 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
+		]
+	},
+	{
+		"id": "32",
+		"name": "Сорочка Київщина",
+		"price": "5300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
+		]
+	},
+	{
+		"id": "33",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
+	},
+	{
+		"id": "34",
+		"name": "Сорочка Єдність",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
+	},
+	{
+		"id": "35",
+		"name": "Сорочка Перемога",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
+	},
+	{
+		"id": "36",
+		"name": "Сорочка Дарина",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
+	},
+	{
+		"id": "37",
+		"name": "Сорочка Христина",
+		"price": "3400 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		]
+	},
+	{
+		"id": "38",
+		"name": "Сорочка Марина",
+		"price": "4000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		]
+	},
+	{
+		"id": "39",
+		"name": "Буча",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "40",
+		"name": "Сорочка Маріуполь",
+		"price": "4500 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
+		]
+	},
+	{
+		"id": "41",
+		"name": "Сорочка Київщина",
+		"price": "5300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
+		]
+	},
+	{
+		"id": "42",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
+	},
+	{
+		"id": "43",
+		"name": "Сорочка Єдність",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
+	},
+	{
+		"id": "44",
+		"name": "Сорочка Перемога",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
+	},
+	{
+		"id": "45",
+		"name": "Сорочка Дарина",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
+	},
+	{
+		"id": "46",
+		"name": "Сорочка Христина",
+		"price": "3400 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		]
+	},
+	{
+		"id": "47",
+		"name": "Сорочка Марина",
+		"price": "4000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		]
+	},
+	{
+		"id": "48",
+		"name": "Буча",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "49",
+		"name": "Сорочка Маріуполь",
+		"price": "4500 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
 		]
 	},
 	{
 		"id": "50",
+		"name": "Сорочка Київщина",
+		"price": "5300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
+		]
+	},
+	{
+		"id": "51",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
+	},
+	{
+		"id": "52",
+		"name": "Сорочка Єдність",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
+	},
+	{
+		"id": "53",
+		"name": "Сорочка Перемога",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
+	},
+	{
+		"id": "54",
+		"name": "Сорочка Дарина",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
+	},
+	{
+		"id": "55",
+		"name": "Сорочка Христина",
+		"price": "3400 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		]
+	},
+	{
+		"id": "56",
+		"name": "Сорочка Марина",
+		"price": "4000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		]
+	},
+	{
+		"id": "57",
+		"name": "Буча",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "58",
 		"name": "Сорочка Маріуполь",
 		"price": "4500 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -421,10 +605,102 @@
 			"src/images/Shirts/5/shirts_5_0.webp",
 			"src/images/Shirts/5/shirts_5_1.webp",
 			"src/images/Shirts/5/shirts_5_2.webp"
+		]
+	},
+	{
+		"id": "59",
+		"name": "Сорочка Київщина",
+		"price": "5300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
 		]
 	},
 	{
 		"id": "60",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
+	},
+	{
+		"id": "61",
+		"name": "Сорочка Єдність",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
+	},
+	{
+		"id": "62",
+		"name": "Сорочка Перемога",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
+	},
+	{
+		"id": "63",
+		"name": "Сорочка Дарина",
+		"price": "3200 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
+	},
+	{
+		"id": "64",
+		"name": "Сорочка Христина",
+		"price": "3400 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		]
+	},
+	{
+		"id": "65",
+		"name": "Сорочка Марина",
+		"price": "4000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		]
+	},
+	{
+		"id": "66",
+		"name": "Буча",
+		"price": "5000 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		]
+	},
+	{
+		"id": "67",
+		"name": "Сорочка Маріуполь",
+		"price": "4500 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
+		]
+	},
+	{
+		"id": "68",
 		"name": "Сорочка Київщина",
 		"price": "5300 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -434,17 +710,17 @@
 			"src/images/Shirts/6/shirts_6_1.webp",
 			"src/images/Shirts/6/shirts_6_2.webp"
 		]
+	},
+	{
+		"id": "69",
+		"name": "Сорочка Незалежність",
+		"price": "4300 UAH",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
 	},
 	{
 		"id": "70",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "80",
 		"name": "Сорочка Єдність",
 		"price": "3200 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -452,283 +728,7 @@
 		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
 	},
 	{
-		"id": "90",
-		"name": "Сорочка Перемога",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
-	},
-	{
-		"id": "110",
-		"name": "Сорочка Дарина",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
-	},
-	{
-		"id": "220",
-		"name": "Сорочка Христина",
-		"price": "3400 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/2/shirts_2_0.webp",
-			"src/images/Shirts/2/shirts_2_1.webp",
-			"src/images/Shirts/2/shirts_2_2.webp"
-		]
-	},
-	{
-		"id": "330",
-		"name": "Сорочка Марина",
-		"price": "4000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/3/shirts_3_0.webp",
-			"src/images/Shirts/3/shirts_3_1.webp",
-			"src/images/Shirts/3/shirts_3_2.webp"
-		]
-	},
-	{
-		"id": "440",
-		"name": "Сорочка Київщина2",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/4/shirts_4_0.webp",
-			"src/images/Shirts/4/shirts_4_1.webp",
-			"src/images/Shirts/4/shirts_4_2.webp"
-		]
-	},
-	{
-		"id": "550",
-		"name": "Сорочка Маріуполь",
-		"price": "4500 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": [
-			"src/images/Shirts/5/shirts_5_0.webp",
-			"src/images/Shirts/5/shirts_5_1.webp",
-			"src/images/Shirts/5/shirts_5_2.webp"
-		]
-	},
-	{
-		"id": "660",
-		"name": "Сорочка Київщина",
-		"price": "5300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/6/shirts_6_0.webp",
-			"src/images/Shirts/6/shirts_6_1.webp",
-			"src/images/Shirts/6/shirts_6_2.webp"
-		]
-	},
-	{
-		"id": "770",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "88",
-		"name": "Сорочка Єдність",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
-	},
-	{
-		"id": "990",
-		"name": "Сорочка Перемога",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
-	},
-	{
-		"id": "1110",
-		"name": "Сорочка Дарина",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
-	},
-	{
-		"id": "2220",
-		"name": "Сорочка Христина",
-		"price": "3400 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/2/shirts_2_0.webp",
-			"src/images/Shirts/2/shirts_2_1.webp",
-			"src/images/Shirts/2/shirts_2_2.webp"
-		]
-	},
-	{
-		"id": "3330",
-		"name": "Сорочка Марина",
-		"price": "4000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/3/shirts_3_0.webp",
-			"src/images/Shirts/3/shirts_3_1.webp",
-			"src/images/Shirts/3/shirts_3_2.webp"
-		]
-	},
-	{
-		"id": "4440",
-		"name": "Сорочка Київщина2",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/4/shirts_4_0.webp",
-			"src/images/Shirts/4/shirts_4_1.webp",
-			"src/images/Shirts/4/shirts_4_2.webp"
-		]
-	},
-	{
-		"id": "5550",
-		"name": "Сорочка Маріуполь",
-		"price": "4500 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": [
-			"src/images/Shirts/5/shirts_5_0.webp",
-			"src/images/Shirts/5/shirts_5_1.webp",
-			"src/images/Shirts/5/shirts_5_2.webp"
-		]
-	},
-	{
-		"id": "6660",
-		"name": "Сорочка Київщина",
-		"price": "5300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/6/shirts_6_0.webp",
-			"src/images/Shirts/6/shirts_6_1.webp",
-			"src/images/Shirts/6/shirts_6_2.webp"
-		]
-	},
-	{
-		"id": "7770",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "8880",
-		"name": "Сорочка Єдність",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
-	},
-	{
-		"id": "9990",
-		"name": "Сорочка Перемога",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"]
-	},
-	{
-		"id": "11110",
-		"name": "Сорочка Дарина",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"]
-	},
-	{
-		"id": "22220",
-		"name": "Сорочка Христина",
-		"price": "3400 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/2/shirts_2_0.webp",
-			"src/images/Shirts/2/shirts_2_1.webp",
-			"src/images/Shirts/2/shirts_2_2.webp"
-		]
-	},
-	{
-		"id": "33330",
-		"name": "Сорочка Марина",
-		"price": "4000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "grandmother",
-		"imageUrls": [
-			"src/images/Shirts/3/shirts_3_0.webp",
-			"src/images/Shirts/3/shirts_3_1.webp",
-			"src/images/Shirts/3/shirts_3_2.webp"
-		]
-	},
-	{
-		"id": "44440",
-		"name": "Сорочка Київщина2",
-		"price": "5000 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/4/shirts_4_0.webp",
-			"src/images/Shirts/4/shirts_4_1.webp",
-			"src/images/Shirts/4/shirts_4_2.webp"
-		]
-	},
-	{
-		"id": "55550",
-		"name": "Сорочка Маріуполь",
-		"price": "4500 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": [
-			"src/images/Shirts/5/shirts_5_0.webp",
-			"src/images/Shirts/5/shirts_5_1.webp",
-			"src/images/Shirts/5/shirts_5_2.webp"
-		]
-	},
-	{
-		"id": "66660",
-		"name": "Сорочка Київщина",
-		"price": "5300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "kiev",
-		"imageUrls": [
-			"src/images/Shirts/6/shirts_6_0.webp",
-			"src/images/Shirts/6/shirts_6_1.webp",
-			"src/images/Shirts/6/shirts_6_2.webp"
-		]
-	},
-	{
-		"id": "77770",
-		"name": "Сорочка Незалежність",
-		"price": "4300 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"]
-	},
-	{
-		"id": "88880",
-		"name": "Сорочка Єдність",
-		"price": "3200 UAH",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"collection": "regions",
-		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"]
-	},
-	{
-		"id": "99990",
+		"id": "71",
 		"name": "Сорочка Перемога",
 		"price": "5000 UAH",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",

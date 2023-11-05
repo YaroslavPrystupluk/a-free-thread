@@ -25,7 +25,7 @@ export const getProductsAsync = createAsyncThunk(
 	'products/fetchProducts',
 	async (productsFile: string) => {
 		try {
-			const response = await fetch(`src/products/${productsFile}.json`);
+			const response = await fetch(productsFile);
 
 			if (!response.ok) {
 				throw new Error(`Error fetching products: ${response.statusText}`);
