@@ -5,7 +5,7 @@ import LoadingAnimation from '../Loading';
 import { RootState } from '../../redux/store/store';
 import ProductItem from '../Hits/productItem';
 import { Product } from '../../redux/slices/productsSlice';
-import { CollectionState, CollectionItem } from '../../redux/slices/collectionSlice';
+import { CollectionItem } from '../../redux/slices/collectionSlice';
 
 interface LikesProps {
 	title: string;
@@ -14,7 +14,10 @@ interface LikesProps {
 
 const Likes: React.FC<LikesProps> = ({ title, collection }) => {
 	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
-	const arrayColl = useSelector((state: RootState) => state.collection) as CollectionState;
+	const arrayColl = useSelector((state: RootState) => state.collection) as unknown as Record<
+		string,
+		CollectionItem
+	>;
 	const collectionItem = arrayColl[collection] as CollectionItem | undefined;
 	const collectionsProducts = collectionItem?.collectionProducts as Product[];
 	const randomProducts = collectionsProducts
