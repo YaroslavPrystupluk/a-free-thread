@@ -6,7 +6,7 @@ const collectionsManes = ['kiev', 'grandmother', 'regions'];
 
 export async function filterProducts() {
 	try {
-		await store.dispatch(getProductsAsync('src/products/shirts.json'));
+		await store.dispatch(getProductsAsync('src/json/shirts.json'));
 		await Promise.all(
 			collectionsManes.map(async (item) => {
 				await store.dispatch(selectCollection(item));

@@ -35,3 +35,27 @@ export const RightArrowWhite = () => (
 export const DividerIcon = () => {
 	return <StyleDriverIcon>&#47;</StyleDriverIcon>;
 };
+
+export const ArrowShow = () => (
+	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+		<path
+			d="M13.8895 6.31718L6.52382 13.6829M6.52382 13.6829L6.52381 6.61181M6.52382 13.6829L13.5949 13.6829"
+			stroke="black"
+			strokeWidth="1.25"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		/>
+	</svg>
+);
+
+export const ArrowHide = () => (
+	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+		<path
+			d="M6.52382 13.6829L13.8895 6.31718M13.8895 6.31718L6.81844 6.31718M13.8895 6.31718L13.8895 13.3882"
+			stroke="black"
+			strokeWidth="1.25"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		/>
+	</svg>
+);

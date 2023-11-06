@@ -52,7 +52,7 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 		fontFamily: theme.fontFamily.text,
 		display: 'flex',
 		height: 44,
-		padding: '20px 0px',
+		padding: '16px 0px',
 		justifyContent: 'center',
 		alignItems: 'center',
 		margin: 'auto',

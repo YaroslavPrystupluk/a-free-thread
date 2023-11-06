@@ -7,6 +7,8 @@ export interface Product {
 	description: string;
 	collection: string;
 	imageUrls: string[];
+	size: string[];
+	recommendations: string;
 }
 
 export interface ProductsState {

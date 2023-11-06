@@ -63,7 +63,7 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 					</StyleCollectionImageList>
 					<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
 						<StyleCollectionButton>
-							<div>перейти до колекції</div>
+							<span style={{ lineHeight: '1.2' }}>перейти до колекції</span>
 							<div>{RightArrowWhite()}</div>
 						</StyleCollectionButton>
 					</Link>

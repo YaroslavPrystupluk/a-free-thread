@@ -8,7 +8,7 @@ import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/mat
 import { filterProducts } from '../Main/getProducts';
 import { RootState } from '../../redux/store/store';
 import { Product } from '../../redux/slices/productsSlice';
-import { CollectionItem, CollectionState } from '../../redux/slices/collectionSlice';
+import { CollectionItem } from '../../redux/slices/collectionSlice';
 import LoadingAnimation from '../../components/Loading';
 import ProductItem from '../../components/Hits/productItem';
 import PageNotFound from '../NotFoundPage';
@@ -32,7 +32,10 @@ import {
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
-	const idColl = useSelector((state: RootState) => state.collection) as CollectionState;
+	const idColl = useSelector((state: RootState) => state.collection) as unknown as Record<
+		string,
+		CollectionItem
+	>;
 	const [currentPage, setCurrentPage] = useState(1);
 	const productsArrayAll: Product[] = useSelector(
 		(state: RootState) => (state.products.products || []) as Product[],
@@ -42,7 +45,7 @@ const CollectionPage = () => {
 	);
 	const [productsPerPage, setProductsPerPage] = useState<number>(16);
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
-	const collectionItem = idColl[id] as CollectionItem | undefined;
+	const collectionItem = id ? idColl[id] : undefined;
 	const collectionsProducts = collectionItem?.collectionProducts as Product[];
 	const total = collectionsProducts?.length;
 	const countPagination = total ? Math.ceil(total / productsPerPage) : 0;

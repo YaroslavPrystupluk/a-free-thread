@@ -58,7 +58,7 @@ export const selectCollection = createAsyncThunk(
 
 		if (products.length === 0) {
 			try {
-				await dispatch(getProductsAsync('src/products/shirts.json'));
+				await dispatch(getProductsAsync('src/json/shirts.json'));
 			} catch (error) {
 				console.error('Помилка завантаження продуктів', error);
 				throw error;
