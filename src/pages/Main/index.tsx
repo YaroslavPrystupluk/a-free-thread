@@ -5,6 +5,7 @@ import Hits from '../../components/Hits/index';
 import Collection from '../../components/Collection';
 import { RootState } from '../../redux/store/store';
 import { filterProducts } from './getProducts';
+import SubHeader from '../../components/SubHeader';
 
 const Main = () => {
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
@@ -15,6 +16,7 @@ const Main = () => {
 
 	return (
 		<>
+			<SubHeader />
 			<Hits badge="Хіт" />
 			<Hits badge="Новинка" />
 			<Collection title="kiev" />
