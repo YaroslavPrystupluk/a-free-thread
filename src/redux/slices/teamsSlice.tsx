@@ -19,9 +19,9 @@ const initialState: TeamsState = {
 	error: null,
 };
 
-export const getTeamsAsync = createAsyncThunk('teams/fetchTeams', async (teamsFile: string) => {
+export const getTeamsAsync = createAsyncThunk('teams/fetchTeams', async () => {
 	try {
-		const response = await fetch(`src/products/${teamsFile}.json`);
+		const response = await fetch('src/products/teams.json');
 
 		if (!response.ok) {
 			throw new Error(`Error fetching products: ${response.statusText}`);
@@ -37,7 +37,11 @@ export const getTeamsAsync = createAsyncThunk('teams/fetchTeams', async (teamsFi
 const teamsSlice = createSlice({
 	name: 'teams',
 	initialState,
-	reducers: {},
+	reducers: {
+		teamsReducer: (state, action) => {
+			state.teams = action.payload;
+		},
+	},
 	extraReducers: (builder) => {
 		builder.addCase(getTeamsAsync.pending, (state) => {
 			state.isLoading = true;

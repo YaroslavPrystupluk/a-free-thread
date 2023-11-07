@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Grid from '@mui/material/Unstable_Grid2';
 
 interface SquareTitleProps {
-	isTeam?: boolean;
+	$isTeam?: boolean;
 }
 
 const Container = styled.article`
@@ -22,12 +22,12 @@ const TitleWrapper = styled.div<SquareTitleProps>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: ${(props) => (props.isTeam ? '60px 0 24px 0' : '67px 0 24px 0')};
+	margin: ${(props) => (props.$isTeam ? '60px 0 24px 0' : '67px 0 24px 0')};
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		margin: ${(props) => (props.isTeam ? '42px 0 32px 0' : '60px 0 32px 0')};
+		margin: ${(props) => (props.$isTeam ? '42px 0 32px 0' : '60px 0 32px 0')};
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		margin: ${(props) => (props.isTeam ? '80px 0 40px 0' : '80px 0 37px 0')};
+		margin: ${(props) => (props.$isTeam ? '80px 0 40px 0' : '80px 0 37px 0')};
 	}
 `;
 
@@ -68,12 +68,12 @@ const SquareTitle = styled.span<SquareTitleProps>`
 	min-width: 28px;
 	min-height: 28px;
 	position: absolute;
-	left: ${(props) => (props.isTeam ? '12%' : '28%')};
+	left: ${(props) => (props.$isTeam ? '12%' : '28%')};
 	bottom: 60%;
 	background: ${({ theme }) => theme.colors.primary};
 	opacity: 0.2;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		left: ${(props) => (props.isTeam ? '34%' : '40.5%')};
+		left: ${(props) => (props.$isTeam ? '34%' : '40.5%')};
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		min-width: 40px;

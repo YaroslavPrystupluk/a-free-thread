@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import Grid from '@mui/material/Unstable_Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -29,16 +29,16 @@ const About = () => {
 		},
 	});
 
-	const teams = useSelector((state) => state.teams);
-
-	console.log(teams);
+	// const teams = useSelector((state) => state);
+	//
+	// console.log(teams);
 
 	return (
 		<Container>
-			<TitleWrapper isTeam={false}>
+			<TitleWrapper $isTeam={false}>
 				<Title>Про нас</Title>
 				<StarIcon src={star} alt="star" />
-				<SquareTitle isTeam={false} />
+				<SquareTitle $isTeam={false} />
 			</TitleWrapper>
 			<ThemeProvider theme={theme}>
 				<Grid
@@ -83,9 +83,9 @@ const About = () => {
 					</GridAbout>
 				</Grid>
 			</ThemeProvider>
-			<TitleWrapper isTeam>
+			<TitleWrapper $isTeam>
 				<Title>наша команда</Title>
-				<SquareTitle isTeam />
+				<SquareTitle $isTeam />
 			</TitleWrapper>
 		</Container>
 	);
