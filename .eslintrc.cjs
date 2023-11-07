@@ -127,5 +127,6 @@ module.exports = {
 		'@typescript-eslint/quotes': ['error', 'single'],
 		'@typescript-eslint/indent': 'off',
 		'@typescript-eslint/no-shadow': 'off',
+		'react/no-array-index-key': 'off',
 	},
 };
