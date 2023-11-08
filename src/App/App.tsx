@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/Header';
-import SubHeader from '../components/SubHeader';
 import Modal from '../components/Modal';
 import Main from '../pages/Main';
 import CollectionPage from '../pages/Collections';
 import PageNotFound from '../pages/NotFoundPage';
 import Footer from '../components/Footer';
 import ProductPage from '../pages/Product';
+import About from '../pages/About';
 
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
@@ -81,11 +81,11 @@ const App = () => {
 				burgerMenu={burgerMenu}
 				isActive={isActive}
 			/>
-			<SubHeader />
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route path="/:id" element={<CollectionPage />} />
 				<Route path="/product/:id" element={<ProductPage />} />
+				<Route path="about" element={<About />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer

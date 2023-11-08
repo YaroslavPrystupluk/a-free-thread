@@ -41,6 +41,7 @@ const theme = {
 		secondary: '#ffffff',
 		price: '#472124',
 		third: '#000000',
+		fourth: '#472124',
 	},
 	fontFamily: {
 		title: 'Kyiv',

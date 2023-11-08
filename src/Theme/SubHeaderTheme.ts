@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ornamentImg from '../../images/icon/ornament.webp';
+import ornamentImg from '../images/icon/ornament.webp';
 
 const Container = styled.article`
 	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
