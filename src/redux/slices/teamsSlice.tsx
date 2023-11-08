@@ -1,14 +1,8 @@
 import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
+import { Teams } from '../../model/Iteams';
 
-export interface Teams {
-	image: string;
-	name: string;
-	position: string;
-	city: string;
-}
-
-export interface TeamsState {
-	teams: Teams[] | unknown;
+interface TeamsState {
+	teams: Teams[];
 	isLoading: boolean;
 	error: string | null | SerializedError;
 }
@@ -19,18 +13,19 @@ const initialState: TeamsState = {
 	error: null,
 };
 
-export const getTeamsAsync = createAsyncThunk('teams/fetchTeams', async () => {
+export const getTeamsAsync = createAsyncThunk<Teams[]>('teams/fetchTeams', async () => {
 	try {
-		const response = await fetch('src/products/teams.json');
+		const response = await fetch('teams.json');
 
 		if (!response.ok) {
-			throw new Error(`Error fetching products: ${response.statusText}`);
+			throw new Error(`Error fetching teams: ${response.statusText}`);
 		}
+
 		const results: Teams[] = await response.json();
 
 		return results;
 	} catch (error) {
-		return error;
+		throw new Error('Failed to fetch teams');
 	}
 });
 
@@ -58,5 +53,5 @@ const teamsSlice = createSlice({
 	},
 });
 
-export const { reducer: teamsReducer } = teamsSlice;
-export default teamsReducer;
+export const { teamsReducer } = teamsSlice.actions;
+export default teamsSlice.reducer;

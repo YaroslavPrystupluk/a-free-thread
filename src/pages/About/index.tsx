@@ -1,6 +1,14 @@
-// import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import Grid from '@mui/material/Unstable_Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { RootState } from '../../redux/store/store';
+import aboutImageTop from '../../images/About/about_1.webp';
+import aboutImageButton from '../../images/About/about.webp';
+import star from '../../images/icon/star.webp';
+import { getTeamsAsync } from '../../redux/slices/teamsSlice';
+import CardItem from './CardItem';
 
 import {
 	Container,
@@ -12,9 +20,6 @@ import {
 	AboutImage,
 	AboutText,
 } from '../../Theme/AboutTheme';
-import aboutImageTop from '../../images/About/about_1.webp';
-import aboutImageButton from '../../images/About/about.webp';
-import star from '../../images/icon/star.webp';
 
 const About = () => {
 	const theme = createTheme({
@@ -29,9 +34,13 @@ const About = () => {
 		},
 	});
 
-	// const teams = useSelector((state) => state);
-	//
-	// console.log(teams);
+	const dispath: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+
+	useEffect(() => {
+		dispath(getTeamsAsync());
+	}, [dispath]);
+
+	const { teams } = useSelector((state: RootState) => state.teams);
 
 	return (
 		<Container>
@@ -41,11 +50,7 @@ const About = () => {
 				<SquareTitle $isTeam={false} />
 			</TitleWrapper>
 			<ThemeProvider theme={theme}>
-				<Grid
-					container
-					rowSpacing={{ xs: 3, md: 7, xl: 9 }}
-					columnSpacing={{ xs: 0, md: 3, xl: 4 }}
-				>
+				<Grid container columnSpacing={{ xs: 0, md: 3, xl: 4 }}>
 					<GridAbout>
 						<AboutImage src={aboutImageTop} alt="needlework" />
 					</GridAbout>
@@ -82,11 +87,22 @@ const About = () => {
 						</AboutText>
 					</GridAbout>
 				</Grid>
+				<TitleWrapper $isTeam>
+					<Title>наша команда</Title>
+					<SquareTitle $isTeam />
+				</TitleWrapper>
+				<Grid
+					container
+					justifyContent="center"
+					columnGap={{ xs: 2, md: 3 }}
+					rowGap={{ xs: 2.5, md: 7.5, xl: 10 }}
+					pb={3}
+				>
+					{teams.map((player, index) => (
+						<CardItem key={index} player={player} />
+					))}
+				</Grid>
 			</ThemeProvider>
-			<TitleWrapper $isTeam>
-				<Title>наша команда</Title>
-				<SquareTitle $isTeam />
-			</TitleWrapper>
 		</Container>
 	);
 };
