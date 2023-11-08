@@ -42,8 +42,6 @@ const About = () => {
 
 	const { teams } = useSelector((state: RootState) => state.teams);
 
-	console.log(teams);
-
 	return (
 		<Container>
 			<TitleWrapper $isTeam={false}>
@@ -52,11 +50,7 @@ const About = () => {
 				<SquareTitle $isTeam={false} />
 			</TitleWrapper>
 			<ThemeProvider theme={theme}>
-				<Grid
-					container
-					rowSpacing={{ xs: 3, md: 7, xl: 9 }}
-					columnSpacing={{ xs: 0, md: 3, xl: 4 }}
-				>
+				<Grid container columnSpacing={{ xs: 0, md: 3, xl: 4 }}>
 					<GridAbout>
 						<AboutImage src={aboutImageTop} alt="needlework" />
 					</GridAbout>
@@ -93,16 +87,22 @@ const About = () => {
 						</AboutText>
 					</GridAbout>
 				</Grid>
+				<TitleWrapper $isTeam>
+					<Title>наша команда</Title>
+					<SquareTitle $isTeam />
+				</TitleWrapper>
+				<Grid
+					container
+					justifyContent="center"
+					columnGap={{ xs: 2, md: 3 }}
+					rowGap={{ xs: 2.5, md: 7.5, xl: 10 }}
+					pb={3}
+				>
+					{teams.map((player, index) => (
+						<CardItem key={index} player={player} />
+					))}
+				</Grid>
 			</ThemeProvider>
-			<TitleWrapper $isTeam>
-				<Title>наша команда</Title>
-				<SquareTitle $isTeam />
-			</TitleWrapper>
-			<Grid container rowSpacing={{ xs: 3, md: 7, xl: 9 }} columnSpacing={{ xs: 0, md: 3, xl: 4 }}>
-				{teams.map((player, index) => (
-					<CardItem key={index} player={player} />
-				))}
-			</Grid>
 		</Container>
 	);
 };

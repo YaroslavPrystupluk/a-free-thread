@@ -1,27 +1,44 @@
 import { FC } from 'react';
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { CardContent, CardMedia } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Teams } from '../../model/Iteams';
+import { CustomCard, CardTitle, CardSubTitle } from '../../Theme/CardTheme';
 
 interface CardItemProps {
 	player: Teams;
 }
 
 const CardItem: FC<CardItemProps> = ({ player }) => {
+	const theme = createTheme({
+		breakpoints: {
+			values: {
+				xs: 320,
+				sm: 480,
+				md: 768,
+				lg: 992,
+				xl: 1220,
+			},
+		},
+	});
+
 	return (
-		<Card sx={{ maxWidth: 345 }}>
-			<CardMedia component="img" height="140" image={player.image} alt={player.position} />
-			<CardContent>
-				<Typography gutterBottom variant="h5" component="div">
-					{player.name}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					{player.position}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					{player.city}
-				</Typography>
-			</CardContent>
-		</Card>
+		<ThemeProvider theme={theme}>
+			<Grid>
+				<CustomCard>
+					<CardMedia component="img" image={player.image} alt={player.position} />
+					<CardContent>
+						<CardTitle>{player.name}</CardTitle>
+						<Grid container justifyContent="space-between">
+							<CardSubTitle>
+								{player.position}, з м.
+								{player.city}
+							</CardSubTitle>
+						</Grid>
+					</CardContent>
+				</CustomCard>
+			</Grid>
+		</ThemeProvider>
 	);
 };
 

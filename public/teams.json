@@ -1,37 +1,37 @@
 [
   {
-	"image": "../../images/About/employee",
-	"name": "Анна ковальова",
+	"image": "src/images/About/employee.webp",
+	"name": "Анна Ковальова",
 	"position": "Швея",
 	"city": "Дніпро"
   },
   {
-	"image": "../../images/About/employee_3",
-	"name": "Анна ковальова",
+	"image": "src/images/About/employee_3.webp",
+	"name": "Анна Ковальова",
 	"position": "Швея",
 	"city": "Дніпро"
   },
   {
-	"image": "../../images/About/employee",
-	"name": "Анна ковальова",
+	"image": "src/images/About/employee.webp",
+	"name": "Анна Ковальова",
 	"position": "Швея",
 	"city": "Дніпро"
   },
   {
-	"image": "../../images/About/employee_3",
-	"name": "Анна ковальова",
+	"image": "src/images/About/employee_3.webp",
+	"name": "Анна Ковальова",
 	"position": "Швея",
 	"city": "Дніпро"
   },
   {
-	"image": "../../images/About/employee_1",
-	"name": "Анна ковальова",
+	"image": "src/images/About/employee_1.webp",
+	"name": "Анна Ковальова",
 	"position": "Швея",
 	"city": "Дніпро"
   },
   {
-  "image": "../../images/About/employee",
-  "name": "Анна ковальова",
+  "image": "src/images/About/employee.webp",
+  "name": "Анна Ковальова",
   "position": "Швея",
   "city": "Дніпро"
 }

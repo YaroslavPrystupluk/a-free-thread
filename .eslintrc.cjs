@@ -128,5 +128,6 @@ module.exports = {
 		'@typescript-eslint/indent': 'off',
 		'@typescript-eslint/no-shadow': 'off',
 		'react/no-array-index-key': 'off',
+'react/jsx-one-expression-per-line': 'off'
 	},
 };
