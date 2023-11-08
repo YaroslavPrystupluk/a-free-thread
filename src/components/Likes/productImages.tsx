@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { StyleSlideImg } from '../../Theme/HitsTheme';
 
 interface ProductImagesProps {
@@ -8,13 +8,12 @@ interface ProductImagesProps {
 }
 
 const ProductImages: React.FC<ProductImagesProps> = ({ img, alt }) => {
-	const { id } = useParams<{ id: string | undefined }>();
 	const location = useLocation();
 	const [hasProductPath, setHasProductPath] = useState(false);
 
 	useEffect(() => {
 		const path = location.pathname.split('/').filter((crumb) => crumb);
-		console.log(id, path);
+
 		setHasProductPath(path.includes('product'));
 	}, [location.pathname]);
 

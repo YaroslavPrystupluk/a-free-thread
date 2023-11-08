@@ -10,7 +10,7 @@ import { RootState } from '../../redux/store/store';
 import { Product } from '../../redux/slices/productsSlice';
 import { CollectionItem } from '../../redux/slices/collectionSlice';
 import LoadingAnimation from '../../components/Loading';
-import ProductItem from '../../components/Hits/productItem';
+import ProductItem from '../../components/Likes/productItem';
 import PageNotFound from '../NotFoundPage';
 import { RightArrow, LeftArrow, DividerIcon } from '../../components/Collection/arrows';
 
@@ -68,7 +68,7 @@ const CollectionPage = () => {
 
 	useEffect(() => {
 		if (productsArrayAll.length <= 0) {
-			filterProducts();
+			filterProducts('public/shirts.json');
 		}
 	}, [dispatch]);
 

@@ -4,9 +4,9 @@ import { selectCollection } from '../../redux/slices/collectionSlice';
 
 const collectionsManes = ['kiev', 'grandmother', 'regions'];
 
-export async function filterProducts() {
+export async function filterProducts(pathFile: string) {
 	try {
-		await store.dispatch(getProductsAsync('src/json/shirts.json'));
+		await store.dispatch(getProductsAsync(pathFile));
 		await Promise.all(
 			collectionsManes.map(async (item) => {
 				await store.dispatch(selectCollection(item));

@@ -27,7 +27,7 @@ export const getProduct = createAsyncThunk(
 
 		if (products.length === 0) {
 			try {
-				await dispatch(getProductsAsync('../src/json/shirts.json'));
+				await dispatch(getProductsAsync('../public/shirts.json'));
 				const updatedState = getState() as RootState;
 				const updatedProducts = selectProducts(updatedState) as Product[];
 				const productItem = updatedProducts.find((product) => Number(product.id) === idProduct);

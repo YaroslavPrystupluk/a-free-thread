@@ -36,7 +36,7 @@ const ProductPage: React.FC = () => {
 	) as Product;
 	const productNotFound: boolean = useSelector((state: RootState) => state.product.productNotFound);
 	const loadingProduct: boolean = useSelector((state: RootState) => state.product.isLoading);
-	const imgArray = productItem?.imageUrls || [];
+	const imgArray = (productItem?.imageUrls || []).map((path) => `../${path}`);
 	const productSizes = productItem?.size || [];
 	const [mainImage, setMainImage] = useState('');
 	const [selectedButtonIndex, setSelectedButtonIndex] = useState(0);
@@ -62,7 +62,7 @@ const ProductPage: React.FC = () => {
 
 	useEffect(() => {
 		if (imgArray.length > 0) {
-			setMainImage(`../${imgArray[0]}`);
+			setMainImage(imgArray[0]);
 		}
 	}, [imgArray]);
 
@@ -91,10 +91,10 @@ const ProductPage: React.FC = () => {
 						<button
 							type="button"
 							key={`productItem.name_${index + 1}`}
-							onClick={() => handleThumbnailClick(`../${thumbnail}`, index)}
+							onClick={() => handleThumbnailClick(thumbnail, index)}
 							className={index === selectedButtonIndex ? 'selected' : ''}
 						>
-							<img src={`../${thumbnail}`} alt={`Превью ${index + 1}`} />
+							<img src={thumbnail} alt={`Превью ${index + 1}`} />
 						</button>
 					))}
 				</StyleProductThumbnails>
@@ -176,7 +176,7 @@ const ProductPage: React.FC = () => {
 					)}
 				</StyleProductDescriptionContainer>
 			</StyleProductDescription>
-			<Likes title="вам може сподобатись" collection={productItem.collection} />
+			<Likes title="вам може сподобатись" collection={productItem.collection} badge="Хіт" />
 		</StyleProductWrapper>
 	);
 };

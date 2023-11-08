@@ -11,7 +11,7 @@ import {
 } from '../../Theme/CollectionTheme';
 import { CollectionState, CollectionItem } from '../../redux/slices/collectionSlice';
 import { RootState } from '../../redux/store/store';
-import ProductItem from '../Hits/productItem';
+import ProductItem from '../Likes/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import LoadingAnimation from '../Loading';
 import { RightArrowWhite } from './arrows';
