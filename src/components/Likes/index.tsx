@@ -1,11 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import { StyleHitsWrapper, StyleTypography, StyleImageList } from '../../Theme/HitsTheme';
 import LoadingAnimation from '../Loading';
 import { RootState } from '../../redux/store/store';
 import ProductItem from '../Hits/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import { CollectionItem } from '../../redux/slices/collectionSlice';
+import { filterProducts } from '../../pages/Main/getProducts';
 
 interface LikesProps {
 	title: string;
@@ -13,6 +15,10 @@ interface LikesProps {
 }
 
 const Likes: React.FC<LikesProps> = ({ title, collection }) => {
+	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+	const productsArrayAll: Product[] = useSelector(
+		(state: RootState) => (state.products.products || []) as Product[],
+	);
 	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
 	const arrayColl = useSelector((state: RootState) => state.collection) as unknown as Record<
 		string,
@@ -24,6 +30,12 @@ const Likes: React.FC<LikesProps> = ({ title, collection }) => {
 		.slice()
 		.sort(() => 0.5 - Math.random())
 		.slice(0, 4);
+
+	useEffect(() => {
+		if (collectionsProducts.length <= 0) {
+			filterProducts();
+		}
+	}, [dispatch]);
 
 	return (
 		<StyleHitsWrapper>

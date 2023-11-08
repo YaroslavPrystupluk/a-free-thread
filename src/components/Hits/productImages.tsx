@@ -14,11 +14,9 @@ const ProductImages: React.FC<ProductImagesProps> = ({ img, alt }) => {
 
 	useEffect(() => {
 		const path = location.pathname.split('/').filter((crumb) => crumb);
-
+		console.log(id, path);
 		setHasProductPath(path.includes('product'));
 	}, [location.pathname]);
-
-	console.log(id, hasProductPath);
 
 	return <StyleSlideImg src={hasProductPath ? `../${img}` : img} alt={alt} loading="lazy" />;
 };
