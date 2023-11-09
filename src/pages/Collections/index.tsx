@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/material';
 import { filterProducts } from '../Main/getProducts';
@@ -20,7 +19,7 @@ import {
 	StyleCollectionImg,
 	StyleCollectionProducts,
 } from '../../Theme/CollectionTheme';
-import { StyleTypography, StyleImageList } from '../../Theme/HitsTheme';
+import { StyleTypography, StyleImageList } from '../../Theme/LikesTheme';
 import {
 	StyleCollectionPageMain,
 	StylePaginationBox,
@@ -37,14 +36,10 @@ const CollectionPage = () => {
 		CollectionItem
 	>;
 	const [currentPage, setCurrentPage] = useState(1);
-	const productsArrayAll: Product[] = useSelector(
-		(state: RootState) => (state.products.products || []) as Product[],
-	);
 	const loadingCollection: boolean = useSelector(
 		(state: RootState) => state.collection.isLoadingCollection,
 	);
 	const [productsPerPage, setProductsPerPage] = useState<number>(16);
-	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
 	const collectionItem = id ? idColl[id] : undefined;
 	const collectionsProducts = collectionItem?.collectionProducts as Product[];
 	const total = collectionsProducts?.length;
@@ -67,10 +62,10 @@ const CollectionPage = () => {
 	}, []);
 
 	useEffect(() => {
-		if (productsArrayAll.length <= 0) {
+		if (!collectionsProducts?.length) {
 			filterProducts('public/shirts.json');
 		}
-	}, [dispatch]);
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('resize', handleScrollAndResize);

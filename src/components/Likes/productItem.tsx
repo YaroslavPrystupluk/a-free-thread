@@ -5,7 +5,7 @@ import {
 	StyleImageListItem,
 	StyleImageListItemBadge,
 	StyleImageListItemBar,
-} from '../../Theme/HitsTheme';
+} from '../../Theme/LikesTheme';
 import ProductImages from './productImages';
 import { Product } from '../../redux/slices/productsSlice';
 
@@ -19,7 +19,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item, badge }) => {
 		<StyleImageListItem key={item.id}>
 			<Carousel renderCenterLeftControls={null} renderCenterRightControls={null}>
 				{item.imageUrls.map((imageUrls: string) => (
-					<ProductImages img={imageUrls} key={item.id * Math.random()} alt={item.name} />
+					<ProductImages img={imageUrls} key={item.id} alt={item.name} />
 				))}
 			</Carousel>
 			<Link to={`/product/${item.id}`} style={{ color: 'black', textDecoration: 'none' }}>
@@ -29,7 +29,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item, badge }) => {
 					position="below"
 				/>
 			</Link>
-			<StyleImageListItemBadge title={badge} position="top" />
+			<StyleImageListItemBadge className={badge} title={badge} position="top" />
 		</StyleImageListItem>
 	);
 };

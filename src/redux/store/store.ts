@@ -5,6 +5,7 @@ import productsSlice from '../slices/productsSlice';
 import collectionSlice from '../slices/collectionSlice';
 import productSlice from '../slices/productSlice';
 import teamsSlice from '../slices/teamsSlice';
+import lastVisitedProductsSlice from '../slices/lastVisitedSlice';
 
 const store = configureStore({
 	reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
 		collection: collectionSlice,
 		product: productSlice,
 		teams: teamsSlice,
+		lastVisited: lastVisitedProductsSlice,
 	},
 });
 

@@ -37,6 +37,16 @@ const StyleSquare = styled('div')(({ theme }) => ({
 	zIndex: -1,
 	opacity: 0.2,
 	backgroundColor: '#EDCDB6',
+	'&.product': {
+		left: -5,
+		top: 30,
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			left: '25%',
+		},
+	},
+	'&.main': {
+		display: 'none',
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		width: 40,
 		height: 40,

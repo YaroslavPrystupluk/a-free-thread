@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { StyleTypography } from '../../Theme/HitsTheme';
+import { StyleTypography } from '../../Theme/LikesTheme';
 import {
 	StyleCollectionImg,
 	StyleCollectionProducts,
