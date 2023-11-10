@@ -4,6 +4,7 @@ import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit
 import kiev from '../../images/Collections/collection_kiev.webp';
 import grandmother from '../../images/Collections/collection_grandmother.webp';
 import regions from '../../images/Collections/collection_regions.webp';
+import accessories from '../../images/Sleeves/sleeves_1.webp';
 import { getProductsAsync, Product } from './productsSlice';
 import { RootState } from '../store/store';
 
@@ -18,6 +19,7 @@ export interface CollectionState {
 	kiev: CollectionItem;
 	grandmother: CollectionItem;
 	regions: CollectionItem;
+	accessories: CollectionItem;
 	isLoadingCollection: boolean;
 	error: string | null | SerializedError;
 }
@@ -46,6 +48,13 @@ const initialState: CollectionState = {
 		img: regions,
 		collectionProducts: [],
 	},
+	accessories: {
+		title: 'Аксессуари',
+		description:
+			'Опис о аксессуарах...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		img: accessories,
+		collectionProducts: [],
+	},
 	isLoadingCollection: false,
 	error: null,
 };
@@ -58,7 +67,7 @@ export const selectCollection = createAsyncThunk(
 
 		if (products.length === 0) {
 			try {
-				await dispatch(getProductsAsync('shirts'));
+				await dispatch(getProductsAsync('public/shirts.json'));
 			} catch (error) {
 				console.error('Помилка завантаження продуктів', error);
 				throw error;
@@ -90,6 +99,8 @@ const collectionSlice = createSlice({
 				state.grandmother.collectionProducts = action.payload;
 			} else if (action.meta.arg === 'regions') {
 				state.regions.collectionProducts = action.payload;
+			} else if (action.meta.arg === 'accessories') {
+				state.accessories.collectionProducts = action.payload;
 			}
 		});
 		builder.addCase(selectCollection.rejected, (state, action) => {

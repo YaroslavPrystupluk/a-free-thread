@@ -7,6 +7,8 @@ export interface Product {
 	description: string;
 	collection: string;
 	imageUrls: string[];
+	size: string[];
+	recommendations: string;
 }
 
 export interface ProductsState {
@@ -25,7 +27,7 @@ export const getProductsAsync = createAsyncThunk(
 	'products/fetchProducts',
 	async (productsFile: string) => {
 		try {
-			const response = await fetch(`src/products/${productsFile}.json`);
+			const response = await fetch(productsFile);
 
 			if (!response.ok) {
 				throw new Error(`Error fetching products: ${response.statusText}`);
@@ -50,8 +52,25 @@ const productsSlice = createSlice({
 		});
 		builder.addCase(getProductsAsync.fulfilled, (state, action) => {
 			state.isLoading = false;
-			state.products = action.payload;
+			const productsArray = state.products as Product[];
+
+			if (productsArray.length === 0) {
+				state.products = action.payload;
+			} else {
+				(action.payload as Product[]).forEach((product: Product) => {
+					const existingProduct = productsArray.find(
+						(existing: Product) => existing.name === product.name,
+					);
+
+					if (!existingProduct) {
+						productsArray.push(product);
+					}
+				});
+
+				state.products = productsArray;
+			}
 		});
+
 		builder.addCase(getProductsAsync.rejected, (state, action) => {
 			state.isLoading = false;
 			state.error = action.error.message || action.error;

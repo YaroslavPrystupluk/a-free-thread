@@ -4,7 +4,6 @@ import { ImageList, ImageListItem, ImageListItemBar, Typography, Container } fro
 const StyleImageList = styled(ImageList)(({ theme }) => ({
 	'&.MuiImageList-root': {
 		overflow: 'hidden',
-		margin: '16px 10px',
 		gridTemplateColumns: 'repeat(2, 144px)!important',
 		justifyContent: 'center',
 		'& button': {
@@ -87,6 +86,9 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 		top: 8,
 		right: 'auto',
 		background: 'rgba(255, 255, 255, 0.70)',
+		'&.last': {
+			display: 'none',
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			top: 12,
 			height: 25,
@@ -148,6 +150,10 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		textAlign: 'center',
 		maxWidth: theme.breakpoints.xsl,
 		width: '85%',
+		'&.product': {
+			width: '100%',
+			whiteSpace: 'nowrap',
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: 24,
 			letterSpacing: 0.48,
@@ -207,14 +213,20 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 
 const StyleHitsWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xsl,
-	margin: '60px 6px',
+	margin: '30px auto',
 	minHeight: 550,
 	textAlign: 'center',
+	'&.product': {
+		margin: 0,
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		minHeight: 350,
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		minHeight: 550,
+		'&.product': {
+			margin: '40px auto',
+		},
 	},
 }));
 

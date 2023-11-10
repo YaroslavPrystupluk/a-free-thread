@@ -6,6 +6,7 @@ import Main from '../pages/Main';
 import CollectionPage from '../pages/Collections';
 import PageNotFound from '../pages/NotFoundPage';
 import Footer from '../components/Footer';
+import ProductPage from '../pages/Product';
 import About from '../pages/About';
 
 const App = () => {
@@ -83,6 +84,7 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route path="/:id" element={<CollectionPage />} />
+				<Route path="/product/:id" element={<ProductPage />} />
 				<Route path="about" element={<About />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>

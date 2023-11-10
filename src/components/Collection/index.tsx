@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { StyleTypography } from '../../Theme/HitsTheme';
+import { StyleTypography } from '../../Theme/LikesTheme';
 import {
 	StyleCollectionImg,
 	StyleCollectionProducts,
@@ -11,7 +11,7 @@ import {
 } from '../../Theme/CollectionTheme';
 import { CollectionState, CollectionItem } from '../../redux/slices/collectionSlice';
 import { RootState } from '../../redux/store/store';
-import ProductItem from '../Hits/productItem';
+import ProductItem from '../Likes/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import LoadingAnimation from '../Loading';
 import { RightArrowWhite } from './arrows';
@@ -63,7 +63,7 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 					</StyleCollectionImageList>
 					<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
 						<StyleCollectionButton>
-							<div>перейти до колекції</div>
+							<span style={{ lineHeight: '1.2' }}>перейти до колекції</span>
 							<div>{RightArrowWhite()}</div>
 						</StyleCollectionButton>
 					</Link>

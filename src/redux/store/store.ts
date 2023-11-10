@@ -1,14 +1,19 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-cycle */
 import { configureStore } from '@reduxjs/toolkit';
 import productsSlice from '../slices/productsSlice';
 import collectionSlice from '../slices/collectionSlice';
+import productSlice from '../slices/productSlice';
 import teamsSlice from '../slices/teamsSlice';
+import lastVisitedProductsSlice from '../slices/lastVisitedSlice';
 
 const store = configureStore({
 	reducer: {
 		products: productsSlice,
 		collection: collectionSlice,
+		product: productSlice,
 		teams: teamsSlice,
+		lastVisited: lastVisitedProductsSlice,
 	},
 });
 

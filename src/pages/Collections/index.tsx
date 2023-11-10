@@ -1,16 +1,15 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/material';
 import { filterProducts } from '../Main/getProducts';
 import { RootState } from '../../redux/store/store';
 import { Product } from '../../redux/slices/productsSlice';
-import { CollectionItem, CollectionState } from '../../redux/slices/collectionSlice';
+import { CollectionItem } from '../../redux/slices/collectionSlice';
 import LoadingAnimation from '../../components/Loading';
-import ProductItem from '../../components/Hits/productItem';
+import ProductItem from '../../components/Likes/productItem';
 import PageNotFound from '../NotFoundPage';
 import { RightArrow, LeftArrow, DividerIcon } from '../../components/Collection/arrows';
 
@@ -20,7 +19,7 @@ import {
 	StyleCollectionImg,
 	StyleCollectionProducts,
 } from '../../Theme/CollectionTheme';
-import { StyleTypography, StyleImageList } from '../../Theme/HitsTheme';
+import { StyleTypography, StyleImageList } from '../../Theme/LikesTheme';
 import {
 	StyleCollectionPageMain,
 	StylePaginationBox,
@@ -32,17 +31,16 @@ import {
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
-	const idColl = useSelector((state: RootState) => state.collection) as CollectionState;
+	const idColl = useSelector((state: RootState) => state.collection) as unknown as Record<
+		string,
+		CollectionItem
+	>;
 	const [currentPage, setCurrentPage] = useState(1);
-	const productsArrayAll: Product[] = useSelector(
-		(state: RootState) => (state.products.products || []) as Product[],
-	);
 	const loadingCollection: boolean = useSelector(
 		(state: RootState) => state.collection.isLoadingCollection,
 	);
 	const [productsPerPage, setProductsPerPage] = useState<number>(16);
-	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
-	const collectionItem = idColl[id] as CollectionItem;
+	const collectionItem = id ? idColl[id] : undefined;
 	const collectionsProducts = collectionItem?.collectionProducts as Product[];
 	const total = collectionsProducts?.length;
 	const countPagination = total ? Math.ceil(total / productsPerPage) : 0;
@@ -54,10 +52,8 @@ const CollectionPage = () => {
 	const handleScrollAndResize = () => {
 		if (window.innerWidth >= 768) {
 			setProductsPerPage(8);
-			console.log(productsPerPage);
 		} else {
 			setProductsPerPage(16);
-			console.log(productsPerPage);
 		}
 	};
 
@@ -66,10 +62,10 @@ const CollectionPage = () => {
 	}, []);
 
 	useEffect(() => {
-		if (productsArrayAll.length <= 0) {
-			filterProducts();
+		if (!collectionsProducts?.length) {
+			filterProducts('public/shirts.json', 'public/sleeves.json');
 		}
-	}, [dispatch]);
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('resize', handleScrollAndResize);
@@ -146,7 +142,7 @@ const CollectionPage = () => {
 														slots={{ previous: LeftArrow, next: RightArrow }}
 														{...item}
 														onClick={() => {
-															setCurrentPage(item.page);
+															setCurrentPage(item.page as number);
 														}}
 													/>
 													<DividerIcon />
@@ -157,7 +153,7 @@ const CollectionPage = () => {
 																component="button"
 																{...item}
 																onClick={() => {
-																	setCurrentPage(item.page);
+																	setCurrentPage(item.page as number);
 																}}
 															/>
 														</StylePaginationButton>
@@ -173,7 +169,7 @@ const CollectionPage = () => {
 													slots={{ previous: LeftArrow, next: RightArrow }}
 													{...item}
 													onClick={() => {
-														setCurrentPage(item.page);
+														setCurrentPage(item.page as number);
 													}}
 												/>
 											</StylePaginationButton>
@@ -188,11 +184,12 @@ const CollectionPage = () => {
 											slots={{ previous: LeftArrow, next: RightArrow }}
 											{...item}
 											onClick={() => {
-												setCurrentPage(item.page);
+												setCurrentPage(item.page as number);
 											}}
 										/>
 									);
 								}
+								return null;
 							}}
 						/>
 					</StylePaginationBox>
