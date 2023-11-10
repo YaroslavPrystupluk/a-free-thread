@@ -55,6 +55,7 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 		},
 		'& .MuiImageListItemBar-subtitle': {
 			lineHeight: 'normal',
+			whiteSpace: 'wrap',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				fontSize: 14,
 			},

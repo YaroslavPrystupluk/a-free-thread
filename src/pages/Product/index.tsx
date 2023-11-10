@@ -10,6 +10,7 @@ import LoadingAnimation from '../../components/Loading';
 import { ArrowHide, ArrowShow } from '../../components/Collection/arrows';
 import Likes from '../../components/Likes';
 import { addProduct } from '../../redux/slices/lastVisitedSlice';
+import { filterProducts } from '../Main/getProducts';
 import {
 	StyleProductDescription,
 	StyleProductGallery,
@@ -33,6 +34,9 @@ type DescriptionsOpen = {
 const ProductPage: React.FC = () => {
 	const { id } = useParams<{ id: string | undefined }>();
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+	const productsArray: Product[] = useSelector(
+		(state: RootState) => (state.products.products || []) as Product[],
+	);
 	const productItem: Product = useSelector(
 		(state: RootState) => state.product.product || {},
 	) as Product;
@@ -70,16 +74,22 @@ const ProductPage: React.FC = () => {
 	}, [imgArray]);
 
 	useEffect(() => {
-		if (idProduct !== undefined) {
-			dispatch(getProduct(idProduct));
-		}
-	}, [dispatch, idProduct]);
+		const fetchData = async () => {
+			if (!productsArray?.length) {
+				await filterProducts('../public/shirts.json', '../public/sleeves.json');
+			}
 
-	useEffect(() => {
-		if (productItem && Object.keys(productItem).length > 0) {
-			dispatch(addProduct(productItem));
-		}
-	}, [productItem]);
+			if (idProduct !== undefined) {
+				await dispatch(getProduct(idProduct));
+			}
+
+			if (productItem && Object.keys(productItem).length > 0) {
+				await dispatch(addProduct(productItem));
+			}
+		};
+
+		fetchData();
+	}, [dispatch, idProduct, productItem, productsArray]);
 
 	if (productNotFound) {
 		return (
@@ -133,6 +143,7 @@ const ProductPage: React.FC = () => {
 						<Typography
 							variant="h4"
 							component="h4"
+							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('description')}
 						>
 							опис
@@ -151,6 +162,7 @@ const ProductPage: React.FC = () => {
 						<Typography
 							variant="h4"
 							component="h4"
+							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('recommendations')}
 						>
 							рекомендації по догляду
@@ -169,6 +181,7 @@ const ProductPage: React.FC = () => {
 						<Typography
 							variant="h4"
 							component="h4"
+							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('deliveryAndPayment')}
 						>
 							доставка і оплата
@@ -188,6 +201,7 @@ const ProductPage: React.FC = () => {
 						<Typography
 							variant="h4"
 							component="h4"
+							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('exchangeAndReturn')}
 						>
 							обмін і повернення
