@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+
 import {
 	Container,
 	TitleWrapper,
@@ -7,6 +9,8 @@ import {
 	SquareTitle,
 	Content,
 	TitleContent,
+	ContentList,
+	CustomDoneIcon,
 } from '../../Theme/DeliveryAndPai';
 import star from '../../images/icon/star.webp';
 
@@ -19,40 +23,67 @@ const DeliveryAndPai: FC = () => {
 				<SquareTitle />
 			</TitleWrapper>
 			<Content>
-				<TitleContent>Для відправлення замовлення нам потрібні такі дані:</TitleContent>
-				<ul>
-					<li>Обраний товар, розмір, колір</li>
-					<li>Контактні дані отримувача (ПІБ, номер телефону, електронна пошта)</li>
-					<li>Адресу (Країна, регіон, населений пункт, вулиця, номер будинку, індекс</li>
-					<li>
-						Чек/квитанцію про передоплату вартості товару та доставки (оплата здійснюється за
-						рахунком чи на карту)
-					</li>
-				</ul>
-
+				<ContentList>
+					<TitleContent $isTitle>Для відправлення замовлення нам потрібні такі дані:</TitleContent>
+					<List>
+						<ListItem>
+							<ListItemIcon>
+								<CustomDoneIcon />
+							</ListItemIcon>
+							<ListItemText>Обраний товар, розмір, колір</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemIcon>
+								<CustomDoneIcon />
+							</ListItemIcon>
+							<ListItemText>
+								Контактні дані отримувача (ПІБ, номер телефону, електронна пошта)
+							</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemIcon>
+								<CustomDoneIcon />
+							</ListItemIcon>
+							<ListItemText>
+								Адресу (Країна, регіон, населений пункт, вулиця, номер будинку, індекс
+							</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemIcon>
+								<CustomDoneIcon />
+							</ListItemIcon>
+							<ListItemText>
+								Чек/квитанцію про передоплату вартості товару та доставки (оплата здійснюється за
+								рахунком чи на карту)
+							</ListItemText>
+						</ListItem>
+					</List>
+				</ContentList>
 				<div>
-					<TitleContent>Відправлення Україною</TitleContent>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor
-						sit amet, consectetur adipiscing elit
-					</p>
-				</div>
-				<div>
-					<TitleContent>Міжнародні відправлення</TitleContent>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor
-						sit amet, consectetur adipiscing elit
-					</p>
-				</div>
-				<div>
-					<TitleContent>Самовивіз</TitleContent>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor
-						sit amet, consectetur adipiscing elit
-					</p>
+					<div>
+						<TitleContent $isTitle={false}>Відправлення Україною</TitleContent>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
+							dolor sit amet, consectetur adipiscing elit
+						</p>
+					</div>
+					<div>
+						<TitleContent $isTitle={false}>Міжнародні відправлення</TitleContent>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
+							dolor sit amet, consectetur adipiscing elit
+						</p>
+					</div>
+					<div>
+						<TitleContent $isTitle={false}>Самовивіз</TitleContent>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
+							dolor sit amet, consectetur adipiscing elit
+						</p>
+					</div>
 				</div>
 			</Content>
 		</Container>

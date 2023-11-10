@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import DoneIcon from '@mui/icons-material/Done';
+import { ListItemText } from '@mui/material';
+
+interface TitleProps {
+	$isTitle?: boolean;
+}
 
 const Container = styled.article`
 	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
@@ -79,11 +85,20 @@ const SquareTitle = styled.span`
 
 const Content = styled.div`
 	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		flex-direction: row;
+		gap: 20px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		gap: 24px;
+	}
 `;
 
-const TitleContent = styled.p`
+const TitleContent = styled.p<TitleProps>`
 	font-family: ${({ theme }) => theme.fontFamily.title}, sans-serif;
-	text-align: center;
+	text-align: ${(props) => (props.$isTitle ? 'center' : 'start')};
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 160%;
@@ -97,4 +112,50 @@ const TitleContent = styled.p`
 	}
 `;
 
-export { Container, TitleWrapper, TitlePage, StarIcon, SquareTitle, Content, TitleContent };
+const ContentList = styled.div`
+	background: ${({ theme }) => theme.colors.primary};
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding: 20px 16px 0 16px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		order: 1;
+	}
+
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		gap: 32px;
+		padding: 40px 40px 0 40px;
+	}
+`;
+
+const CustomDoneIcon = styled(DoneIcon)`
+	&.MuiSvgIcon-root {
+		font-size: 16px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		&.MuiSvgIcon-root {
+			font-size: 20px;
+		}
+	}
+`;
+
+const CustomListItemText = styled(ListItemText)`
+	&.MuiTypography-root {
+		font-size: 12px;
+		line-height: 160%;
+		letter-spacing: 0.24px;
+	}
+`;
+
+export {
+	Container,
+	TitleWrapper,
+	TitlePage,
+	StarIcon,
+	SquareTitle,
+	Content,
+	TitleContent,
+	ContentList,
+	CustomDoneIcon,
+	CustomListItemText,
+};
