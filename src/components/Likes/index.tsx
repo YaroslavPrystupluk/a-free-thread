@@ -42,7 +42,7 @@ const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper })
 
 	useEffect(() => {
 		if (!collectionsProducts?.length) {
-			filterProducts('../public/shirts.json');
+			filterProducts('../public/shirts.json', '../public/sleeves.json');
 		}
 	}, []);
 

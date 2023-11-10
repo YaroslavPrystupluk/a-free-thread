@@ -1,4 +1,4 @@
-import { useEffect, useState }  from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
@@ -77,14 +77,16 @@ const ProductPage: React.FC = () => {
 
 	useEffect(() => {
 		if (productItem && Object.keys(productItem).length > 0) {
-		  dispatch(addProduct(productItem));
+			dispatch(addProduct(productItem));
 		}
-	  }, [productItem]);	  
+	}, [productItem]);
 
 	if (productNotFound) {
 		return (
 			<>
-				<StyleProductNotFound>У нашій базі даних такого продукту немає. Подивіться наші популярні продукти.</StyleProductNotFound>
+				<StyleProductNotFound>
+					У нашій базі даних такого продукту немає. Подивіться наші популярні продукти.
+				</StyleProductNotFound>
 				<Likes classWrapper="main" title="популярні товари" collection="hit" badge="Хіт" />
 			</>
 		);
@@ -95,100 +97,130 @@ const ProductPage: React.FC = () => {
 	) : (
 		<StyleProductWrapper>
 			<StyleProductMain>
-			<StyleProductGallery>
-				<StyleProductThumbnails>
-					{imgArray.map((thumbnail, index) => (
-						<button
-							type="button"
-							key={`productItem.name_${index + 1}`}
-							onClick={() => handleThumbnailClick(`../${thumbnail}`, index)}
-							className={index === selectedButtonIndex ? 'selected' : ''}
+				<StyleProductGallery>
+					<StyleProductThumbnails>
+						{imgArray.map((thumbnail, index) => (
+							<button
+								type="button"
+								key={`productItem.name_${index + 1}`}
+								onClick={() => handleThumbnailClick(`../${thumbnail}`, index)}
+								className={index === selectedButtonIndex ? 'selected' : ''}
+							>
+								<img src={`../${thumbnail}`} alt={`Превью ${index + 1}`} />
+							</button>
+						))}
+					</StyleProductThumbnails>
+					<StyleProductMainImg
+						src={mainImage}
+						alt={productItem.name}
+						loading="lazy"
+						className="mainImage_page"
+					/>
+				</StyleProductGallery>
+				<StyleProductDescription>
+					<StyleProductItemBar
+						className="product"
+						subtitle={<span>{productItem.name}</span>}
+						title={productItem.price}
+						position="below"
+					/>
+					<StyleProductSize>
+						{productSizes.map((size) => (
+							<span key={`productItem.name_${size}`}>{size}</span>
+						))}
+					</StyleProductSize>
+					<StyleProductDescriptionContainer>
+						<Typography
+							variant="h4"
+							component="h4"
+							onClick={() => toggleDescription('description')}
 						>
-							<img src={`../${thumbnail}`} alt={`Превью ${index + 1}`} />
-						</button>
-					))}
-				</StyleProductThumbnails>
-				<StyleProductMainImg
-					src={mainImage}
-					alt={productItem.name}
-					loading="lazy"
-					className="mainImage_page"
-				/>
-			</StyleProductGallery>
-			<StyleProductDescription>
-				<StyleProductItemBar
-					className="product"
-					subtitle={<span>{productItem.name}</span>}
-					title={productItem.price}
-					position="below"
-				/>
-				<StyleProductSize>
-					{productSizes.map((size) => (
-						<span key={`productItem.name_${size}`}>{size}</span>
-					))}
-				</StyleProductSize>
-				<StyleProductDescriptionContainer>
-					<Typography variant="h4" component="h4" onClick={() => toggleDescription('description')}>
-						опис
-						<button type="button">
-							{descriptionsOpen.description && <ArrowShow />}
-							{!descriptionsOpen.description && <ArrowHide />}
-						</button>
-					</Typography>
-					{descriptionsOpen.description && (
-						<Typography variant="body2" component="p">
-							{productItem.description}
+							опис
+							<button type="button">
+								{descriptionsOpen.description && <ArrowShow />}
+								{!descriptionsOpen.description && <ArrowHide />}
+							</button>
 						</Typography>
-					)}
-				</StyleProductDescriptionContainer>
-				<StyleProductDescriptionContainer>
-					<Typography variant="h4" component="h4" onClick={() => toggleDescription('recommendations')}>
-						рекомендації по догляду
-						<button type="button">
-							{descriptionsOpen.recommendations && <ArrowShow />}
-							{!descriptionsOpen.recommendations && <ArrowHide />}
-						</button>
-					</Typography>
-					{descriptionsOpen.recommendations && (
-						<Typography variant="body2" component="p">
-							{productItem.recommendations}
+						{descriptionsOpen.description && (
+							<Typography variant="body2" component="p">
+								{productItem.description}
+							</Typography>
+						)}
+					</StyleProductDescriptionContainer>
+					<StyleProductDescriptionContainer>
+						<Typography
+							variant="h4"
+							component="h4"
+							onClick={() => toggleDescription('recommendations')}
+						>
+							рекомендації по догляду
+							<button type="button">
+								{descriptionsOpen.recommendations && <ArrowShow />}
+								{!descriptionsOpen.recommendations && <ArrowHide />}
+							</button>
 						</Typography>
-					)}
-				</StyleProductDescriptionContainer>
-				<StyleProductDescriptionContainer>
-					<Typography variant="h4" component="h4" onClick={() => toggleDescription('deliveryAndPayment')}>
-						доставка і оплата
-						<button type="button">
-							{descriptionsOpen.deliveryAndPayment && <ArrowShow />}
-							{!descriptionsOpen.deliveryAndPayment && <ArrowHide />}
-						</button>
-					</Typography>
-					{descriptionsOpen.deliveryAndPayment && (
-						<Typography variant="body2" component="p">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+						{descriptionsOpen.recommendations && (
+							<Typography variant="body2" component="p">
+								{productItem.recommendations}
+							</Typography>
+						)}
+					</StyleProductDescriptionContainer>
+					<StyleProductDescriptionContainer>
+						<Typography
+							variant="h4"
+							component="h4"
+							onClick={() => toggleDescription('deliveryAndPayment')}
+						>
+							доставка і оплата
+							<button type="button">
+								{descriptionsOpen.deliveryAndPayment && <ArrowShow />}
+								{!descriptionsOpen.deliveryAndPayment && <ArrowHide />}
+							</button>
 						</Typography>
-					)}
-				</StyleProductDescriptionContainer>
-				<StyleProductDescriptionContainer>
-					<Typography variant="h4" component="h4" onClick={() => toggleDescription('exchangeAndReturn')}>
-						обмін і повернення
-						<button type="button">
-							{descriptionsOpen.exchangeAndReturn && <ArrowShow />}
-							{!descriptionsOpen.exchangeAndReturn && <ArrowHide />}
-						</button>
-					</Typography>
-					{descriptionsOpen.exchangeAndReturn && (
-						<Typography variant="body2" component="p">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+						{descriptionsOpen.deliveryAndPayment && (
+							<Typography variant="body2" component="p">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+							</Typography>
+						)}
+					</StyleProductDescriptionContainer>
+					<StyleProductDescriptionContainer>
+						<Typography
+							variant="h4"
+							component="h4"
+							onClick={() => toggleDescription('exchangeAndReturn')}
+						>
+							обмін і повернення
+							<button type="button">
+								{descriptionsOpen.exchangeAndReturn && <ArrowShow />}
+								{!descriptionsOpen.exchangeAndReturn && <ArrowHide />}
+							</button>
 						</Typography>
-					)}
-				</StyleProductDescriptionContainer>
-			</StyleProductDescription>
+						{descriptionsOpen.exchangeAndReturn && (
+							<Typography variant="body2" component="p">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+							</Typography>
+						)}
+					</StyleProductDescriptionContainer>
+				</StyleProductDescription>
 			</StyleProductMain>
-			<Likes classWrapper="product" title="вам може сподобатись" collection={productItem.collection} badge="Хіт" />
-			{lastVisitedProducts.length < 4 ? <Likes classWrapper="product" title="популярні товари" collection="hit" badge="Хіт" /> : <Likes classWrapper="product" title="раніше ви переглядали" collection="last" badge={'last'} /> }
+			<Likes
+				classWrapper="product"
+				title="вам може сподобатись"
+				collection={productItem.collection}
+				badge="Хіт"
+			/>
+			{lastVisitedProducts.length < 4 ? (
+				<Likes classWrapper="product" title="популярні товари" collection="hit" badge="Хіт" />
+			) : (
+				<Likes
+					classWrapper="product"
+					title="раніше ви переглядали"
+					collection="last"
+					badge="last"
+				/>
+			)}
 		</StyleProductWrapper>
 	);
 };

@@ -13,7 +13,11 @@ const StyleProductMainImg = styled('img')(({ theme }) => ({
 	objectFit: 'cover',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		width: 341,
-        height: 449,
+		height: 449,
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		width: 552,
+		height: 727,
 	},
 }));
 
@@ -27,6 +31,11 @@ const StyleProductGallery = styled('div')(({ theme }) => ({
 		flexDirection: 'column-reverse',
 		maxWidth: 340,
 	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		maxWidth: theme.breakpoints.xsl,
+		flexDirection: 'row',
+		gap: 24,
+	},
 }));
 
 const StyleProductMain = styled('div')(({ theme }) => ({
@@ -34,6 +43,10 @@ const StyleProductMain = styled('div')(({ theme }) => ({
 		maxWidth: theme.breakpoints.md,
 		display: 'flex',
 		alignItems: 'flex-start',
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		maxWidth: theme.breakpoints.xsl,
+		gap: 24,
 	},
 }));
 
@@ -54,12 +67,17 @@ const StyleProductThumbnails = styled('div')(({ theme }) => ({
 			height: 7,
 		},
 		'&::-webkit-scrollbar-thumb': {
-			background:  theme.colors.secondary,
+			background: theme.colors.secondary,
 			borderRadius: 7,
-		  },
+		},
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		flexDirection: 'column',
+		maxHeight: 730,
+		gap: 23,
 	},
 	'&::-webkit-scrollbar': {
-		width: 1,
+		width: 0,
 	},
 	'&::-webkit-scrollbar-track': {
 		background: 'none',
@@ -70,7 +88,11 @@ const StyleProductThumbnails = styled('div')(({ theme }) => ({
 		objectFit: 'cover',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			width: 104,
-            height: 140,
+			height: 140,
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			width: 168,
+			height: 227,
 		},
 	},
 	'& button': {
@@ -102,6 +124,10 @@ const StyleProductItemBar = styled(ImageListItemBar)(({ theme }) => ({
 			fontSize: 20,
 			letterSpacing: '0.4px',
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			fontSize: 24,
+			letterSpacing: '0.48px',
+		},
 	},
 	'& .MuiImageListItemBar-title': {
 		color: theme.colorText.third,
@@ -111,6 +137,9 @@ const StyleProductItemBar = styled(ImageListItemBar)(({ theme }) => ({
 		lineHeight: 'normal',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: 18,
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			fontSize: 20,
 		},
 	},
 }));
@@ -125,6 +154,9 @@ const StyleProductSize = styled('div')(({ theme }) => ({
 	fontWeight: 400,
 	lineHeight: '17px',
 	letterSpacing: '0.24px',
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		gap: 10,
+	},
 }));
 
 const StyleProductWrapper = styled('div')(({ theme }) => ({
@@ -134,6 +166,10 @@ const StyleProductWrapper = styled('div')(({ theme }) => ({
 	flexDirection: 'column',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		maxWidth: theme.breakpoints.md,
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		maxWidth: theme.breakpoints.xl,
+		alignItems: 'center',
 	},
 }));
 
@@ -179,6 +215,9 @@ const StyleProductDescription = styled('div')(({ theme }) => ({
 			fontSize: 14,
 			letterSpacing: '0.28px',
 			lineHeight: '24px',
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			'-webkit-line-clamp': '5',
 		},
 	},
 }));
