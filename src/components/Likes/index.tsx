@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { StyleHitsWrapper, StyleTypography, StyleImageList } from '../../Theme/LikesTheme';
 import LoadingAnimation from '../Loading';
@@ -6,7 +6,6 @@ import { RootState } from '../../redux/store/store';
 import ProductItem from './productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import { CollectionItem } from '../../redux/slices/collectionSlice';
-import { filterProducts } from '../../pages/Main/getProducts';
 import { StyleSquare } from '../../Theme/CollectionPageTheme';
 
 interface LikesProps {
@@ -32,19 +31,15 @@ const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper })
 		collection === 'hit' || collection === 'new'
 			? productsArray
 			: (collectionItem?.collectionProducts as Product[]);
-	const randomProducts =
-		collection === 'new'
+
+	const randomProducts = useMemo(() => {
+		return collection === 'new'
 			? collectionsProducts?.slice(-4)
 			: collectionsProducts
 					?.slice()
 					.sort(() => 0.5 - Math.random())
 					.slice(0, 4);
-
-	useEffect(() => {
-		if (!collectionsProducts?.length) {
-			filterProducts('../public/shirts.json', '../public/sleeves.json');
-		}
-	}, []);
+	}, [collection, collectionsProducts]);
 
 	return (
 		<StyleHitsWrapper className={classWrapper}>
@@ -60,11 +55,9 @@ const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper })
 						? lastVisitedProducts
 								.slice()
 								.reverse()
-								.map((item: Product) => (
-									<ProductItem item={item} badge={badge} key={item.id * Math.random()} />
-								))
+								.map((item: Product) => <ProductItem item={item} badge={badge} key={item.id} />)
 						: randomProducts.map((item: Product) => (
-								<ProductItem item={item} badge={badge} key={item.id * Math.random()} />
+								<ProductItem item={item} badge={badge} key={item.id} />
 						  ))}
 				</StyleImageList>
 			)}

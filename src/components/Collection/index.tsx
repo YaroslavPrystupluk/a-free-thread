@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { StyleTypography } from '../../Theme/LikesTheme';
@@ -31,10 +32,12 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 
 	const collectionsProducts = collectionItem.collectionProducts as Product[];
 
-	const randomCollectionProducts = collectionsProducts
-		.slice()
-		.sort(() => 0.5 - Math.random())
-		.slice(0, 2);
+	const randomCollectionProducts = useMemo(() => {
+		return collectionsProducts
+			.slice()
+			.sort(() => 0.5 - Math.random())
+			.slice(0, 2);
+	}, [collectionsProducts]);
 
 	return loadingCollection || loading ? (
 		<LoadingAnimation />
