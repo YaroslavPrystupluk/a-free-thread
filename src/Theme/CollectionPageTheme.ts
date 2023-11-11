@@ -20,6 +20,17 @@ const StyleStar = styled('div')(({ theme }) => ({
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		top: -4,
 	},
+	'&.contacts_star': {
+		right: 40,
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			right: 235,
+			top: 2,
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			right: 380,
+			top: 0,
+		},
+	},
 	'& svg': {
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			width: 24,
@@ -36,12 +47,21 @@ const StyleSquare = styled('div')(({ theme }) => ({
 	top: 5,
 	zIndex: -1,
 	opacity: 0.2,
-	backgroundColor: '#EDCDB6',
+	backgroundColor: theme.colors.primary,
 	'&.product': {
 		left: -5,
 		top: 30,
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			left: '25%',
+		},
+	},
+	'&.contacts_square': {
+		left: 50,
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			left: 240,
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			left: 390,
 		},
 	},
 	'&.main': {

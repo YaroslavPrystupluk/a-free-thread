@@ -91,7 +91,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						відгуки
 					</MenuButton>
 				</CustomLink>
-				<CustomLink to="/">
+				<CustomLink to="/contacts">
 					<MenuButton
 						disableRipple
 						$active={activeButtonMenu === 5}
