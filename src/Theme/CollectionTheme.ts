@@ -122,6 +122,22 @@ const StyledCollectionWrapper = styled('div')(({ theme }) => ({
 const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
+	'&.contacts_text-block': {
+		gap: 32,
+		margin: '16px auto 32px',
+		width: 270,
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			width: 700,
+			flexDirection: 'row',
+			justifyContent: 'center',
+			margin: '24px auto 60px',
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			width: theme.breakpoints.xsl,
+			justifyContent: 'space-between',
+			margin: '56px auto 90px',
+		},
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		flexDirection: 'row-reverse',
 		'&.wrapper_grandmother': {
