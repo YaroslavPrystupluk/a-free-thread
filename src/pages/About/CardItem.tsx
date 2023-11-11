@@ -3,7 +3,15 @@ import { CardContent, CardMedia } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Teams } from '../../model/Iteams';
-import { CustomCard, CardTitle, CardSubTitle } from '../../Theme/CardTheme';
+import {
+	CustomCard,
+	CardHeader,
+	Front,
+	Back,
+	BackContent,
+	CardTitle,
+	CardSubTitle,
+} from '../../Theme/CardTheme';
 
 interface CardItemProps {
 	player: Teams;
@@ -26,7 +34,17 @@ const CardItem: FC<CardItemProps> = ({ player }) => {
 		<ThemeProvider theme={theme}>
 			<Grid>
 				<CustomCard>
-					<CardMedia component="img" image={player.image} alt={player.position} />
+					<CardHeader>
+						<Front className="front">
+							<CardMedia component="img" image={player.image} alt={player.position} />
+						</Front>
+						<Back className="back">
+							<BackContent>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia lorem
+							</BackContent>
+						</Back>
+					</CardHeader>
 					<CardContent>
 						<CardTitle>{player.name}</CardTitle>
 						<Grid container justifyContent="space-between">
