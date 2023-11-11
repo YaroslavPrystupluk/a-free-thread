@@ -99,7 +99,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 							Доставка і оплата
 						</MenuItem>
 					</CustomLink>
-					<CustomLink to="/paymentAndDelivery">
+					<CustomLink to="/comments">
 						<MenuItem divider onClick={handleCloseBurgerMenu}>
 							Відгуки
 						</MenuItem>

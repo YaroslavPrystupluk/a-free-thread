@@ -34,11 +34,11 @@ const About = () => {
 		},
 	});
 
-	const dispath: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
 
 	useEffect(() => {
-		dispath(getTeamsAsync());
-	}, [dispath]);
+		dispatch(getTeamsAsync());
+	}, [dispatch]);
 
 	const { teams } = useSelector((state: RootState) => state.teams);
 
