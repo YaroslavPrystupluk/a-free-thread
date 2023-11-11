@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {} from '@mui/material';
 
 import {
 	Container,
@@ -10,7 +10,14 @@ import {
 	Content,
 	TitleContent,
 	ContentList,
+	CustomList,
+	CustomListItem,
+	CustomListItemIcon,
 	CustomDoneIcon,
+	CustomListItemText,
+	ContentText,
+	TextWrapper,
+	Text,
 } from '../../Theme/DeliveryAndPai';
 import star from '../../images/icon/star.webp';
 
@@ -25,66 +32,66 @@ const DeliveryAndPai: FC = () => {
 			<Content>
 				<ContentList>
 					<TitleContent $isTitle>Для відправлення замовлення нам потрібні такі дані:</TitleContent>
-					<List>
-						<ListItem>
-							<ListItemIcon>
+					<CustomList>
+						<CustomListItem>
+							<CustomListItemIcon>
 								<CustomDoneIcon />
-							</ListItemIcon>
-							<ListItemText>Обраний товар, розмір, колір</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemIcon>
+							</CustomListItemIcon>
+							<CustomListItemText>Обраний товар, розмір, колір</CustomListItemText>
+						</CustomListItem>
+						<CustomListItem>
+							<CustomListItemIcon>
 								<CustomDoneIcon />
-							</ListItemIcon>
-							<ListItemText>
+							</CustomListItemIcon>
+							<CustomListItemText>
 								Контактні дані отримувача (ПІБ, номер телефону, електронна пошта)
-							</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemIcon>
+							</CustomListItemText>
+						</CustomListItem>
+						<CustomListItem>
+							<CustomListItemIcon>
 								<CustomDoneIcon />
-							</ListItemIcon>
-							<ListItemText>
-								Адресу (Країна, регіон, населений пункт, вулиця, номер будинку, індекс
-							</ListItemText>
-						</ListItem>
-						<ListItem>
-							<ListItemIcon>
+							</CustomListItemIcon>
+							<CustomListItemText>
+								Адресу (Країна, регіон, населений пункт, вулиця, номер будинку, індекс)
+							</CustomListItemText>
+						</CustomListItem>
+						<CustomListItem>
+							<CustomListItemIcon>
 								<CustomDoneIcon />
-							</ListItemIcon>
-							<ListItemText>
+							</CustomListItemIcon>
+							<CustomListItemText>
 								Чек/квитанцію про передоплату вартості товару та доставки (оплата здійснюється за
 								рахунком чи на карту)
-							</ListItemText>
-						</ListItem>
-					</List>
+							</CustomListItemText>
+						</CustomListItem>
+					</CustomList>
 				</ContentList>
-				<div>
-					<div>
+				<ContentText>
+					<TextWrapper>
 						<TitleContent $isTitle={false}>Відправлення Україною</TitleContent>
-						<p>
+						<Text>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
 							dolor sit amet, consectetur adipiscing elit
-						</p>
-					</div>
-					<div>
+						</Text>
+					</TextWrapper>
+					<TextWrapper>
 						<TitleContent $isTitle={false}>Міжнародні відправлення</TitleContent>
-						<p>
+						<Text>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
 							dolor sit amet, consectetur adipiscing elit
-						</p>
-					</div>
-					<div>
+						</Text>
+					</TextWrapper>
+					<TextWrapper>
 						<TitleContent $isTitle={false}>Самовивіз</TitleContent>
-						<p>
+						<Text>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
 							dolor sit amet, consectetur adipiscing elit
-						</p>
-					</div>
-				</div>
+						</Text>
+					</TextWrapper>
+				</ContentText>
 			</Content>
 		</Container>
 	);

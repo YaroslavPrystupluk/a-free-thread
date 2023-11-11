@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import DoneIcon from '@mui/icons-material/Done';
-import { ListItemText } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 
 interface TitleProps {
 	$isTitle?: boolean;
@@ -87,16 +87,20 @@ const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 60px;
+	margin: 0 0 70px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		flex-direction: row;
 		gap: 20px;
+		margin: 0 0 120px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		gap: 24px;
+		margin: 0 0 128px 0;
 	}
 `;
 
 const TitleContent = styled.p<TitleProps>`
+	background: ${(props) => (props.$isTitle ? props.theme.colors.primary : 'transparent')};
 	font-family: ${({ theme }) => theme.fontFamily.title}, sans-serif;
 	text-align: ${(props) => (props.$isTitle ? 'center' : 'start')};
 	font-size: 16px;
@@ -104,27 +108,78 @@ const TitleContent = styled.p<TitleProps>`
 	line-height: 160%;
 	letter-spacing: 0.32px;
 	text-transform: uppercase;
+	padding: ${(props) => (props.$isTitle ? '20px 16px 24px 16px' : '0')};
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		font-size: 18px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		font-size: 24px;
+		padding: ${(props) => (props.$isTitle ? '40px 40px 32px 40px' : '0')};
 	}
 `;
 
 const ContentList = styled.div`
-	background: ${({ theme }) => theme.colors.primary};
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
-	padding: 20px 16px 0 16px;
+
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		order: 1;
+		min-width: 340px;
 	}
 
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		gap: 32px;
-		padding: 40px 40px 0 40px;
+		min-width: 550px;
+	}
+`;
+
+const CustomList = styled(List)`
+	&.MuiList-root {
+		background: ${({ theme }) => theme.colors.primary};
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	&.MuiList-padding {
+		padding: 0;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		&.MuiList-root {
+			gap: 32px;
+		}
+	}
+
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		&.MuiList-root {
+			gap: 40px;
+		}
+	}
+`;
+
+const CustomListItem = styled(ListItem)`
+	&.MuiListItem-padding {
+		padding: 0 16px;
+		&:last-child {
+			padding: 0 16px 20px 16px;
+		}
+	}
+  @media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+	&.MuiListItem-padding {
+	  padding: 0 40px;
+	  &:last-child {
+		padding: 0 40px 40px 40px;
+	  }
+  }
+`;
+
+const CustomListItemIcon = styled(ListItemIcon)`
+	&.MuiListItemIcon-root {
+		min-width: 0;
+		padding: 0 12px 0 0;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		&.MuiListItemIcon-root {
+			padding: 0 16px 0 0;
+		}
 	}
 `;
 
@@ -132,6 +187,7 @@ const CustomDoneIcon = styled(DoneIcon)`
 	&.MuiSvgIcon-root {
 		font-size: 16px;
 	}
+
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		&.MuiSvgIcon-root {
 			font-size: 20px;
@@ -140,10 +196,46 @@ const CustomDoneIcon = styled(DoneIcon)`
 `;
 
 const CustomListItemText = styled(ListItemText)`
-	&.MuiTypography-root {
+	& .MuiTypography-root {
+		font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 		font-size: 12px;
 		line-height: 160%;
-		letter-spacing: 0.24px;
+		letter-spacing: 0.5px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		& .MuiTypography-root {
+			font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+			font-size: 14px;
+		}
+	}
+
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		& .MuiTypography-root {
+			font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+			font-size: 16px;
+		}
+	}
+`;
+
+const ContentText = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+`;
+const TextWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+`;
+
+const Text = styled.p`
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	font-size: 12px;
+	line-height: 160%;
+	letter-spacing: 0.24px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 14px;
+		letter-spacing: 0.28px;
 	}
 `;
 
@@ -156,6 +248,12 @@ export {
 	Content,
 	TitleContent,
 	ContentList,
+	CustomList,
+	CustomListItem,
+	CustomListItemIcon,
 	CustomDoneIcon,
 	CustomListItemText,
+	ContentText,
+	TextWrapper,
+	Text,
 };
