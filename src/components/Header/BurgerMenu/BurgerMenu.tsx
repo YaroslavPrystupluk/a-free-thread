@@ -94,7 +94,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 							Про нас
 						</MenuItem>
 					</CustomLink>
-					<CustomLink to="/guarantee">
+					<CustomLink to="/delivery">
 						<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 							Доставка і оплата
 						</MenuItem>
