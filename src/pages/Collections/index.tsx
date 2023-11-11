@@ -124,45 +124,19 @@ const CollectionPage = () => {
 					{productsSliced.map((item: Product) => (
 						<ProductItem item={item} badge="Новинка" key={item.id} />
 					))}
-					<StylePaginationBox>
-						<Pagination
-							sx={{ margin: '40px auto' }}
-							count={countPagination}
-							color="primary"
-							page={currentPage}
-							renderItem={(item: PaginationRenderItemParams) => {
-								if (item.type === 'page') {
-									if (item.page === currentPage || item.page === countPagination) {
-										if (item.page === currentPage) {
-											return (
-												<StylePaginationButton>
-													0
-													<PaginationItem
-														component="button"
-														slots={{ previous: LeftArrow, next: RightArrow }}
-														{...item}
-														onClick={() => {
-															setCurrentPage(item.page as number);
-														}}
-													/>
-													<DividerIcon />
-													{item.page === countPagination ? (
-														<StylePaginationButton className="countPagination1">
-															0
-															<PaginationItem
-																component="button"
-																{...item}
-																onClick={() => {
-																	setCurrentPage(item.page as number);
-																}}
-															/>
-														</StylePaginationButton>
-													) : null}
-												</StylePaginationButton>
-											);
-										}
+				</StyleImageList>
+				<StylePaginationBox>
+					<Pagination
+						sx={{ margin: '40px auto' }}
+						count={countPagination}
+						color="primary"
+						page={currentPage}
+						renderItem={(item: PaginationRenderItemParams) => {
+							if (item.type === 'page') {
+								if (item.page === currentPage || item.page === countPagination) {
+									if (item.page === currentPage) {
 										return (
-											<StylePaginationButton className="countPagination2">
+											<StylePaginationButton>
 												0
 												<PaginationItem
 													component="button"
@@ -172,28 +146,54 @@ const CollectionPage = () => {
 														setCurrentPage(item.page as number);
 													}}
 												/>
+												<DividerIcon />
+												{item.page === countPagination ? (
+													<StylePaginationButton className="countPagination1">
+														0
+														<PaginationItem
+															component="button"
+															{...item}
+															onClick={() => {
+																setCurrentPage(item.page as number);
+															}}
+														/>
+													</StylePaginationButton>
+												) : null}
 											</StylePaginationButton>
 										);
 									}
-								} else if (item.type === 'start-ellipsis' || item.type === 'end-ellipsis') {
-									return null;
-								} else {
 									return (
-										<PaginationItem
-											component="button"
-											slots={{ previous: LeftArrow, next: RightArrow }}
-											{...item}
-											onClick={() => {
-												setCurrentPage(item.page as number);
-											}}
-										/>
+										<StylePaginationButton className="countPagination2">
+											0
+											<PaginationItem
+												component="button"
+												slots={{ previous: LeftArrow, next: RightArrow }}
+												{...item}
+												onClick={() => {
+													setCurrentPage(item.page as number);
+												}}
+											/>
+										</StylePaginationButton>
 									);
 								}
+							} else if (item.type === 'start-ellipsis' || item.type === 'end-ellipsis') {
 								return null;
-							}}
-						/>
-					</StylePaginationBox>
-				</StyleImageList>
+							} else {
+								return (
+									<PaginationItem
+										component="button"
+										slots={{ previous: LeftArrow, next: RightArrow }}
+										{...item}
+										onClick={() => {
+											setCurrentPage(item.page as number);
+										}}
+									/>
+								);
+							}
+							return null;
+						}}
+					/>
+				</StylePaginationBox>
 			</StyleCollectionProducts>
 		</StyledCollectionWrapper>
 	);

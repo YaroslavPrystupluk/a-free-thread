@@ -78,7 +78,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 								“Регіони України”
 							</MenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/restore">
+						<SubMenuItem to="/grandmother">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>

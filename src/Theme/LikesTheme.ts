@@ -8,9 +8,16 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 		justifyContent: 'center',
 		'& button': {
 			fill: 'white!important',
+			padding: 2,
 		},
 		'& ul': {
 			top: '-5px!important',
+		},
+		'& svg': {
+			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+				height: 10,
+				width: 10,
+			},
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			gridTemplateColumns: 'repeat(4, 180px)!important',

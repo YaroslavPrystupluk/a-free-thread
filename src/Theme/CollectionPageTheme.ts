@@ -71,7 +71,7 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 	fontWeight: 400,
 	lineHeight: '20px',
 	position: 'relative',
-	left: '35%',
+	left: '15%',
 	'& .MuiPagination-ul': {
 		gap: 3,
 	},
@@ -87,11 +87,11 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 		},
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		left: '145%',
+		left: '35%',
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		width: 230,
-		left: '160%',
+		left: '40%',
 		fontSize: 18,
 	},
 }));

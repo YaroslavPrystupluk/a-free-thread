@@ -52,7 +52,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 								“Регіони України”
 							</MenuItem>
 						</CustomLink>
-						<CustomLink to="/restore">
+						<CustomLink to="/grandmother">
 							<MenuItem disableRipple divider onClick={handleCloseBayer}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>
