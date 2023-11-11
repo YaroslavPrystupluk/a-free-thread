@@ -1,42 +1,46 @@
 [
-    {
-    "id": "101",
-    "name": "Манжет Одеса",
-    "price": "550 UAH",
-    "recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "collection": "accessories",
-    "imageUrls": ["src/images/Sleeves/1/sleeves_1_0.webp", "src/images/Sleeves/1/sleeves_1_1.webp", "src/images/Sleeves/1/sleeves_1_2.webp"],
-    "size": ["One size"]
-    },
-    {
-    "id": "102",
-    "name": "Манжет Хмельниччина",
-    "price": "600 UAH",
-    "recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "collection": "accessories",
-    "imageUrls": ["src/images/Sleeves/2/sleeves_2_0.webp", "src/images/Sleeves/2/sleeves_2_1.webp"],
-    "size": ["One size"]
-    },
-    {
-    "id": "103",
-    "name": "Манжет Закарпаття",
-    "price": "550 UAH",
-    "recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "collection": "accessories",
-    "imageUrls": ["src/images/Sleeves/3/sleeves_3_0.webp", "src/images/Sleeves/3/sleeves_3_1.webp"],
-    "size": ["One size"]
-    },
-    {
-    "id": "104",
-    "name": "Манжет Волинь",
-    "price": "600 UAH",
-    "recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    "collection": "accessories",
-    "imageUrls": ["src/images/Sleeves/4/sleeves_4_0.webp", "src/images/Sleeves/4/sleeves_4_1.webp"],
-    "size": ["One size"]
-    }
+	{
+		"id": "101",
+		"name": "Манжет Одеса",
+		"price": "550 UAH",
+		"recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "accessories",
+		"imageUrls": [
+			"src/images/Sleeves/1/sleeves_1_0.webp",
+			"src/images/Sleeves/1/sleeves_1_1.webp",
+			"src/images/Sleeves/1/sleeves_1_2.webp"
+		],
+		"size": ["One size"]
+	},
+	{
+		"id": "102",
+		"name": "Манжет Хмельниччина",
+		"price": "600 UAH",
+		"recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "accessories",
+		"imageUrls": ["src/images/Sleeves/2/sleeves_2_0.webp", "src/images/Sleeves/2/sleeves_2_1.webp"],
+		"size": ["One size"]
+	},
+	{
+		"id": "103",
+		"name": "Манжет Закарпаття",
+		"price": "550 UAH",
+		"recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "accessories",
+		"imageUrls": ["src/images/Sleeves/3/sleeves_3_0.webp", "src/images/Sleeves/3/sleeves_3_1.webp"],
+		"size": ["One size"]
+	},
+	{
+		"id": "104",
+		"name": "Манжет Волинь",
+		"price": "600 UAH",
+		"recommendations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"collection": "accessories",
+		"imageUrls": ["src/images/Sleeves/4/sleeves_4_0.webp", "src/images/Sleeves/4/sleeves_4_1.webp"],
+		"size": ["One size"]
+	}
 ]

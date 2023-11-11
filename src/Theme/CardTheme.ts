@@ -3,6 +3,7 @@ import { Card, Typography } from '@mui/material';
 
 const CustomCard = styled(Card)`
 	max-width: 126px;
+
 	&& {
 		border: none;
 		border-radius: 0;
@@ -13,11 +14,55 @@ const CustomCard = styled(Card)`
 			0 6px 3px 0 rgba(0, 0, 0, 0.01),
 			0 10px 3px 0 rgba(0, 0, 0, 0);
 	}
+
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 220px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: 360px;
+	}
+`;
+
+const Front = styled.div`
+	overflow: hidden;
+	backface-visibility: hidden;
+	transition: transform 1s linear;
+	transform: perspective(600px) rotateY(0deg);
+`;
+
+const Back = styled.div`
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: ${({ theme }) => theme.colors.primary};
+	overflow: auto;
+	backface-visibility: hidden;
+	transition: transform 1s linear;
+	transform: perspective(600px) rotateY(180deg);
+`;
+
+const CardHeader = styled.div`
+	cursor: pointer;
+	position: relative;
+	&:hover > ${Front} {
+		transform: perspective(600px) rotateY(-180deg);
+	}
+	&:hover > ${Back} {
+		transform: perspective(600px) rotateY(0deg);
+	}
+`;
+
+const BackContent = styled.p`
+	padding: 12px 10px;
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	font-size: 10px;
+	line-height: 147%;
+	letter-spacing: 0.2px;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 16px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		font-size: 24px;
 	}
 `;
 
@@ -56,4 +101,4 @@ const CardSubTitle = styled(Typography)`
       }
 `;
 
-export { CustomCard, CardTitle, CardSubTitle };
+export { CustomCard, CardHeader, Front, Back, BackContent, CardTitle, CardSubTitle };
