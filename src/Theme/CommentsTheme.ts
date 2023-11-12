@@ -92,4 +92,68 @@ const CardsWrapper = styled.div`
 	}
 `;
 
-export { Container, TitleWrapper, Title, StarIcon, SquareTitle, CardsWrapper };
+const StylePaginationBox = styled('div')(({ theme }) => ({
+	width: 210,
+	display: 'flex',
+	alignItems: 'center',
+	textAlign: 'center',
+	fontFamily: theme.fontFamily.text,
+	fontStyle: 'normal',
+	fontWeight: 400,
+	lineHeight: '20px',
+	position: 'relative',
+	left: '15%',
+	'& .MuiPagination-ul': {
+		gap: 3,
+	},
+	'& .MuiPaginationItem-page': {
+		color: `${theme.colorText.third}!important`,
+		backgroundColor: 'white!important',
+		fontSize: 16,
+		margin: 0,
+		minHeight: '20px!important',
+		minWidth: '20px!important',
+		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+			fontSize: 18,
+		},
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		left: '35%',
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		width: 230,
+		left: '40%',
+		fontSize: 18,
+	},
+}));
+
+const StylePaginationButton = styled('div')(({ theme }) => ({
+	display: 'flex',
+	position: 'relative',
+	fontSize: 14,
+	bottom: 10,
+	alignContent: 'flex-start',
+	alignItems: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
+		fontSize: 18,
+	},
+	'&.countPagination1': {
+		position: 'relative',
+		top: 20,
+	},
+	'&.countPagination2': {
+		position: 'relative',
+		bottom: -10,
+	},
+}));
+
+export {
+	Container,
+	TitleWrapper,
+	Title,
+	StarIcon,
+	SquareTitle,
+	CardsWrapper,
+	StylePaginationBox,
+	StylePaginationButton,
+};
