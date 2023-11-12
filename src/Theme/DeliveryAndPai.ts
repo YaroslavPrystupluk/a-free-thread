@@ -204,14 +204,12 @@ const CustomListItemText = styled(ListItemText)`
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		& .MuiTypography-root {
-			font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 			font-size: 14px;
 		}
 	}
 
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		& .MuiTypography-root {
-			font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
 			font-size: 16px;
 		}
 	}

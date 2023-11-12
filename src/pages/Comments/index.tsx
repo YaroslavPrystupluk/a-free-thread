@@ -4,7 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store/store';
 import { getCommentsAsync } from '../../redux/slices/commentsSlice';
 import Comment from './Comment';
-import { Container } from '../../Theme/CommentsTheme';
+import {
+	Container,
+	SquareTitle,
+	StarIcon,
+	Title,
+	TitleWrapper,
+	CardsWrapper,
+} from '../../Theme/CommentsTheme';
+
+import star from '../../images/icon/star.webp';
 
 const Comments: FC = () => {
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
@@ -17,9 +26,16 @@ const Comments: FC = () => {
 
 	return (
 		<Container>
-			{comments.map((comment, index) => (
-				<Comment key={index} comment={comment} />
-			))}
+			<TitleWrapper>
+				<Title>Відгуки</Title>
+				<StarIcon src={star} alt="star" />
+				<SquareTitle />
+			</TitleWrapper>
+			<CardsWrapper>
+				{comments.map((comment, index) => (
+					<Comment key={index} comment={comment} />
+				))}
+			</CardsWrapper>
 		</Container>
 	);
 };
