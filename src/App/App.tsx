@@ -10,6 +10,7 @@ import ProductPage from '../pages/Product';
 import About from '../pages/About';
 import DeliveryAndPai from '../pages/DeliveryAndPai';
 import Comments from '../pages/Comments';
+import Contacts from '../pages/Contacts';
 
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
@@ -90,6 +91,7 @@ const App = () => {
 				<Route path="about" element={<About />} />
 				<Route path="delivery" element={<DeliveryAndPai />} />
 				<Route path="comments" element={<Comments />} />
+				<Route path="contacts" element={<Contacts />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer

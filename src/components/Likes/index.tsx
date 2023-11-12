@@ -51,14 +51,11 @@ const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper })
 				<LoadingAnimation />
 			) : (
 				<StyleImageList style={{ gap: 'auto' }}>
-					{collection === 'last'
-						? lastVisitedProducts
-								.slice()
-								.reverse()
-								.map((item: Product) => <ProductItem item={item} badge={badge} key={item.id} />)
-						: randomProducts.map((item: Product) => (
-								<ProductItem item={item} badge={badge} key={item.id} />
-						  ))}
+					{(collection === 'last' ? lastVisitedProducts.slice().reverse() : randomProducts).map(
+						(item: Product) => (
+							<ProductItem item={item} badge={badge} key={item.id} />
+						),
+					)}
 				</StyleImageList>
 			)}
 		</StyleHitsWrapper>
