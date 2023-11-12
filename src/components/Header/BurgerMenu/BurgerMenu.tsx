@@ -60,7 +60,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 						'aria-labelledby': 'button-burgerMenu',
 					}}
 				>
-					<CustomLink onClick={toggleActive} to="#">
+					<CustomLink onClick={toggleActive} to="/">
 						<MenuItem disableRipple divider onClick={handleOpenSubMenu}>
 							<BtnCatalogLine $active={isActive} />
 							Каталог

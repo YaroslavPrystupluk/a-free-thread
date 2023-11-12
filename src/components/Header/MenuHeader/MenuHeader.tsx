@@ -21,7 +21,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 
 		return (
 			<WrapperMenu>
-				<CustomLink onClick={() => handleActiveButtonMenu(1)} to="#">
+				<CustomLink onClick={() => handleActiveButtonMenu(1)} to="/">
 					<MenuButton
 						id="MenuButton-bayer"
 						aria-controls={openCatalog ? 'menu-bayer' : undefined}
