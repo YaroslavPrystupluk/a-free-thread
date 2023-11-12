@@ -81,12 +81,14 @@ const CardsWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	padding: 0 0 40px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		gap: 24px;
+		padding: 0 0 60px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		min-width: 40px;
 		gap: 40px;
+		padding: 0 0 80px 0;
 	}
 `;
 

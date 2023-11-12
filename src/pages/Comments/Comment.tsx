@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { Comments } from '../../model/Icomments';
 import {
 	CustomCard,
 	CustomAvatar,
 	NameAuthor,
 	CommentDate,
+	StarsWrapper,
 	Star,
 	CommentBody,
 } from '../../Theme/CommentTheme';
@@ -37,7 +38,7 @@ const Comment: FC<CommentProps> = ({ comment }) => {
 				<CustomAvatar {...stringAvatar(comment.name)} />
 				<NameAuthor>{comment.name}</NameAuthor>
 				<CommentDate>{comment.date}</CommentDate>
-				<Typography>{stars}</Typography>
+				<StarsWrapper>{stars}</StarsWrapper>
 				<CommentBody>{comment.body}</CommentBody>
 			</CustomCard>
 		</Box>
