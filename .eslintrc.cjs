@@ -129,5 +129,7 @@ module.exports = {
 		'@typescript-eslint/no-shadow': 'off',
 		'react/no-array-index-key': 'off',
 		'react/jsx-one-expression-per-line': 'off',
+		'no-plusplus': 'off',
+		'react/jsx-props-no-spreading': 'off',
 	},
 };

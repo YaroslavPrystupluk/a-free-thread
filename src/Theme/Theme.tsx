@@ -35,6 +35,7 @@ const theme = {
 		secondary: '#edcdb6',
 		third: '#973a23',
 		fourth: '#ffffff',
+		star: '#c77a54',
 	},
 	colorText: {
 		primary: '#353840',

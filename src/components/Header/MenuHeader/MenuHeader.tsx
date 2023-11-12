@@ -82,7 +82,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						доставка і оплата
 					</MenuButton>
 				</CustomLink>
-				<CustomLink to="/">
+				<CustomLink to="/comments">
 					<MenuButton
 						disableRipple
 						$active={activeButtonMenu === 4}

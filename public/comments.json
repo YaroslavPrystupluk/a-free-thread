@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"name": "ОКСАНА ПЕРЕБИЙНІС",
+		"date": "12 червня 2023",
+		"star": 4,
+		"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.❤\uFE0F Ut enim ad minim veniam"
+	},
+	{
+		"id": 2,
+		"name": "ОЛЕКСАНДРА РЯБОКОНЬ",
+		"date": "12 червня 2023",
+		"star": 5,
+		"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 3,
+		"name": "БОГДАНА ІВАНОВА",
+		"date": "12 червня 2023",
+		"star": 5,
+		"body": "Lorem ipsum dolor ❤\uFE0F❤\uFE0F❤\uFE0F "
+	},
+	{
+		"id": 4,
+		"name": "ОКСАНА ПЕРЕБИЙНІС",
+		"date": "12 червня 2023",
+		"star": 5,
+		"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.❤\uFE0F Ut enim ad minim veniam"
+	},
+	{
+		"id": 5,
+		"name": "ОЛЕКСАНДРА РЯБОКОНЬ",
+		"date": "12 червня 2023",
+		"star": 5,
+		"body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 6,
+		"name": "БОГДАНА ІВАНОВА",
+		"date": "12 червня 2023",
+		"star": 5,
+		"body": "Lorem ipsum dolor ❤\uFE0F❤\uFE0F❤\uFE0F "
+	}
+]
