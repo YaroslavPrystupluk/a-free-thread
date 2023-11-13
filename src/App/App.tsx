@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/Header';
 import Modal from '../components/Modal';
@@ -11,6 +12,9 @@ import About from '../pages/About';
 import DeliveryAndPai from '../pages/DeliveryAndPai';
 import Comments from '../pages/Comments';
 import Contacts from '../pages/Contacts';
+import ResultSearch from '../pages/ResultSearch';
+import { Product } from '../redux/slices/productsSlice';
+import { RootState } from '../redux/store/store';
 
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
@@ -20,10 +24,22 @@ const App = () => {
 	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
 	const [openSubMenu, setOpenSubMenu] = useState(false);
 	const [valueSearch, setValueSearch] = useState('');
+	const [searchResult, setSearchResult] = useState<Product[]>([]);
+
+	const products = useSelector((state: RootState) => state.products.products) as Product[];
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		setValueSearch(event.target.value);
 	};
+
+	const handleSearch = () => {
+		const resultSearch = products.filter((product) => {
+			return product.name.toLowerCase().includes(valueSearch.toLowerCase());
+		});
+
+		setSearchResult(resultSearch);
+	};
+
 	const toggleActive = () => {
 		setIsActive(!isActive);
 	};
@@ -31,11 +47,6 @@ const App = () => {
 	const handleClickBurgerMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setBurgerMenu(event.currentTarget);
 	};
-
-	// const handleKeyDoun = (e: KeyboardEvent<HTMLInputElement>) => {
-	// eslint-disable-next-line no-tabs
-	// 	if (e.key === "Enter") showIssues();
-	// };
 
 	const handleCloseBurgerMenu = () => {
 		setBurgerMenu(null);
@@ -62,6 +73,13 @@ const App = () => {
 		setOpenModal(false);
 	};
 
+	const handleKeyDoun = (e: React.KeyboardEvent<HTMLInputElement>) => {
+		if (e.key === 'Enter') {
+			handleSearch();
+			handleCloseModal();
+		}
+	};
+
 	return (
 		<BrowserRouter>
 			<Modal
@@ -69,6 +87,8 @@ const App = () => {
 				valueSearch={valueSearch}
 				handleCloseModal={handleCloseModal}
 				openModal={openModal}
+				handleKeyDoun={handleKeyDoun}
+				handleSearch={handleSearch}
 			/>
 			<Header
 				activeButtonLang={activeButtonLang}
@@ -92,6 +112,10 @@ const App = () => {
 				<Route path="delivery" element={<DeliveryAndPai />} />
 				<Route path="comments" element={<Comments />} />
 				<Route path="contacts" element={<Contacts />} />
+				<Route
+					path="search"
+					element={<ResultSearch valueSearch={valueSearch} searchResult={searchResult} />}
+				/>
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer
