@@ -63,7 +63,7 @@ const CollectionPage = () => {
 
 	useEffect(() => {
 		if (!collectionsProducts?.length) {
-			filterProducts('public/shirts.json', 'public/accessories.json');
+			filterProducts('shirts.json', 'accessories.json');
 		}
 	}, []);
 
