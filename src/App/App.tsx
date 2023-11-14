@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import styled from 'styled-components';
 import Header from '../components/Header';
 import Modal from '../components/Modal';
 import Main from '../pages/Main';
@@ -15,6 +16,13 @@ import Contacts from '../pages/Contacts';
 import ResultSearch from '../pages/ResultSearch';
 import { Product } from '../redux/slices/productsSlice';
 import { RootState } from '../redux/store/store';
+
+const Wrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+`;
 
 const App = () => {
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
@@ -78,46 +86,48 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-			<Modal
-				handleChange={handleChange}
-				valueSearch={valueSearch}
-				handleCloseModal={handleCloseModal}
-				openModal={openModal}
-				handleSearch={handleSearch}
-			/>
-			<Header
-				activeButtonLang={activeButtonLang}
-				handleActiveButtonLang={handleActiveButtonLang}
-				handleOpenModal={handleOpenModal}
-				handleActiveButtonMenu={handleActiveButtonMenu}
-				activeButtonMenu={activeButtonMenu}
-				handleOpenSubMenu={handleOpenSubMenu}
-				openSubMenu={openSubMenu}
-				toggleActive={toggleActive}
-				handleClickBurgerMenu={handleClickBurgerMenu}
-				handleCloseBurgerMenu={handleCloseBurgerMenu}
-				burgerMenu={burgerMenu}
-				isActive={isActive}
-			/>
-			<Routes>
-				<Route path="/" element={<Main />} />
-				<Route path="/:id" element={<CollectionPage />} />
-				<Route path="/product/:id" element={<ProductPage />} />
-				<Route path="about" element={<About />} />
-				<Route path="delivery" element={<DeliveryAndPai />} />
-				<Route path="comments" element={<Comments />} />
-				<Route path="contacts" element={<Contacts />} />
-				<Route
-					path="search"
-					element={<ResultSearch searchProduct={searchProduct} searchResult={searchResult} />}
+			<Wrapper>
+				<Modal
+					handleChange={handleChange}
+					valueSearch={valueSearch}
+					handleCloseModal={handleCloseModal}
+					openModal={openModal}
+					handleSearch={handleSearch}
 				/>
-				<Route path="*" element={<PageNotFound />} />
-			</Routes>
-			<Footer
-				handleOpenSubMenu={handleOpenSubMenu}
-				openSubMenu={openSubMenu}
-				handleCloseSubMenu={handleCloseSubMenu}
-			/>
+				<Header
+					activeButtonLang={activeButtonLang}
+					handleActiveButtonLang={handleActiveButtonLang}
+					handleOpenModal={handleOpenModal}
+					handleActiveButtonMenu={handleActiveButtonMenu}
+					activeButtonMenu={activeButtonMenu}
+					handleOpenSubMenu={handleOpenSubMenu}
+					openSubMenu={openSubMenu}
+					toggleActive={toggleActive}
+					handleClickBurgerMenu={handleClickBurgerMenu}
+					handleCloseBurgerMenu={handleCloseBurgerMenu}
+					burgerMenu={burgerMenu}
+					isActive={isActive}
+				/>
+				<Routes>
+					<Route path="/" element={<Main />} />
+					<Route path="/:id" element={<CollectionPage />} />
+					<Route path="/product/:id" element={<ProductPage />} />
+					<Route path="about" element={<About />} />
+					<Route path="delivery" element={<DeliveryAndPai />} />
+					<Route path="comments" element={<Comments />} />
+					<Route path="contacts" element={<Contacts />} />
+					<Route
+						path="search"
+						element={<ResultSearch searchProduct={searchProduct} searchResult={searchResult} />}
+					/>
+					<Route path="*" element={<PageNotFound />} />
+				</Routes>
+				<Footer
+					handleOpenSubMenu={handleOpenSubMenu}
+					openSubMenu={openSubMenu}
+					handleCloseSubMenu={handleCloseSubMenu}
+				/>
+			</Wrapper>
 		</BrowserRouter>
 	);
 };

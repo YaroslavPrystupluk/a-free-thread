@@ -82,8 +82,53 @@ const SquareTitle = styled.span`
 	}
 `;
 
-const ProductsWrapper = styled.ul`
+const NotFoundWrapper = styled.div`
 	display: flex;
+	flex-direction: column;
+	gap: 24px;
 `;
 
-export { Container, TitleWrapper, Title, StarIcon, SquareTitle, ProductsWrapper };
+const TitleNotFound = styled.p`
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	letter-spacing: 0.36px;
+	text-align: center;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 24px;
+		line-height: 160%;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		font-size: 28px;
+	}
+`;
+
+const SubTitleNotFound = styled.p`
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	font-size: 14px;
+	line-height: 160%;
+	letter-spacing: 0.28px;
+	padding: 0 0 118px 0;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		font-size: 18px;
+	}
+`;
+
+export {
+	Container,
+	TitleWrapper,
+	Title,
+	StarIcon,
+	SquareTitle,
+	NotFoundWrapper,
+	TitleNotFound,
+	SubTitleNotFound,
+};
