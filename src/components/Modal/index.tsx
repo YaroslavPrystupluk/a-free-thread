@@ -14,12 +14,11 @@ interface ModalSearchProps {
 	openModal: boolean;
 	handleCloseModal: () => void;
 	handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 	handleSearch: () => void;
 }
 
 const ModalSearch: FC<ModalSearchProps> = React.memo(
-	({ handleCloseModal, openModal, valueSearch, handleChange, handleKeyDown, handleSearch }) => {
+	({ handleCloseModal, openModal, valueSearch, handleChange, handleSearch }) => {
 		return (
 			<CustomDialog fullScreen open={openModal} onClose={handleCloseModal}>
 				<DialogActions>
@@ -38,7 +37,6 @@ const ModalSearch: FC<ModalSearchProps> = React.memo(
 						<CustomTextField
 							value={valueSearch}
 							onChange={handleChange}
-							onKeyDown={handleKeyDown}
 							size="small"
 							placeholder="введіть назву"
 						/>

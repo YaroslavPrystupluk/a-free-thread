@@ -82,4 +82,8 @@ const SquareTitle = styled.span`
 	}
 `;
 
-export { Container, TitleWrapper, Title, StarIcon, SquareTitle };
+const ProductsWrapper = styled.ul`
+	display: flex;
+`;
+
+export { Container, TitleWrapper, Title, StarIcon, SquareTitle, ProductsWrapper };

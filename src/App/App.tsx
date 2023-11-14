@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from '../components/Header';
@@ -24,12 +24,14 @@ const App = () => {
 	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
 	const [openSubMenu, setOpenSubMenu] = useState(false);
 	const [valueSearch, setValueSearch] = useState('');
+	const [searchProduct, setSearchProduct] = useState('');
 	const [searchResult, setSearchResult] = useState<Product[]>([]);
 
 	const products = useSelector((state: RootState) => state.products.products) as Product[];
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		setValueSearch(event.target.value);
+		setSearchProduct(event.target.value);
 	};
 
 	const handleSearch = () => {
@@ -37,6 +39,7 @@ const App = () => {
 			return product.name.toLowerCase().includes(valueSearch.toLowerCase());
 		});
 
+		setValueSearch('');
 		setSearchResult(resultSearch);
 	};
 
@@ -73,13 +76,6 @@ const App = () => {
 		setOpenModal(false);
 	};
 
-	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-		if (e.key === 'Enter') {
-			handleSearch();
-			handleCloseModal();
-		}
-	};
-
 	return (
 		<BrowserRouter>
 			<Modal
@@ -87,7 +83,6 @@ const App = () => {
 				valueSearch={valueSearch}
 				handleCloseModal={handleCloseModal}
 				openModal={openModal}
-				handleKeyDown={handleKeyDown}
 				handleSearch={handleSearch}
 			/>
 			<Header
@@ -114,7 +109,7 @@ const App = () => {
 				<Route path="contacts" element={<Contacts />} />
 				<Route
 					path="search"
-					element={<ResultSearch valueSearch={valueSearch} searchResult={searchResult} />}
+					element={<ResultSearch searchProduct={searchProduct} searchResult={searchResult} />}
 				/>
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
