@@ -1,9 +1,4 @@
 import styled from 'styled-components';
-import Grid from '@mui/material/Unstable_Grid2';
-
-interface SquareTitleProps {
-	$isTeam?: boolean;
-}
 
 const Container = styled.article`
 	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
@@ -17,28 +12,29 @@ const Container = styled.article`
 	}
 `;
 
-const TitleWrapper = styled.div<SquareTitleProps>`
-	position: relative;
+const TitleWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: ${(props) => (props.$isTeam ? '60px 0 24px 0' : '67px 0 24px 0')};
+	margin: 67px 0 24px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		margin: ${(props) => (props.$isTeam ? '42px 0 32px 0' : '60px 0 32px 0')};
+		margin: 60px 0 30px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		margin: ${(props) => (props.$isTeam ? '80px 0 40px 0' : '80px 0 37px 0')};
+		margin: 80px 0 40px 0;
 	}
 `;
 
 const Title = styled.h1`
+	position: relative;
 	font-family: ${({ theme }) => theme.fontFamily.title}, sans-serif;
-	font-size: 20px;
+	font-size: 22px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 160%;
-	letter-spacing: 0.4px;
+	letter-spacing: 0.3px;
 	text-transform: uppercase;
+	text-align: center;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		font-size: 24px;
 		letter-spacing: 0.48px;
@@ -52,62 +48,87 @@ const Title = styled.h1`
 const StarIcon = styled.img`
 	max-width: 16px;
 	position: absolute;
-	bottom: 65%;
-	left: 65%;
+	top: -2%;
+	right: -3%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 20px;
-		left: 57%;
+		top: -2%;
+		right: -6%;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: 24px;
-		left: 58%;
+		top: -2%;
+		right: -3%;
 	}
 `;
 
-const SquareTitle = styled.span<SquareTitleProps>`
+const SquareTitle = styled.span`
 	min-width: 28px;
 	min-height: 28px;
 	position: absolute;
-	left: ${(props) => (props.$isTeam ? '12%' : '28%')};
-	bottom: 60%;
+	left: -2%;
+	bottom: 75%;
 	background: ${({ theme }) => theme.colors.primary};
 	opacity: 0.2;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		left: ${(props) => (props.$isTeam ? '34%' : '40.5%')};
+		left: -2%;
+		bottom: 50%;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		min-width: 40px;
 		min-height: 40px;
+		left: -2%;
 		bottom: 50%;
 	}
 `;
 
-const GridAbout = styled(Grid)`
+const NotFoundWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: 24px;
+`;
 
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		max-width: 50%;
-		&:nth-child(3) {
-			order: 1;
-		}
-	}
-`;
-const AboutImage = styled.img`
-	max-width: 100%;
-`;
-const AboutText = styled.p`
+const TitleNotFound = styled.p`
 	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
-	font-size: 12px;
-	line-height: 160%;
-
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 400;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	letter-spacing: 0.36px;
+	text-align: center;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 24px;
 		line-height: 160%;
 	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		font-size: 28px;
+	}
 `;
 
-export { Container, TitleWrapper, Title, StarIcon, SquareTitle, GridAbout, AboutImage, AboutText };
+const SubTitleNotFound = styled.p`
+	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+	color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	font-size: 14px;
+	line-height: 160%;
+	letter-spacing: 0.28px;
+	padding: 0 0 118px 0;
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		font-size: 16px;
+		letter-spacing: 0.32px;
+	}
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		font-size: 18px;
+	}
+`;
+
+export {
+	Container,
+	TitleWrapper,
+	Title,
+	StarIcon,
+	SquareTitle,
+	NotFoundWrapper,
+	TitleNotFound,
+	SubTitleNotFound,
+};

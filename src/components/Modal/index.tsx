@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { NavLink } from 'react-router-dom';
 import { DialogActions, Grid, IconButton } from '@mui/material';
 import {
 	CustomTextField,
@@ -13,10 +14,11 @@ interface ModalSearchProps {
 	openModal: boolean;
 	handleCloseModal: () => void;
 	handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	handleSearch: () => void;
 }
 
 const ModalSearch: FC<ModalSearchProps> = React.memo(
-	({ handleCloseModal, openModal, valueSearch, handleChange }) => {
+	({ handleCloseModal, openModal, valueSearch, handleChange, handleSearch }) => {
 		return (
 			<CustomDialog fullScreen open={openModal} onClose={handleCloseModal}>
 				<DialogActions>
@@ -40,9 +42,18 @@ const ModalSearch: FC<ModalSearchProps> = React.memo(
 						/>
 					</Grid>
 					<Grid item>
-						<CustomButton disableRipple variant="contained" onClick={handleCloseModal}>
-							Знайти
-						</CustomButton>
+						<NavLink to="/search">
+							<CustomButton
+								disableRipple
+								variant="contained"
+								onClick={() => {
+									handleSearch();
+									handleCloseModal();
+								}}
+							>
+								Знайти
+							</CustomButton>
+						</NavLink>
 					</Grid>
 				</ContainerGrid>
 			</CustomDialog>

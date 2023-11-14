@@ -131,5 +131,6 @@ module.exports = {
 		'react/jsx-one-expression-per-line': 'off',
 		'no-plusplus': 'off',
 		'react/jsx-props-no-spreading': 'off',
+		'eslintimplicit-arrow-linebreak': 'off',
 	},
 };
