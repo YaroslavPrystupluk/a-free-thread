@@ -3,6 +3,7 @@ import star from '../../images/icon/star.webp';
 import { Container, TitleWrapper, Title, StarIcon, SquareTitle } from '../../Theme/ResultSearch';
 import { Product } from '../../redux/slices/productsSlice';
 import ProductItem from '../../components/Likes/productItem';
+import { StyleImageList } from '../../Theme/LikesTheme';
 
 interface ResultSearchProps {
 	valueSearch: string;
@@ -19,10 +20,11 @@ const ResultSearch: FC<ResultSearchProps> = React.memo(({ valueSearch, searchRes
 					<StarIcon src={star} alt="star" />
 				</Title>
 			</TitleWrapper>
-
-			{searchResult.map((item: Product) => (
-				<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
-			))}
+			<StyleImageList>
+				{searchResult.map((item: Product) => (
+					<ProductItem item={item} key={item.id} />
+				))}
+			</StyleImageList>
 		</Container>
 	);
 });

@@ -73,7 +73,7 @@ const App = () => {
 		setOpenModal(false);
 	};
 
-	const handleKeyDoun = (e: React.KeyboardEvent<HTMLInputElement>) => {
+	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter') {
 			handleSearch();
 			handleCloseModal();
@@ -87,7 +87,7 @@ const App = () => {
 				valueSearch={valueSearch}
 				handleCloseModal={handleCloseModal}
 				openModal={openModal}
-				handleKeyDoun={handleKeyDoun}
+				handleKeyDown={handleKeyDown}
 				handleSearch={handleSearch}
 			/>
 			<Header
