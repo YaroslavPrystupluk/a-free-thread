@@ -36,7 +36,7 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 		return collectionsProducts
 			.slice()
 			.sort(() => 0.5 - Math.random())
-			.slice(0, 2);
+			.slice(0, 3);
 	}, [collectionsProducts]);
 
 	return loadingCollection || loading ? (

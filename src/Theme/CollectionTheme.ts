@@ -2,23 +2,25 @@ import { Button, ImageList } from '@mui/material';
 import styled from 'styled-components';
 
 const StyleCollectionImg = styled('img')(({ theme }) => ({
-	height: 250,
-	width: 260,
+	height: '100%',
+	maxHeight: 380,
+	width: '90%',
 	paddingTop: 12,
 	margin: 'auto',
 	objectFit: 'cover',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		height: 380,
-		width: 350,
+		width: '49%',
 		marginTop: 16,
 		paddingRight: 16,
 		'&.mainImage_grandmother': {
 			paddingLeft: 16,
+			paddingRight: 0,
 		},
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		height: 560,
-		width: 560,
+		maxHeight: 600,
 	},
 	'&.mainImage_page': {
 		height: 170,
@@ -37,9 +39,13 @@ const StyleCollectionImg = styled('img')(({ theme }) => ({
 	},
 }));
 
-const StyleCollectionProducts = styled('div')(() => ({
+const StyleCollectionProducts = styled('div')(({ theme }) => ({
 	padding: 0,
 	margin: 'auto',
+	width: '100%',
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		width: '51%',
+	},
 }));
 
 const StyleCollectionButton = styled(Button)(({ theme }) => ({
@@ -64,6 +70,9 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 			color: theme.colorText.third,
 			backgroundColor: theme.colors.primary,
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			width: '95%',
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			height: 62,
 			width: 552,
@@ -78,13 +87,19 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 const StyleCollectionImageList = styled(ImageList)(({ theme }) => ({
 	'&.MuiImageList-root': {
 		overflow: 'hidden',
-		margin: '16px 10px',
+		display: 'flex',
+		margin: '16px auto',
+		height: 270,
+		flexWrap: 'wrap',
 		justifyContent: 'center',
 		'& button': {
 			fill: 'white!important',
 		},
 		'& ul': {
 			top: '-5px!important',
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+			height: 310,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			height: 320,
@@ -96,17 +111,17 @@ const StyleCollectionImageList = styled(ImageList)(({ theme }) => ({
 }));
 
 const StyledCollectionWrapper = styled('div')(({ theme }) => ({
-	maxWidth: theme.breakpoints.xs,
+	maxWidth: theme.breakpoints.xl,
+	width: '95%',
 	margin: '60px auto',
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+		width: '85%',
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		minHeight: 350,
-		maxWidth: theme.breakpoints.md,
-	},
-	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		maxWidth: theme.breakpoints.xsl,
 	},
 	'&.collectionPage': {
 		margin: '24px auto',
@@ -122,6 +137,7 @@ const StyledCollectionWrapper = styled('div')(({ theme }) => ({
 const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
+	width: '100%',
 	'&.contacts_text-block': {
 		gap: 32,
 		margin: '16px auto 32px',

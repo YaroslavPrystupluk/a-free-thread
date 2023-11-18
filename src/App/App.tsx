@@ -33,7 +33,6 @@ const App = () => {
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		setValueSearch(event.target.value);
 		dispatch(addProduct(event.target.value));
-		console.log('app', event.target.value);
 	};
 
 	const handleSearch = () => {
@@ -43,7 +42,6 @@ const App = () => {
 
 		setValueSearch('');
 		dispatch(addResult(resultSearch));
-		console.log('app2', resultSearch);
 	};
 
 	const toggleActive = () => {

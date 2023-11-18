@@ -6,7 +6,7 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 		display: 'flex',
 		overflow: 'hidden',
 		justifyContent: 'center',
-		maxHeight: 540,
+		maxHeight: 520,
 		flexWrap: 'wrap',
 		'& button': {
 			fill: 'white!important',
@@ -21,8 +21,11 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 				width: 10,
 			},
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+			maxHeight: 620,
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
-			height: 270,
+			height: 310,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			height: 320,
@@ -132,7 +135,7 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 }));
 
 const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
-	width: 124,
+	width: '43%',
 	margin: '13px 10px',
 	border: '1px solid #F5F5F5',
 	boxShadow: `
@@ -141,6 +144,12 @@ const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 	  0px 3.67742px 1.83871px 0px rgba(0, 0, 0, 0.02),
 	  0px 5.51613px 2.75806px 0px rgba(0, 0, 0, 0.01),
 	  0px 9.19355px 2.75806px 0px rgba(0, 0, 0, 0.00)`,
+	'& .slider-container': {
+		height: '100%',
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+		width: '27%',
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		width: 162,
 	},
@@ -160,7 +169,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		margin: '16px auto',
 		textAlign: 'center',
 		maxWidth: theme.breakpoints.xsl,
-		width: '85%',
+		width: '100%',
 		'&.product': {
 			width: '100%',
 			whiteSpace: 'nowrap',
@@ -178,7 +187,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		},
 	},
 	'&.MuiTypography-body1': {
-		width: '85%',
+		width: '90%',
 		fontFamily: theme.fontFamily.text,
 		fontSize: 12,
 		fontWeight: 400,
@@ -190,7 +199,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		'-webkit-box-orient': 'vertical',
 		display: '-webkit-box',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			width: '90%',
+			width: '95%',
 			'-webkit-line-clamp': '3',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
@@ -210,8 +219,13 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const StyleSlideImg = styled('img')(({ theme }) => ({
+	width: '100%',
 	height: 180,
-	width: 124,
+	objectFit: 'cover',
+	objectPosition: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+		height: 230,
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		height: 230,
 		width: 162,
