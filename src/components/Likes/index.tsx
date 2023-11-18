@@ -34,11 +34,11 @@ const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper })
 
 	const randomProducts = useMemo(() => {
 		return collection === 'new'
-			? collectionsProducts?.slice(-4)
+			? collectionsProducts?.slice(-6)
 			: collectionsProducts
 					?.slice()
 					.sort(() => 0.5 - Math.random())
-					.slice(0, 4);
+					.slice(0, 6);
 	}, [collection, collectionsProducts]);
 
 	return (

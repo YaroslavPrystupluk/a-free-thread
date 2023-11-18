@@ -3,9 +3,11 @@ import { ImageList, ImageListItem, ImageListItemBar, Typography, Container } fro
 
 const StyleImageList = styled(ImageList)(({ theme }) => ({
 	'&.MuiImageList-root': {
+		display: 'flex',
 		overflow: 'hidden',
-		gridTemplateColumns: 'repeat(2, 144px)!important',
 		justifyContent: 'center',
+		maxHeight: 540,
+		flexWrap: 'wrap',
 		'& button': {
 			fill: 'white!important',
 			padding: 2,
@@ -19,12 +21,13 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 				width: 10,
 			},
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+			height: 270,
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			gridTemplateColumns: 'repeat(4, 180px)!important',
 			height: 320,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			gridTemplateColumns: 'repeat(4, 1fr)!important',
 			height: 480,
 		},
 		'&.collectionPage': {
@@ -222,7 +225,7 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 const StyleHitsWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xsl,
 	margin: '30px auto',
-	minHeight: 550,
+	minHeight: 320,
 	textAlign: 'center',
 	'&.product': {
 		margin: 0,

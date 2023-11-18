@@ -76,7 +76,7 @@ const ProductPage: React.FC = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			if (!productsArray?.length) {
-				await filterProducts('../public/shirts.json', '../public/accessories.json');
+				await filterProducts('../shirts.json', '../accessories.json');
 			}
 
 			if (idProduct !== undefined) {
