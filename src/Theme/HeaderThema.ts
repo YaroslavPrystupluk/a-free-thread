@@ -7,7 +7,7 @@ interface BtnLangProps {
 const HeaderWrapper = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	background: ${({ theme }) => theme.colors.primary};
 	padding: 0 26px;
 	gap: 9px;
@@ -109,9 +109,8 @@ const SelectLanguage = styled.div`
 
 const SubHeader = styled.div`
 	display: flex;
-	justify-content: center;
-	gap: calc(220px - 26px);
-	padding: 4px 0;
+	justify-content: space-between;
+	padding: 4px 26px;
 	border-bottom: 1px solid rgba(243, 198, 182, 0.5);
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		display: none;

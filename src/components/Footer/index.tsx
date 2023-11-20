@@ -15,8 +15,6 @@ import {
 	IconMenuSocial,
 	FooterLink,
 	IconMenuBank,
-	ArrowRight,
-	ArrowDown,
 	CustomLink,
 	SubMenuItem,
 	CustomMenuItem,
@@ -38,39 +36,45 @@ const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseSu
 			<WrappMenuFooter>
 				<MenuFooter>
 					<TitleMenu>Про компанію</TitleMenu>
-					<li>Про нас</li>
+					<CustomLink to="/about">
+						<li>Про нас</li>
+					</CustomLink>
 					<CustomLink to="/">
 						<CustomMenuItem disableRipple divider onClick={handleOpenSubMenu}>
 							Каталог
-							{!openSubMenu ? <ArrowRight /> : <ArrowDown />}
 						</CustomMenuItem>
 					</CustomLink>
 					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
-						<SubMenuItem to="/products">
+						<SubMenuItem to="/kiev">
 							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								“Сорочки Київщини”
 							</CustomSubMenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/guarantee">
+						<SubMenuItem to="regions">
 							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								“Регіони України”
 							</CustomSubMenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/paymentAndDelivery">
+						<SubMenuItem to="/grandmother">
 							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								“Віднови вишиванку своєї бабусі”
 							</CustomSubMenuItem>
 						</SubMenuItem>
-						<SubMenuItem to="/contacts">
+						<SubMenuItem to="/accessories">
 							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
 								Аксесуари
 							</CustomSubMenuItem>
 						</SubMenuItem>
 					</Collapse>
-
-					<li>Доставка і оплата</li>
-					<li>Відгуки</li>
-					<li>Контакти</li>
+					<CustomLink to="/delivery">
+						<li>Доставка і оплата</li>
+					</CustomLink>
+					<CustomLink to="/comments">
+						<li>Відгуки</li>
+					</CustomLink>
+					<CustomLink to="/contacts">
+						<li>Контакти</li>
+					</CustomLink>
 				</MenuFooter>
 				<MenuFooter>
 					<TitleMenu>Контакти</TitleMenu>

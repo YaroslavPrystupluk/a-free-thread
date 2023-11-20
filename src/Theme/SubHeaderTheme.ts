@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import ornamentImg from '../images/icon/ornament.webp';
 
 const Container = styled.article`
-	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
-	margin: 0 auto;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
+		margin: 0 auto;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
@@ -14,11 +13,9 @@ const Container = styled.article`
 
 const SubHeaderWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 3fr;
-	//grid-auto-rows: auto;
-	grid-template-rows: auto;
+	grid-template-columns: 25% 60%;
 	padding: 16px 0;
-	column-gap: 30px;
+	column-gap: 10%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		grid-template-columns: 1fr 2fr 3fr;
 		padding: 20px 0;

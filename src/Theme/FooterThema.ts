@@ -91,28 +91,6 @@ const IconMenuBank = styled.img`
 	}
 `;
 
-const ArrowRight = styled.span`
-	position: absolute;
-	right: 16px;
-	border: solid #000000;
-	border-width: 0 1px 1px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	margin: 0 0 2px 16px;
-`;
-
-const ArrowDown = styled.span`
-	position: absolute;
-	right: 16px;
-	border: solid #000000;
-	border-width: 0 1px 1px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	margin: 0 0 2px 16px;
-`;
-
 const CustomLink = styled(NavLink)`
 	color: ${({ theme }) => theme.colorText.primary};
 	text-decoration: none;
@@ -164,8 +142,6 @@ export {
 	IconMenuSocial,
 	IconMenuBank,
 	FooterLink,
-	ArrowRight,
-	ArrowDown,
 	CustomLink,
 	SubMenuItem,
 	CustomMenuItem,
