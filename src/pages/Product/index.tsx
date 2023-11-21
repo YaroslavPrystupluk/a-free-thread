@@ -116,7 +116,7 @@ const ProductPage: React.FC = () => {
 								onClick={() => handleThumbnailClick(`../${thumbnail}`, index)}
 								className={index === selectedButtonIndex ? 'selected' : ''}
 							>
-								<img src={`../${thumbnail}`} alt={`Превью ${index + 1}`} />
+								<img src={`../${thumbnail}`} alt={`Попередній перегляд ${index + 1}`} />
 							</button>
 						))}
 					</StyleProductThumbnails>

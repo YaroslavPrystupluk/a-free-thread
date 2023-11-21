@@ -67,27 +67,25 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 			overflow: 'inherit',
 		},
 		'& .MuiImageListItemBar-subtitle': {
-			lineHeight: 'normal',
 			whiteSpace: 'wrap',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				fontSize: 14,
+				fontSize: '0.9rem',
 			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-				fontSize: 16,
+				fontSize: '1rem',
 			},
 		},
 		'& .MuiImageListItemBar-title': {
 			color: theme.colorText.price,
 			fontWeight: 400,
 			marginBottom: 6,
-			fontSize: 11,
-			lineHeight: 'normal',
+			fontSize: '0.7rem',
 			letterSpacing: 0.24,
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				fontSize: 16,
+				fontSize: '1rem',
 			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-				fontSize: 20,
+				fontSize: '1.25rem',
 			},
 		},
 	},
@@ -122,10 +120,10 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 			textTransform: 'capitalize',
 			display: 'inline-flex',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				fontSize: 12,
+				fontSize: '0.75rem',
 			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-				fontSize: 14,
+				fontSize: '0.9rem',
 			},
 		},
 		'& .MuiImageListItemBar-titleWrap': {
@@ -161,7 +159,7 @@ const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 const StyleTypography = styled(Typography)(({ theme }) => ({
 	'&.MuiTypography-h4': {
 		fontFamily: theme.fontFamily.title,
-		fontSize: 20,
+		fontSize: '1.25rem',
 		fontWeight: 500,
 		lineHeight: '32px',
 		letterSpacing: 0.4,
@@ -173,13 +171,18 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		'&.product': {
 			width: '100%',
 			whiteSpace: 'nowrap',
+			display: 'flex',
+			justifyContent: 'center',
+			padding: '44px 0 16px',
+			position: 'relative',
+			right: 16,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			fontSize: 24,
+			fontSize: '1.5rem',
 			letterSpacing: 0.48,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 40,
+			fontSize: '2.5rem',
 			letterSpacing: 0.8,
 		},
 		'&.collectionPageTitle': {
@@ -189,7 +192,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 	'&.MuiTypography-body1': {
 		width: '90%',
 		fontFamily: theme.fontFamily.text,
-		fontSize: 12,
+		fontSize: '0.75rem',
 		fontWeight: 400,
 		lineHeight: '20px',
 		letterSpacing: 0.24,
@@ -203,7 +206,7 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 			'-webkit-line-clamp': '3',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 14,
+			fontSize: '0.9rem',
 			letterSpacing: 0.28,
 			lineHeight: '24px',
 		},

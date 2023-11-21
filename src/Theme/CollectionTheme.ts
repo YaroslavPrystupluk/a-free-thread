@@ -43,6 +43,12 @@ const StyleCollectionProducts = styled('div')(({ theme }) => ({
 	padding: 0,
 	margin: 'auto',
 	width: '100%',
+	'&.collectionPage': {
+		width: '95%',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		width: '51%',
 	},
@@ -54,7 +60,7 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 		backgroundColor: theme.colors.third,
 		borderRadius: 0,
 		width: '90%',
-		fontSize: 12,
+		fontSize: '0.75rem',
 		fontFamily: theme.fontFamily.text,
 		display: 'flex',
 		height: 44,
@@ -77,8 +83,8 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 			height: 62,
 			width: 552,
 			marginTop: 20,
-			fontSize: 16,
-			lineHeight: 22,
+			fontSize: '1rem',
+			lineHeight: '22px',
 			letterSpacing: 0.32,
 		},
 	},
@@ -103,6 +109,7 @@ const StyleCollectionImageList = styled(ImageList)(({ theme }) => ({
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			height: 320,
+			justifyContent: 'space-evenly',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			height: 480,
@@ -141,7 +148,7 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 	'&.contacts_text-block': {
 		gap: 32,
 		margin: '16px auto 32px',
-		width: 270,
+		width: '100%',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			width: 700,
 			flexDirection: 'row',
@@ -155,6 +162,7 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 		},
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		gap: 10,
 		flexDirection: 'row-reverse',
 		'&.wrapper_grandmother': {
 			flexDirection: 'row',
@@ -164,10 +172,14 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 			justifyContent: 'center',
 			alignItems: 'center',
 			gap: 20,
-			padding: '0 10px',
+			padding: '0 10px 32px',
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				padding: '0 10px 32px',
+			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 				gap: 24,
 				marginBottom: 60,
+				padding: '0 10px 60px',
 			},
 		},
 	},

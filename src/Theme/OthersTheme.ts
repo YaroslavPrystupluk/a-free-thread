@@ -21,46 +21,44 @@ const StyleContactsBlock = styled('div')(({ theme }) => ({
 }));
 
 const StyleContactsWrapper = styled('div')(({ theme }) => ({
-	maxWidth: theme.breakpoints.xs,
+	maxWidth: theme.breakpoints.xl,
 	flexDirection: 'column',
 	margin: '24px auto 70px',
 	display: 'flex',
 	alignItems: 'center',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		maxWidth: theme.breakpoints.md,
 		margin: '44px auto 100px',
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		maxWidth: theme.breakpoints.xl,
 		margin: '64px auto 140px',
 	},
 }));
 
 const StyleContactsSpan = styled('span')(({ theme }) => ({
 	fontFamily: theme.fontFamily.title,
-	fontSize: 16,
+	fontSize: '1rem',
 	fontWeight: 500,
 	lineHeight: '22px',
 	letterSpacing: '0.32px',
 	textTransform: 'uppercase',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		fontSize: 20,
+		fontSize: '1.25rem',
 		letterSpacing: '0.4px',
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		fontSize: 24,
+		fontSize: '1.5rem',
 		letterSpacing: '0.48px',
 	},
 }));
 
 const StyleContactsParagraph = styled('p')(({ theme }) => ({
 	fontFamily: theme.fontFamily.text,
-	fontSize: 14,
+	fontSize: '0.9rem',
 	fontWeight: 400,
 	lineHeight: '22px',
 	letterSpacing: '0.28px',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		fontSize: 16,
+		fontSize: '1rem',
 		lineHeight: '25px',
 		letterSpacing: '0.32px',
 	},
@@ -93,7 +91,7 @@ const StylePosition = styled('div')(({ theme }) => ({
 	backgroundColor: theme.colorText.price,
 	color: theme.colors.primary,
 	fontFamily: theme.fontFamily.text,
-	fontSize: 12,
+	fontSize: '0.75rem',
 	fontWeight: 400,
 	textTransform: 'uppercase',
 	'&::before': {
@@ -107,7 +105,7 @@ const StylePosition = styled('div')(({ theme }) => ({
 		transform: 'translate(-50%, -50%) rotate(45deg)',
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		fontSize: 14,
+		fontSize: '0.9rem',
 		width: 160,
 		height: 56,
 		paddingRight: 15,

@@ -43,8 +43,8 @@ const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper })
 
 	return (
 		<StyleHitsWrapper className={classWrapper}>
-			<StyleSquare className={classWrapper}> </StyleSquare>
 			<StyleTypography className={classWrapper} variant="h4" gutterBottom>
+				<StyleSquare className={classWrapper}> </StyleSquare>
 				{title}
 			</StyleTypography>
 			{loading && randomProducts ? (
