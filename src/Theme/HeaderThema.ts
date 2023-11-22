@@ -15,11 +15,11 @@ const HeaderWrapper = styled.div`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		background: ${({ theme }) => theme.colors.fourth};
 		border-bottom: 1px solid ${({ theme }) => theme.colors.third};
-		justify-content: center;
 		padding: 0 34px;
 		gap: 48px;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		justify-content: center;
 		padding: 0 46px;
 		gap: 166px;
 	}

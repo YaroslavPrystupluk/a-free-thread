@@ -6,19 +6,13 @@ interface SquareTitleProps {
 }
 
 const Container = styled.article`
-	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
-	margin: 0 auto;
 	padding: 0 26px;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
-	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
 	}
 `;
 
 const TitleWrapper = styled.div<SquareTitleProps>`
-	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -51,34 +45,30 @@ const Title = styled.h1`
 
 const StarIcon = styled.img`
 	max-width: 16px;
-	position: absolute;
-	bottom: 65%;
-	left: 65%;
+	margin: 0 -13px 25px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 20px;
-		left: 57%;
+		margin: 0 -15px 30px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: 24px;
-		left: 58%;
+		margin: 0 -23px 45px 0;
 	}
 `;
 
-const SquareTitle = styled.span<SquareTitleProps>`
+const SquareTitle = styled.span`
 	min-width: 28px;
 	min-height: 28px;
-	position: absolute;
-	left: ${(props) => (props.$isTeam ? '12%' : '28%')};
-	bottom: 60%;
+	margin: 0 -13px 30px 0;
 	background: ${({ theme }) => theme.colors.primary};
 	opacity: 0.2;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		left: ${(props) => (props.$isTeam ? '34%' : '40.5%')};
+		margin: 0 -15px 30px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		min-width: 40px;
 		min-height: 40px;
-		bottom: 50%;
+		margin: 0 -23px 45px 0;
 	}
 `;
 

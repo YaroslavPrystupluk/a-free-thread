@@ -9,7 +9,7 @@ import {
 	FooterWrap,
 	LogoWrapper,
 	LogoIcon,
-	WrappMenuFooter,
+	WrapperMenuFooter,
 	MenuFooter,
 	TitleMenu,
 	IconMenuSocial,
@@ -30,10 +30,10 @@ interface FooterProps {
 const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseSubMenu }) => {
 	return (
 		<FooterWrap>
-			<LogoWrapper>
-				<LogoIcon src={FooterLogo} alt="logo free-thread footer" />
-			</LogoWrapper>
-			<WrappMenuFooter>
+			<WrapperMenuFooter>
+				<LogoWrapper>
+					<LogoIcon src={FooterLogo} alt="logo free-thread footer" />
+				</LogoWrapper>
 				<MenuFooter>
 					<TitleMenu>Про компанію</TitleMenu>
 					<CustomLink to="/about">
@@ -101,7 +101,7 @@ const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseSu
 						<IconMenuBank src={logoVisa} alt="icon Visa" />
 					</li>
 				</MenuFooter>
-			</WrappMenuFooter>
+			</WrapperMenuFooter>
 		</FooterWrap>
 	);
 };

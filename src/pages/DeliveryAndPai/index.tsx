@@ -25,9 +25,9 @@ const DeliveryAndPai: FC = () => {
 	return (
 		<Container>
 			<TitleWrapper>
+				<SquareTitle />
 				<TitlePage>Доставка і оплата</TitlePage>
 				<StarIcon src={star} alt="star" />
-				<SquareTitle />
 			</TitleWrapper>
 			<Content>
 				<ContentList>

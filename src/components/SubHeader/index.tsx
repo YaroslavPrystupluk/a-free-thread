@@ -49,14 +49,14 @@ const SubHeader = () => {
 						<ImgDesktopBig src={imgDesktopSubHeaderBig} alt="ornament" />
 						<ImgDesktopMedium src={imgDesktopSubHeaderMedium} alt="ornament" />
 						<ImgDesktopSmall src={imgDesktopSubHeaderSmall} alt="ornament" />
-						<SloganWrapper>
-							<StarIcon src={star} alt="star icon" />
-							<Slogan>віднови вишиванку своєї бабусі.</Slogan>
-						</SloganWrapper>
 						<SloganWrapperTop>
 							<StarIcon src={star} alt="star icon" />
 							<Slogan>Створюємо речі сили сильними жінками.</Slogan>
 						</SloganWrapperTop>
+						<SloganWrapper>
+							<StarIcon src={star} alt="star icon" />
+							<Slogan>віднови вишиванку своєї бабусі.</Slogan>
+						</SloganWrapper>
 						<SloganWrapperEnd>
 							<Slogan>Час бути вільною.</Slogan>
 						</SloganWrapperEnd>
