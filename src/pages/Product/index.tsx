@@ -76,7 +76,7 @@ const ProductPage: React.FC = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			if (!productsArray?.length) {
-				await filterProducts('../public/shirts.json', '../public/accessories.json');
+				await filterProducts('../shirts.json', '../accessories.json');
 			}
 
 			if (idProduct !== undefined) {
@@ -116,7 +116,7 @@ const ProductPage: React.FC = () => {
 								onClick={() => handleThumbnailClick(`../${thumbnail}`, index)}
 								className={index === selectedButtonIndex ? 'selected' : ''}
 							>
-								<img src={`../${thumbnail}`} alt={`Превью ${index + 1}`} />
+								<img src={`../${thumbnail}`} alt={`Попередній перегляд ${index + 1}`} />
 							</button>
 						))}
 					</StyleProductThumbnails>

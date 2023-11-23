@@ -3,9 +3,11 @@ import { ImageList, ImageListItem, ImageListItemBar, Typography, Container } fro
 
 const StyleImageList = styled(ImageList)(({ theme }) => ({
 	'&.MuiImageList-root': {
+		display: 'flex',
 		overflow: 'hidden',
-		gridTemplateColumns: 'repeat(2, 144px)!important',
 		justifyContent: 'center',
+		maxHeight: 520,
+		flexWrap: 'wrap',
 		'& button': {
 			fill: 'white!important',
 			padding: 2,
@@ -19,12 +21,16 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 				width: 10,
 			},
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+			maxHeight: 630,
+		},
+		[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+			height: 310,
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			gridTemplateColumns: 'repeat(4, 180px)!important',
 			height: 320,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			gridTemplateColumns: 'repeat(4, 1fr)!important',
 			height: 480,
 		},
 		'&.collectionPage': {
@@ -61,27 +67,25 @@ const StyleImageListItemBar = styled(ImageListItemBar)(({ theme }) => ({
 			overflow: 'inherit',
 		},
 		'& .MuiImageListItemBar-subtitle': {
-			lineHeight: 'normal',
 			whiteSpace: 'wrap',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				fontSize: 14,
+				fontSize: '0.9rem',
 			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-				fontSize: 16,
+				fontSize: '1rem',
 			},
 		},
 		'& .MuiImageListItemBar-title': {
 			color: theme.colorText.price,
 			fontWeight: 400,
 			marginBottom: 6,
-			fontSize: 11,
-			lineHeight: 'normal',
+			fontSize: '0.7rem',
 			letterSpacing: 0.24,
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				fontSize: 16,
+				fontSize: '1rem',
 			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-				fontSize: 20,
+				fontSize: '1.25rem',
 			},
 		},
 	},
@@ -116,10 +120,10 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 			textTransform: 'capitalize',
 			display: 'inline-flex',
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				fontSize: 12,
+				fontSize: '0.75rem',
 			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-				fontSize: 14,
+				fontSize: '0.9rem',
 			},
 		},
 		'& .MuiImageListItemBar-titleWrap': {
@@ -129,7 +133,7 @@ const StyleImageListItemBadge = styled(ImageListItemBar)(({ theme }) => ({
 }));
 
 const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
-	width: 124,
+	width: '43%',
 	margin: '13px 10px',
 	border: '1px solid #F5F5F5',
 	boxShadow: `
@@ -138,6 +142,12 @@ const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 	  0px 3.67742px 1.83871px 0px rgba(0, 0, 0, 0.02),
 	  0px 5.51613px 2.75806px 0px rgba(0, 0, 0, 0.01),
 	  0px 9.19355px 2.75806px 0px rgba(0, 0, 0, 0.00)`,
+	'& .slider-container': {
+		height: '100%',
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+		width: '27%',
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		width: 162,
 	},
@@ -149,7 +159,7 @@ const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 const StyleTypography = styled(Typography)(({ theme }) => ({
 	'&.MuiTypography-h4': {
 		fontFamily: theme.fontFamily.title,
-		fontSize: 20,
+		fontSize: '1.25rem',
 		fontWeight: 500,
 		lineHeight: '32px',
 		letterSpacing: 0.4,
@@ -157,17 +167,22 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		margin: '16px auto',
 		textAlign: 'center',
 		maxWidth: theme.breakpoints.xsl,
-		width: '85%',
+		width: '100%',
 		'&.product': {
 			width: '100%',
 			whiteSpace: 'nowrap',
+			display: 'flex',
+			justifyContent: 'center',
+			padding: '44px 0 16px',
+			position: 'relative',
+			right: 16,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			fontSize: 24,
+			fontSize: '1.5rem',
 			letterSpacing: 0.48,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 40,
+			fontSize: '2.5rem',
 			letterSpacing: 0.8,
 		},
 		'&.collectionPageTitle': {
@@ -175,9 +190,9 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		},
 	},
 	'&.MuiTypography-body1': {
-		width: '85%',
+		width: '90%',
 		fontFamily: theme.fontFamily.text,
-		fontSize: 12,
+		fontSize: '0.75rem',
 		fontWeight: 400,
 		lineHeight: '20px',
 		letterSpacing: 0.24,
@@ -187,11 +202,11 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 		'-webkit-box-orient': 'vertical',
 		display: '-webkit-box',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			width: '90%',
+			width: '95%',
 			'-webkit-line-clamp': '3',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 14,
+			fontSize: '0.9rem',
 			letterSpacing: 0.28,
 			lineHeight: '24px',
 		},
@@ -207,8 +222,13 @@ const StyleTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const StyleSlideImg = styled('img')(({ theme }) => ({
+	width: '100%',
 	height: 180,
-	width: 124,
+	objectFit: 'cover',
+	objectPosition: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+		height: 230,
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		height: 230,
 		width: 162,
@@ -222,7 +242,7 @@ const StyleSlideImg = styled('img')(({ theme }) => ({
 const StyleHitsWrapper = styled(Container)(({ theme }) => ({
 	maxWidth: theme.breakpoints.xsl,
 	margin: '30px auto',
-	minHeight: 550,
+	minHeight: 320,
 	textAlign: 'center',
 	'&.product': {
 		margin: 0,

@@ -7,6 +7,7 @@ import productSlice from '../slices/productSlice';
 import teamsSlice from '../slices/teamsSlice';
 import commentsSlice from '../slices/commentsSlice';
 import lastVisitedProductsSlice from '../slices/lastVisitedSlice';
+import searchSlice from '../slices/searchSlice';
 
 const store = configureStore({
 	reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
 		teams: teamsSlice,
 		comments: commentsSlice,
 		lastVisited: lastVisitedProductsSlice,
+		search: searchSlice,
 	},
 });
 

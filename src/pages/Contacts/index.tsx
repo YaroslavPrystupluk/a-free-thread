@@ -49,7 +49,7 @@ function Contacts() {
 				</StyleContactsBlock>
 			</StyleCollectionImageWrapper>
 			<StylePosition>вільна нитка</StylePosition>
-			<StyleImgMap src="../src/images/Others/map.png" alt="Map" />
+			<StyleImgMap src="/images/Others/map.png" alt="Map" />
 		</StyleContactsWrapper>
 	);
 }

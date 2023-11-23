@@ -119,7 +119,7 @@ const CollectionPage = () => {
 					</StyleTypography>
 				</StyleCollectionPageMain>
 			</StyleCollectionImageWrapper>
-			<StyleCollectionProducts>
+			<StyleCollectionProducts className="collectionPage">
 				<StyleImageList style={{ gap: 'auto' }} className="collectionPage">
 					{productsSliced.map((item: Product) => (
 						<ProductItem item={item} badge="Новинка" key={item.id} />
