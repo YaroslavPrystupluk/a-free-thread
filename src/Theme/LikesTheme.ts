@@ -28,7 +28,7 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			height: 310,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			height: 320,
+			height: 340,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			height: 480,
@@ -37,8 +37,19 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				margin: '16px 0',
 			},
-			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-				height: 'auto',
+			'&.searchPage': {
+				maxHeight: 'fit-content',
+				minWidth: 290,
+				width: '95%',
+				[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+					height: 'fit-content',
+				},
+				[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+					margin: '16px 0',
+				},
+				[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+					height: 'auto',
+				},
 			},
 			'& .MuiPagination-ul svg': {
 				'& button': {
@@ -142,10 +153,8 @@ const StyleImageListItem = styled(ImageListItem)(({ theme }) => ({
 	  0px 3.67742px 1.83871px 0px rgba(0, 0, 0, 0.02),
 	  0px 5.51613px 2.75806px 0px rgba(0, 0, 0, 0.01),
 	  0px 9.19355px 2.75806px 0px rgba(0, 0, 0, 0.00)`,
-	'& .slider-container': {
-		height: '100%',
-	},
 	[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+		minWidth: 150,
 		width: '27%',
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {

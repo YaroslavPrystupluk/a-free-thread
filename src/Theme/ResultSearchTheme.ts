@@ -1,15 +1,9 @@
 import styled from 'styled-components';
 
 const Container = styled.article`
-	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
+	max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
 	margin: 0 auto;
 	padding: 0 26px;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
-	}
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
-	}
 `;
 
 const TitleWrapper = styled.div`
@@ -35,6 +29,14 @@ const Title = styled.h1`
 	letter-spacing: 0.3px;
 	text-transform: uppercase;
 	text-align: center;
+
+	&.search {
+		width: 280px;
+		@media (min-width: ${({ theme }) => `${theme.breakpoints.sm}px`}) {
+			width: auto;
+		}
+	}
+
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		font-size: 24px;
 		letter-spacing: 0.48px;
