@@ -16,6 +16,7 @@ import Contacts from '../pages/Contacts';
 import ResultSearch from '../pages/ResultSearch';
 import { Product } from '../redux/slices/productsSlice';
 import { RootState } from '../redux/store/store';
+import { useToggle } from '../hooks/useToggle';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -25,12 +26,11 @@ const Wrapper = styled.div`
 `;
 
 const App = () => {
+	const [isVisible, toggleVisible] = useToggle(false);
+	const [isModalVisible, toggleModal] = useToggle(false);
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
-	const [isActive, setIsActive] = useState(false);
-	const [openModal, setOpenModal] = useState(false);
 	const [activeButtonLang, setActiveButtonLang] = useState(1);
 	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
-	const [openSubMenu, setOpenSubMenu] = useState(false);
 	const [valueSearch, setValueSearch] = useState('');
 	const [searchProduct, setSearchProduct] = useState('');
 	const [searchResult, setSearchResult] = useState<Product[]>([]);
@@ -51,10 +51,6 @@ const App = () => {
 		setSearchResult(resultSearch);
 	};
 
-	const toggleActive = () => {
-		setIsActive(!isActive);
-	};
-
 	const handleClickBurgerMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setBurgerMenu(event.currentTarget);
 	};
@@ -62,26 +58,13 @@ const App = () => {
 	const handleCloseBurgerMenu = () => {
 		setBurgerMenu(null);
 	};
-	const handleOpenSubMenu = () => {
-		setOpenSubMenu(!openSubMenu);
-	};
 
-	const handleCloseSubMenu = () => {
-		setOpenSubMenu(false);
-	};
 	const handleActiveButtonLang = (buttonIndex: number) => {
 		setActiveButtonLang(buttonIndex);
 	};
 
 	const handleActiveButtonMenu = (buttonIndex: number) => {
 		setActiveButtonMenu(buttonIndex);
-	};
-	const handleOpenModal = () => {
-		setOpenModal(true);
-	};
-
-	const handleCloseModal = () => {
-		setOpenModal(false);
 	};
 
 	return (
@@ -90,23 +73,23 @@ const App = () => {
 				<Modal
 					handleChange={handleChange}
 					valueSearch={valueSearch}
-					handleCloseModal={handleCloseModal}
-					openModal={openModal}
+					handleCloseModal={toggleModal}
+					openModal={isModalVisible}
 					handleSearch={handleSearch}
 				/>
 				<Header
 					activeButtonLang={activeButtonLang}
 					handleActiveButtonLang={handleActiveButtonLang}
-					handleOpenModal={handleOpenModal}
+					handleOpenModal={toggleModal}
 					handleActiveButtonMenu={handleActiveButtonMenu}
 					activeButtonMenu={activeButtonMenu}
-					handleOpenSubMenu={handleOpenSubMenu}
-					openSubMenu={openSubMenu}
-					toggleActive={toggleActive}
+					handleOpenSubMenu={toggleVisible}
+					openSubMenu={isVisible}
+					toggleActive={toggleVisible}
 					handleClickBurgerMenu={handleClickBurgerMenu}
 					handleCloseBurgerMenu={handleCloseBurgerMenu}
 					burgerMenu={burgerMenu}
-					isActive={isActive}
+					isActive={isVisible}
 				/>
 				<Routes>
 					<Route path="/" element={<Main />} />
@@ -123,9 +106,9 @@ const App = () => {
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 				<Footer
-					handleOpenSubMenu={handleOpenSubMenu}
-					openSubMenu={openSubMenu}
-					handleCloseSubMenu={handleCloseSubMenu}
+					handleOpenSubMenu={toggleVisible}
+					openSubMenu={isVisible}
+					handleCloseSubMenu={toggleVisible}
 				/>
 			</Wrapper>
 		</BrowserRouter>
