@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
+import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from '../components/Header';
 import Modal from '../components/Modal';
-import Main from '../pages/Main';
-import CollectionPage from '../pages/Collections';
-import PageNotFound from '../pages/NotFoundPage';
 import Footer from '../components/Footer';
-import ProductPage from '../pages/Product';
-import About from '../pages/About';
-import DeliveryAndPai from '../pages/DeliveryAndPai';
-import Comments from '../pages/Comments';
-import Contacts from '../pages/Contacts';
-import ResultSearch from '../pages/ResultSearch';
 import { Product } from '../redux/slices/productsSlice';
 import { RootState } from '../redux/store/store';
 import { useToggle } from '../hooks/useToggle';
+import { addProduct, addResult } from '../redux/slices/searchSlice';
+import RoutesInApp from '../components/Routes';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -26,20 +20,19 @@ const Wrapper = styled.div`
 `;
 
 const App = () => {
-	const [isVisible, toggleVisible] = useToggle(false);
+	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+  const [isVisible, toggleVisible] = useToggle(false);
 	const [isModalVisible, toggleModal] = useToggle(false);
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
 	const [activeButtonLang, setActiveButtonLang] = useState(1);
 	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
 	const [valueSearch, setValueSearch] = useState('');
-	const [searchProduct, setSearchProduct] = useState('');
-	const [searchResult, setSearchResult] = useState<Product[]>([]);
 
 	const products = useSelector((state: RootState) => state.products.products) as Product[];
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		setValueSearch(event.target.value);
-		setSearchProduct(event.target.value);
+		dispatch(addProduct(event.target.value));
 	};
 
 	const handleSearch = () => {
@@ -48,7 +41,7 @@ const App = () => {
 		});
 
 		setValueSearch('');
-		setSearchResult(resultSearch);
+		dispatch(addResult(resultSearch));
 	};
 
 	const handleClickBurgerMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -91,20 +84,7 @@ const App = () => {
 					burgerMenu={burgerMenu}
 					isActive={isVisible}
 				/>
-				<Routes>
-					<Route path="/" element={<Main />} />
-					<Route path="/:id" element={<CollectionPage />} />
-					<Route path="/product/:id" element={<ProductPage />} />
-					<Route path="about" element={<About />} />
-					<Route path="delivery" element={<DeliveryAndPai />} />
-					<Route path="comments" element={<Comments />} />
-					<Route path="contacts" element={<Contacts />} />
-					<Route
-						path="search"
-						element={<ResultSearch searchProduct={searchProduct} searchResult={searchResult} />}
-					/>
-					<Route path="*" element={<PageNotFound />} />
-				</Routes>
+				<RoutesInApp />
 				<Footer
 					handleOpenSubMenu={toggleVisible}
 					openSubMenu={isVisible}

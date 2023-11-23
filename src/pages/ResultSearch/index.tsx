@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import star from '../../images/icon/star.webp';
 import {
 	Container,
@@ -13,13 +14,16 @@ import {
 import { Product } from '../../redux/slices/productsSlice';
 import ProductItem from '../../components/Likes/productItem';
 import { StyleImageList } from '../../Theme/LikesTheme';
+import { RootState } from '../../redux/store/store';
 
-interface ResultSearchProps {
-	searchProduct: string;
-	searchResult: Product[];
-}
+const ResultSearch = React.memo(() => {
+	const searchProduct: string = useSelector((state: RootState) => state.search.searchProduct || '');
+	const searchResult: Product[] = useSelector(
+		(state: RootState) => state.search.searchResult || [],
+	);
 
-const ResultSearch: FC<ResultSearchProps> = React.memo(({ searchProduct, searchResult }) => {
+	console.log('пошук', searchProduct, searchResult);
+
 	return (
 		<Container>
 			<TitleWrapper>

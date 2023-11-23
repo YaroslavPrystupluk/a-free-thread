@@ -9,7 +9,6 @@ const StyleProductNotFound = styled('div')({
 const StyleProductMainImg = styled('img')(({ theme }) => ({
 	width: 204,
 	height: 267,
-	margin: 'auto',
 	objectFit: 'cover',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		width: 341,
@@ -25,8 +24,9 @@ const StyleProductGallery = styled('div')(({ theme }) => ({
 	margin: '24px auto',
 	textAlign: 'center',
 	display: 'flex',
-	maxWidth: 270,
+	maxWidth: '80%',
 	gap: 12,
+	justifyContent: 'center',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		flexDirection: 'column-reverse',
 		maxWidth: 340,
@@ -40,7 +40,6 @@ const StyleProductGallery = styled('div')(({ theme }) => ({
 
 const StyleProductMain = styled('div')(({ theme }) => ({
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		maxWidth: theme.breakpoints.md,
 		display: 'flex',
 		alignItems: 'flex-start',
 	},
@@ -115,17 +114,17 @@ const StyleProductItemBar = styled(ImageListItemBar)(({ theme }) => ({
 	},
 	'& .MuiImageListItemBar-subtitle': {
 		fontFamily: theme.fontFamily.title,
-		fontSize: 16,
+		fontSize: '1rem',
 		fontWeight: 500,
 		lineHeight: '22px',
 		letterSpacing: '0.32px',
 		textTransform: 'uppercase',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			fontSize: 20,
+			fontSize: '1.25rem',
 			letterSpacing: '0.4px',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 24,
+			fontSize: '1.5rem',
 			letterSpacing: '0.48px',
 		},
 	},
@@ -133,13 +132,12 @@ const StyleProductItemBar = styled(ImageListItemBar)(({ theme }) => ({
 		color: theme.colorText.third,
 		fontFamily: theme.fontFamily.text,
 		fontWeight: 400,
-		fontSize: 14,
-		lineHeight: 'normal',
+		fontSize: '0.9rem',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			fontSize: 18,
+			fontSize: '1.1rem',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 20,
+			fontSize: '1.25rem',
 		},
 	},
 }));
@@ -150,7 +148,7 @@ const StyleProductSize = styled('div')(({ theme }) => ({
 	padding: '4px 0px 18px 0',
 	color: theme.colors.third,
 	fontFamily: theme.fontFamily.text,
-	fontSize: 12,
+	fontSize: '0.75rem',
 	fontWeight: 400,
 	lineHeight: '17px',
 	letterSpacing: '0.24px',
@@ -160,15 +158,10 @@ const StyleProductSize = styled('div')(({ theme }) => ({
 }));
 
 const StyleProductWrapper = styled('div')(({ theme }) => ({
-	maxWidth: 320,
 	margin: '50px auto',
 	display: 'flex',
 	flexDirection: 'column',
-	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-		maxWidth: theme.breakpoints.md,
-	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		maxWidth: theme.breakpoints.xl,
 		alignItems: 'center',
 	},
 }));
@@ -177,10 +170,9 @@ const StyleProductDescription = styled('div')(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	gap: 12,
-	width: 270,
+	width: '80%',
 	fontWeight: 400,
 	margin: 'auto',
-	lineHeight: 'normal',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		width: 340,
 		margin: '24px auto',
@@ -188,13 +180,13 @@ const StyleProductDescription = styled('div')(({ theme }) => ({
 	'& .MuiTypography-h4': {
 		color: theme.colorText.third,
 		fontFamily: theme.fontFamily.text,
-		fontSize: 14,
+		fontSize: '0.9rem',
 		letterSpacing: '0.28px',
 		textTransform: 'uppercase',
 		display: 'flex',
 		justifyContent: 'space-between',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			fontSize: 16,
+			fontSize: '1rem',
 			letterSpacing: '0.32px',
 		},
 		'& button': {
@@ -203,7 +195,7 @@ const StyleProductDescription = styled('div')(({ theme }) => ({
 		},
 	},
 	'& .MuiTypography-body2': {
-		fontSize: 12,
+		fontSize: '0.75rem',
 		letterSpacing: '0.24px',
 		lineHeight: '20px',
 		overflow: 'hidden',
@@ -212,7 +204,7 @@ const StyleProductDescription = styled('div')(({ theme }) => ({
 		'-webkit-box-orient': 'vertical',
 		display: '-webkit-box',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			fontSize: 14,
+			fontSize: '0.9rem',
 			letterSpacing: '0.28px',
 			lineHeight: '24px',
 		},

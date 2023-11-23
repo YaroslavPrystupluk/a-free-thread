@@ -2,23 +2,25 @@ import { Button, ImageList } from '@mui/material';
 import styled from 'styled-components';
 
 const StyleCollectionImg = styled('img')(({ theme }) => ({
-	height: 250,
-	width: 260,
+	height: '100%',
+	maxHeight: 380,
+	width: '90%',
 	paddingTop: 12,
 	margin: 'auto',
 	objectFit: 'cover',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		height: 380,
-		width: 350,
+		width: '49%',
 		marginTop: 16,
 		paddingRight: 16,
 		'&.mainImage_grandmother': {
 			paddingLeft: 16,
+			paddingRight: 0,
 		},
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		height: 560,
-		width: 560,
+		maxHeight: 600,
 	},
 	'&.mainImage_page': {
 		height: 170,
@@ -37,9 +39,19 @@ const StyleCollectionImg = styled('img')(({ theme }) => ({
 	},
 }));
 
-const StyleCollectionProducts = styled('div')(() => ({
+const StyleCollectionProducts = styled('div')(({ theme }) => ({
 	padding: 0,
 	margin: 'auto',
+	width: '100%',
+	'&.collectionPage': {
+		width: '95%',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+	},
+	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		width: '51%',
+	},
 }));
 
 const StyleCollectionButton = styled(Button)(({ theme }) => ({
@@ -48,7 +60,7 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 		backgroundColor: theme.colors.third,
 		borderRadius: 0,
 		width: '90%',
-		fontSize: 12,
+		fontSize: '0.75rem',
 		fontFamily: theme.fontFamily.text,
 		display: 'flex',
 		height: 44,
@@ -64,12 +76,16 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 			color: theme.colorText.third,
 			backgroundColor: theme.colors.primary,
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+			width: '95%',
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			height: 62,
-			width: 552,
+			width: '100%',
+			maxWidth: 552,
 			marginTop: 20,
-			fontSize: 16,
-			lineHeight: 22,
+			fontSize: '1rem',
+			lineHeight: '22px',
 			letterSpacing: 0.32,
 		},
 	},
@@ -78,7 +94,10 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 const StyleCollectionImageList = styled(ImageList)(({ theme }) => ({
 	'&.MuiImageList-root': {
 		overflow: 'hidden',
-		margin: '16px 10px',
+		display: 'flex',
+		margin: '16px auto',
+		height: 270,
+		flexWrap: 'wrap',
 		justifyContent: 'center',
 		'& button': {
 			fill: 'white!important',
@@ -86,8 +105,12 @@ const StyleCollectionImageList = styled(ImageList)(({ theme }) => ({
 		'& ul': {
 			top: '-5px!important',
 		},
+		[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+			height: 310,
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			height: 320,
+			justifyContent: 'space-evenly',
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			height: 480,
@@ -96,36 +119,31 @@ const StyleCollectionImageList = styled(ImageList)(({ theme }) => ({
 }));
 
 const StyledCollectionWrapper = styled('div')(({ theme }) => ({
-	maxWidth: theme.breakpoints.xs,
+	maxWidth: theme.breakpoints.xl,
+	width: '95%',
 	margin: '60px auto',
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'center',
+	[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
+		width: '85%',
+	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 		minHeight: 350,
-		maxWidth: theme.breakpoints.md,
-	},
-	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		maxWidth: theme.breakpoints.xsl,
 	},
 	'&.collectionPage': {
 		margin: '24px auto',
-		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			maxWidth: 700,
-		},
-		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			maxWidth: theme.breakpoints.xsl,
-		},
 	},
 }));
 
 const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
+	width: '95%',
 	'&.contacts_text-block': {
 		gap: 32,
 		margin: '16px auto 32px',
-		width: 270,
+		width: '100%',
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			width: 700,
 			flexDirection: 'row',
@@ -139,6 +157,7 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 		},
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+		gap: 10,
 		flexDirection: 'row-reverse',
 		'&.wrapper_grandmother': {
 			flexDirection: 'row',
@@ -148,10 +167,17 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 			justifyContent: 'center',
 			alignItems: 'center',
 			gap: 20,
-			padding: '0 10px',
+			padding: '0 10px 32px',
+			[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+				width: '80%',
+			},
+			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
+				padding: '0 10px 32px',
+			},
 			[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 				gap: 24,
 				marginBottom: 60,
+				padding: '0 10px 60px',
 			},
 		},
 	},

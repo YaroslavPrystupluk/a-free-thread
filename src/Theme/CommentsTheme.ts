@@ -99,12 +99,12 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 	'& .MuiPaginationItem-page': {
 		color: `${theme.colorText.third}!important`,
 		backgroundColor: 'white!important',
-		fontSize: 16,
+		fontSize: '1rem',
 		margin: 0,
 		minHeight: '20px!important',
 		minWidth: '20px!important',
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			fontSize: 18,
+			fontSize: '1.1rem',
 		},
 	},
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
@@ -113,19 +113,19 @@ const StylePaginationBox = styled('div')(({ theme }) => ({
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 		width: 230,
 		left: '40%',
-		fontSize: 18,
+		fontSize: '1.1rem',
 	},
 }));
 
 const StylePaginationButton = styled('div')(({ theme }) => ({
 	display: 'flex',
 	position: 'relative',
-	fontSize: 14,
+	fontSize: '0.9rem',
 	bottom: 10,
 	alignContent: 'flex-start',
 	alignItems: 'center',
 	[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-		fontSize: 18,
+		fontSize: '1.1rem',
 	},
 	'&.countPagination1': {
 		position: 'relative',
