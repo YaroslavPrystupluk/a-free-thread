@@ -22,7 +22,7 @@ const StyleImageList = styled(ImageList)(({ theme }) => ({
 			},
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.sm}px)`]: {
-			maxHeight: 620,
+			maxHeight: 630,
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
 			height: 310,

@@ -81,7 +81,8 @@ const StyleCollectionButton = styled(Button)(({ theme }) => ({
 		},
 		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
 			height: 62,
-			width: 552,
+			width: '100%',
+			maxWidth: 552,
 			marginTop: 20,
 			fontSize: '1rem',
 			lineHeight: '22px',
@@ -132,19 +133,13 @@ const StyledCollectionWrapper = styled('div')(({ theme }) => ({
 	},
 	'&.collectionPage': {
 		margin: '24px auto',
-		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
-			maxWidth: 700,
-		},
-		[`@media screen and (min-width: ${theme.breakpoints.xl}px)`]: {
-			maxWidth: theme.breakpoints.xsl,
-		},
 	},
 }));
 
 const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
-	width: '100%',
+	width: '95%',
 	'&.contacts_text-block': {
 		gap: 32,
 		margin: '16px auto 32px',
@@ -173,6 +168,9 @@ const StyleCollectionImageWrapper = styled('div')(({ theme }) => ({
 			alignItems: 'center',
 			gap: 20,
 			padding: '0 10px 32px',
+			[`@media screen and (min-width: ${theme.breakpoints.mdm}px)`]: {
+				width: '80%',
+			},
 			[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 				padding: '0 10px 32px',
 			},

@@ -24,6 +24,7 @@ const StyleContactsWrapper = styled('div')(({ theme }) => ({
 	maxWidth: theme.breakpoints.xl,
 	flexDirection: 'column',
 	margin: '24px auto 70px',
+	padding: '0 10px',
 	display: 'flex',
 	alignItems: 'center',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
@@ -65,7 +66,7 @@ const StyleContactsParagraph = styled('p')(({ theme }) => ({
 }));
 
 const StyleImgMap = styled('img')(({ theme }) => ({
-	width: 320,
+	width: 300,
 	height: 190,
 	objectFit: 'cover',
 	[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
