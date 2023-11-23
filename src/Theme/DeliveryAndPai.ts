@@ -7,19 +7,14 @@ interface TitleProps {
 }
 
 const Container = styled.article`
-	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
 	margin: 0 auto;
 	padding: 0 26px;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
-	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
 	}
 `;
 
 const TitleWrapper = styled.div`
-	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -51,35 +46,30 @@ const TitlePage = styled.h1`
 
 const StarIcon = styled.img`
 	max-width: 16px;
-	position: absolute;
-	bottom: 75%;
-	right: 6%;
+	margin: 0 0 30px -10px;
+
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 20px;
-		right: 31%;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: 24px;
-		right: 31%;
+		margin: 0 0 55px -15px;
 	}
 `;
 
 const SquareTitle = styled.span`
 	min-width: 28px;
 	min-height: 28px;
-	position: absolute;
-	left: 5%;
-	bottom: 60%;
+	margin: 0 -13px 25px 0;
 	background: ${({ theme }) => theme.colors.primary};
 	opacity: 0.2;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		left: 31%;
+		margin: 0 -15px 30px 0;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		min-width: 40px;
 		min-height: 40px;
-		left: 30.5%;
-		bottom: 60%;
+		margin: 0 -23px 45px 0;
 	}
 `;
 

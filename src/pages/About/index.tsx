@@ -45,9 +45,9 @@ const About = () => {
 	return (
 		<Container>
 			<TitleWrapper $isTeam={false}>
+				<SquareTitle />
 				<Title>Про нас</Title>
 				<StarIcon src={star} alt="star" />
-				<SquareTitle $isTeam={false} />
 			</TitleWrapper>
 			<ThemeProvider theme={theme}>
 				<Grid container columnSpacing={{ xs: 0, md: 3, xl: 4 }}>
@@ -88,8 +88,8 @@ const About = () => {
 					</GridAbout>
 				</Grid>
 				<TitleWrapper $isTeam>
+					<SquareTitle />
 					<Title>наша команда</Title>
-					<SquareTitle $isTeam />
 				</TitleWrapper>
 				<Grid
 					container
