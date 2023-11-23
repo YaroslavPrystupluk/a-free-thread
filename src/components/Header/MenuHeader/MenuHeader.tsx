@@ -1,23 +1,24 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { MenuItem } from '@mui/material';
 import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from '../../../Theme/MenuThema';
 
 interface HeaderMenuProps {
 	activeButtonMenu: number;
 	handleActiveButtonMenu: (buttonIndex: number) => void;
+	handleOpenCatalog: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	handleCloseCatalog: () => void;
+	catalog: null | HTMLElement;
 }
 
 const MenuHeader: FC<HeaderMenuProps> = React.memo(
-	({ activeButtonMenu, handleActiveButtonMenu }) => {
-		const [catalog, setCatalog] = useState<null | HTMLElement>(null);
+	({
+		activeButtonMenu,
+		handleActiveButtonMenu,
+		handleOpenCatalog,
+		handleCloseCatalog,
+		catalog,
+	}) => {
 		const openCatalog = Boolean(catalog);
-
-		const handleClickBayer = (event: React.MouseEvent<HTMLButtonElement>) => {
-			setCatalog(event.currentTarget);
-		};
-		const handleCloseBayer = () => {
-			setCatalog(null);
-		};
 
 		return (
 			<WrapperMenu>
@@ -27,7 +28,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						aria-controls={openCatalog ? 'menu-bayer' : undefined}
 						aria-haspopup="true"
 						aria-expanded={openCatalog ? 'true' : undefined}
-						onClick={handleClickBayer}
+						onClick={handleOpenCatalog}
 						$active={activeButtonMenu === 1}
 						disableRipple
 					>
@@ -37,28 +38,28 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						id="menu-bayer"
 						anchorEl={catalog}
 						open={openCatalog}
-						onClose={handleCloseBayer}
+						onClose={handleCloseCatalog}
 						MenuListProps={{
 							'aria-labelledby': 'MenuButton-catalog',
 						}}
 					>
 						<CustomLink to="/kiev">
-							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
 								“Сорочки Київщини”
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="regions">
-							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
 								“Регіони України”
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/grandmother">
-							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
 								“Віднови вишиванку своєї бабусі”
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/accessories">
-							<MenuItem disableRipple divider onClick={handleCloseBayer}>
+							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
 								Аксесуари
 							</MenuItem>
 						</CustomLink>

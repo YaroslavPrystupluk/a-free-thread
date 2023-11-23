@@ -22,8 +22,6 @@ const ResultSearch = React.memo(() => {
 		(state: RootState) => state.search.searchResult || [],
 	);
 
-	console.log('пошук', searchProduct, searchResult);
-
 	return (
 		<Container>
 			<TitleWrapper>

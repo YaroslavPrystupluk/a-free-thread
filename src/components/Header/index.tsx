@@ -27,8 +27,11 @@ interface HeaderProps {
 	handleOpenModal: () => void;
 	handleOpenSubMenu: () => void;
 	toggleActive: () => void;
-	handleClickBurgerMenu: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	handleOpenBurgerMenu: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	handleCloseBurgerMenu: () => void;
+	handleOpenCatalog: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	handleCloseCatalog: () => void;
+	catalog: null | HTMLElement;
 	burgerMenu: null | HTMLElement;
 	isActive: boolean;
 }
@@ -42,8 +45,11 @@ const Header: FC<HeaderProps> = ({
 	openSubMenu,
 	handleOpenSubMenu,
 	toggleActive,
-	handleClickBurgerMenu,
+	handleOpenBurgerMenu,
 	handleCloseBurgerMenu,
+	handleOpenCatalog,
+	handleCloseCatalog,
+	catalog,
 	burgerMenu,
 	isActive,
 }) => {
@@ -60,6 +66,9 @@ const Header: FC<HeaderProps> = ({
 				<MenuHeader
 					activeButtonMenu={activeButtonMenu}
 					handleActiveButtonMenu={handleActiveButtonMenu}
+					handleOpenCatalog={handleOpenCatalog}
+					handleCloseCatalog={handleCloseCatalog}
+					catalog={catalog}
 				/>
 				<Wrapper>
 					<SearchDesktop>
@@ -82,7 +91,7 @@ const Header: FC<HeaderProps> = ({
 					openSubMenu={openSubMenu}
 					handleOpenSubMenu={handleOpenSubMenu}
 					toggleActive={toggleActive}
-					handleClickBurgerMenu={handleClickBurgerMenu}
+					handleOpenBurgerMenu={handleOpenBurgerMenu}
 					handleCloseBurgerMenu={handleCloseBurgerMenu}
 					burgerMenu={burgerMenu}
 					isActive={isActive}

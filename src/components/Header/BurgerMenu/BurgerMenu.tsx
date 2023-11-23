@@ -17,7 +17,7 @@ interface HeaderBurgerMenuProps {
 	handleActiveButtonMenu: (buttonIndex: number) => void;
 	handleOpenSubMenu: () => void;
 	toggleActive: () => void;
-	handleClickBurgerMenu: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	handleOpenBurgerMenu: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	handleCloseBurgerMenu: () => void;
 	burgerMenu: null | HTMLElement;
 	isActive: boolean;
@@ -29,7 +29,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 		openSubMenu,
 		toggleActive,
 		handleCloseBurgerMenu,
-		handleClickBurgerMenu,
+		handleOpenBurgerMenu,
 		burgerMenu,
 		isActive,
 	}) => {
@@ -43,7 +43,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 					aria-controls={openBurgerMenu ? 'menu-burgerMenu' : undefined}
 					aria-haspopup="true"
 					aria-expanded={openBurgerMenu ? 'true' : undefined}
-					onClick={handleClickBurgerMenu}
+					onClick={handleOpenBurgerMenu}
 				>
 					{!burgerMenu ? (
 						<img src={closeMenu} alt="icon menu close" />
