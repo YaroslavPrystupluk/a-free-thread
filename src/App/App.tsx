@@ -8,6 +8,7 @@ import Modal from '../components/Modal';
 import Footer from '../components/Footer';
 import { Product } from '../redux/slices/productsSlice';
 import { RootState } from '../redux/store/store';
+import { useToggle } from '../hooks/useToggle';
 import { addProduct, addResult } from '../redux/slices/searchSlice';
 import RoutesInApp from '../components/Routes';
 
@@ -20,12 +21,11 @@ const Wrapper = styled.div`
 
 const App = () => {
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+  const [isVisible, toggleVisible] = useToggle(false);
+	const [isModalVisible, toggleModal] = useToggle(false);
 	const [burgerMenu, setBurgerMenu] = useState<null | HTMLElement>(null);
-	const [isActive, setIsActive] = useState(false);
-	const [openModal, setOpenModal] = useState(false);
 	const [activeButtonLang, setActiveButtonLang] = useState(1);
 	const [activeButtonMenu, setActiveButtonMenu] = useState(0);
-	const [openSubMenu, setOpenSubMenu] = useState(false);
 	const [valueSearch, setValueSearch] = useState('');
 
 	const products = useSelector((state: RootState) => state.products.products) as Product[];
@@ -44,10 +44,6 @@ const App = () => {
 		dispatch(addResult(resultSearch));
 	};
 
-	const toggleActive = () => {
-		setIsActive(!isActive);
-	};
-
 	const handleClickBurgerMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setBurgerMenu(event.currentTarget);
 	};
@@ -55,26 +51,13 @@ const App = () => {
 	const handleCloseBurgerMenu = () => {
 		setBurgerMenu(null);
 	};
-	const handleOpenSubMenu = () => {
-		setOpenSubMenu(!openSubMenu);
-	};
 
-	const handleCloseSubMenu = () => {
-		setOpenSubMenu(false);
-	};
 	const handleActiveButtonLang = (buttonIndex: number) => {
 		setActiveButtonLang(buttonIndex);
 	};
 
 	const handleActiveButtonMenu = (buttonIndex: number) => {
 		setActiveButtonMenu(buttonIndex);
-	};
-	const handleOpenModal = () => {
-		setOpenModal(true);
-	};
-
-	const handleCloseModal = () => {
-		setOpenModal(false);
 	};
 
 	return (
@@ -83,29 +66,29 @@ const App = () => {
 				<Modal
 					handleChange={handleChange}
 					valueSearch={valueSearch}
-					handleCloseModal={handleCloseModal}
-					openModal={openModal}
+					handleCloseModal={toggleModal}
+					openModal={isModalVisible}
 					handleSearch={handleSearch}
 				/>
 				<Header
 					activeButtonLang={activeButtonLang}
 					handleActiveButtonLang={handleActiveButtonLang}
-					handleOpenModal={handleOpenModal}
+					handleOpenModal={toggleModal}
 					handleActiveButtonMenu={handleActiveButtonMenu}
 					activeButtonMenu={activeButtonMenu}
-					handleOpenSubMenu={handleOpenSubMenu}
-					openSubMenu={openSubMenu}
-					toggleActive={toggleActive}
+					handleOpenSubMenu={toggleVisible}
+					openSubMenu={isVisible}
+					toggleActive={toggleVisible}
 					handleClickBurgerMenu={handleClickBurgerMenu}
 					handleCloseBurgerMenu={handleCloseBurgerMenu}
 					burgerMenu={burgerMenu}
-					isActive={isActive}
+					isActive={isVisible}
 				/>
 				<RoutesInApp />
 				<Footer
-					handleOpenSubMenu={handleOpenSubMenu}
-					openSubMenu={openSubMenu}
-					handleCloseSubMenu={handleCloseSubMenu}
+					handleOpenSubMenu={toggleVisible}
+					openSubMenu={isVisible}
+					handleCloseSubMenu={toggleVisible}
 				/>
 			</Wrapper>
 		</BrowserRouter>
