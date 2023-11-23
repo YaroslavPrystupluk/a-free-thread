@@ -13,7 +13,7 @@ const Container = styled.article`
 
 const SubHeaderWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 25% 60%;
+	grid-template-columns: 25% 65%;
 	padding: 16px 0;
 	column-gap: 10%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
@@ -38,7 +38,7 @@ const OrnamentWrapper = styled.section`
 
 const SubHeaderText = styled.section`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		margin: 30px 21px 0 30px;
+		margin: 10px 21px 0 30px;
 	}
 `;
 const SubHeaderTitle = styled.p`
