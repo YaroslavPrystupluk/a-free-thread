@@ -59,9 +59,9 @@ const Comments: FC = () => {
 	return (
 		<Container>
 			<TitleWrapper>
+				<SquareTitle />
 				<Title>Відгуки</Title>
 				<StarIcon src={star} alt="star" />
-				<SquareTitle />
 			</TitleWrapper>
 			<CardsWrapper>
 				{commentsSliced.map((comment, index) => (

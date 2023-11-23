@@ -5,37 +5,36 @@ import { MenuItem } from '@mui/material';
 const FooterWrap = styled.footer`
 	background: ${({ theme }) => theme.colors.primary};
 	padding: 21px 26px;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+
+	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 24px;
-	}
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		gap: 69px;
 	}
 `;
 
 const LogoWrapper = styled.div`
-	width: 49px;
-	height: 38px;
-	margin: 0 0 16px 0;
+	width: 20%;
+	height: auto;
+	margin: 0 0 -16px 0;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		width: 66px;
-		height: 51px;
+		width: 10%;
+		height: auto;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		width: 205px;
-		height: 217px;
+		width: 100%;
+		height: auto;
 	}
 `;
 const LogoIcon = styled.img`
 	max-width: 100%;
 `;
 
-const WrappMenuFooter = styled.div`
+const WrapperMenuFooter = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	gap: 32px;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		flex-direction: row;
@@ -91,28 +90,6 @@ const IconMenuBank = styled.img`
 	}
 `;
 
-const ArrowRight = styled.span`
-	position: absolute;
-	right: 16px;
-	border: solid #000000;
-	border-width: 0 1px 1px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	margin: 0 0 2px 16px;
-`;
-
-const ArrowDown = styled.span`
-	position: absolute;
-	right: 16px;
-	border: solid #000000;
-	border-width: 0 1px 1px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	margin: 0 0 2px 16px;
-`;
-
 const CustomLink = styled(NavLink)`
 	color: ${({ theme }) => theme.colorText.primary};
 	text-decoration: none;
@@ -158,14 +135,12 @@ export {
 	FooterWrap,
 	LogoWrapper,
 	LogoIcon,
-	WrappMenuFooter,
+	WrapperMenuFooter,
 	MenuFooter,
 	TitleMenu,
 	IconMenuSocial,
 	IconMenuBank,
 	FooterLink,
-	ArrowRight,
-	ArrowDown,
 	CustomLink,
 	SubMenuItem,
 	CustomMenuItem,

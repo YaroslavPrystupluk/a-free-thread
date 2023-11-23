@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import ornamentImg from '../images/icon/ornament.webp';
 
 const Container = styled.article`
-	max-width: ${({ theme }) => `${theme.breakpoints.xs}px`};
 	margin: 0 auto;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
+		// max-width: ${({ theme }) => `${theme.breakpoints.md}px`};
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
@@ -14,18 +13,16 @@ const Container = styled.article`
 
 const SubHeaderWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 3fr;
-	//grid-auto-rows: auto;
-	grid-template-rows: auto;
+	grid-template-columns: 25% 65%;
 	padding: 16px 0;
-	column-gap: 30px;
+	column-gap: 10%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		grid-template-columns: 1fr 2fr 3fr;
+		grid-template-columns: 120px 1fr 400px;
 		padding: 20px 0;
 		column-gap: 0;
-		align-items: end;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
+		grid-template-columns: 1fr 2fr 3fr;
 		padding: 40px 0 33px 0;
 		align-items: center;
 		justify-self: center;
@@ -41,8 +38,7 @@ const OrnamentWrapper = styled.section`
 
 const SubHeaderText = styled.section`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		margin: 30px 21px 0 30px;
-		grid-row: 1 / 3;
+		margin: 10px 21px 0 30px;
 	}
 `;
 const SubHeaderTitle = styled.p`
@@ -78,18 +74,10 @@ const SubHeaderParagraph = styled.p`
 
 const SubHeaderImage = styled.div`
 	margin: 13px 0 27px 0;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		grid-row: 1 / 3;
-	}
 `;
 const WrapperGrid = styled.div`
 	position: relative;
-	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		align-self: center;
-		max-width: 400px;
-	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		align-self: center;
 		max-width: 670px;
 	}
 `;
@@ -142,7 +130,7 @@ const SloganWrapper = styled.div`
 	left: 67%;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		top: 60%;
-		left: 79%;
+		left: 77%;
 	}
   @media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 	position: absolute;
@@ -186,13 +174,14 @@ const SloganWrapperTop = styled.div`
 const SloganWrapperEnd = styled.div`
 	display: none;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
+		display: block;
 		position: absolute;
-		bottom: 6%;
+		bottom: -3%;
 		right: 1%;
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
-		bottom: 18%;
-		right: 4%;
+		bottom: 7%;
+		right: 8%;
 	}
 `;
 
