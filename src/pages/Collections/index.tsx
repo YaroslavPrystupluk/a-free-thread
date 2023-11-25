@@ -196,7 +196,7 @@ const CollectionPage = () => {
 					/>
 				</StylePaginationBox>
 			</StyleCollectionProducts>
-			<CircleLoading />
+			{/* <CircleLoading /> */}
 		</StyledCollectionWrapper>
 	);
 };
