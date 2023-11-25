@@ -46,3 +46,53 @@ export const LoadingText = styled.div`
     opacity: 0;
   }
 }`;
+
+export const StyleSpinner = styled.div`
+	position: relative;
+	opacity: 0.7;
+	height: 50px;
+	width: 50px;
+	border: 3px solid transparent;
+	border-top-color: ${({ theme }) => theme.colors.star};
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+
+	&:before {
+		display: block;
+		height: 60px;
+		width: 60px;
+		position: relative;
+		content: '';
+		border: 3px solid transparent;
+		border-radius: 50%;
+		border-top-color: ${({ theme }) => theme.colors.primary};
+		top: -12px;
+		left: -11px;
+		animation: spin 3s linear infinite;
+	}
+
+	&:after {
+		display: block;
+		height: 30px;
+		width: 30px;
+		position: relative;
+		content: '';
+		border: 3px solid transparent;
+		border-radius: 50%;
+		border-top-color: ${({ theme }) => theme.colorText.price};
+		top: -60px;
+		left: 4px;
+		right: 36px;
+		bottom: 6px;
+		animation: spin 4s linear infinite;
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+`;
