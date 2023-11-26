@@ -28,7 +28,6 @@ import {
 	StyleStar,
 	StyleTitleCollectionPage,
 } from '../../Theme/CollectionPageTheme';
-import CircleLoading from '../../components/Loading/circleLoading';
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
@@ -196,7 +195,6 @@ const CollectionPage = () => {
 					/>
 				</StylePaginationBox>
 			</StyleCollectionProducts>
-			{/* <CircleLoading /> */}
 		</StyledCollectionWrapper>
 	);
 };
