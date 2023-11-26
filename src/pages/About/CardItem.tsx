@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { CardContent, CardMedia } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import { CardContent, CardMedia, Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Teams } from '../../model/Iteams';
 import {

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
 import MenuHeader from './MenuHeader/MenuHeader';
@@ -19,10 +20,8 @@ import logoBig from '../../images/logo/logo_free_thread.webp';
 import phone from '../../images/icon/phone.webp';
 
 interface HeaderProps {
-	activeButtonLang: number;
 	activeButtonMenu: number;
 	openSubMenu: boolean;
-	handleActiveButtonLang: (buttonIndex: number) => void;
 	handleActiveButtonMenu: (buttonIndex: number) => void;
 	handleOpenModal: () => void;
 	handleOpenSubMenu: () => void;
@@ -38,8 +37,6 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({
 	handleOpenModal,
-	handleActiveButtonLang,
-	activeButtonLang,
 	activeButtonMenu,
 	handleActiveButtonMenu,
 	openSubMenu,
@@ -53,6 +50,12 @@ const Header: FC<HeaderProps> = ({
 	burgerMenu,
 	isActive,
 }) => {
+	const { i18n } = useTranslation();
+
+	const handleLanguageChange = (language: string) => {
+		i18n.changeLanguage(language);
+	};
+
 	return (
 		<header>
 			<HeaderWrapper>
@@ -75,10 +78,10 @@ const Header: FC<HeaderProps> = ({
 						<Search handleOpenModal={handleOpenModal} />
 					</SearchDesktop>
 					<SelectLanguage>
-						<BtnLang $active={activeButtonLang === 1} onClick={() => handleActiveButtonLang(1)}>
+						<BtnLang $active={i18n.language === 'ua'} onClick={() => handleLanguageChange('ua')}>
 							ua
 						</BtnLang>
-						<BtnLang $active={activeButtonLang === 2} onClick={() => handleActiveButtonLang(2)}>
+						<BtnLang $active={i18n.language === 'en'} onClick={() => handleLanguageChange('en')}>
 							en
 						</BtnLang>
 					</SelectLanguage>

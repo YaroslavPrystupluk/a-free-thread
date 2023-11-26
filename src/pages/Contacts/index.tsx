@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import { Container } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { StyleSquare, StyleStar } from '../../Theme/CollectionPageTheme';
 import { StyleCollectionImageWrapper } from '../../Theme/CollectionTheme';
 import { StyleTypography } from '../../Theme/LikesTheme';
@@ -13,11 +14,13 @@ import {
 } from '../../Theme/OthersTheme';
 
 function Contacts() {
+	const { t } = useTranslation();
+
 	return (
 		<StyleContactsWrapper>
 			<Container style={{ display: 'flex', position: 'relative' }}>
 				<StyleSquare className="contacts_square"> </StyleSquare>
-				<StyleTypography variant="h4">Наші контакти</StyleTypography>
+				<StyleTypography variant="h4">{t('contacts.title')}</StyleTypography>
 				<StyleStar className="contacts_star">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -36,19 +39,19 @@ function Contacts() {
 			</Container>
 			<StyleCollectionImageWrapper className="contacts_text-block">
 				<StyleContactsBlock>
-					<StyleContactsSpan>АДРЕСА</StyleContactsSpan>
-					<StyleContactsParagraph>Україна, Київська обл, м.Вишневе</StyleContactsParagraph>
+					<StyleContactsSpan>{t('contacts.address.span')}</StyleContactsSpan>
+					<StyleContactsParagraph>{t('contacts.address.p')}</StyleContactsParagraph>
 				</StyleContactsBlock>
 				<StyleContactsBlock>
-					<StyleContactsSpan>ТЕЛЕФОН</StyleContactsSpan>
+					<StyleContactsSpan>{t('contacts.phone.span')}</StyleContactsSpan>
 					<StyleContactsParagraph>+38 (050) 3337820</StyleContactsParagraph>
 				</StyleContactsBlock>
 				<StyleContactsBlock>
-					<StyleContactsSpan>ЕМЕЙЛ</StyleContactsSpan>
+					<StyleContactsSpan>{t('contacts.email.span')}</StyleContactsSpan>
 					<StyleContactsParagraph>Vilna.nytka@gmail.com</StyleContactsParagraph>
 				</StyleContactsBlock>
 			</StyleCollectionImageWrapper>
-			<StylePosition>вільна нитка</StylePosition>
+			<StylePosition>{t('contacts.position')}</StylePosition>
 			<StyleImgMap src="/images/Others/map.png" alt="Map" />
 		</StyleContactsWrapper>
 	);

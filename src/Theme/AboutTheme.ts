@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Grid from '@mui/material/Unstable_Grid2';
+import { Grid } from '@mui/material';
 
 interface SquareTitleProps {
 	$isTeam?: boolean;
@@ -7,6 +7,7 @@ interface SquareTitleProps {
 
 const Container = styled.article`
 	padding: 0 26px;
+	margin: auto;
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: ${({ theme }) => `${theme.breakpoints.xl}px`};
 	}
@@ -78,7 +79,7 @@ const GridAbout = styled(Grid)`
 	gap: 30px;
 
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
-		max-width: 50%;
+		max-width: 48%;
 		&:nth-child(3) {
 			order: 1;
 		}

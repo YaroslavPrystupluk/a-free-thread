@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
-import Grid from '@mui/material/Unstable_Grid2';
+import { Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { RootState } from '../../redux/store/store';
 import aboutImageTop from '../../images/About/about_1.webp';
@@ -50,7 +50,7 @@ const About = () => {
 				<StarIcon src={star} alt="star" />
 			</TitleWrapper>
 			<ThemeProvider theme={theme}>
-				<Grid container columnSpacing={{ xs: 0, md: 3, xl: 4 }}>
+				<Grid container columnSpacing={{ xs: 0, md: 3, xl: 4 }} style={{ gap: 24 }}>
 					<GridAbout>
 						<AboutImage src={aboutImageTop} alt="needlework" />
 					</GridAbout>

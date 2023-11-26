@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/jsx-wrap-multilines */
 import React, { useState, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -29,7 +30,6 @@ const App = () => {
 	const [isModalVisible, toggleModal] = useToggle(false);
 	const [catalog, openCatalog, closeCatalog] = useMenu(null);
 	const [burgerMenu, openBurgerMenu, closeBurgerMenu] = useMenu(null);
-	const [activeButtonLang, toggleButtonLang] = useToggleButton(1);
 	const [activeButtonMenu, toggleButtonMenu] = useToggleButton(0);
 	const [valueSearch, setValueSearch] = useState('');
 
@@ -60,8 +60,6 @@ const App = () => {
 					handleSearch={handleSearch}
 				/>
 				<Header
-					activeButtonLang={activeButtonLang}
-					handleActiveButtonLang={toggleButtonLang}
 					handleOpenModal={toggleModal}
 					handleActiveButtonMenu={toggleButtonMenu}
 					activeButtonMenu={activeButtonMenu}
