@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Grid } from '@mui/material';
 
 interface SquareTitleProps {
 	$isTeam?: boolean;
@@ -73,7 +72,7 @@ const SquareTitle = styled.span`
 	}
 `;
 
-const GridAbout = styled(Grid)`
+const GridAbout = styled('div')`
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
@@ -90,7 +89,7 @@ const AboutImage = styled.img`
 `;
 const AboutText = styled.p`
 	font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 160%;
 
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {

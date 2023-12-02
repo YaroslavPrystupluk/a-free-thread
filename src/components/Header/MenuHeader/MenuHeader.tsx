@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MenuItem } from '@mui/material';
 import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from '../../../Theme/MenuThema';
 
@@ -19,6 +20,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 		catalog,
 	}) => {
 		const openCatalog = Boolean(catalog);
+		const { t } = useTranslation();
 
 		return (
 			<WrapperMenu>
@@ -32,7 +34,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						$active={activeButtonMenu === 1}
 						disableRipple
 					>
-						каталог
+						{t('header.catalog')}
 					</MenuButton>
 					<CustomMenu
 						id="menu-bayer"
@@ -45,22 +47,22 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 					>
 						<CustomLink to="/kiev">
 							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
-								“Сорочки Київщини”
+								{t('collection.kiev.title')}
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="regions">
 							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
-								“Регіони України”
+								{t('collection.regions.title')}
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/grandmother">
 							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
-								“Віднови вишиванку своєї бабусі”
+								{t('collection.grandmother.title')}
 							</MenuItem>
 						</CustomLink>
 						<CustomLink to="/accessories">
 							<MenuItem disableRipple divider onClick={handleCloseCatalog}>
-								Аксесуари
+								{t('collection.accessories.title')}
 							</MenuItem>
 						</CustomLink>
 					</CustomMenu>
@@ -71,7 +73,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						$active={activeButtonMenu === 2}
 						onClick={() => handleActiveButtonMenu(2)}
 					>
-						про нас
+						{t('about.title')}
 					</MenuButton>
 				</CustomLink>
 				<CustomLink to="/delivery">
@@ -80,7 +82,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						$active={activeButtonMenu === 3}
 						onClick={() => handleActiveButtonMenu(3)}
 					>
-						доставка і оплата
+						{t('delivery.title')}
 					</MenuButton>
 				</CustomLink>
 				<CustomLink to="/comments">
@@ -89,7 +91,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						$active={activeButtonMenu === 4}
 						onClick={() => handleActiveButtonMenu(4)}
 					>
-						відгуки
+						{t('header.button.reviews')}
 					</MenuButton>
 				</CustomLink>
 				<CustomLink to="/contacts">
@@ -98,7 +100,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 						$active={activeButtonMenu === 5}
 						onClick={() => handleActiveButtonMenu(5)}
 					>
-						контакти
+						{t('header.button.contacts')}
 					</MenuButton>
 				</CustomLink>
 			</WrapperMenu>

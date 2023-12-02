@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { IconButton, MenuItem, Collapse } from '@mui/material';
 import {
 	CustomizedMenu,
@@ -34,6 +35,7 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 		isActive,
 	}) => {
 		const openBurgerMenu = Boolean(burgerMenu);
+		const { t } = useTranslation();
 
 		return (
 			<>
@@ -63,50 +65,50 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 					<CustomLink onClick={toggleActive} to="/">
 						<MenuItem disableRipple divider onClick={handleOpenSubMenu}>
 							<BtnCatalogLine $active={isActive} />
-							Каталог
+							{t('header.catalog')}
 							{!openSubMenu ? <ArrowRight /> : <ArrowDown />}
 						</MenuItem>
 					</CustomLink>
 					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
 						<SubMenuItem to="/kiev">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-								“Сорочки Київщини”
+								{t('collection.kiev.title')}
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="regions">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-								“Регіони України”
+								{t('collection.regions.title')}
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/grandmother">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-								“Віднови вишиванку своєї бабусі”
+								{t('collection.grandmother.title')}
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/accessories">
 							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-								Аксесуари
+								{t('collection.accessories.title')}
 							</MenuItem>
 						</SubMenuItem>
 					</Collapse>
 					<CustomLink to="/about">
 						<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-							Про нас
+							{t('about.title')}
 						</MenuItem>
 					</CustomLink>
 					<CustomLink to="/delivery">
 						<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-							Доставка і оплата
+							{t('delivery.title')}
 						</MenuItem>
 					</CustomLink>
 					<CustomLink to="/comments">
 						<MenuItem divider onClick={handleCloseBurgerMenu}>
-							Відгуки
+							{t('header.button.reviews')}
 						</MenuItem>
 					</CustomLink>
 					<CustomLink to="/contacts">
 						<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
-							Контакти
+							{t('header.button.contacts')}
 						</MenuItem>
 					</CustomLink>
 				</CustomizedMenu>
