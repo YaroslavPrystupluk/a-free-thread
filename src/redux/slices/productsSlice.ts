@@ -15,17 +15,19 @@ export interface ProductsState {
 	products: Product[] | unknown;
 	isLoading: boolean;
 	error: string | null | SerializedError;
+	language: string;
 }
 
 const initialState: ProductsState = {
 	products: [],
 	isLoading: false,
 	error: null,
+	language: 'ua',
 };
 
 export const getProductsAsync = createAsyncThunk(
 	'products/fetchProducts',
-	async (productsFile: string) => {
+	async ({ productsFile, language }: { productsFile: string; language: string }) => {
 		try {
 			const response = await fetch(productsFile);
 
@@ -34,9 +36,12 @@ export const getProductsAsync = createAsyncThunk(
 			}
 			const results: Product[] = await response.json();
 
-			return results;
+			return { products: results, language };
 		} catch (error) {
-			return error;
+			if (error instanceof Error) {
+				return { error: error.message };
+			}
+			return { error: 'An unknown error occurred.' };
 		}
 	},
 );
@@ -52,12 +57,15 @@ const productsSlice = createSlice({
 		});
 		builder.addCase(getProductsAsync.fulfilled, (state, action) => {
 			state.isLoading = false;
+			const { products, language } = action.payload as { products: Product[]; language: string };
+
 			const productsArray = state.products as Product[];
 
 			if (productsArray.length === 0) {
-				state.products = action.payload;
+				state.products = products;
+				state.language = language;
 			} else {
-				(action.payload as Product[]).forEach((product: Product) => {
+				products.forEach((product: Product) => {
 					const existingProduct = productsArray.find(
 						(existing: Product) => existing.name === product.name,
 					);
@@ -68,6 +76,7 @@ const productsSlice = createSlice({
 				});
 
 				state.products = productsArray;
+				state.language = language;
 			}
 		});
 

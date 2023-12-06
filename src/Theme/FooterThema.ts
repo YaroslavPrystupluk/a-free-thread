@@ -14,6 +14,24 @@ const FooterWrap = styled.footer`
 	}
 `;
 
+const ArrowRight = styled.span`
+	border: solid #000000;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	margin: 0 0 2px 16px;
+`;
+
+const ArrowDown = styled.span`
+	border: solid #000000;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	margin: 0 0 2px 16px;
+`;
+
 const LogoWrapper = styled.div`
 	width: 20%;
 	height: auto;
@@ -145,4 +163,6 @@ export {
 	SubMenuItem,
 	CustomMenuItem,
 	CustomSubMenuItem,
+	ArrowDown,
+	ArrowRight,
 };

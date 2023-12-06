@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MenuItem } from '@mui/material';
 import { WrapperMenu, CustomMenu, CustomLink, MenuButton } from '../../../Theme/MenuThema';
+import { CatalogLink } from '../../../Theme/BurgerMenuThema';
 
 interface HeaderMenuProps {
 	activeButtonMenu: number;
@@ -24,7 +25,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 
 		return (
 			<WrapperMenu>
-				<CustomLink onClick={() => handleActiveButtonMenu(1)} to="/">
+				<CatalogLink onClick={() => handleActiveButtonMenu(1)}>
 					<MenuButton
 						id="MenuButton-bayer"
 						aria-controls={openCatalog ? 'menu-bayer' : undefined}
@@ -66,7 +67,7 @@ const MenuHeader: FC<HeaderMenuProps> = React.memo(
 							</MenuItem>
 						</CustomLink>
 					</CustomMenu>
-				</CustomLink>
+				</CatalogLink>
 				<CustomLink to="/about">
 					<MenuButton
 						disableRipple

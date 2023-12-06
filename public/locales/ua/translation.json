@@ -39,5 +39,12 @@
     "collection.kiev.title": "“Сорочки Київщини”",
     "collection.regions.title": "“Регіони України”",
     "collection.grandmother.title": "“Віднови вишиванку своєї бабусі”",
-    "collection.accessories.title": "Аксесуари"
+    "collection.accessories.title": "Аксесуари",
+    "footer.title": "Про компанію",
+    "footer.time": "пн-сб: з 9:00 до 18:00",
+    "footer.social": "Ми в соцмережах:",
+    "footer.pay": "Способи оплати:",
+    "search.modal.placeholder": "введіть назву продукту",
+    "search.modal.button": "Знайти",
+    "search.page.title": "Результати пошуку:"
 }

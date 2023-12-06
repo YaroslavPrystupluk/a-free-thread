@@ -8,6 +8,7 @@ import {
 	ArrowRight,
 	ArrowDown,
 	SubMenuItem,
+	CatalogLink,
 } from '../../../Theme/BurgerMenuThema';
 import openMenu from '../../../images/icon/cancel-menu.webp';
 import closeMenu from '../../../images/icon/menu-2.webp';
@@ -62,31 +63,59 @@ const BurgerMenu: FC<HeaderBurgerMenuProps> = React.memo(
 						'aria-labelledby': 'button-burgerMenu',
 					}}
 				>
-					<CustomLink onClick={toggleActive} to="/">
+					<CatalogLink onClick={toggleActive}>
 						<MenuItem disableRipple divider onClick={handleOpenSubMenu}>
 							<BtnCatalogLine $active={isActive} />
 							{t('header.catalog')}
 							{!openSubMenu ? <ArrowRight /> : <ArrowDown />}
 						</MenuItem>
-					</CustomLink>
+					</CatalogLink>
 					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
 						<SubMenuItem to="/kiev">
-							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<MenuItem
+								disableRipple
+								divider
+								onClick={() => {
+									handleCloseBurgerMenu();
+									handleOpenSubMenu();
+								}}
+							>
 								{t('collection.kiev.title')}
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="regions">
-							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<MenuItem
+								disableRipple
+								divider
+								onClick={() => {
+									handleCloseBurgerMenu();
+									handleOpenSubMenu();
+								}}
+							>
 								{t('collection.regions.title')}
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/grandmother">
-							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<MenuItem
+								disableRipple
+								divider
+								onClick={() => {
+									handleCloseBurgerMenu();
+									handleOpenSubMenu();
+								}}
+							>
 								{t('collection.grandmother.title')}
 							</MenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/accessories">
-							<MenuItem disableRipple divider onClick={handleCloseBurgerMenu}>
+							<MenuItem
+								disableRipple
+								divider
+								onClick={() => {
+									handleCloseBurgerMenu();
+									handleOpenSubMenu();
+								}}
+							>
 								{t('collection.accessories.title')}
 							</MenuItem>
 						</SubMenuItem>

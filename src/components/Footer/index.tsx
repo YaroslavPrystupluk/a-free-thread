@@ -1,4 +1,6 @@
+/* eslint-disable max-len */
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Collapse } from '@mui/material';
 import FooterLogo from '../../images/logo/logo_free_thread.webp';
 import logoFacebook from '../../images/icon/facebook-v1-2.webp';
@@ -19,15 +21,24 @@ import {
 	SubMenuItem,
 	CustomMenuItem,
 	CustomSubMenuItem,
+	ArrowDown,
+	ArrowRight,
 } from '../../Theme/FooterThema';
+import { CatalogLink } from '../../Theme/BurgerMenuThema';
 
 interface FooterProps {
-	openSubMenu: boolean;
+	openFooterSubMenu: boolean;
 	handleOpenSubMenu: () => void;
 	handleCloseSubMenu: () => void;
 }
 
-const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseSubMenu }) => {
+const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openFooterSubMenu, handleCloseSubMenu }) => {
+	const { t } = useTranslation();
+	const upPage = () => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		handleCloseSubMenu();
+	};
+
 	return (
 		<FooterWrap>
 			<WrapperMenuFooter>
@@ -35,67 +46,74 @@ const Footer: FC<FooterProps> = ({ handleOpenSubMenu, openSubMenu, handleCloseSu
 					<LogoIcon src={FooterLogo} alt="logo free-thread footer" />
 				</LogoWrapper>
 				<MenuFooter>
-					<TitleMenu>Про компанію</TitleMenu>
-					<CustomLink to="/about">
-						<li>Про нас</li>
+					<TitleMenu>{t('footer.title')}</TitleMenu>
+					<CustomLink to="/about" onClick={upPage}>
+						{t('about.title')}
 					</CustomLink>
-					<CustomLink to="/">
+					<CatalogLink>
 						<CustomMenuItem disableRipple divider onClick={handleOpenSubMenu}>
-							Каталог
+							{t('header.catalog')}
+							{!openFooterSubMenu ? <ArrowRight /> : <ArrowDown />}
 						</CustomMenuItem>
-					</CustomLink>
-					<Collapse in={openSubMenu} timeout="auto" unmountOnExit>
+					</CatalogLink>
+					<Collapse in={openFooterSubMenu} timeout="auto" unmountOnExit>
 						<SubMenuItem to="/kiev">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
-								“Сорочки Київщини”
+							<CustomSubMenuItem disableRipple divider onClick={upPage}>
+								{t('collection.kiev.title')}
 							</CustomSubMenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="regions">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
-								“Регіони України”
+							<CustomSubMenuItem disableRipple divider onClick={upPage}>
+								{t('collection.grandmother.title')}
 							</CustomSubMenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/grandmother">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
-								“Віднови вишиванку своєї бабусі”
+							<CustomSubMenuItem disableRipple divider onClick={upPage}>
+								{t('collection.grandmother.title')}
 							</CustomSubMenuItem>
 						</SubMenuItem>
 						<SubMenuItem to="/accessories">
-							<CustomSubMenuItem disableRipple divider onClick={handleCloseSubMenu}>
-								Аксесуари
+							<CustomSubMenuItem disableRipple divider onClick={upPage}>
+								{t('collection.accessories.title')}
 							</CustomSubMenuItem>
 						</SubMenuItem>
 					</Collapse>
-					<CustomLink to="/delivery">
-						<li>Доставка і оплата</li>
-					</CustomLink>
-					<CustomLink to="/comments">
-						<li>Відгуки</li>
-					</CustomLink>
-					<CustomLink to="/contacts">
-						<li>Контакти</li>
-					</CustomLink>
+					<CustomLink to="/delivery">{t('delivery.title')}</CustomLink>
+					<CustomLink to="/comments">{t('header.button.reviews')}</CustomLink>
+					<CustomLink to="/contacts">{t('header.button.contacts')}</CustomLink>
 				</MenuFooter>
 				<MenuFooter>
-					<TitleMenu>Контакти</TitleMenu>
+					<TitleMenu>{t('header.button.contacts')}</TitleMenu>
 					<li>
 						<FooterLink href="tel:+380503337820">+38 (050) 333 78 20</FooterLink>
 						(viber, telegram)
 					</li>
-					<li>Україна, Київська обл., м.Вишневе</li>
-					<li>пн-сб: з 9:00 до 18:00</li>
+					<li>{t('contacts.address.p')}</li>
+					<li>{t('footer.time')}</li>
 					<li>
 						{' '}
 						<FooterLink href="mailto:Vilna.nytka@gmail.com"> Vilna.nytka@gmail.com</FooterLink>
 					</li>
 				</MenuFooter>
 				<MenuFooter>
-					<TitleMenu>Ми в соцмережах:</TitleMenu>
+					<TitleMenu>{t('footer.social')}</TitleMenu>
 					<li>
-						<IconMenuSocial src={logoFacebook} alt="icon Facrbook" />
-						<IconMenuSocial src={logoInstagram} alt="icon Instagrom" />
+						<a
+							href="https://www.facebook.com/vilnaNytka/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<IconMenuSocial src={logoFacebook} alt="icon Facebook" />
+						</a>
+						<a
+							href="https://www.instagram.com/vilnanytka"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<IconMenuSocial src={logoInstagram} alt="icon Instagram" />
+						</a>
 					</li>
-					<TitleMenu>Способи оплати:</TitleMenu>
+					<TitleMenu>{t('footer.pay')}</TitleMenu>
 					<li>
 						<IconMenuBank src={logoMasterCard} alt="icon MasterCard" />
 						<IconMenuBank src={logoVisa} alt="icon Visa" />

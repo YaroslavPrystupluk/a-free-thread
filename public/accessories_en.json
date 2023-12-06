@@ -1,0 +1,46 @@
+[
+	{
+		"id": "101",
+		"name": "Odessa Cuffs",
+		"price": "550 UAH",
+		"recommendations": "For durability and vibrancy, hand wash the cuffs at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off excess water without wringing, and dry on a flat surface, avoiding prolonged exposure to sunlight. When ironing, use gauze or fabric to protect the product from damage.",
+		"description": "Elegant Odessa cuffs that add a special charm to your look.",
+		"collection": "accessories",
+		"imageUrls": [
+			"src/images/Sleeves/1/sleeves_1_0.webp",
+			"src/images/Sleeves/1/sleeves_1_1.webp",
+			"src/images/Sleeves/1/sleeves_1_2.webp"
+		],
+		"size": ["One size"]
+	},
+	{
+		"id": "102",
+		"name": "Khmelnytskyi Cuffs",
+		"price": "600 UAH",
+		"recommendations": "For durability and vibrancy, hand wash the cuffs at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off excess water without wringing, and dry on a flat surface, avoiding prolonged exposure to sunlight. When ironing, use gauze or fabric to protect the product from damage.",
+		"description": "Khmelnytskyi cuffs – a sophisticated addition to your look with national flavor.",
+		"collection": "accessories",
+		"imageUrls": ["src/images/Sleeves/2/sleeves_2_0.webp", "src/images/Sleeves/2/sleeves_2_1.webp"],
+		"size": ["One size"]
+	},
+	{
+		"id": "103",
+		"name": "Zakarpattia Cuffs",
+		"price": "550 UAH",
+		"recommendations": "For durability and vibrancy, hand wash the cuffs at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off excess water without wringing, and dry on a flat surface, avoiding prolonged exposure to sunlight. When ironing, use gauze or fabric to protect the product from damage.",
+		"description": "Zakarpattia cuffs – a unique style element with a folk pattern.",
+		"collection": "accessories",
+		"imageUrls": ["src/images/Sleeves/3/sleeves_3_0.webp", "src/images/Sleeves/3/sleeves_3_1.webp"],
+		"size": ["One size"]
+	},
+	{
+		"id": "104",
+		"name": "Volyn Cuffs",
+		"price": "600 UAH",
+		"recommendations": "For durability and vibrancy, hand wash the cuffs at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off excess water without wringing, and dry on a flat surface, avoiding prolonged exposure to sunlight. When ironing, use gauze or fabric to protect the product from damage.",
+		"description": "Volyn cuffs – a wonderful accent for your look with a traditional design.",
+		"collection": "accessories",
+		"imageUrls": ["src/images/Sleeves/4/sleeves_4_0.webp", "src/images/Sleeves/4/sleeves_4_1.webp"],
+		"size": ["One size"]
+	}
+]

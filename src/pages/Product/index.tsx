@@ -172,7 +172,7 @@ const ProductPage: React.FC = () => {
 							</button>
 						</Typography>
 						{descriptionsOpen.recommendations && (
-							<Typography variant="body2" component="p">
+							<Typography variant="body2" component="p" className="product_recommendations">
 								{productItem.recommendations}
 							</Typography>
 						)}

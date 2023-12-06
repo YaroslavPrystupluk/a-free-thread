@@ -2,6 +2,7 @@
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import i18next from 'i18next';
 import { useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/material';
 import { filterProducts } from '../Main/getProducts';
@@ -31,10 +32,12 @@ import {
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
+	const currentLanguage = i18next.language;
 	const idColl = useSelector((state: RootState) => state.collection) as unknown as Record<
 		string,
 		CollectionItem
 	>;
+	const languageState = useSelector((state: RootState) => state.products.language);
 	const [currentPage, setCurrentPage] = useState(1);
 	const loadingCollection: boolean = useSelector(
 		(state: RootState) => state.collection.isLoadingCollection,
@@ -62,10 +65,14 @@ const CollectionPage = () => {
 	}, []);
 
 	useEffect(() => {
-		if (!collectionsProducts?.length) {
-			filterProducts('shirts.json', 'accessories.json');
+		if (languageState !== currentLanguage) {
+			filterProducts(
+				`shirts_${currentLanguage}.json`,
+				`accessories_${currentLanguage}.json`,
+				currentLanguage,
+			);
 		}
-	}, []);
+	}, [currentLanguage, languageState]);
 
 	useEffect(() => {
 		window.addEventListener('resize', handleScrollAndResize);

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import star from '../../images/icon/star.webp';
 import {
@@ -18,6 +19,7 @@ import { RootState } from '../../redux/store/store';
 import { filterProducts } from '../Main/getProducts';
 
 const ResultSearch = React.memo(() => {
+	const { t } = useTranslation();
 	const searchProduct: string = useSelector((state: RootState) => state.search.searchProduct || '');
 	const searchResult: Product[] = useSelector(
 		(state: RootState) => state.search.searchResult || [],
@@ -37,7 +39,7 @@ const ResultSearch = React.memo(() => {
 			<TitleWrapper>
 				<Title className="search">
 					<SquareTitle />
-					Результати пошуку: &ldquo;{searchProduct}&ldquo;
+					{t('search.page.title')} &ldquo;{searchProduct}&ldquo;
 					<StarIcon src={star} alt="star" />
 				</Title>
 			</TitleWrapper>
@@ -49,10 +51,8 @@ const ResultSearch = React.memo(() => {
 				</StyleImageList>
 			) : (
 				<NotFoundWrapper>
-					<TitleNotFound>За даними параметрами, на жаль, нічого не знайдено</TitleNotFound>
-					<SubTitleNotFound>
-						Перейдіть до каталогу, щоб обрати бажаний продукт або спробуйте ще.
-					</SubTitleNotFound>
+					<TitleNotFound>{t('search.page.error')}</TitleNotFound>
+					<SubTitleNotFound>{t('search.page.error.text')}</SubTitleNotFound>
 				</NotFoundWrapper>
 			)}
 		</Container>

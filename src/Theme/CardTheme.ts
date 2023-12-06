@@ -15,11 +15,20 @@ const CustomCard = styled(Card)`
 			0 10px 3px 0 rgba(0, 0, 0, 0);
 	}
 
+	&& .MuiCardContent-root {
+		padding: 8px;
+	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		max-width: 220px;
+		&& .MuiCardContent-root {
+			padding: 10px;
+		}
 	}
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.xl}px`}) {
 		max-width: 360px;
+		&& .MuiCardContent-root {
+			padding: 16px;
+		}
 	}
 `;
 
@@ -31,7 +40,9 @@ const Front = styled.div`
 `;
 
 const Back = styled.div`
+	width: 100%;
 	position: absolute;
+	padding: 20px 10px;
 	top: 0;
 	height: 100%;
 	background: ${({ theme }) => theme.colors.primary};
@@ -42,7 +53,6 @@ const Back = styled.div`
 `;
 
 const CardHeader = styled.div`
-	cursor: pointer;
 	position: relative;
 	&:hover > ${Front} {
 		transform: perspective(600px) rotateY(-180deg);

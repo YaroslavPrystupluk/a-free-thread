@@ -39,5 +39,14 @@
     "collection.kiev.title": "“Shirts of Kyiv Region”",
     "collection.regions.title": "“Regions of Ukraine”",
     "collection.grandmother.title": "“Restore Your Embroidery”",
-    "collection.accessories.title": "Accessories"
+    "collection.accessories.title": "Accessories",
+    "footer.title": "About the company",
+    "footer.time": "Mon-Sat: from 9:00 to 18:00",
+    "footer.social": "We are on social networks:",
+    "footer.pay": "Payment methods:",
+    "search.modal.placeholder": "enter the product name",
+    "search.modal.button": "Search",
+    "search.page.title": "Search results:",
+    "search.page.error": "Unfortunately, nothing was found with these parameters.",
+    "search.page.error.text": "Navigate to the catalog to choose the desired product or try again."
 }

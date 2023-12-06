@@ -21,6 +21,19 @@ const CustomizedMenu = styled(Menu)`
 	}
 `;
 
+const CatalogLink = styled.span`
+	color: ${({ theme }) => theme.colorText.primary};
+	text-transform: uppercase;
+	text-decoration: none;
+
+	& .MuiMenuItem-root {
+		font-family: ${({ theme }) => theme.fontFamily.text}, sans-serif;
+		font-size: 12px;
+		border-bottom: none;
+		padding: 16px;
+	}
+`;
+
 const CustomLink = styled(NavLink)<BtnMenuProps>`
 	color: ${({ theme }) => theme.colorText.primary};
 	text-transform: uppercase;
@@ -75,4 +88,12 @@ const SubMenuItem = styled(NavLink)`
 	}
 `;
 
-export { CustomizedMenu, CustomLink, BtnCatalogLine, ArrowRight, ArrowDown, SubMenuItem };
+export {
+	CustomizedMenu,
+	CustomLink,
+	BtnCatalogLine,
+	ArrowRight,
+	ArrowDown,
+	SubMenuItem,
+	CatalogLink,
+};

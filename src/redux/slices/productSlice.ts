@@ -8,6 +8,7 @@ export interface ProductsState {
 	isLoading: boolean;
 	error: string | null | SerializedError;
 	productNotFound: boolean;
+	language: string;
 }
 
 const initialState: ProductsState = {
@@ -15,19 +16,20 @@ const initialState: ProductsState = {
 	isLoading: false,
 	error: null,
 	productNotFound: false,
+	language: 'ua',
 };
 
 export const selectProducts = (state: RootState) => state.products.products;
 
 export const getProduct = createAsyncThunk(
 	'product/getProduct',
-	async (idProduct: number, { getState, dispatch }) => {
+	async (idProduct: number, language: string, { getState, dispatch }) => {
 		const state = getState() as RootState;
 		const products = selectProducts(state) as Product[];
 
 		if (products.length === 0) {
 			try {
-				await dispatch(getProductsAsync('../public/shirts.json'));
+				await dispatch(getProductsAsync(`../public/shirts_${language}.json`));
 				const updatedState = getState() as RootState;
 				const updatedProducts = selectProducts(updatedState) as Product[];
 				const productItem = updatedProducts.find((product) => Number(product.id) === idProduct);
@@ -44,6 +46,7 @@ export const getProduct = createAsyncThunk(
 		return productItem;
 	},
 );
+
 
 export const productSlice = createSlice({
 	name: 'product',

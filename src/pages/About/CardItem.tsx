@@ -38,10 +38,7 @@ const CardItem: FC<CardItemProps> = ({ player }) => {
 							<CardMedia component="img" image={player.image} alt={player.position} />
 						</Front>
 						<Back className="back">
-							<BackContent>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia lorem
-							</BackContent>
+							<BackContent>{player.content}</BackContent>
 						</Back>
 					</CardHeader>
 					<CardContent>

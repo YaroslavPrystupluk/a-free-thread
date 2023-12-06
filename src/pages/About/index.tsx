@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import i18next from 'i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import { Grid } from '@mui/material';
@@ -37,10 +38,11 @@ const About = () => {
 
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
 	const { t } = useTranslation();
+	const currentLanguage = i18next.language;
 
 	useEffect(() => {
-		dispatch(getTeamsAsync());
-	}, [dispatch]);
+		dispatch(getTeamsAsync(currentLanguage));
+	}, [dispatch, currentLanguage]);
 
 	const { teams } = useSelector((state: RootState) => state.teams);
 

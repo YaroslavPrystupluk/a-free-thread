@@ -21,8 +21,12 @@ const searchSlice = createSlice({
 		addResult: (state, action) => {
 			state.searchResult = action.payload;
 		},
+		clearSearch: (state) => {
+			state.searchProduct = '';
+			state.searchResult = [];
+		},
 	},
 });
 
-export const { addProduct, addResult } = searchSlice.actions;
+export const { addProduct, addResult, clearSearch } = searchSlice.actions;
 export default searchSlice.reducer;
