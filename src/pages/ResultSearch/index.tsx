@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import star from '../../images/icon/star.webp';
@@ -16,7 +16,6 @@ import { Product } from '../../redux/slices/productsSlice';
 import ProductItem from '../../components/Likes/productItem';
 import { StyleImageList } from '../../Theme/LikesTheme';
 import { RootState } from '../../redux/store/store';
-import { filterProducts } from '../Main/getProducts';
 
 const ResultSearch = React.memo(() => {
 	const { t } = useTranslation();
@@ -24,15 +23,6 @@ const ResultSearch = React.memo(() => {
 	const searchResult: Product[] = useSelector(
 		(state: RootState) => state.search.searchResult || [],
 	);
-	const аllProductsArray: Product[] = useSelector(
-		(state: RootState) => (state.products.products || []) as Product[],
-	);
-
-	useEffect(() => {
-		if (!аllProductsArray?.length) {
-			filterProducts('shirts.json', 'accessories.json');
-		}
-	}, []);
 
 	return (
 		<Container>

@@ -14,7 +14,7 @@ export async function filterProducts(
 		await store.dispatch(getProductsAsync({ productsFile: secondPathFile, language }));
 		await Promise.all(
 			collectionsManes.map(async (item) => {
-				await store.dispatch(selectCollection(item));
+				await store.dispatch(selectCollection({ selectedProduct: item, language }));
 			}),
 		);
 	} catch (error) {

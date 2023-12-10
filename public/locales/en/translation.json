@@ -1,6 +1,4 @@
 {
-    "likes.title.hits": "popular products",
-    "likes.title.new": "new arrivals",
     "contacts.title": "Our Contacts",
     "contacts.address.span": "ADDRESS",
     "contacts.address.p": "Ukraine, Kyiv region, Vyshneve",
@@ -48,5 +46,18 @@
     "search.modal.button": "Search",
     "search.page.title": "Search results:",
     "search.page.error": "Unfortunately, nothing was found with these parameters.",
-    "search.page.error.text": "Navigate to the catalog to choose the desired product or try again."
+    "search.page.error.text": "Navigate to the catalog to choose the desired product or try again.",
+    "product.error": "We don't have such a product in our database. Check out our popular products.",
+    "product.description.button": "description",
+    "product.recommendations.button": "care recommendations",
+    "product.deliveryAndPayment.button": "delivery and payment",
+    "product.deliveryAndPayment.text": "Pay for your order easily and conveniently: receive a prepayment invoice for the product and delivery to your card or by invoice. Choose the delivery method: within Ukraine, international delivery, or pick up your order yourself.",
+    "product.exchangeAndReturn.button": "exchange and return",
+    "product.exchangeAndReturn.text": "Our exchange and return policy makes your purchases safe and convenient. If you have any questions about exchanging a product or returning it, please contact our customer service. We're always here to provide you with the best service!",
+    "likes.title.hit": "popular products",
+    "likes.badge.hit": "Hit",
+    "likes.title.new": "new arrivals",
+    "likes.badge.new": "New",
+    "likes.title.last": "previously viewed by you",
+    "likes.title.like": "you might like"
 }

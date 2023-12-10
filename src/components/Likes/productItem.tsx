@@ -18,8 +18,8 @@ const ProductItem: React.FC<ProductItemProps> = ({ item, badge }) => {
 	return (
 		<StyleImageListItem key={item.id}>
 			<Carousel renderCenterLeftControls={null} renderCenterRightControls={null}>
-				{item.imageUrls.map((imageUrls: string) => (
-					<ProductImages img={imageUrls} key={item.id} alt={item.name} />
+				{item.imageUrls.map((imageUrl: string, index: number) => (
+					<ProductImages img={imageUrl} key={index} alt={item.name} />
 				))}
 			</Carousel>
 			<Link to={`/product/${item.id}`} style={{ color: 'black', textDecoration: 'none' }}>

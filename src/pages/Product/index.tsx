@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import { Typography } from '@mui/material';
@@ -10,7 +11,6 @@ import LoadingAnimation from '../../components/Loading';
 import { ArrowHide, ArrowShow } from '../../components/Collection/arrows';
 import Likes from '../../components/Likes';
 import { addProduct } from '../../redux/slices/lastVisitedSlice';
-import { filterProducts } from '../Main/getProducts';
 import {
 	StyleProductDescription,
 	StyleProductGallery,
@@ -33,10 +33,12 @@ type DescriptionsOpen = {
 
 const ProductPage: React.FC = () => {
 	const { id } = useParams<{ id: string | undefined }>();
+	const { t } = useTranslation();
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
 	const productsArray: Product[] = useSelector(
 		(state: RootState) => (state.products.products || []) as Product[],
 	);
+	const languageState = useSelector((state: RootState) => state.products.language);
 	const productItem: Product = useSelector(
 		(state: RootState) => state.product.product || {},
 	) as Product;
@@ -74,30 +76,27 @@ const ProductPage: React.FC = () => {
 	}, [imgArray]);
 
 	useEffect(() => {
+		console.log(languageState);
 		const fetchData = async () => {
-			if (!productsArray?.length) {
-				await filterProducts('../shirts.json', '../accessories.json');
-			}
-
 			if (idProduct !== undefined) {
 				await dispatch(getProduct(idProduct));
+				console.log('1');
 			}
 
 			if (productItem && Object.keys(productItem).length > 0) {
 				await dispatch(addProduct(productItem));
+				console.log('2');
 			}
 		};
 
 		fetchData();
-	}, [dispatch, idProduct, productItem, productsArray]);
+	}, [idProduct, productItem, productsArray, languageState]);
 
 	if (productNotFound) {
 		return (
 			<>
-				<StyleProductNotFound>
-					У нашій базі даних такого продукту немає. Подивіться наші популярні продукти.
-				</StyleProductNotFound>
-				<Likes classWrapper="main" title="популярні товари" collection="hit" badge="Хіт" />
+				<StyleProductNotFound>{t('product.error')}</StyleProductNotFound>
+				<Likes classWrapper="main" title={t('likes.title.hit')} collection="hit" badge="Хіт" />
 			</>
 		);
 	}
@@ -116,7 +115,7 @@ const ProductPage: React.FC = () => {
 								onClick={() => handleThumbnailClick(`../${thumbnail}`, index)}
 								className={index === selectedButtonIndex ? 'selected' : ''}
 							>
-								<img src={`../${thumbnail}`} alt={`Попередній перегляд ${index + 1}`} />
+								<img src={`../${thumbnail}`} alt={`${index + 1}`} />
 							</button>
 						))}
 					</StyleProductThumbnails>
@@ -146,7 +145,7 @@ const ProductPage: React.FC = () => {
 							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('description')}
 						>
-							опис
+							{t('product.description.button')}
 							<button type="button">
 								{descriptionsOpen.description && <ArrowShow />}
 								{!descriptionsOpen.description && <ArrowHide />}
@@ -165,7 +164,7 @@ const ProductPage: React.FC = () => {
 							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('recommendations')}
 						>
-							рекомендації по догляду
+							{t('product.recommendations.button')}
 							<button type="button">
 								{descriptionsOpen.recommendations && <ArrowShow />}
 								{!descriptionsOpen.recommendations && <ArrowHide />}
@@ -184,7 +183,7 @@ const ProductPage: React.FC = () => {
 							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('deliveryAndPayment')}
 						>
-							доставка і оплата
+							{t('product.deliveryAndPayment.button')}
 							<button type="button">
 								{descriptionsOpen.deliveryAndPayment && <ArrowShow />}
 								{!descriptionsOpen.deliveryAndPayment && <ArrowHide />}
@@ -192,8 +191,7 @@ const ProductPage: React.FC = () => {
 						</Typography>
 						{descriptionsOpen.deliveryAndPayment && (
 							<Typography variant="body2" component="p">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+								{t('product.deliveryAndPayment.text')}
 							</Typography>
 						)}
 					</StyleProductDescriptionContainer>
@@ -204,7 +202,7 @@ const ProductPage: React.FC = () => {
 							style={{ cursor: 'pointer' }}
 							onClick={() => toggleDescription('exchangeAndReturn')}
 						>
-							обмін і повернення
+							{t('product.exchangeAndReturn.button')}
 							<button type="button">
 								{descriptionsOpen.exchangeAndReturn && <ArrowShow />}
 								{!descriptionsOpen.exchangeAndReturn && <ArrowHide />}
@@ -212,8 +210,7 @@ const ProductPage: React.FC = () => {
 						</Typography>
 						{descriptionsOpen.exchangeAndReturn && (
 							<Typography variant="body2" component="p">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+								{t('product.exchangeAndReturn.text')}
 							</Typography>
 						)}
 					</StyleProductDescriptionContainer>
@@ -221,16 +218,21 @@ const ProductPage: React.FC = () => {
 			</StyleProductMain>
 			<Likes
 				classWrapper="product"
-				title="вам може сподобатись"
+				title={t('likes.title.like')}
 				collection={productItem.collection}
-				badge="Хіт"
+				badge={t('likes.badge.hit')}
 			/>
 			{lastVisitedProducts.length < 4 ? (
-				<Likes classWrapper="product" title="популярні товари" collection="hit" badge="Хіт" />
+				<Likes
+					classWrapper="product"
+					title={t('likes.title.hit')}
+					collection="hit"
+					badge={t('likes.badge.hit')}
+				/>
 			) : (
 				<Likes
 					classWrapper="product"
-					title="раніше ви переглядали"
+					title={t('likes.title.last')}
 					collection="last"
 					badge="last"
 				/>

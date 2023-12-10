@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, SerializedError, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Product {
 	id: number;
@@ -49,7 +49,11 @@ export const getProductsAsync = createAsyncThunk(
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
-	reducers: {},
+	reducers: {
+		setLanguage: (state, action: PayloadAction<string>) => {
+			state.language = action.payload;
+		},
+	},
 	extraReducers: (builder) => {
 		builder.addCase(getProductsAsync.pending, (state) => {
 			state.isLoading = true;
@@ -67,7 +71,7 @@ const productsSlice = createSlice({
 			} else {
 				products.forEach((product: Product) => {
 					const existingProduct = productsArray.find(
-						(existing: Product) => existing.name === product.name,
+						(existing: Product) => existing.id === product.id,
 					);
 
 					if (!existingProduct) {
@@ -87,6 +91,7 @@ const productsSlice = createSlice({
 	},
 });
 
-export const { reducer: productsReducer } = productsSlice;
+export const { reducer: productsReducer, actions } = productsSlice;
+export const { setLanguage } = actions;
 
 export default productsReducer;

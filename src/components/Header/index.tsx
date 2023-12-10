@@ -1,8 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
 import MenuHeader from './MenuHeader/MenuHeader';
+import { RootState } from '../../redux/store/store';
+import { setLanguage, Product } from '../../redux/slices/productsSlice';
+import { filterProducts } from '../../pages/Main/getProducts';
 
 import {
 	HeaderWrapper,
@@ -51,10 +58,37 @@ const Header: FC<HeaderProps> = ({
 	isActive,
 }) => {
 	const { i18n } = useTranslation();
+	const currentLanguage = i18next.language;
+	const languageState = useSelector((state: RootState) => state.products.language);
+	const productsArray: Product[] = useSelector(
+		(state: RootState) => (state.products.products || []) as Product[],
+	);
+	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+	const location = useLocation();
+	const hasProductPath = location.pathname.includes('product');
 
 	const handleLanguageChange = (language: string) => {
 		i18n.changeLanguage(language);
+		dispatch(setLanguage(language));
 	};
+
+	useEffect(() => {
+		if (languageState !== currentLanguage || !productsArray?.length) {
+			if (!hasProductPath) {
+				filterProducts(
+					`shirts_${currentLanguage}.json`,
+					`accessories_${currentLanguage}.json`,
+					currentLanguage,
+				);
+			} else {
+				filterProducts(
+					`../shirts_${currentLanguage}.json`,
+					`../accessories_${currentLanguage}.json`,
+					currentLanguage,
+				);
+			}
+		}
+	}, [languageState, currentLanguage, productsArray, hasProductPath]);
 
 	const toggleSearch = () => {
 		handleOpenModal();

@@ -61,13 +61,18 @@ const initialState: CollectionState = {
 
 export const selectCollection = createAsyncThunk(
 	'collection/selectCollection',
-	async (selectedProduct: string, { getState, dispatch }) => {
+	async (
+		{ selectedProduct, language }: { selectedProduct: string; language: string },
+		{ getState, dispatch },
+	) => {
 		const state = getState() as RootState;
 		const products = selectProducts(state) as Product[];
 
 		if (products.length === 0) {
 			try {
-				await dispatch(getProductsAsync('public/shirts.json'));
+				await dispatch(
+					getProductsAsync({ productsFile: `public/shirts_${language}.json`, language }),
+				);
 			} catch (error) {
 				console.error('Помилка завантаження продуктів', error);
 				throw error;
@@ -78,7 +83,7 @@ export const selectCollection = createAsyncThunk(
 
 		const collection = updatedProducts.filter((product) => product.collection === selectedProduct);
 
-		return collection;
+		return { selectedProduct, language, collection };
 	},
 );
 
@@ -93,14 +98,14 @@ const collectionSlice = createSlice({
 		});
 		builder.addCase(selectCollection.fulfilled, (state, action) => {
 			state.isLoadingCollection = false;
-			if (action.meta.arg === 'kiev') {
-				state.kiev.collectionProducts = action.payload;
-			} else if (action.meta.arg === 'grandmother') {
-				state.grandmother.collectionProducts = action.payload;
-			} else if (action.meta.arg === 'regions') {
-				state.regions.collectionProducts = action.payload;
-			} else if (action.meta.arg === 'accessories') {
-				state.accessories.collectionProducts = action.payload;
+			if (action.payload.selectedProduct === 'kiev') {
+				state.kiev.collectionProducts = action.payload.collection;
+			} else if (action.payload.selectedProduct === 'grandmother') {
+				state.grandmother.collectionProducts = action.payload.collection;
+			} else if (action.payload.selectedProduct === 'regions') {
+				state.regions.collectionProducts = action.payload.collection;
+			} else if (action.payload.selectedProduct === 'accessories') {
+				state.accessories.collectionProducts = action.payload.collection;
 			}
 		});
 		builder.addCase(selectCollection.rejected, (state, action) => {
