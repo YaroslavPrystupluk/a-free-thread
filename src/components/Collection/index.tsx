@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { StyleTypography } from '../../Theme/LikesTheme';
@@ -22,6 +23,7 @@ interface CollectionProps {
 }
 
 const Collection: React.FC<CollectionProps> = ({ title }) => {
+	const { t } = useTranslation();
 	const titleColl = useSelector((state: RootState) => state.collection) as CollectionState;
 	const loadingCollection: boolean = useSelector(
 		(state: RootState) => state.collection.isLoadingCollection,
@@ -61,12 +63,12 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 				<StyleCollectionProducts>
 					<StyleCollectionImageList style={{ gap: 'auto' }}>
 						{randomCollectionProducts.map((item: Product) => (
-							<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
+							<ProductItem item={item} badge={t('likes.badge.new')} key={item.id * Math.random()} />
 						))}
 					</StyleCollectionImageList>
 					<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
 						<StyleCollectionButton>
-							<span style={{ lineHeight: '1.2' }}>перейти до колекції</span>
+							<span style={{ lineHeight: '1.2' }}>{t('main.collection.button')}</span>
 							<div>{RightArrowWhite()}</div>
 						</StyleCollectionButton>
 					</Link>

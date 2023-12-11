@@ -59,5 +59,6 @@
     "likes.title.new": "new arrivals",
     "likes.badge.new": "New",
     "likes.title.last": "previously viewed by you",
-    "likes.title.like": "you might like"
+    "likes.title.like": "you might like",
+    "main.collection.button": "go to the collection"
 }

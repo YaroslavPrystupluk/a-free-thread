@@ -32,16 +32,13 @@ export const getProductsAsync = createAsyncThunk(
 			const response = await fetch(productsFile);
 
 			if (!response.ok) {
-				throw new Error(`Error fetching products: ${response.statusText}`);
+				return { error: `Error fetching products: ${response.statusText}` };
 			}
 			const results: Product[] = await response.json();
 
 			return { products: results, language };
 		} catch (error) {
-			if (error instanceof Error) {
-				return { error: error.message };
-			}
-			return { error: 'An unknown error occurred.' };
+			return { error: error instanceof Error ? error.message : 'An unknown error occurred.' };
 		}
 	},
 );
@@ -52,6 +49,7 @@ const productsSlice = createSlice({
 	reducers: {
 		setLanguage: (state, action: PayloadAction<string>) => {
 			state.language = action.payload;
+			state.products = [];
 		},
 	},
 	extraReducers: (builder) => {

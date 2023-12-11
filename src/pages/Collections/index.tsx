@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/material';
@@ -30,6 +31,7 @@ import {
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
+	const { t } = useTranslation();
 	const idColl = useSelector((state: RootState) => state.collection) as unknown as Record<
 		string,
 		CollectionItem
@@ -115,7 +117,7 @@ const CollectionPage = () => {
 			<StyleCollectionProducts className="collectionPage">
 				<StyleImageList style={{ gap: 'auto' }} className="collectionPage">
 					{productsSliced.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id} />
+						<ProductItem item={item} badge={t('likes.badge.new')} key={item.id} />
 					))}
 				</StyleImageList>
 				<StylePaginationBox>

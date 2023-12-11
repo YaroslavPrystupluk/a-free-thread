@@ -16,6 +16,7 @@ interface LikesProps {
 }
 
 const Likes: React.FC<LikesProps> = ({ title, collection, badge, classWrapper }) => {
+	console.log(title, collection, badge, classWrapper);
 	const productsArray: Product[] = useSelector(
 		(state: RootState) => (state.products.products || []) as Product[],
 	);
