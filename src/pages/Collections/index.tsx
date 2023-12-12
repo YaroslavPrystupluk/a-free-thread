@@ -11,6 +11,7 @@ import { CollectionItem } from '../../redux/slices/collectionSlice';
 import LoadingAnimation from '../../components/Loading';
 import ProductItem from '../../components/Likes/productItem';
 import PageNotFound from '../NotFoundPage';
+import useDescriptionCollections from './description';
 import { RightArrow, LeftArrow, DividerIcon } from '../../components/Collection/arrows';
 
 import {
@@ -47,8 +48,8 @@ const CollectionPage = () => {
 	const countPagination = total ? Math.ceil(total / productsPerPage) : 0;
 	const startIndex = (currentPage - 1) * productsPerPage;
 	const endIndex = currentPage * productsPerPage;
-
 	const productsSliced = collectionsProducts?.slice(startIndex, endIndex);
+	const { titleCol, description } = useDescriptionCollections()[id || ''] || {};
 
 	const handleScrollAndResize = () => {
 		if (window.innerWidth >= 768) {
@@ -82,7 +83,7 @@ const CollectionPage = () => {
 				<StyleSquare> </StyleSquare>
 				<StyleTypography variant="h4" className="collectionPageTitle" gutterBottom>
 					&ldquo;
-					{collectionItem.title}
+					{titleCol}
 					&rdquo;
 				</StyleTypography>
 				<StyleStar>
@@ -110,7 +111,7 @@ const CollectionPage = () => {
 				/>
 				<StyleCollectionPageMain>
 					<StyleTypography variant="body1" className="collectionPageSpan" gutterBottom>
-						{collectionItem.description}
+						{description}
 					</StyleTypography>
 				</StyleCollectionPageMain>
 			</StyleCollectionImageWrapper>

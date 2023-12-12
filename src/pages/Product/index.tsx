@@ -76,16 +76,13 @@ const ProductPage: React.FC = () => {
 	}, [imgArray]);
 
 	useEffect(() => {
-		console.log(languageState);
 		const fetchData = async () => {
 			if (idProduct !== undefined) {
 				await dispatch(getProduct(idProduct));
-				console.log('1');
 			}
 
 			if (productItem && Object.keys(productItem).length > 0) {
 				await dispatch(addProduct(productItem));
-				console.log('2');
 			}
 		};
 

@@ -17,6 +17,7 @@ import ProductItem from '../Likes/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import LoadingAnimation from '../Loading';
 import { RightArrowWhite } from './arrows';
+import useDescriptionCollections from '../../pages/Collections/description';
 
 interface CollectionProps {
 	title: keyof CollectionState;
@@ -29,10 +30,9 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 		(state: RootState) => state.collection.isLoadingCollection,
 	);
 	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
-
 	const collectionItem = titleColl[title] as CollectionItem;
-
 	const collectionsProducts = collectionItem.collectionProducts as Product[];
+	const { titleCol, description } = useDescriptionCollections()[title || ''] || {};
 
 	const randomCollectionProducts = useMemo(() => {
 		return collectionsProducts
@@ -47,11 +47,11 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 		<StyledCollectionWrapper>
 			<StyleTypography variant="h4" gutterBottom>
 				&ldquo;
-				{collectionItem.title}
+				{titleCol}
 				&rdquo;
 			</StyleTypography>
 			<StyleTypography variant="body1" gutterBottom>
-				{collectionItem.description}
+				{description}
 			</StyleTypography>
 			<StyleCollectionImageWrapper className={`wrapper_${title}`}>
 				<StyleCollectionImg

@@ -38,6 +38,10 @@
     "collection.regions.title": "“Regions of Ukraine”",
     "collection.grandmother.title": "“Restore Your Embroidery”",
     "collection.accessories.title": "Accessories",
+    "collection.kiev.description": "Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts. Description of Kyiv region shirts.",
+    "collection.grandmother.description": "Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt. Description of restoring the embroidered shirt.",
+    "collection.regions.description": "Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine. Description of shirts with regions of Ukraine.",
+    "collection.accessories.description": "Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories. Description of accessories.",      
     "footer.title": "About the company",
     "footer.time": "Mon-Sat: from 9:00 to 18:00",
     "footer.social": "We are on social networks:",
@@ -60,5 +64,7 @@
     "likes.badge.new": "New",
     "likes.title.last": "previously viewed by you",
     "likes.title.like": "you might like",
-    "main.collection.button": "go to the collection"
+    "main.collection.button": "go to the collection",
+    "error.page.title": "Oops, something went wrong...",
+    "error.page.description": "You have entered a wrong address, or this page on the site is no longer available."
 }
