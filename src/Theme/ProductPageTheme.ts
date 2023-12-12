@@ -203,6 +203,9 @@ const StyleProductDescription = styled('div')(({ theme }) => ({
 		'-webkit-line-clamp': '4',
 		'-webkit-box-orient': 'vertical',
 		display: '-webkit-box',
+		'&.product_recommendations': {
+			'-webkit-line-clamp': '10',
+		},
 		[`@media screen and (min-width: ${theme.breakpoints.md}px)`]: {
 			fontSize: '0.9rem',
 			letterSpacing: '0.28px',

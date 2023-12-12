@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { DialogActions, Grid, IconButton } from '@mui/material';
 import {
@@ -19,6 +20,8 @@ interface ModalSearchProps {
 
 const ModalSearch: FC<ModalSearchProps> = React.memo(
 	({ handleCloseModal, openModal, valueSearch, handleChange, handleSearch }) => {
+		const { t } = useTranslation();
+
 		return (
 			<CustomDialog fullScreen open={openModal} onClose={handleCloseModal}>
 				<DialogActions>
@@ -38,7 +41,7 @@ const ModalSearch: FC<ModalSearchProps> = React.memo(
 							value={valueSearch}
 							onChange={handleChange}
 							size="small"
-							placeholder="введіть назву"
+							placeholder={t('search.modal.placeholder')}
 						/>
 					</Grid>
 					<Grid item>
@@ -51,7 +54,7 @@ const ModalSearch: FC<ModalSearchProps> = React.memo(
 									handleCloseModal();
 								}}
 							>
-								Знайти
+								{t('search.modal.button')}
 							</CustomButton>
 						</NavLink>
 					</Grid>

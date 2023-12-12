@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { CardContent, CardMedia } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import { CardContent, CardMedia, Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Teams } from '../../model/Iteams';
 import {
@@ -39,10 +38,7 @@ const CardItem: FC<CardItemProps> = ({ player }) => {
 							<CardMedia component="img" image={player.image} alt={player.position} />
 						</Front>
 						<Back className="back">
-							<BackContent>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia lorem
-							</BackContent>
+							<BackContent>{player.content}</BackContent>
 						</Back>
 					</CardHeader>
 					<CardContent>

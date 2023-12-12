@@ -1,4 +1,6 @@
 import { FC, useEffect, useState } from 'react';
+import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/material';
 import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,13 +22,15 @@ import {
 import star from '../../images/icon/star.webp';
 
 const Comments: FC = () => {
+	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
 	const [productsPerPage, setProductsPerPage] = useState<number>(6);
 	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+	const currentLanguage = i18next.language;
 
 	useEffect(() => {
-		dispatch(getCommentsAsync());
-	}, [dispatch]);
+		dispatch(getCommentsAsync(currentLanguage));
+	}, [dispatch, currentLanguage]);
 
 	const { comments } = useSelector((state: RootState) => state.comments);
 	const total = comments?.length;
@@ -60,7 +64,7 @@ const Comments: FC = () => {
 		<Container>
 			<TitleWrapper>
 				<SquareTitle />
-				<Title>Відгуки</Title>
+				<Title>{t('header.button.reviews')}</Title>
 				<StarIcon src={star} alt="star" />
 			</TitleWrapper>
 			<CardsWrapper>

@@ -1,7 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
 import MenuHeader from './MenuHeader/MenuHeader';
+import { RootState } from '../../redux/store/store';
+import { setLanguage, Product } from '../../redux/slices/productsSlice';
+import { filterProducts } from '../../pages/Main/getProducts';
 
 import {
 	HeaderWrapper,
@@ -19,10 +27,8 @@ import logoBig from '../../images/logo/logo_free_thread.webp';
 import phone from '../../images/icon/phone.webp';
 
 interface HeaderProps {
-	activeButtonLang: number;
 	activeButtonMenu: number;
 	openSubMenu: boolean;
-	handleActiveButtonLang: (buttonIndex: number) => void;
 	handleActiveButtonMenu: (buttonIndex: number) => void;
 	handleOpenModal: () => void;
 	handleOpenSubMenu: () => void;
@@ -38,8 +44,6 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({
 	handleOpenModal,
-	handleActiveButtonLang,
-	activeButtonLang,
 	activeButtonMenu,
 	handleActiveButtonMenu,
 	openSubMenu,
@@ -53,11 +57,50 @@ const Header: FC<HeaderProps> = ({
 	burgerMenu,
 	isActive,
 }) => {
+	const { i18n } = useTranslation();
+	const currentLanguage = i18next.language;
+	const languageState = useSelector((state: RootState) => state.products.language);
+	const productsArray: Product[] = useSelector(
+		(state: RootState) => (state.products.products || []) as Product[],
+	);
+	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
+	const location = useLocation();
+	const hasProductPath = location.pathname.includes('product');
+
+	const handleLanguageChange = (language: string) => {
+		i18n.changeLanguage(language);
+		dispatch(setLanguage(language));
+	};
+
+	useEffect(() => {
+		if (languageState !== currentLanguage || !productsArray?.length) {
+			if (!hasProductPath) {
+				filterProducts(
+					`shirts_${currentLanguage}.json`,
+					`accessories_${currentLanguage}.json`,
+					currentLanguage,
+				);
+			} else {
+				filterProducts(
+					`../shirts_${currentLanguage}.json`,
+					`../accessories_${currentLanguage}.json`,
+					currentLanguage,
+				);
+			}
+		}
+	}, [languageState, currentLanguage, productsArray, hasProductPath]);
+
+	const toggleSearch = () => {
+		handleOpenModal();
+	};
+
 	return (
 		<header>
 			<HeaderWrapper>
 				<LogoWrapper>
-					<Logo src={logoBig} alt="logo free thread" />
+					<a href="/">
+						<Logo src={logoBig} alt="logo free thread" />
+					</a>
 				</LogoWrapper>
 				<PhoneWrapper>
 					<img src={phone} alt="icon phone" />
@@ -72,13 +115,13 @@ const Header: FC<HeaderProps> = ({
 				/>
 				<Wrapper>
 					<SearchDesktop>
-						<Search handleOpenModal={handleOpenModal} />
+						<Search handleOpenModal={toggleSearch} />
 					</SearchDesktop>
 					<SelectLanguage>
-						<BtnLang $active={activeButtonLang === 1} onClick={() => handleActiveButtonLang(1)}>
+						<BtnLang $active={i18n.language === 'ua'} onClick={() => handleLanguageChange('ua')}>
 							ua
 						</BtnLang>
-						<BtnLang $active={activeButtonLang === 2} onClick={() => handleActiveButtonLang(2)}>
+						<BtnLang $active={i18n.language === 'en'} onClick={() => handleLanguageChange('en')}>
 							en
 						</BtnLang>
 					</SelectLanguage>
@@ -96,7 +139,7 @@ const Header: FC<HeaderProps> = ({
 					burgerMenu={burgerMenu}
 					isActive={isActive}
 				/>
-				<Search handleOpenModal={handleOpenModal} />
+				<Search handleOpenModal={toggleSearch} />
 			</SubHeader>
 		</header>
 	);

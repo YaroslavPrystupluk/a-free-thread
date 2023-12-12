@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, SerializedError, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Product {
 	id: number;
@@ -15,28 +15,30 @@ export interface ProductsState {
 	products: Product[] | unknown;
 	isLoading: boolean;
 	error: string | null | SerializedError;
+	language: string;
 }
 
 const initialState: ProductsState = {
 	products: [],
 	isLoading: false,
 	error: null,
+	language: 'ua',
 };
 
 export const getProductsAsync = createAsyncThunk(
 	'products/fetchProducts',
-	async (productsFile: string) => {
+	async ({ productsFile, language }: { productsFile: string; language: string }) => {
 		try {
 			const response = await fetch(productsFile);
 
 			if (!response.ok) {
-				throw new Error(`Error fetching products: ${response.statusText}`);
+				return { error: `Error fetching products: ${response.statusText}` };
 			}
 			const results: Product[] = await response.json();
 
-			return results;
+			return { products: results, language };
 		} catch (error) {
-			return error;
+			return { error: error instanceof Error ? error.message : 'An unknown error occurred.' };
 		}
 	},
 );
@@ -44,7 +46,12 @@ export const getProductsAsync = createAsyncThunk(
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
-	reducers: {},
+	reducers: {
+		setLanguage: (state, action: PayloadAction<string>) => {
+			state.language = action.payload;
+			state.products = [];
+		},
+	},
 	extraReducers: (builder) => {
 		builder.addCase(getProductsAsync.pending, (state) => {
 			state.isLoading = true;
@@ -52,14 +59,17 @@ const productsSlice = createSlice({
 		});
 		builder.addCase(getProductsAsync.fulfilled, (state, action) => {
 			state.isLoading = false;
+			const { products, language } = action.payload as { products: Product[]; language: string };
+
 			const productsArray = state.products as Product[];
 
 			if (productsArray.length === 0) {
-				state.products = action.payload;
+				state.products = products;
+				state.language = language;
 			} else {
-				(action.payload as Product[]).forEach((product: Product) => {
+				products.forEach((product: Product) => {
 					const existingProduct = productsArray.find(
-						(existing: Product) => existing.name === product.name,
+						(existing: Product) => existing.id === product.id,
 					);
 
 					if (!existingProduct) {
@@ -68,6 +78,7 @@ const productsSlice = createSlice({
 				});
 
 				state.products = productsArray;
+				state.language = language;
 			}
 		});
 
@@ -78,6 +89,7 @@ const productsSlice = createSlice({
 	},
 });
 
-export const { reducer: productsReducer } = productsSlice;
+export const { reducer: productsReducer, actions } = productsSlice;
+export const { setLanguage } = actions;
 
 export default productsReducer;

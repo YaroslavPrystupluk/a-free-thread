@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import {
 	Container,
@@ -21,74 +22,57 @@ import {
 import star from '../../images/icon/star.webp';
 
 const DeliveryAndPai: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Container>
 			<TitleWrapper>
 				<SquareTitle />
-				<TitlePage>Доставка і оплата</TitlePage>
+				<TitlePage>{t('delivery.title')}</TitlePage>
 				<StarIcon src={star} alt="star" />
 			</TitleWrapper>
 			<Content>
 				<ContentList>
-					<TitleContent $isTitle>Для відправлення замовлення нам потрібні такі дані:</TitleContent>
+					<TitleContent $isTitle>{t('delivery.data.product')}</TitleContent>
 					<CustomList>
 						<CustomListItem>
 							<CustomListItemIcon>
 								<CustomDoneIcon />
 							</CustomListItemIcon>
-							<CustomListItemText>Обраний товар, розмір, колір</CustomListItemText>
+							<CustomListItemText>{t('delivery.data.product.size')}</CustomListItemText>
 						</CustomListItem>
 						<CustomListItem>
 							<CustomListItemIcon>
 								<CustomDoneIcon />
 							</CustomListItemIcon>
-							<CustomListItemText>
-								Контактні дані отримувача (ПІБ, номер телефону, електронна пошта)
-							</CustomListItemText>
+							<CustomListItemText>{t('delivery.data.product.phone')}</CustomListItemText>
 						</CustomListItem>
 						<CustomListItem>
 							<CustomListItemIcon>
 								<CustomDoneIcon />
 							</CustomListItemIcon>
-							<CustomListItemText>
-								Адресу (Країна, регіон, населений пункт, вулиця, номер будинку, індекс)
-							</CustomListItemText>
+							<CustomListItemText>{t('delivery.data.product.address')}</CustomListItemText>
 						</CustomListItem>
 						<CustomListItem>
 							<CustomListItemIcon>
 								<CustomDoneIcon />
 							</CustomListItemIcon>
-							<CustomListItemText>
-								Чек/квитанцію про передоплату вартості товару та доставки (оплата здійснюється за
-								рахунком чи на карту)
-							</CustomListItemText>
+							<CustomListItemText>{t('delivery.data.product.bill')}</CustomListItemText>
 						</CustomListItem>
 					</CustomList>
 				</ContentList>
 				<ContentText>
 					<TextWrapper>
-						<TitleContent $isTitle={false}>Відправлення Україною</TitleContent>
-						<Text>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
-							dolor sit amet, consectetur adipiscing elit
-						</Text>
+						<TitleContent $isTitle={false}>{t('delivery.data.way.ukraine.title')}</TitleContent>
+						<Text>{t('delivery.data.way.ukraine')}</Text>
 					</TextWrapper>
 					<TextWrapper>
-						<TitleContent $isTitle={false}>Міжнародні відправлення</TitleContent>
-						<Text>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
-							dolor sit amet, consectetur adipiscing elit
-						</Text>
+						<TitleContent $isTitle={false}>{t('delivery.data.way.world.title')}</TitleContent>
+						<Text>{t('delivery.data.way.world')}</Text>
 					</TextWrapper>
 					<TextWrapper>
-						<TitleContent $isTitle={false}>Самовивіз</TitleContent>
-						<Text>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum
-							dolor sit amet, consectetur adipiscing elit
-						</Text>
+						<TitleContent $isTitle={false}>{t('delivery.data.way.self.title')}</TitleContent>
+						<Text>{t('delivery.data.way.self')}</Text>
 					</TextWrapper>
 				</ContentText>
 			</Content>

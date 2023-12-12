@@ -3,4 +3,5 @@ export interface Teams {
 	name: string;
 	position: string;
 	city: string;
+	content: string;
 }

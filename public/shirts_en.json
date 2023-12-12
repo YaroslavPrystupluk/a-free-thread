@@ -1,0 +1,112 @@
+[
+	{
+		"id": "1",
+		"name": "Shirt Darina",
+		"price": "3200 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Beautiful shirt Darina with embroidery that adds a unique national touch to your look.",
+		"collection": "grandmother",
+		"imageUrls": ["src/images/Shirts/1/shirts_1_0.webp", "src/images/Shirts/1/shirts_1_1.webp"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "2",
+		"name": "Shirt Christina",
+		"price": "3400 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Charming shirt Christina with exquisite embroidery that impresses with its beauty and national style.",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/2/shirts_2_0.webp",
+			"src/images/Shirts/2/shirts_2_1.webp",
+			"src/images/Shirts/2/shirts_2_2.webp"
+		],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "3",
+		"name": "Shirt Marina",
+		"price": "4000 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Attractive shirt Marina with unique embroidery that adds a special charm to your look.",
+		"collection": "grandmother",
+		"imageUrls": [
+			"src/images/Shirts/3/shirts_3_0.webp",
+			"src/images/Shirts/3/shirts_3_1.webp",
+			"src/images/Shirts/3/shirts_3_2.webp"
+		],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "4",
+		"name": "Shirt Bucha",
+		"price": "5000 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Luxurious shirt Bucha with exquisite embroidery, created for those who appreciate traditional style and elegance.",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/4/shirts_4_0.webp",
+			"src/images/Shirts/4/shirts_4_1.webp",
+			"src/images/Shirts/4/shirts_4_2.webp"
+		],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "5",
+		"name": "Shirt Mariupol",
+		"price": "4500 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Elegant shirt Mariupol with traditional embroidery that will emphasize your unique style.",
+		"collection": "regions",
+		"imageUrls": [
+			"src/images/Shirts/5/shirts_5_0.webp",
+			"src/images/Shirts/5/shirts_5_1.webp",
+			"src/images/Shirts/5/shirts_5_2.webp"
+		],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "6",
+		"name": "Shirt Kyivshchyna",
+		"price": "5300 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Elegant shirt Kyivshchyna with traditional embroidery that impresses with its solemnity and sophistication.",
+		"collection": "kiev",
+		"imageUrls": [
+			"src/images/Shirts/6/shirts_6_0.webp",
+			"src/images/Shirts/6/shirts_6_1.webp",
+			"src/images/Shirts/6/shirts_6_2.webp"
+		],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "7",
+		"name": "Shirt Independence",
+		"price": "4300 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Stylish shirt Independence with unique embroidery symbolizing the spirit of independence and dignity.",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/7/shirts_7_0.webp", "src/images/Shirts/7/shirts_7_1.webp"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "8",
+		"name": "Shirt Unity",
+		"price": "3200 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Shirt Unity – a symbol of national unity and style in every stitch.",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/8/shirts_8_0.webp"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	},
+	{
+		"id": "9",
+		"name": "Shirt Victory",
+		"price": "5000 UAH",
+		"recommendations": "For durability and brightness, hand wash the shirt at 30-40 degrees, avoiding the use of a washing machine. After washing, gently shake off the water without wringing it out, and dry it on a flat surface, avoiding prolonged exposure to sunlight. When ironing the embroidered shirt, use gauze or fabric to protect the product from damage.",
+		"description": "Shirt Victory – an embodiment of strength and dignity in every stitch and embroidery motif.",
+		"collection": "regions",
+		"imageUrls": ["src/images/Shirts/9/shirts_9_0.webp"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+	}
+]

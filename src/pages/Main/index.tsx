@@ -1,30 +1,26 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
-import { RootState } from '../../redux/store/store';
-import { filterProducts } from './getProducts';
-import { Product } from '../../redux/slices/productsSlice';
+import { useTranslation } from 'react-i18next';
 import Collection from '../../components/Collection';
 import SubHeader from '../../components/SubHeader';
 import Likes from '../../components/Likes';
 
 const Main = () => {
-	const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
-	const productsArray: Product[] = useSelector(
-		(state: RootState) => (state.products.products || []) as Product[],
-	);
-
-	useEffect(() => {
-		if (!productsArray?.length) {
-			filterProducts('shirts.json', 'accessories.json');
-		}
-	}, [dispatch]);
+	const { t } = useTranslation();
 
 	return (
 		<>
 			<SubHeader />
-			<Likes classWrapper="main" title="популярні товари" collection="hit" badge="Хіт" />
-			<Likes classWrapper="main" title="нові надходження" collection="new" badge="Новинка" />
+			<Likes
+				classWrapper="main"
+				title={t('likes.title.hit')}
+				collection="hit"
+				badge={t('likes.badge.hit')}
+			/>
+			<Likes
+				classWrapper="main"
+				title={t('likes.title.new')}
+				collection="new"
+				badge={t('likes.badge.new')}
+			/>
 			<Collection title="kiev" />
 			<Collection title="grandmother" />
 			<Collection title="regions" />

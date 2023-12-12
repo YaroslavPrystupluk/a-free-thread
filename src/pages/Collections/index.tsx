@@ -1,16 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, PaginationRenderItemParams } from '@mui/material';
-import { filterProducts } from '../Main/getProducts';
 import { RootState } from '../../redux/store/store';
 import { Product } from '../../redux/slices/productsSlice';
 import { CollectionItem } from '../../redux/slices/collectionSlice';
 import LoadingAnimation from '../../components/Loading';
 import ProductItem from '../../components/Likes/productItem';
 import PageNotFound from '../NotFoundPage';
+import useDescriptionCollections from './description';
 import { RightArrow, LeftArrow, DividerIcon } from '../../components/Collection/arrows';
 
 import {
@@ -31,6 +32,7 @@ import {
 
 const CollectionPage = () => {
 	const { id } = useParams<{ id: string | undefined }>();
+	const { t } = useTranslation();
 	const idColl = useSelector((state: RootState) => state.collection) as unknown as Record<
 		string,
 		CollectionItem
@@ -46,8 +48,8 @@ const CollectionPage = () => {
 	const countPagination = total ? Math.ceil(total / productsPerPage) : 0;
 	const startIndex = (currentPage - 1) * productsPerPage;
 	const endIndex = currentPage * productsPerPage;
-
 	const productsSliced = collectionsProducts?.slice(startIndex, endIndex);
+	const { titleCol, description } = useDescriptionCollections()[id || ''] || {};
 
 	const handleScrollAndResize = () => {
 		if (window.innerWidth >= 768) {
@@ -59,12 +61,6 @@ const CollectionPage = () => {
 
 	useEffect(() => {
 		setCurrentPage(1);
-	}, []);
-
-	useEffect(() => {
-		if (!collectionsProducts?.length) {
-			filterProducts('shirts.json', 'accessories.json');
-		}
 	}, []);
 
 	useEffect(() => {
@@ -87,7 +83,7 @@ const CollectionPage = () => {
 				<StyleSquare> </StyleSquare>
 				<StyleTypography variant="h4" className="collectionPageTitle" gutterBottom>
 					&ldquo;
-					{collectionItem.title}
+					{titleCol}
 					&rdquo;
 				</StyleTypography>
 				<StyleStar>
@@ -115,14 +111,14 @@ const CollectionPage = () => {
 				/>
 				<StyleCollectionPageMain>
 					<StyleTypography variant="body1" className="collectionPageSpan" gutterBottom>
-						{collectionItem.description}
+						{description}
 					</StyleTypography>
 				</StyleCollectionPageMain>
 			</StyleCollectionImageWrapper>
 			<StyleCollectionProducts className="collectionPage">
 				<StyleImageList style={{ gap: 'auto' }} className="collectionPage">
 					{productsSliced.map((item: Product) => (
-						<ProductItem item={item} badge="Новинка" key={item.id} />
+						<ProductItem item={item} badge={t('likes.badge.new')} key={item.id} />
 					))}
 				</StyleImageList>
 				<StylePaginationBox>

@@ -13,21 +13,24 @@ const initialState: TeamsState = {
 	error: null,
 };
 
-export const getTeamsAsync = createAsyncThunk<Teams[]>('teams/fetchTeams', async () => {
-	try {
-		const response = await fetch('teams.json');
+export const getTeamsAsync = createAsyncThunk<Teams[], string>(
+	'teams/fetchTeams',
+	async (language) => {
+		try {
+			const response = await fetch(`teams_${language}.json`);
 
-		if (!response.ok) {
-			throw new Error(`Error fetching teams: ${response.statusText}`);
+			if (!response.ok) {
+				throw new Error(`Error fetching teams: ${response.statusText}`);
+			}
+
+			const results: Teams[] = await response.json();
+
+			return results;
+		} catch (error) {
+			throw new Error('Failed to fetch teams');
 		}
-
-		const results: Teams[] = await response.json();
-
-		return results;
-	} catch (error) {
-		throw new Error('Failed to fetch teams');
-	}
-});
+	},
+);
 
 const teamsSlice = createSlice({
 	name: 'teams',

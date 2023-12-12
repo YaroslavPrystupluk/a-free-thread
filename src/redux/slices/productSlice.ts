@@ -1,6 +1,7 @@
+/* eslint-disable no-tabs */
 /* eslint-disable import/no-cycle */
 import { createSlice, createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
-import { getProductsAsync, Product } from './productsSlice';
+import { Product } from './productsSlice';
 import { RootState } from '../store/store';
 
 export interface ProductsState {
@@ -21,23 +22,23 @@ export const selectProducts = (state: RootState) => state.products.products;
 
 export const getProduct = createAsyncThunk(
 	'product/getProduct',
-	async (idProduct: number, { getState, dispatch }) => {
+	(idProduct: number, { getState }) => {
 		const state = getState() as RootState;
 		const products = selectProducts(state) as Product[];
 
-		if (products.length === 0) {
-			try {
-				await dispatch(getProductsAsync('../public/shirts.json'));
-				const updatedState = getState() as RootState;
-				const updatedProducts = selectProducts(updatedState) as Product[];
-				const productItem = updatedProducts.find((product) => Number(product.id) === idProduct);
+		// if (products.length === 0) {
+		// 	try {
+		// 		await dispatch(getProductsAsync('../public/shirts.json'));
+		// 		const updatedState = getState() as RootState;
+		// 		const updatedProducts = selectProducts(updatedState) as Product[];
+		// 		const productItem = updatedProducts.find((product) => Number(product.id) === idProduct);
 
-				return productItem;
-			} catch (error) {
-				console.error('Помилка завантаження продуктів', error);
-				throw error;
-			}
-		}
+		// 		return productItem;
+		// 	} catch (error) {
+		// 		console.error('Помилка завантаження продуктів', error);
+		// 		throw error;
+		// 	}
+		// }
 
 		const productItem = products.find((product) => Number(product.id) === idProduct);
 

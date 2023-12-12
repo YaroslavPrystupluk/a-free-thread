@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { StyleTypography } from '../../Theme/LikesTheme';
@@ -16,21 +17,22 @@ import ProductItem from '../Likes/productItem';
 import { Product } from '../../redux/slices/productsSlice';
 import LoadingAnimation from '../Loading';
 import { RightArrowWhite } from './arrows';
+import useDescriptionCollections from '../../pages/Collections/description';
 
 interface CollectionProps {
 	title: keyof CollectionState;
 }
 
 const Collection: React.FC<CollectionProps> = ({ title }) => {
+	const { t } = useTranslation();
 	const titleColl = useSelector((state: RootState) => state.collection) as CollectionState;
 	const loadingCollection: boolean = useSelector(
 		(state: RootState) => state.collection.isLoadingCollection,
 	);
 	const loading: boolean = useSelector((state: RootState) => state.products.isLoading);
-
 	const collectionItem = titleColl[title] as CollectionItem;
-
 	const collectionsProducts = collectionItem.collectionProducts as Product[];
+	const { titleCol, description } = useDescriptionCollections()[title || ''] || {};
 
 	const randomCollectionProducts = useMemo(() => {
 		return collectionsProducts
@@ -45,11 +47,11 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 		<StyledCollectionWrapper>
 			<StyleTypography variant="h4" gutterBottom>
 				&ldquo;
-				{collectionItem.title}
+				{titleCol}
 				&rdquo;
 			</StyleTypography>
 			<StyleTypography variant="body1" gutterBottom>
-				{collectionItem.description}
+				{description}
 			</StyleTypography>
 			<StyleCollectionImageWrapper className={`wrapper_${title}`}>
 				<StyleCollectionImg
@@ -61,12 +63,12 @@ const Collection: React.FC<CollectionProps> = ({ title }) => {
 				<StyleCollectionProducts>
 					<StyleCollectionImageList style={{ gap: 'auto' }}>
 						{randomCollectionProducts.map((item: Product) => (
-							<ProductItem item={item} badge="Новинка" key={item.id * Math.random()} />
+							<ProductItem item={item} badge={t('likes.badge.new')} key={item.id * Math.random()} />
 						))}
 					</StyleCollectionImageList>
 					<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
 						<StyleCollectionButton>
-							<span style={{ lineHeight: '1.2' }}>перейти до колекції</span>
+							<span style={{ lineHeight: '1.2' }}>{t('main.collection.button')}</span>
 							<div>{RightArrowWhite()}</div>
 						</StyleCollectionButton>
 					</Link>

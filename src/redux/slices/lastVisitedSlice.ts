@@ -21,9 +21,7 @@ const lastVisitedProductsSlice = createSlice({
 		addProduct(state, action) {
 			const newItem = action.payload;
 
-			const isDuplicate = state.lastArray.some(
-				(item: { name: string }) => item.name === newItem.name,
-			);
+			const isDuplicate = state.lastArray.some((item: { id: number }) => item.id === newItem.id);
 
 			if (!isDuplicate) {
 				const newArray = [...state.lastArray, newItem].slice(-4);

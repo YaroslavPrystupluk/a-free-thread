@@ -13,21 +13,24 @@ const initialState: TeamsState = {
 	error: null,
 };
 
-export const getCommentsAsync = createAsyncThunk<Comments[]>('comments/fetchComments', async () => {
-	try {
-		const response = await fetch('comments.json');
+export const getCommentsAsync = createAsyncThunk<Comments[], string>(
+	'comments/fetchComments',
+	async (language) => {
+		try {
+			const response = await fetch(`comments_${language}.json`);
 
-		if (!response.ok) {
-			throw new Error(`Error fetching teams: ${response.statusText}`);
+			if (!response.ok) {
+				throw new Error(`Error fetching teams: ${response.statusText}`);
+			}
+
+			const results: Comments[] = await response.json();
+
+			return results;
+		} catch (error) {
+			throw new Error('Failed to fetch teams');
 		}
-
-		const results: Comments[] = await response.json();
-
-		return results;
-	} catch (error) {
-		throw new Error('Failed to fetch teams');
-	}
-});
+	},
+);
 
 const commentsSlice = createSlice({
 	name: 'comments',

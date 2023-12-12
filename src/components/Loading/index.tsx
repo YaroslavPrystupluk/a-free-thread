@@ -1,12 +1,14 @@
+import { useTranslation } from 'react-i18next';
 import { LoadingContainer, LoadingText } from '../../Theme/LoadingTheme';
 
 function LoadingAnimation() {
-	const letters = ['З', 'А', 'В', 'А', 'Н', 'Т', 'А', 'Ж', 'Е', 'Н', 'Н', 'Я'];
+	const { t } = useTranslation();
+	const letter = t('loading.text');
 
 	return (
 		<LoadingContainer>
 			<LoadingText>
-				{letters.map((letter, index) => (
+				{letter.split('').map((letter, index) => (
 					<span
 						key={`${letter}-${Math.random()}`}
 						style={{ animationDelay: `${(index + 1) * 0.05}s` }}
