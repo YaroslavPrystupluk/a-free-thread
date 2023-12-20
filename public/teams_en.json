@@ -1,0 +1,45 @@
+[
+    {
+      "image": "src/images/About/employee.webp",
+      "name": "Hanna Kovalova",
+      "position": "Seamstress",
+      "city": "Dnipro",
+      "content": "Experienced and talented seamstress with many years of experience. Possesses a unique perspective on fashion and creates distinctive garments. Always ready to bring your ideas to life."
+    },
+    {
+      "image": "src/images/About/employee_3.webp",
+      "name": "Olena Malish",
+      "position": "Seamstress",
+      "city": "Dnipro",
+      "content": "Creative and passionate seamstress dedicated to her craft. Specializes in original designs and unconventional solutions. Her works always capture attention and leave a lasting impression."
+    },
+    {
+      "image": "src/images/About/employee.webp",
+      "name": "Alla Kobzar",
+      "position": "Seamstress",
+      "city": "Dnipro",
+      "content": "Professional and responsible seamstress with excellent taste. Pays close attention to details and creates sophisticated outfits. Her works are characterized by impeccable craftsmanship."
+    },
+    {
+      "image": "src/images/About/employee_3.webp",
+      "name": "Olha Vozniak",
+      "position": "Seamstress",
+      "city": "Dnipro",
+      "content": "Creative and energetic seamstress who loves experimenting with materials and styles. Her works are a blend of boldness and sophistication, bringing joy to clients."
+    },
+    {
+      "image": "src/images/About/employee_1.webp",
+      "name": "Aliona Babich",
+      "position": "Seamstress",
+      "city": "Dnipro",
+      "content": "Talented and inspired seamstress specializing in creating refined and elegant attire. Her works reflect style, quality, and attention to every detail."
+    },
+    {
+      "image": "src/images/About/employee.webp",
+      "name": "Christina Kozachenko",
+      "position": "Seamstress",
+      "city": "Dnipro",
+      "content": "Innovative and passionate seamstress constantly exploring new trends and styles. Capable of crafting unique looks that accentuate the individuality of each client."
+    }
+  ]
+  
